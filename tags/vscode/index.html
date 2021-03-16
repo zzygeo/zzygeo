@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://zzygeo.cn">
-  <title>C++ | 西瓜🍉</title>
+  <title>Tag: -vscode | 西瓜🍉</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="写一些觉得能用上的C++代码：">
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++">
-<meta property="og:url" content="https://zzygeo.cn/2020/12/19/CPP/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="西瓜🍉">
+<meta property="og:url" content="https://zzygeo.cn/tags/vscode/index.html">
 <meta property="og:site_name" content="西瓜🍉">
-<meta property="og:description" content="写一些觉得能用上的C++代码：">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-12-19T10:01:10.000Z">
-<meta property="article:modified_time" content="2021-03-13T17:52:19.790Z">
 <meta property="article:author" content="CallMe🍉">
 <meta name="twitter:card" content="summary">
   
@@ -227,342 +223,65 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CPP" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2021/03/17/Vscode%E4%B8%BAcmake%E9%85%8D%E7%BD%AEtask-json/" class="archive-article-date">
+        <time datetime="2021-03-16T22:05:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-17</time>
+</a>
+
+        </div>
+    	 
   
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2021/03/17/Vscode%E4%B8%BAcmake%E9%85%8D%E7%BD%AEtask-json/" target="_blank">Vscode为cmake配置task.json</a>
   
-    <h1 class="article-title" itemprop="name">
-      C++
     </h1>
   
 
 
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2020/12/19/CPP/" class="archive-article-date">
-        <time datetime="2020-12-19T10:01:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-19</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">432字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>写一些觉得能用上的C++代码：<br><a id="more"></a><br>将文本的数字读成数组：  </p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;fstream&gt;
-using namespace std;
-int main()
-&#123;
-    const int txtRow = 201;
-    const int txtColumn = 8;
-    float txtData[txtRow][txtColumn];
-    ifstream infile;
-    infile.open(&quot;C:\\APP\\C\\Project2\\测试数据.txt&quot;);
-    for (int i = 0; i &lt; txtRow; i++)
-    &#123;
-        for (int j = 0; j &lt; txtColumn; j++)
-        &#123;
-            infile &gt;&gt; txtData[i][j];
-        &#125;
-    &#125;
-    infile.close();
-
-return 0;
-&#125;    
-</code></pre><p>将文本的数字读成矩阵，需要第三方库Eigen。  </p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;Eigen/Dense&gt;
-#include&lt;fstream&gt;
-#include&lt;cmath&gt;
-using namespace std;
-using namespace Eigen;
-
-MatrixXd ReadData(istream&amp; data, int a, int b)
-&#123;
-    MatrixXd m_matrix(a, b);
-    for (int i = 0; i &lt; a; i++)
-    &#123;
-        for (int j = 0; j &lt; b; j++)
-        &#123;
-            data &gt;&gt; m_matrix(i,j);
-        &#125;
-    &#125;
-    return m_matrix;
-&#125;
-
-int main()
-&#123;
-    const int row = 201;
-    const int column = 8;
-    ifstream infile(&quot;C:\\APP\\C\\Project2\\测试数据.txt&quot;, ios::in);
-    if (!infile)
-    &#123;
-        return 0;
-    &#125;
-    MatrixXd m_matrix = ReadData(infile, row, column);
-
-return 0;
-&#125;
-</code></pre><p>冒泡排序：</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-void display(vector&lt;int&gt; vec)
-&#123;
-    for (int i = 0; i &lt; vec.size(); ++i)
-        cout &lt;&lt; vec[i] &lt;&lt; &#39; &#39;;
-    cout &lt;&lt; endl;
-&#125;
-
-void swap(int&amp; val1, int&amp; val2)
-&#123;
-    int temp = val1;
-    val1 = val2;
-    val2 = temp;
-&#125;
-
-void bubble_sort(vector&lt;int&gt;&amp; vec)
-&#123;
-    for (int ix = 0; ix &lt; vec.size(); ++ix)
-        for (int jx = ix + 1; jx &lt; vec.size(); ++jx)
-            if (vec[ix] &gt; vec[jx])
-                swap(vec[ix], vec[jx]);
-&#125;
-
-int main()
-&#123;
-    int al[8] = &#123; 2,56,4,5,13,7,1,24 &#125;;
-    vector&lt;int&gt; vec(al, al + 8);
-    cout &lt;&lt; &quot;before sort:  &quot;;
-    display(vec);
-    bubble_sort(vec);
-    cout &lt;&lt; &quot;after sort: &quot;;
-    display(vec);
-
-    return 0;
-&#125;
-</code></pre><p>关键在于swap 和 bubble_sort时，不仅要传值，也要传址，不然只是其值被复制了一份，成为了参数的局部性定义，当运行结束也就从“程序堆栈”里释放掉了，并没有关联起来。</p>
-<hr>
-
-    
-
-    
-    <div class="page-reward">
-      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
-        <div class="tooltip tooltip-east">
-          <span class="tooltip-item">
-            赏
-          </span>
-          <span class="tooltip-content">
-            <span class="tooltip-text">
-              <span class="tooltip-inner">
-                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
-                    class="icon icon-quo-right"></i></p>
-                <div class="reward-box">
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/images/alipay1.jpg">
-                    <span class="reward-type">支付宝</span>
-                  </div>
-                  
-                  
-                  <div class="reward-box-item">
-                    <img class="reward-img" src="/images/weixin.jpg">
-                    <span class="reward-type">微信</span>
-                  </div>
-                  
-                </div>
-              </span>
-            </span>
-          </span>
-        </div>
-      </a>
-    </div>
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          CallMe🍉
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="https://zzygeo.cn/2020/12/19/CPP/" title="C++" target="_blank">https://zzygeo.cn/2020/12/19/CPP/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
+        <div class="article-info info-on-right">
           
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
-    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">-vscode</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
+          
 
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://zzygeo.cn/2020/12/19/CPP/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2020/12/27/pcl-vs-cmake%E7%BC%96%E8%AF%91/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          pcl+vs+cmake编译
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/11/26/%E7%BC%96%E8%AF%91%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">编译器</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    目录，不存在的…
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
           </div>
@@ -603,9 +322,9 @@ int main()
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -760,15 +479,15 @@ int main()
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-编译器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">资源</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">-资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">-vscode</a>
               </li>
             
             <div class="clearfix"></div>

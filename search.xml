@@ -1,108 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++</title>
-    <url>/2020/12/19/CPP/</url>
-    <content><![CDATA[<p>写一些觉得能用上的C++代码：<br><a id="more"></a><br>将文本的数字读成数组：  </p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;fstream&gt;
-using namespace std;
-int main()
-&#123;
-    const int txtRow = 201;
-    const int txtColumn = 8;
-    float txtData[txtRow][txtColumn];
-    ifstream infile;
-    infile.open(&quot;C:\\APP\\C\\Project2\\测试数据.txt&quot;);
-    for (int i = 0; i &lt; txtRow; i++)
-    &#123;
-        for (int j = 0; j &lt; txtColumn; j++)
-        &#123;
-            infile &gt;&gt; txtData[i][j];
-        &#125;
-    &#125;
-    infile.close();
-
-return 0;
-&#125;    
-</code></pre><p>将文本的数字读成矩阵，需要第三方库Eigen。  </p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;Eigen/Dense&gt;
-#include&lt;fstream&gt;
-#include&lt;cmath&gt;
-using namespace std;
-using namespace Eigen;
-
-MatrixXd ReadData(istream&amp; data, int a, int b)
-&#123;
-    MatrixXd m_matrix(a, b);
-    for (int i = 0; i &lt; a; i++)
-    &#123;
-        for (int j = 0; j &lt; b; j++)
-        &#123;
-            data &gt;&gt; m_matrix(i,j);
-        &#125;
-    &#125;
-    return m_matrix;
-&#125;
-
-int main()
-&#123;
-    const int row = 201;
-    const int column = 8;
-    ifstream infile(&quot;C:\\APP\\C\\Project2\\测试数据.txt&quot;, ios::in);
-    if (!infile)
-    &#123;
-        return 0;
-    &#125;
-    MatrixXd m_matrix = ReadData(infile, row, column);
-
-return 0;
-&#125;
-</code></pre><p>冒泡排序：</p>
-<pre><code>#include&lt;iostream&gt;
-#include&lt;vector&gt;
-using namespace std;
-
-void display(vector&lt;int&gt; vec)
-&#123;
-    for (int i = 0; i &lt; vec.size(); ++i)
-        cout &lt;&lt; vec[i] &lt;&lt; &#39; &#39;;
-    cout &lt;&lt; endl;
-&#125;
-
-void swap(int&amp; val1, int&amp; val2)
-&#123;
-    int temp = val1;
-    val1 = val2;
-    val2 = temp;
-&#125;
-
-void bubble_sort(vector&lt;int&gt;&amp; vec)
-&#123;
-    for (int ix = 0; ix &lt; vec.size(); ++ix)
-        for (int jx = ix + 1; jx &lt; vec.size(); ++jx)
-            if (vec[ix] &gt; vec[jx])
-                swap(vec[ix], vec[jx]);
-&#125;
-
-int main()
-&#123;
-    int al[8] = &#123; 2,56,4,5,13,7,1,24 &#125;;
-    vector&lt;int&gt; vec(al, al + 8);
-    cout &lt;&lt; &quot;before sort:  &quot;;
-    display(vec);
-    bubble_sort(vec);
-    cout &lt;&lt; &quot;after sort: &quot;;
-    display(vec);
-
-    return 0;
-&#125;
-</code></pre><p>关键在于swap 和 bubble_sort时，不仅要传值，也要传址，不然只是其值被复制了一份，成为了参数的局部性定义，当运行结束也就从“程序堆栈”里释放掉了，并没有关联起来。</p>
-<hr>
-]]></content>
-  </entry>
-  <entry>
     <title>PCL-1-11-Visual-Studio-2019-配置</title>
     <url>/2020/10/04/PCL-1-11-Visual-Studio-2019-%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<font color= ff size=4 face="">
@@ -801,16 +699,6 @@ jupyter notebook
       </tags>
   </entry>
   <entry>
-    <title>编译器</title>
-    <url>/2020/11/26/%E7%BC%96%E8%AF%91%E5%99%A8/</url>
-    <content><![CDATA[<p>鉴于在编译器的配置上花费了一些时间，在两台电脑上都进行了配置，想单独写一篇博客来介绍编译器。持续更新，现在用的是vscode 进行c以及python的使用，具体的链接如下：  <a id="more"></a><br><a href="https://blog.csdn.net/m0_45161766/article/details/105729025">vscode配置anaconda环境</a><br>使用python强烈建议直接装一个anaconda全家桶，里面的库很多也很方便管理。<br>2020/11/26更新，vscode for python读取文本总找不到，搜了很多博客也没解决，可能我太菜了，这个VSCODE真不太适合新手。。。   python还是直接pycharm或者jupyter吧，pycharm那点内存对我们搞机的不是简简单单嘛！！！<br><a href="https://www.jb51.net/article/171027.htm">vscode配置C语言环境</a></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-编译器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>训练初稿</title>
     <url>/2020/09/24/%E8%AE%AD%E7%BB%83%E5%88%9D%E7%A8%BF/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -842,6 +730,53 @@ jupyter notebook
 ]]></content>
       <tags>
         <tag>-资源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vscode为cmake配置task.json</title>
+    <url>/2021/03/17/Vscode%E4%B8%BAcmake%E9%85%8D%E7%BD%AEtask-json/</url>
+    <content><![CDATA[<p>来来回回总算是整明白了，还是不能看有些垃圾博客，一知半解的。<br><a id="more"></a><br>主要看的这个<a href="https://www.bilibili.com/video/BV13K411M78v?p=2">视频</a>，真的特别详细，不枉我熬夜看这个玩意。<br>这里主要写一下配置给cmake配置task.json文件的代码,至于理解这个两个文件，上面这个视频已经非常详细了。</p>
+<pre><code>&#123;
+    &quot;version&quot;: &quot;2.0.0&quot;,
+    &quot;options&quot;: &#123;
+        &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;/build&quot;
+    &#125;,
+    &quot;tasks&quot;: [
+        &#123;
+            &quot;type&quot;:&quot;shell&quot;,
+            &quot;label&quot;: &quot;cmake&quot;,
+            &quot;command&quot;: &quot;cmake&quot;,
+            &quot;args&quot;: [
+                &quot;..&quot;
+            ]
+        &#125;,
+        &#123;
+            &quot;label&quot;: &quot;make&quot;,
+            &quot;group&quot;:&#123;
+                &quot;kind&quot;: &quot;build&quot;,
+                &quot;isDefault&quot;: true
+            &#125;,
+            &quot;command&quot;: &quot;mingw32-make.exe&quot;,
+            &quot;args&quot;:[
+
+            ]
+        &#125;,
+        &#123;
+            &quot;label&quot;: &quot;Build&quot;,
+            &quot;dependsOn&quot;:[
+                &quot;cmake&quot;,
+                &quot;make&quot;
+            ]
+        &#125;
+    ],
+
+
+&#125;
+</code></pre><p>其实配置Vscode的插件，还是去看官方文档是最合适的。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>-vscode</tag>
       </tags>
   </entry>
 </search>
