@@ -229,6 +229,153 @@
             
 
   
+    <article id="post-C-源文件和函数分开编写" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/03/20/C-%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E7%BC%96%E5%86%99/" target="_blank">C++源文件和函数分开编写</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/03/20/C-%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E7%BC%96%E5%86%99/" class="archive-article-date">
+        <time datetime="2021-03-19T17:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>main.cpp</p>
+<pre><code class="lang-c++">#include &quot;main.h&quot;
+
+int main()
+&#123;
+    int arr[10] = &#123; 4,3,6,9,1,2,10,8,7,5 &#125;;
+    vector&lt;int&gt; vec(arr, arr + 10);
+    display(vec);
+    bubble_sort(vec);
+    display(vec);
+
+    return 0;
+&#125;
+</code></pre>
+<p>main.h</p>
+<pre><code class="lang-c++">#pragma once
+#include&lt;vector&gt;
+#include&lt;iostream&gt;
+using namespace std;
+
+void bubble_sort(vector&lt;int&gt;&amp;);
+void display(const vector&lt;int&gt;&amp;);
+void swap(int&amp;, int&amp;);
+</code></pre>
+<p>bubble_sort.cpp</p>
+<pre><code class="lang-c++">#include &quot;main.h&quot;
+
+void bubble_sort(vector&lt;int&gt;&amp; vec)
+&#123;
+    for (int i = 0; i &lt; vec.size(); i++)
+        for (int j = i + 1; j &lt; vec.size(); j++)
+        &#123;
+            if (vec[i] &gt; vec[j])
+            &#123;
+                swap(vec[i], vec[j]);
+            &#125;
+        &#125;
+&#125;
+</code></pre>
+<p>display.cpp</p>
+<pre><code class="lang-c++">#include &quot;main.h&quot;
+
+void display(const vector&lt;int&gt;&amp; vec)
+&#123;
+    for (int i = 0; i &lt; vec.size(); i++)
+    &#123;
+        cout &lt;&lt; vec[i] &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+</code></pre>
+<p>swap.cpp</p>
+<pre><code class="lang-c++">#include &quot;main.h&quot;
+
+void swap(int&amp; val1, int&amp; val2)
+&#123;
+    int temp = val1;
+    val1 = val2;
+    val2 = temp;
+&#125;
+</code></pre>
+<hr>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/03/20/C-%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E7%BC%96%E5%86%99/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Vscode为cmake配置task-json" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1186,94 +1333,6 @@
 
 
   
-    <article id="post-深度学习篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/11/11/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AF%87/" target="_blank">深度学习篇</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/11/11/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AF%87/" class="archive-article-date">
-        <time datetime="2020-11-10T16:41:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-11</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>这两天其实做了不少事，时间确实很短，今天和华为的hr小姐姐聊了一会，校招她说3月多就开始了，着实吓到我了，然后还给了我一些鼓励，另外值得高兴的是咨询羊哥的一些问题，他当天就回复了我，这我是没想到的。在这里希望明年的这个时候可以拿到一个不错的offer。</p>
-    
-    <a class="article-more-a" href="/2020/11/11/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AF%87/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-deep learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/11/11/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AF%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1485,6 +1544,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">-vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-C++</a>
               </li>
             
             <div class="clearfix"></div>
