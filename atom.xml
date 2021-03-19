@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>西瓜🍉</title>
+  <title>Eagle</title>
   
   
   <link href="https://zzygeo.cn/atom.xml" rel="self"/>
@@ -8,11 +8,6 @@
   <link href="https://zzygeo.cn/"/>
   <updated>2021-03-16T22:17:53.098Z</updated>
   <id>https://zzygeo.cn/</id>
-  
-  <author>
-    <name>CallMe🍉</name>
-    
-  </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
