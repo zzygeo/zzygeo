@@ -783,6 +783,7 @@ jupyter notebook
     <title>C++源文件和函数分开编写</title>
     <url>/2021/03/20/C-%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E7%BC%96%E5%86%99/</url>
     <content><![CDATA[<p>main.cpp</p>
+<a id="more"></a>
 <pre><code class="lang-c++">#include &quot;main.h&quot;
 
 int main()
