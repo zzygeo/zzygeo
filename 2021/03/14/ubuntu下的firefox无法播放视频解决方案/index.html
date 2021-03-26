@@ -18,7 +18,7 @@
 <meta property="og:description" content="1.下载flash的tar.gz文件直接去官网链接下载">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-03-13T17:09:31.000Z">
-<meta property="article:modified_time" content="2021-03-13T18:12:01.956Z">
+<meta property="article:modified_time" content="2021-03-26T02:59:22.936Z">
 <meta property="article:author" content="Eagle">
 <meta property="article:tag" content="-ubuntu">
 <meta name="twitter:card" content="summary">
@@ -261,7 +261,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">124字</span>
+      <span class="post-count">108字</span>
     </span>
   </span>
 
@@ -285,10 +285,9 @@
 <h1 id="2-解压tar-gz文件"><a href="#2-解压tar-gz文件" class="headerlink" title="2.解压tar.gz文件"></a>2.解压tar.gz文件</h1><pre><code>tar -zxvf filename.tar.gz
 </code></pre><p>注意filename.tar.gz就是你下载的文件的名字，可以直接复制下载包名字。</p>
 <h1 id="3-移动解压文件夹"><a href="#3-移动解压文件夹" class="headerlink" title="3.移动解压文件夹"></a>3.移动解压文件夹</h1><p>先进入安装包目录下,然后</p>
-<pre><code>sudo cp libflashplayer.so /usr/lib/mozilla/plugins
-</code></pre><h1 id="4-进入插件目录并附加权限"><a href="#4-进入插件目录并附加权限" class="headerlink" title="4.进入插件目录并附加权限"></a>4.进入插件目录并附加权限</h1><pre><code>cd usr/lib/mozilla/plugins
-sudo chmod 755 libflashplayer.so
-</code></pre><h1 id="5-缺少依赖报错解决"><a href="#5-缺少依赖报错解决" class="headerlink" title="5.缺少依赖报错解决"></a>5.缺少依赖报错解决</h1><pre><code>sudo apt-get install ffmpeg  //ffmpeg支持H.264解码
+<pre><code>sudo cp libflashplayer.so /usr/lib/firefox/browser/plugins
+sudo cp -r usr/* /usr
+</code></pre><h1 id="4-缺少依赖报错解决"><a href="#4-缺少依赖报错解决" class="headerlink" title="4.缺少依赖报错解决"></a>4.缺少依赖报错解决</h1><pre><code>sudo apt-get install ffmpeg  //ffmpeg支持H.264解码
 </code></pre><hr>
 
     
@@ -467,7 +466,7 @@ sudo chmod 755 libflashplayer.so
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDflash%E7%9A%84tar-gz%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">1.下载flash的tar.gz文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%A7%A3%E5%8E%8Btar-gz%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">2.解压tar.gz文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E7%A7%BB%E5%8A%A8%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">3.</span> <span class="toc-text">3.移动解压文件夹</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E8%BF%9B%E5%85%A5%E6%8F%92%E4%BB%B6%E7%9B%AE%E5%BD%95%E5%B9%B6%E9%99%84%E5%8A%A0%E6%9D%83%E9%99%90"><span class="toc-number">4.</span> <span class="toc-text">4.进入插件目录并附加权限</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E7%BC%BA%E5%B0%91%E4%BE%9D%E8%B5%96%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3"><span class="toc-number">5.</span> <span class="toc-text">5.缺少依赖报错解决</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDflash%E7%9A%84tar-gz%E6%96%87%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">1.下载flash的tar.gz文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%A7%A3%E5%8E%8Btar-gz%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">2.解压tar.gz文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E7%A7%BB%E5%8A%A8%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">3.</span> <span class="toc-text">3.移动解压文件夹</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%BC%BA%E5%B0%91%E4%BE%9D%E8%B5%96%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3"><span class="toc-number">4.</span> <span class="toc-text">4.缺少依赖报错解决</span></a></li></ol>
                     </div>
                 </span>
             </div>

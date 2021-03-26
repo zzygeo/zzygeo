@@ -389,10 +389,9 @@ target_link_libraries (test $&#123;PCL_LIBRARIES&#125;)
 <h1 id="2-解压tar-gz文件"><a href="#2-解压tar-gz文件" class="headerlink" title="2.解压tar.gz文件"></a>2.解压tar.gz文件</h1><pre><code>tar -zxvf filename.tar.gz
 </code></pre><p>注意filename.tar.gz就是你下载的文件的名字，可以直接复制下载包名字。</p>
 <h1 id="3-移动解压文件夹"><a href="#3-移动解压文件夹" class="headerlink" title="3.移动解压文件夹"></a>3.移动解压文件夹</h1><p>先进入安装包目录下,然后</p>
-<pre><code>sudo cp libflashplayer.so /usr/lib/mozilla/plugins
-</code></pre><h1 id="4-进入插件目录并附加权限"><a href="#4-进入插件目录并附加权限" class="headerlink" title="4.进入插件目录并附加权限"></a>4.进入插件目录并附加权限</h1><pre><code>cd usr/lib/mozilla/plugins
-sudo chmod 755 libflashplayer.so
-</code></pre><h1 id="5-缺少依赖报错解决"><a href="#5-缺少依赖报错解决" class="headerlink" title="5.缺少依赖报错解决"></a>5.缺少依赖报错解决</h1><pre><code>sudo apt-get install ffmpeg  //ffmpeg支持H.264解码
+<pre><code>sudo cp libflashplayer.so /usr/lib/firefox/browser/plugins
+sudo cp -r usr/* /usr
+</code></pre><h1 id="4-缺少依赖报错解决"><a href="#4-缺少依赖报错解决" class="headerlink" title="4.缺少依赖报错解决"></a>4.缺少依赖报错解决</h1><pre><code>sudo apt-get install ffmpeg  //ffmpeg支持H.264解码
 </code></pre><hr>
 ]]></content>
       <tags>
@@ -404,7 +403,7 @@ sudo chmod 755 libflashplayer.so
     <url>/2021/03/14/ubuntu%E5%AE%89%E8%A3%85gcc%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
     <content><![CDATA[<p>使用aptitude包依赖管理工具替代apt处理，看其他的博客说这个得慎用，不过用来安装gcc倒是没啥问题。<br><a id="more"></a></p>
 <pre><code>sudo apt-get install aptitude
-sido aptitude install gcc g++
+sudo aptitude install gcc g++
 </code></pre><p>解决方案里选择no,yes,yes.<br>参考<a href="https://blog.csdn.net/CLZHIT/article/details/104508894">博客</a></p>
 <hr>
 ]]></content>
