@@ -6,7 +6,7 @@
   <link href="https://zzygeo.cn/atom.xml" rel="self"/>
   
   <link href="https://zzygeo.cn/"/>
-  <updated>2021-04-24T13:23:26.135Z</updated>
+  <updated>2021-04-20T10:27:46.997Z</updated>
   <id>https://zzygeo.cn/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test.md</title>
-    <link href="https://zzygeo.cn/2021/04/24/test-md/"/>
-    <id>https://zzygeo.cn/2021/04/24/test-md/</id>
-    <published>2021-04-24T13:19:40.000Z</published>
-    <updated>2021-04-24T13:23:26.135Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1.2eun3y1jysro.png" alt="1"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zzygeo/images/master/1.2eun3y1jysro.png&quot; alt=&quot;1&quot;&gt;&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>VS code的一些使用心得</title>
@@ -398,6 +377,27 @@
     
     
     <category term="-office" scheme="https://zzygeo.cn/tags/office/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Youtube视频下载</title>
+    <link href="https://zzygeo.cn/2020/09/26/Youbute%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/"/>
+    <id>https://zzygeo.cn/2020/09/26/Youbute%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/</id>
+    <published>2020-09-26T04:57:33.000Z</published>
+    <updated>2021-03-13T17:48:54.238Z</updated>
+    
+    <content type="html"><![CDATA[<p><font color=# ff size=23 face="黑体">Youtube视频下载</font>&lt;/p&gt;</p><h1 id="1-4K视频下载"><a href="#1-4K视频下载" class="headerlink" title="1.4K视频下载"></a>1.4K视频下载</h1><p><a href="https://distillvideo.com/">下载地址</a></p><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h1 id="2-油猴插件脚本"><a href="#2-油猴插件脚本" class="headerlink" title="2.油猴插件脚本"></a>2.油猴插件脚本</h1><p>参考我的这篇<a href="https://zzygeo.gitee.io/2020/09/26/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BB%A5%E5%8F%8A%E6%8F%92%E4%BB%B6/">博客</a>油猴插件</p><hr><h1 id="3-1080p下载"><a href="#3-1080p下载" class="headerlink" title="3.1080p下载"></a>3.1080p下载</h1><p><a href="https://www.y2mate.com/en60/">下载地址</a></p><hr><h1 id="4-视频字幕下载"><a href="#4-视频字幕下载" class="headerlink" title="4.视频字幕下载"></a>4.视频字幕下载</h1><p><a href="https://www.findyoutube.net/">下载地址</a><br>版权限制，目前下载为VTT格式，需要在Subtitle Edit里将VTT转为SRT格式。</p><hr><h1 id="5-Subtitle-Edit-vvt-srt"><a href="#5-Subtitle-Edit-vvt-srt" class="headerlink" title="5.Subtitle Edit(vvt-srt)"></a>5.Subtitle Edit(vvt-srt)</h1><p><a href="https://www.nikse.dk/subtitleedit/">下载地址</a><br>可以VTT2SRT SRT2VTT,有强大的字幕编辑功能。</p><hr><h1 id="6-Arctime-制作内嵌字幕视频"><a href="#6-Arctime-制作内嵌字幕视频" class="headerlink" title="6.Arctime(制作内嵌字幕视频)"></a>6.Arctime(制作内嵌字幕视频)</h1><p><a href="https://arctime.org/">下载地址</a></p><hr>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;font color=# ff size=23 face=&quot;黑体&quot;&gt;Youtube视频下载&lt;/font&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-4K视频下载&quot;&gt;&lt;a href=&quot;#1-4K视频下载&quot; class=&quot;headerlink&quot; title=&quot;1.4K视频下载&quot;&gt;&lt;/a&gt;1.4K视频下载&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://distillvideo.com/&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;</summary>
+    
+    
+    
+    
+    <category term="-Youtube" scheme="https://zzygeo.cn/tags/Youtube/"/>
     
   </entry>
   

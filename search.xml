@@ -530,12 +530,6 @@ target_link_libraries (test $&#123;PCL_LIBRARIES&#125;)
       </tags>
   </entry>
   <entry>
-    <title>test.md</title>
-    <url>/2021/04/24/test-md/</url>
-    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1.2eun3y1jysro.png" alt="1"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>ubuntu安装gcc依赖关系报错</title>
     <url>/2021/03/14/ubuntu%E5%AE%89%E8%A3%85gcc%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
     <content><![CDATA[<p>使用aptitude包依赖管理工具替代apt处理，看其他的博客说这个得慎用，不过用来安装gcc倒是没啥问题。<br><a id="more"></a></p>
