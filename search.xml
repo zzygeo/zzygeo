@@ -72,38 +72,6 @@ void swap(int&amp; val1, int&amp; val2)
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu更换源教程</title>
-    <url>/2021/03/14/Ubuntu%E6%9B%B4%E6%8D%A2%E6%BA%90%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>参考<a href="https://blog.csdn.net/weixin_43876206/article/details/100924378">博客</a><br><a id="more"></a></p>
-<h1 id="1-备份源列表"><a href="#1-备份源列表" class="headerlink" title="1.备份源列表"></a>1.备份源列表</h1><pre><code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-</code></pre><h1 id="2-打开sources-list文件"><a href="#2-打开sources-list文件" class="headerlink" title="2.打开sources.list文件"></a>2.打开sources.list文件</h1><pre><code>sudo gedit /etc/apt/sources.list
-</code></pre><h1 id="3-修改sources-list文件"><a href="#3-修改sources-list文件" class="headerlink" title="3.修改sources.list文件"></a>3.修改sources.list文件</h1><pre><code>#  阿里镜像源
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-</code></pre><h1 id="4-更新并升级"><a href="#4-更新并升级" class="headerlink" title="4.更新并升级"></a>4.更新并升级</h1><pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade
-</code></pre><h1 id="5-恢复源列表"><a href="#5-恢复源列表" class="headerlink" title="5.恢复源列表"></a>5.恢复源列表</h1><pre><code>sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list
-</code></pre><hr>
-<p>其他的源请自己搜索，这里只放了阿里云的。</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PCL-1-11-Visual-Studio-2019-配置</title>
     <url>/2020/10/04/PCL-1-11-Visual-Studio-2019-%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<font color= ff size=4 face="">
@@ -204,6 +172,38 @@ int main()
       </tags>
   </entry>
   <entry>
+    <title>Ubuntu更换源教程</title>
+    <url>/2021/03/14/Ubuntu%E6%9B%B4%E6%8D%A2%E6%BA%90%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>参考<a href="https://blog.csdn.net/weixin_43876206/article/details/100924378">博客</a><br><a id="more"></a></p>
+<h1 id="1-备份源列表"><a href="#1-备份源列表" class="headerlink" title="1.备份源列表"></a>1.备份源列表</h1><pre><code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+</code></pre><h1 id="2-打开sources-list文件"><a href="#2-打开sources-list文件" class="headerlink" title="2.打开sources.list文件"></a>2.打开sources.list文件</h1><pre><code>sudo gedit /etc/apt/sources.list
+</code></pre><h1 id="3-修改sources-list文件"><a href="#3-修改sources-list文件" class="headerlink" title="3.修改sources.list文件"></a>3.修改sources.list文件</h1><pre><code>#  阿里镜像源
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+</code></pre><h1 id="4-更新并升级"><a href="#4-更新并升级" class="headerlink" title="4.更新并升级"></a>4.更新并升级</h1><pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre><h1 id="5-恢复源列表"><a href="#5-恢复源列表" class="headerlink" title="5.恢复源列表"></a>5.恢复源列表</h1><pre><code>sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list
+</code></pre><hr>
+<p>其他的源请自己搜索，这里只放了阿里云的。</p>
+<hr>
+]]></content>
+      <tags>
+        <tag>-Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Unable to access &#39;https://gitee.com/自己的项目/&#39;: Could not resolve host: gitee.com问题的解决</title>
     <url>/2020/10/23/Unable-to-access-https-gitee-com-%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE-Could-not-resolve-host-gitee-com%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
     <content><![CDATA[<p>果然玩hexo报错是在所难免，就好像我已经长大，读研以后乃至以后得日子，可能总是繁琐常伴。今天在hexo d推到GITEE上时，报了错。<br><a id="more"></a><br>原因是由于爬梯子代理网络的问题，其实折腾了下。具体哪个步骤解决了这个问题，我也不是很清楚，这次做好记录方便以后继续更新把。</p>
@@ -272,6 +272,36 @@ git config --global --unset https.proxy
       </tags>
   </entry>
   <entry>
+    <title>VS code的一些使用心得</title>
+    <url>/2021/04/11/VScode%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<p>这篇博客是用Typora写的，Typora是一款开源、跨平台、免费、轻量化、简单优雅但功能依然强大的一款Markdown编辑器。从我下载上手的第一天，就直接把我破解版的 Markdown2 pro给卸载了，什么玩意，直接爬。哈哈好了，回归正题，今天想记录以及分享的是VS Code这款很猛的编辑器。为什么这么说，VS Code对小白来说算不上友好，而且从官网下载的速度还会被限制（这说明会科学上网真的太重要了，可以说如果不是我去年暑假突然去探索了科学上网，我至今都学不到这个东西，具体怎么上，大家可以看我前面叫做梯子的博客，<a href="https://zzygeo.cn/2020/09/26/%E6%A2%AF%E5%AD%90/">点击链接</a> 。<a id="more"></a></p>
+<h1 id="1-VS-Code初体验"><a href="#1-VS-Code初体验" class="headerlink" title="1.VS Code初体验"></a>1.VS Code初体验</h1><p>讲道理，最开始接触VS Code是20年我刚开始入手博客的时候，在改Hexo Themes 的config.yaml文件的时候，只是把它当作一个高级记事本来用，下载也是因为看了一些博客说VS Code是真香，是宇宙最猛编辑器。所以后来我也开始尝试搜索怎么用VS Code编写C++，怎么用VS Code编写Python。然而这确实难住了我这个小白，第一是很多人写的博客确实不咋样（我的虽然也不咋样，但还是在慢慢变好，尽量写的有头有尾），第二是我确实啥也不懂，什么了解都没有，就这样沉默在了那些博客里，直到翻过年来21.3月我才重新开始捡起来，这会儿我正沉迷在Ubuntu的系统里，更是想把Ubuntu当成主系统来使用，现在嘛，觉得这两个系统都是不可缺少的系统，有什么需求更契合哪个系统就用哪个。这会儿我渐渐体会到了跨平台的魅力，而且跨平台的很多都是开源的，用的人多了起来，自然也就会更加的完善，在这里想感谢这些无名前辈。</p>
+<h1 id="2-VS-Code使用"><a href="#2-VS-Code使用" class="headerlink" title="2.VS Code使用"></a>2.VS Code使用</h1><p>我主要是学一些C++方面的东西，所以VS Code基本都拿来写C++了，当然拿它做一个万能记事本也是很不错的选择。那我还是介绍一些比较主要的东西，一些打开即见的东西就自己探索吧。其实很多设置既可以拿鼠标找到，也可以用快捷键，我觉得那些常用的可以慢慢从鼠标过渡到快捷键，这当然是为了<del>装逼</del> ，不对是为了更丝滑和便捷。</p>
+<p>先贴下我在用的一些拓展，我的原则是，只下载目前能用上的东西，大道至简，事情越简单就会做的更舒服。</p>
+<p><img src="/blog_img/VSCode使用/VSCode拓展.png" alt="VSCode拓展"></p>
+<h2 id="1-Bracket-Pair-Colorizer"><a href="#1-Bracket-Pair-Colorizer" class="headerlink" title="1.Bracket Pair Colorizer"></a>1.Bracket Pair Colorizer</h2><p>这是一款括号匹配的插件</p>
+<h2 id="2-C-的插件"><a href="#2-C-的插件" class="headerlink" title="2.C++的插件"></a>2.C++的插件</h2><p>主要包括 C/C++  CMake的一些插件</p>
+<h2 id="3-简体中文支持"><a href="#3-简体中文支持" class="headerlink" title="3.简体中文支持"></a>3.简体中文支持</h2><p>这个没什么好讲的</p>
+<h2 id="4-主题"><a href="#4-主题" class="headerlink" title="4.主题"></a>4.主题</h2><p>主题我用的One Dark Pro</p>
+<h2 id="5-代码错误检查"><a href="#5-代码错误检查" class="headerlink" title="5.代码错误检查"></a>5.代码错误检查</h2><p>主要是检查变量命名是否符合规范</p>
+<h2 id="6-图标优化"><a href="#6-图标优化" class="headerlink" title="6.图标优化"></a>6.图标优化</h2><p>没什么好讲的，为了更丝滑</p>
+<h1 id="3-利用VSCode进行C-开发"><a href="#3-利用VSCode进行C-开发" class="headerlink" title="3.利用VSCode进行C++开发"></a>3.利用VSCode进行C++开发</h1><p>在这里我就不班门弄斧了，确实我只是进行模仿学习了，建议去看一下这个B站<a href="https://www.bilibili.com/video/BV13K411M78v">视频</a> ，从这里你可以了解launch.json和tasks.json的意义是什么以及怎么对其进行简单的修改。</p>
+<p>在这里我想介绍我碰见的其他的问题。</p>
+<h2 id="1-windows上使用gcc编译"><a href="#1-windows上使用gcc编译" class="headerlink" title="1.windows上使用gcc编译"></a>1.windows上使用gcc编译</h2><p>在windows平台上，我用gcc去进行vscode的开发，不知道是下的版本太次了，还是怎么的，我的gcc编译完了，居然打印不出构造函数以及析构函数的内容，而且在包含string头文件输出时，内容显示也有问题。还有一个问题就是mingw真的很难下，哪怕你翻墙了也很难下。所以我最近都是在用微软的编译器cl.exe去联合vscode去进行代码的编写，怎么做直接看官网（小白可能会碰见一些问题，相信你在看完上面推荐的视频以后，已经可以解决这个问题了），这里贴下<a href="https://code.visualstudio.com/docs">官网链接</a> 。</p>
+<h3 id="1-1-cmd窗口出现中文乱码"><a href="#1-1-cmd窗口出现中文乱码" class="headerlink" title="1.1 cmd窗口出现中文乱码"></a>1.1 cmd窗口出现中文乱码</h3><p><img src="/blog_img/VSCode使用/中文乱码.png" alt="中文乱码"></p>
+<p>类似图上这样，这个问题的原因主要是cmd窗口是gd2312编码的，而vscode默认是UTF-8编码，这两者不匹配，自然会输出成乱码，当然我们可以选择其一进行更改，但是更改cmd并想让它一直默认UTF-8编码，完全不如在vscode里做修改来的方便。<img src="/blog_img/VSCode使用/cmd编码方式.png" alt="cmd编码方式"></p>
+<p>如上图，936是gd2312的编号。</p>
+<p>我们在vscode里点击下方的 UTF-8，然后选择gd2312</p>
+<p><img src="/blog_img/VSCode使用/VSCode更改编码方式.png" alt="VSCode更改编码方式"></p>
+<p>当我再次运行就正常如下图了。<img src="/blog_img/VSCode使用/中文正常输出.png" alt="中文正常输出"></p>
+<h2 id="2-Ubuntu上使用gcc编译"><a href="#2-Ubuntu上使用gcc编译" class="headerlink" title="2.Ubuntu上使用gcc编译"></a>2.Ubuntu上使用gcc编译</h2><p>得益于linux强大的包管理，下载gcc真是不要太方便，但是终端输出的东西总是不太干净，附带一些其他的东西，我这个简洁主义者完全没法接受，探索了下，拓展一个 code run插件就好了，其实也没什么区别，不过是F5变成了 ALT+Ctrl+N而已，或者按F1然后鼠标选择，或者直接点击右上方的运行。</p>
+<h1 id="4-一些题外话"><a href="#4-一些题外话" class="headerlink" title="4.一些题外话"></a>4.一些题外话</h1><p>其实在windowns上完全可以直接使用visual stdio进行开发，简单不用考虑这么多，而在vscode上不仅要自己写tasks.json和launch.json，哪怕一些简单的开发也需要去写Cmake。我觉得有这样的原因，第一，折腾才会进步，多折腾才能理解更深入，了解一下一个程序是进行了那些的步骤才会计算器编译，最后输出成我们能看到的语言，你不仅可以收获技能，还可以收获乐趣。第二，vscode值得你去折腾，它是一个跨平台的产物，群体大，可以自己DIY，碰见错误容易被解决，包括无人小车通过树莓派的一些开发，现在也是推荐去用vscode去做开发去了。第三，当然是他好看啊，而且轻量，可控，我想学C++以及使用linux都是会享受到自己作为超级用户的待遇，很多东西是我自己来控制，这种感觉很nice。</p>
+]]></content>
+      <tags>
+        <tag>-VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Youtube视频下载</title>
     <url>/2020/09/26/Youbute%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/</url>
     <content><![CDATA[<p><font color=# ff size=23 face="黑体">Youtube视频下载</font>&lt;/p&gt;</p>
@@ -304,6 +334,82 @@ sudo apt-get upgrade
 ]]></content>
       <tags>
         <tag>-ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github设置自己的域名</title>
+    <url>/2021/01/20/github%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<p>哈哈，上次整了一晚上的没整明白，今天两下就整好了，看来真的进步不错哈哈，至少看东西，解决问题更有耐心也更能看懂了。<br><a id="more"></a></p>
+<h1 id="1-购买域名"><a href="#1-购买域名" class="headerlink" title="1.购买域名"></a>1.购买域名</h1><p>我是买的阿里云的域名，如下图：<br><img src="/blog_img/github设置自己的域名/1.jpg" alt="域名"><br>域名解析如下：<br><img src="/blog_img/github设置自己的域名/2.jpg" alt="域名解析"></p>
+<h1 id="2-github仓库设置域名地址"><a href="#2-github仓库设置域名地址" class="headerlink" title="2.github仓库设置域名地址"></a>2.github仓库设置域名地址</h1><p>在blog目录下的source文件下，创一个叫CNAME的无后缀文件，里面填入你的域名，比如我的   zzygeo.cn    如下图：<br><img src="/blog_img/github设置自己的域名/4.jpg" alt=""><br>如下图，主要是要设置博客上传分支的目录，以及更改你自己的域名（创建CNAME后自动生成），采用https加密。<br><img src="/blog_img/github设置自己的域名/3.jpg" alt=""></p>
+<p>到此就设置完成了！</p>
+<hr>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo d 出现错误的用户名和密码的解决办法</title>
+    <url>/2020/10/02/hexo-d-%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>在windows搜索栏输入：控制面板<a id="more"></a>)<br><img src="/blog_img/hexo d时错误用户名和密码解决办法/1.png" alt=""><br>然后点击：<br><img src="/blog_img/hexo d时错误用户名和密码解决办法/2.png" alt=""><br><img src="/blog_img/hexo d时错误用户名和密码解决办法/3.png" alt=""><br><img src="/blog_img/hexo d时错误用户名和密码解决办法/4.png" alt=""></p>
+<p>点进去就可以更改用户名和密码了</p>
+<hr>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>pcl+vs+cmake编译</title>
+    <url>/2020/12/27/pcl-vs-cmake%E7%BC%96%E8%AF%91/</url>
+    <content><![CDATA[<p>上一篇写的配置可能是最基础的，也是很麻烦，其实可以用cmake来偷个懒，这样就不用附加依赖性已经加入库目录和包含目录了。<br><a id="more"></a></p>
+<h1 id="1-软件准备"><a href="#1-软件准备" class="headerlink" title="1.软件准备"></a>1.软件准备</h1><p>1.All in one 安装包。</p>
+<p>2.获取All in one 包对应得PDB文件包，用于后期单步调试。</p>
+<p>3.安装Visual studio 2019编译器</p>
+<p>4.cmake<br><img src="/blog_img/PCL配置/17.png" alt="示意图"><br><img src="/blog_img/PCL配置/1.jpg" alt="示意图"></p>
+<p>其实源码包用不上，懒得改了，最复杂的方式就是源代码加第三方库进行配置，等我配置好了也会再一篇关于源码方式的配置。</p>
+<hr>
+<h1 id="2-链接"><a href="#2-链接" class="headerlink" title="2.链接"></a>2.链接</h1><p><a href="https://github.com/PointCloudLibrary/pcl/releases">pcl下载地址</a><br><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">visual studio下载地址</a><br><a href="https://cmake.org/download/">cmake下载地址</a></p>
+<hr>
+<h1 id="3-安装事项"><a href="#3-安装事项" class="headerlink" title="3.安装事项"></a>3.安装事项</h1><p>为了方便配置，pcl安装目录尽量默认，不默认后续添加目录需要选择对应的位置。</p>
+<p>pcl安装请一定选择创建系统路径，visual studio和cmake安装位置随意，其他选项默认即可。</p>
+<p>pcl安装完成后，请把下载的pcd文件解压，如下图：<br><img src="/blog_img/PCL配置/2.jpg" alt=""></p>
+<p>将所有文件复制，安装到pcl下的BIN文件下<br><img src="/blog_img/PCL配置/3.jpg" alt=""></p>
+<p>检查pcl安装目录下的 3rdParty-OpenNI2是否只有一个安装包（我的是这样），这可能是事先安装过SDK的原因，请卸载了重新安装在OpenNI2下，安装完成如下图：<br><img src="/blog_img/PCL配置/4.jpg" alt=""></p>
+<p>cmake 安装请选择添加到系统路径，没选的话也可以自己手动添加，添加的方式为cmake目录下bin文件  比如C:\APP\Cmake\bin这样的形式。</p>
+<hr>
+<h1 id="4-关于Visual-studio安装项目"><a href="#4-关于Visual-studio安装项目" class="headerlink" title="4.关于Visual studio安装项目"></a>4.关于Visual studio安装项目</h1><p>我安装了这些负载</p>
+<p><img src="/blog_img/PCL配置/5.png" alt=""></p>
+<hr>
+<h1 id="5-环境配置"><a href="#5-环境配置" class="headerlink" title="5.环境配置"></a>5.环境配置</h1><p>右键我的电脑——高级系统设置-环境变量，在path选项下新建如下几项，根据你pcl安装的位置来：<br><img src="/blog_img/PCL配置/6.jpg" alt=""></p>
+<p>比如我的：<br>C:\Program Files\PCL 1.11.0\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Redist</p>
+<p>在系统变量下，配置如下图：<br><img src="/blog_img/PCL配置/6.png" alt=""><br>比如我的：<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\bin</p>
+<hr>
+<h1 id="6-cmake编译"><a href="#6-cmake编译" class="headerlink" title="6.cmake编译"></a>6.cmake编译</h1><p>以管理员身份运行cmake-gui<br>在你想要的文件下创建一个名为example的文件夹，然后在此目录下创建一个source和cmake_bin文件，比如我的：</p>
+<p><img src="/blog_img/PCL配置/18.png" alt=""></p>
+<p>在source里面创建一个cpp文件和CMakeLists.txt文件。<br>CmakeLists.txt里写入以下内容：</p>
+<pre><code>cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+project(test)
+find_package(PCL 1.4 REQUIRED)
+include_directories($&#123;PCL_INCLUDE_DIRS&#125;)
+link_directories($&#123;PCL_LIBRARY_DIRS&#125;)  
+add_definitions($&#123;PCL_DEFINITIONS&#125;)
+add_executable (test test.cpp)
+target_link_libraries (test $&#123;PCL_LIBRARIES&#125;)
+</code></pre><p>其中这个test就是你创建的测试代码的名字，请保持一致，如果你换别的名字，请把txt文件的名字也一起改了。我的如下：<br><img src="/blog_img/PCL配置/19.png" alt=""></p>
+<p>测试代码请网上去找，我用的是上一篇文件里的（里面有个D盘文件的读取可能会报错，但只要能出彩色的那个图就算配置成功了）。</p>
+<p>跟着步骤添加<br><img src="/blog_img/PCL配置/20.png" alt=""></p>
+<p>点击Configure，选x64<br><img src="/blog_img/PCL配置/21.jpg" alt=""></p>
+<p>再点击一次configure<br><img src="/blog_img/PCL配置/22.jpg" alt=""></p>
+<p>点击Generate,出现Generating done.<br><img src="/blog_img/PCL配置/23.png" alt=""></p>
+<p>找到cmake_bin底下的test_sln 打开。<br><img src="/blog_img/PCL配置/24.jpg" alt=""></p>
+<p>将test设置为启动项，并调试。<br><img src="/blog_img/PCL配置/25.png" alt=""></p>
+<p><img src="/blog_img/PCL配置/26.jpg" alt=""></p>
+<hr>
+]]></content>
+      <categories>
+        <category>pcl</category>
+      </categories>
+      <tags>
+        <tag>-pcl</tag>
       </tags>
   </entry>
   <entry>
@@ -424,80 +530,37 @@ sudo apt-get upgrade
       </tags>
   </entry>
   <entry>
-    <title>hexo d 出现错误的用户名和密码的解决办法</title>
-    <url>/2020/10/02/hexo-d-%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>在windows搜索栏输入：控制面板<a id="more"></a>)<br><img src="/blog_img/hexo d时错误用户名和密码解决办法/1.png" alt=""><br>然后点击：<br><img src="/blog_img/hexo d时错误用户名和密码解决办法/2.png" alt=""><br><img src="/blog_img/hexo d时错误用户名和密码解决办法/3.png" alt=""><br><img src="/blog_img/hexo d时错误用户名和密码解决办法/4.png" alt=""></p>
-<p>点进去就可以更改用户名和密码了</p>
-<hr>
+    <title>test.md</title>
+    <url>/2021/04/24/test-md/</url>
+    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1.2eun3y1jysro.png" alt="1"></p>
 ]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
   </entry>
   <entry>
-    <title>pcl+vs+cmake编译</title>
-    <url>/2020/12/27/pcl-vs-cmake%E7%BC%96%E8%AF%91/</url>
-    <content><![CDATA[<p>上一篇写的配置可能是最基础的，也是很麻烦，其实可以用cmake来偷个懒，这样就不用附加依赖性已经加入库目录和包含目录了。<br><a id="more"></a></p>
-<h1 id="1-软件准备"><a href="#1-软件准备" class="headerlink" title="1.软件准备"></a>1.软件准备</h1><p>1.All in one 安装包。</p>
-<p>2.获取All in one 包对应得PDB文件包，用于后期单步调试。</p>
-<p>3.安装Visual studio 2019编译器</p>
-<p>4.cmake<br><img src="/blog_img/PCL配置/17.png" alt="示意图"><br><img src="/blog_img/PCL配置/1.jpg" alt="示意图"></p>
-<p>其实源码包用不上，懒得改了，最复杂的方式就是源代码加第三方库进行配置，等我配置好了也会再一篇关于源码方式的配置。</p>
-<hr>
-<h1 id="2-链接"><a href="#2-链接" class="headerlink" title="2.链接"></a>2.链接</h1><p><a href="https://github.com/PointCloudLibrary/pcl/releases">pcl下载地址</a><br><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">visual studio下载地址</a><br><a href="https://cmake.org/download/">cmake下载地址</a></p>
-<hr>
-<h1 id="3-安装事项"><a href="#3-安装事项" class="headerlink" title="3.安装事项"></a>3.安装事项</h1><p>为了方便配置，pcl安装目录尽量默认，不默认后续添加目录需要选择对应的位置。</p>
-<p>pcl安装请一定选择创建系统路径，visual studio和cmake安装位置随意，其他选项默认即可。</p>
-<p>pcl安装完成后，请把下载的pcd文件解压，如下图：<br><img src="/blog_img/PCL配置/2.jpg" alt=""></p>
-<p>将所有文件复制，安装到pcl下的BIN文件下<br><img src="/blog_img/PCL配置/3.jpg" alt=""></p>
-<p>检查pcl安装目录下的 3rdParty-OpenNI2是否只有一个安装包（我的是这样），这可能是事先安装过SDK的原因，请卸载了重新安装在OpenNI2下，安装完成如下图：<br><img src="/blog_img/PCL配置/4.jpg" alt=""></p>
-<p>cmake 安装请选择添加到系统路径，没选的话也可以自己手动添加，添加的方式为cmake目录下bin文件  比如C:\APP\Cmake\bin这样的形式。</p>
-<hr>
-<h1 id="4-关于Visual-studio安装项目"><a href="#4-关于Visual-studio安装项目" class="headerlink" title="4.关于Visual studio安装项目"></a>4.关于Visual studio安装项目</h1><p>我安装了这些负载</p>
-<p><img src="/blog_img/PCL配置/5.png" alt=""></p>
-<hr>
-<h1 id="5-环境配置"><a href="#5-环境配置" class="headerlink" title="5.环境配置"></a>5.环境配置</h1><p>右键我的电脑——高级系统设置-环境变量，在path选项下新建如下几项，根据你pcl安装的位置来：<br><img src="/blog_img/PCL配置/6.jpg" alt=""></p>
-<p>比如我的：<br>C:\Program Files\PCL 1.11.0\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Redist</p>
-<p>在系统变量下，配置如下图：<br><img src="/blog_img/PCL配置/6.png" alt=""><br>比如我的：<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\bin</p>
-<hr>
-<h1 id="6-cmake编译"><a href="#6-cmake编译" class="headerlink" title="6.cmake编译"></a>6.cmake编译</h1><p>以管理员身份运行cmake-gui<br>在你想要的文件下创建一个名为example的文件夹，然后在此目录下创建一个source和cmake_bin文件，比如我的：</p>
-<p><img src="/blog_img/PCL配置/18.png" alt=""></p>
-<p>在source里面创建一个cpp文件和CMakeLists.txt文件。<br>CmakeLists.txt里写入以下内容：</p>
-<pre><code>cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-project(test)
-find_package(PCL 1.4 REQUIRED)
-include_directories($&#123;PCL_INCLUDE_DIRS&#125;)
-link_directories($&#123;PCL_LIBRARY_DIRS&#125;)  
-add_definitions($&#123;PCL_DEFINITIONS&#125;)
-add_executable (test test.cpp)
-target_link_libraries (test $&#123;PCL_LIBRARIES&#125;)
-</code></pre><p>其中这个test就是你创建的测试代码的名字，请保持一致，如果你换别的名字，请把txt文件的名字也一起改了。我的如下：<br><img src="/blog_img/PCL配置/19.png" alt=""></p>
-<p>测试代码请网上去找，我用的是上一篇文件里的（里面有个D盘文件的读取可能会报错，但只要能出彩色的那个图就算配置成功了）。</p>
-<p>跟着步骤添加<br><img src="/blog_img/PCL配置/20.png" alt=""></p>
-<p>点击Configure，选x64<br><img src="/blog_img/PCL配置/21.jpg" alt=""></p>
-<p>再点击一次configure<br><img src="/blog_img/PCL配置/22.jpg" alt=""></p>
-<p>点击Generate,出现Generating done.<br><img src="/blog_img/PCL配置/23.png" alt=""></p>
-<p>找到cmake_bin底下的test_sln 打开。<br><img src="/blog_img/PCL配置/24.jpg" alt=""></p>
-<p>将test设置为启动项，并调试。<br><img src="/blog_img/PCL配置/25.png" alt=""></p>
-<p><img src="/blog_img/PCL配置/26.jpg" alt=""></p>
+    <title>ubuntu安装gcc依赖关系报错</title>
+    <url>/2021/03/14/ubuntu%E5%AE%89%E8%A3%85gcc%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<p>使用aptitude包依赖管理工具替代apt处理，看其他的博客说这个得慎用，不过用来安装gcc倒是没啥问题。<br><a id="more"></a></p>
+<pre><code>sudo apt-get install aptitude
+sudo aptitude install gcc g++
+</code></pre><p>解决方案里选择no,yes,yes.<br>参考<a href="https://blog.csdn.net/CLZHIT/article/details/104508894">博客</a></p>
 <hr>
 ]]></content>
-      <categories>
-        <category>pcl</category>
-      </categories>
       <tags>
-        <tag>-pcl</tag>
+        <tag>-ubuntu</tag>
       </tags>
   </entry>
   <entry>
-    <title>github设置自己的域名</title>
-    <url>/2021/01/20/github%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<p>哈哈，上次整了一晚上的没整明白，今天两下就整好了，看来真的进步不错哈哈，至少看东西，解决问题更有耐心也更能看懂了。<br><a id="more"></a></p>
-<h1 id="1-购买域名"><a href="#1-购买域名" class="headerlink" title="1.购买域名"></a>1.购买域名</h1><p>我是买的阿里云的域名，如下图：<br><img src="/blog_img/github设置自己的域名/1.jpg" alt="域名"><br>域名解析如下：<br><img src="/blog_img/github设置自己的域名/2.jpg" alt="域名解析"></p>
-<h1 id="2-github仓库设置域名地址"><a href="#2-github仓库设置域名地址" class="headerlink" title="2.github仓库设置域名地址"></a>2.github仓库设置域名地址</h1><p>在blog目录下的source文件下，创一个叫CNAME的无后缀文件，里面填入你的域名，比如我的   zzygeo.cn    如下图：<br><img src="/blog_img/github设置自己的域名/4.jpg" alt=""><br>如下图，主要是要设置博客上传分支的目录，以及更改你自己的域名（创建CNAME后自动生成），采用https加密。<br><img src="/blog_img/github设置自己的域名/3.jpg" alt=""></p>
-<p>到此就设置完成了！</p>
-<hr>
+    <title>ubuntu安装vim依赖关系报错</title>
+    <url>/2021/03/14/ubuntu%E5%AE%89%E8%A3%85vim%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<p>按如下步骤进行就可：<br><a id="more"></a></p>
+<pre><code>sudo apt-get purge vim-common
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install vim
+</code></pre><hr>
 ]]></content>
+      <tags>
+        <tag>-ubuntu</tag>
+      </tags>
   </entry>
   <entry>
     <title>ubuntu下的firefox无法播放视频解决方案</title>
@@ -523,33 +586,6 @@ sudo cp -r usr/* /usr
 <h1 id="2-解压到指定目录下"><a href="#2-解压到指定目录下" class="headerlink" title="2.解压到指定目录下"></a>2.解压到指定目录下</h1><pre><code>sudo unzip wps_symbol_fonts.zip -d /home/&lt;user&gt;/usr/share/fonts
 </code></pre><h1 id="3-到解压的根目录下安装"><a href="#3-到解压的根目录下安装" class="headerlink" title="3.到解压的根目录下安装"></a>3.到解压的根目录下安装</h1><p>依次打开每个文件并点击安装即可</p>
 <hr>
-]]></content>
-      <tags>
-        <tag>-ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ubuntu安装gcc依赖关系报错</title>
-    <url>/2021/03/14/ubuntu%E5%AE%89%E8%A3%85gcc%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<p>使用aptitude包依赖管理工具替代apt处理，看其他的博客说这个得慎用，不过用来安装gcc倒是没啥问题。<br><a id="more"></a></p>
-<pre><code>sudo apt-get install aptitude
-sudo aptitude install gcc g++
-</code></pre><p>解决方案里选择no,yes,yes.<br>参考<a href="https://blog.csdn.net/CLZHIT/article/details/104508894">博客</a></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ubuntu安装vim依赖关系报错</title>
-    <url>/2021/03/14/ubuntu%E5%AE%89%E8%A3%85vim%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<p>按如下步骤进行就可：<br><a id="more"></a></p>
-<pre><code>sudo apt-get purge vim-common
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install vim
-</code></pre><hr>
 ]]></content>
       <tags>
         <tag>-ubuntu</tag>
@@ -671,11 +707,23 @@ sudo snap remove &lt;snap name&gt;
     <label for="hbePass">Enter password to read.</label>
     <div class="bottom-line"></div>
   </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="1ca6301289f2dd6896cf5cfc5745366e564684351d7143020e4ffe247e439d2b">a40b706f3ef3cecdee82bde9ce2bd4514c0daefd2ecc9a0471c6dd32fb89c21dd33d989c9838561713a671711864b0b1a1a4480b4508e9ff8837f455c5dce0fe5f300a44bdd7e4e87f4cf4ad6a977b3a2e1fb4941673530eba42a436b7ddbc2a833161220ce856a9c50b0f0a00948c6120e291cacc8235d9112cea2d0ff237ff547ad3c0557cede69bb6e0acac70ff7e8dfd7357b4b0819f29e0b32a89991ff85dbb291e5440a99f3e89272087d1a7bad163b67007c9db378d5b7519efb4bc6adfc98224fb4ce577a17143fe36acb2235be6db2fbdd89c6784c0966f78aecbf7df789c5ac3fbdc42aad6b3332ae1ff1e862ad8340e40571113b1a0f03023896f63756e36c9ab7c908ad0b7107a5ffd66</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="03c1ac4465e4cf3a48495d4bf2e5305f5459e5aa002e29362a916042d55d3feb">a40b706f3ef3cecdee82bde9ce2bd4514c0daefd2ecc9a0471c6dd32fb89c21dd33d989c9838561713a671711864b0b1a1a4480b4508e9ff8837f455c5dce0fe5f300a44bdd7e4e87f4cf4ad6a977b3a2e1fb4941673530eba42a436b7ddbc2a833161220ce856a9c50b0f0a00948c6120e291cacc8235d9112cea2d0ff237ff547ad3c0557cede69bb6e0acac70ff7e8dfd7357b4b0819f29e0b32a89991ff85dbb291e5440a99f3e89272087d1a7bad163b67007c9db378d5b7519efb4bc6adfc98224fb4ce577a17143fe36acb2235be6db2fbdd89c6784c0966f78aecbf7df789c5ac3fbdc42aad6b3332ae1ff1e862ad8340e40571113b1a0f03023896f1f4e9d0282ddc48e33f8992ebced357dfafab8477f1b7ddb0c479b4ef223cd7aa6c3b47bac939edf42c2ea6eeb5976a6c37e76ad4ac9a7c25cf6e5f0161cbe47578cd75de43b1fb65e794e1b15d764b9</script>
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
         <tag>-office</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>梯子</title>
+    <url>/2020/09/26/%E6%A2%AF%E5%AD%90/</url>
+    <content><![CDATA[<p>名称：meilink羊圈  </p>
+<p><a id="more"></a>下载地址：<br><img src="/blog_img/梯子/1.png" alt="VPN"><br>页面浏览：<br><img src="/blog_img/梯子/2.png" alt="">  </p>
+<p><strong>自己根据需求去购买相应的套餐，一般来说最便宜的一档已经够用了</strong></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>-VPN</tag>
       </tags>
   </entry>
   <entry>
@@ -713,18 +761,6 @@ hexo d
 ]]></content>
       <tags>
         <tag>-hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>梯子</title>
-    <url>/2020/09/26/%E6%A2%AF%E5%AD%90/</url>
-    <content><![CDATA[<p>名称：meilink羊圈  </p>
-<p><a id="more"></a>下载地址：<br><img src="/blog_img/梯子/1.png" alt="VPN"><br>页面浏览：<br><img src="/blog_img/梯子/2.png" alt="">  </p>
-<p><strong>自己根据需求去购买相应的套餐，一般来说最便宜的一档已经够用了</strong></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-VPN</tag>
       </tags>
   </entry>
   <entry>
@@ -788,36 +824,6 @@ hexo d
 ]]></content>
       <tags>
         <tag>-资源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS code的一些使用心得</title>
-    <url>/2021/04/11/VScode%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<p>这篇博客是用Typora写的，Typora是一款开源、跨平台、免费、轻量化、简单优雅但功能依然强大的一款Markdown编辑器。从我下载上手的第一天，就直接把我破解版的 Markdown2 pro给卸载了，什么玩意，直接爬。哈哈好了，回归正题，今天想记录以及分享的是VS Code这款很猛的编辑器。为什么这么说，VS Code对小白来说算不上友好，而且从官网下载的速度还会被限制（这说明会科学上网真的太重要了，可以说如果不是我去年暑假突然去探索了科学上网，我至今都学不到这个东西，具体怎么上，大家可以看我前面叫做梯子的博客，<a href="https://zzygeo.cn/2020/09/26/%E6%A2%AF%E5%AD%90/">点击链接</a> 。<a id="more"></a></p>
-<h1 id="1-VS-Code初体验"><a href="#1-VS-Code初体验" class="headerlink" title="1.VS Code初体验"></a>1.VS Code初体验</h1><p>讲道理，最开始接触VS Code是20年我刚开始入手博客的时候，在改Hexo Themes 的config.yaml文件的时候，只是把它当作一个高级记事本来用，下载也是因为看了一些博客说VS Code是真香，是宇宙最猛编辑器。所以后来我也开始尝试搜索怎么用VS Code编写C++，怎么用VS Code编写Python。然而这确实难住了我这个小白，第一是很多人写的博客确实不咋样（我的虽然也不咋样，但还是在慢慢变好，尽量写的有头有尾），第二是我确实啥也不懂，什么了解都没有，就这样沉默在了那些博客里，直到翻过年来21.3月我才重新开始捡起来，这会儿我正沉迷在Ubuntu的系统里，更是想把Ubuntu当成主系统来使用，现在嘛，觉得这两个系统都是不可缺少的系统，有什么需求更契合哪个系统就用哪个。这会儿我渐渐体会到了跨平台的魅力，而且跨平台的很多都是开源的，用的人多了起来，自然也就会更加的完善，在这里想感谢这些无名前辈。</p>
-<h1 id="2-VS-Code使用"><a href="#2-VS-Code使用" class="headerlink" title="2.VS Code使用"></a>2.VS Code使用</h1><p>我主要是学一些C++方面的东西，所以VS Code基本都拿来写C++了，当然拿它做一个万能记事本也是很不错的选择。那我还是介绍一些比较主要的东西，一些打开即见的东西就自己探索吧。其实很多设置既可以拿鼠标找到，也可以用快捷键，我觉得那些常用的可以慢慢从鼠标过渡到快捷键，这当然是为了<del>装逼</del> ，不对是为了更丝滑和便捷。</p>
-<p>先贴下我在用的一些拓展，我的原则是，只下载目前能用上的东西，大道至简，事情越简单就会做的更舒服。</p>
-<p><img src="/blog_img/VSCode使用/VSCode拓展.png" alt="VSCode拓展"></p>
-<h2 id="1-Bracket-Pair-Colorizer"><a href="#1-Bracket-Pair-Colorizer" class="headerlink" title="1.Bracket Pair Colorizer"></a>1.Bracket Pair Colorizer</h2><p>这是一款括号匹配的插件</p>
-<h2 id="2-C-的插件"><a href="#2-C-的插件" class="headerlink" title="2.C++的插件"></a>2.C++的插件</h2><p>主要包括 C/C++  CMake的一些插件</p>
-<h2 id="3-简体中文支持"><a href="#3-简体中文支持" class="headerlink" title="3.简体中文支持"></a>3.简体中文支持</h2><p>这个没什么好讲的</p>
-<h2 id="4-主题"><a href="#4-主题" class="headerlink" title="4.主题"></a>4.主题</h2><p>主题我用的One Dark Pro</p>
-<h2 id="5-代码错误检查"><a href="#5-代码错误检查" class="headerlink" title="5.代码错误检查"></a>5.代码错误检查</h2><p>主要是检查变量命名是否符合规范</p>
-<h2 id="6-图标优化"><a href="#6-图标优化" class="headerlink" title="6.图标优化"></a>6.图标优化</h2><p>没什么好讲的，为了更丝滑</p>
-<h1 id="3-利用VSCode进行C-开发"><a href="#3-利用VSCode进行C-开发" class="headerlink" title="3.利用VSCode进行C++开发"></a>3.利用VSCode进行C++开发</h1><p>在这里我就不班门弄斧了，确实我只是进行模仿学习了，建议去看一下这个B站<a href="https://www.bilibili.com/video/BV13K411M78v">视频</a> ，从这里你可以了解launch.json和tasks.json的意义是什么以及怎么对其进行简单的修改。</p>
-<p>在这里我想介绍我碰见的其他的问题。</p>
-<h2 id="1-windows上使用gcc编译"><a href="#1-windows上使用gcc编译" class="headerlink" title="1.windows上使用gcc编译"></a>1.windows上使用gcc编译</h2><p>在windows平台上，我用gcc去进行vscode的开发，不知道是下的版本太次了，还是怎么的，我的gcc编译完了，居然打印不出构造函数以及析构函数的内容，而且在包含string头文件输出时，内容显示也有问题。还有一个问题就是mingw真的很难下，哪怕你翻墙了也很难下。所以我最近都是在用微软的编译器cl.exe去联合vscode去进行代码的编写，怎么做直接看官网（小白可能会碰见一些问题，相信你在看完上面推荐的视频以后，已经可以解决这个问题了），这里贴下<a href="https://code.visualstudio.com/docs">官网链接</a> 。</p>
-<h3 id="1-1-cmd窗口出现中文乱码"><a href="#1-1-cmd窗口出现中文乱码" class="headerlink" title="1.1 cmd窗口出现中文乱码"></a>1.1 cmd窗口出现中文乱码</h3><p><img src="/blog_img/VSCode使用/中文乱码.png" alt="中文乱码"></p>
-<p>类似图上这样，这个问题的原因主要是cmd窗口是gd2312编码的，而vscode默认是UTF-8编码，这两者不匹配，自然会输出成乱码，当然我们可以选择其一进行更改，但是更改cmd并想让它一直默认UTF-8编码，完全不如在vscode里做修改来的方便。<img src="/blog_img/VSCode使用/cmd编码方式.png" alt="cmd编码方式"></p>
-<p>如上图，936是gd2312的编号。</p>
-<p>我们在vscode里点击下方的 UTF-8，然后选择gd2312</p>
-<p><img src="/blog_img/VSCode使用/VSCode更改编码方式.png" alt="VSCode更改编码方式"></p>
-<p>当我再次运行就正常如下图了。<img src="/blog_img/VSCode使用/中文正常输出.png" alt="中文正常输出"></p>
-<h2 id="2-Ubuntu上使用gcc编译"><a href="#2-Ubuntu上使用gcc编译" class="headerlink" title="2.Ubuntu上使用gcc编译"></a>2.Ubuntu上使用gcc编译</h2><p>得益于linux强大的包管理，下载gcc真是不要太方便，但是终端输出的东西总是不太干净，附带一些其他的东西，我这个简洁主义者完全没法接受，探索了下，拓展一个 code run插件就好了，其实也没什么区别，不过是F5变成了 ALT+Ctrl+N而已，或者按F1然后鼠标选择，或者直接点击右上方的运行。</p>
-<h1 id="4-一些题外话"><a href="#4-一些题外话" class="headerlink" title="4.一些题外话"></a>4.一些题外话</h1><p>其实在windowns上完全可以直接使用visual stdio进行开发，简单不用考虑这么多，而在vscode上不仅要自己写tasks.json和launch.json，哪怕一些简单的开发也需要去写Cmake。我觉得有这样的原因，第一，折腾才会进步，多折腾才能理解更深入，了解一下一个程序是进行了那些的步骤才会计算器编译，最后输出成我们能看到的语言，你不仅可以收获技能，还可以收获乐趣。第二，vscode值得你去折腾，它是一个跨平台的产物，群体大，可以自己DIY，碰见错误容易被解决，包括无人小车通过树莓派的一些开发，现在也是推荐去用vscode去做开发去了。第三，当然是他好看啊，而且轻量，可控，我想学C++以及使用linux都是会享受到自己作为超级用户的待遇，很多东西是我自己来控制，这种感觉很nice。</p>
-]]></content>
-      <tags>
-        <tag>-VSCode</tag>
       </tags>
   </entry>
 </search>

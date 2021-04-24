@@ -6,7 +6,7 @@
   <link href="https://zzygeo.cn/atom.xml" rel="self"/>
   
   <link href="https://zzygeo.cn/"/>
-  <updated>2021-04-20T10:27:46.997Z</updated>
+  <updated>2021-04-24T13:23:26.135Z</updated>
   <id>https://zzygeo.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test.md</title>
+    <link href="https://zzygeo.cn/2021/04/24/test-md/"/>
+    <id>https://zzygeo.cn/2021/04/24/test-md/</id>
+    <published>2021-04-24T13:19:40.000Z</published>
+    <updated>2021-04-24T13:23:26.135Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1.2eun3y1jysro.png" alt="1"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zzygeo/images/master/1.2eun3y1jysro.png&quot; alt=&quot;1&quot;&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>VS code的一些使用心得</title>
@@ -366,9 +387,9 @@
     <link href="https://zzygeo.cn/2020/09/26/%E6%88%91%E7%9A%84Office%E6%BF%80%E6%B4%BB%E7%A0%81/"/>
     <id>https://zzygeo.cn/2020/09/26/%E6%88%91%E7%9A%84Office%E6%BF%80%E6%B4%BB%E7%A0%81/</id>
     <published>2020-09-26T05:05:29.000Z</published>
-    <updated>2021-04-05T04:42:10.025Z</updated>
+    <updated>2021-04-24T13:17:10.478Z</updated>
     
-    <content type="html"><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <div class="hbe-input-container">  <input type="password" id="hbePass" placeholder="" />    <label for="hbePass">Enter password to read.</label>    <div class="bottom-line"></div>  </div>  <script id="hbeData" type="hbeData" data-hmacdigest="1ca6301289f2dd6896cf5cfc5745366e564684351d7143020e4ffe247e439d2b">a40b706f3ef3cecdee82bde9ce2bd4514c0daefd2ecc9a0471c6dd32fb89c21dd33d989c9838561713a671711864b0b1a1a4480b4508e9ff8837f455c5dce0fe5f300a44bdd7e4e87f4cf4ad6a977b3a2e1fb4941673530eba42a436b7ddbc2a833161220ce856a9c50b0f0a00948c6120e291cacc8235d9112cea2d0ff237ff547ad3c0557cede69bb6e0acac70ff7e8dfd7357b4b0819f29e0b32a89991ff85dbb291e5440a99f3e89272087d1a7bad163b67007c9db378d5b7519efb4bc6adfc98224fb4ce577a17143fe36acb2235be6db2fbdd89c6784c0966f78aecbf7df789c5ac3fbdc42aad6b3332ae1ff1e862ad8340e40571113b1a0f03023896f63756e36c9ab7c908ad0b7107a5ffd66</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+    <content type="html"><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <div class="hbe-input-container">  <input type="password" id="hbePass" placeholder="" />    <label for="hbePass">Enter password to read.</label>    <div class="bottom-line"></div>  </div>  <script id="hbeData" type="hbeData" data-hmacdigest="03c1ac4465e4cf3a48495d4bf2e5305f5459e5aa002e29362a916042d55d3feb">a40b706f3ef3cecdee82bde9ce2bd4514c0daefd2ecc9a0471c6dd32fb89c21dd33d989c9838561713a671711864b0b1a1a4480b4508e9ff8837f455c5dce0fe5f300a44bdd7e4e87f4cf4ad6a977b3a2e1fb4941673530eba42a436b7ddbc2a833161220ce856a9c50b0f0a00948c6120e291cacc8235d9112cea2d0ff237ff547ad3c0557cede69bb6e0acac70ff7e8dfd7357b4b0819f29e0b32a89991ff85dbb291e5440a99f3e89272087d1a7bad163b67007c9db378d5b7519efb4bc6adfc98224fb4ce577a17143fe36acb2235be6db2fbdd89c6784c0966f78aecbf7df789c5ac3fbdc42aad6b3332ae1ff1e862ad8340e40571113b1a0f03023896f1f4e9d0282ddc48e33f8992ebced357dfafab8477f1b7ddb0c479b4ef223cd7aa6c3b47bac939edf42c2ea6eeb5976a6c37e76ad4ac9a7c25cf6e5f0161cbe47578cd75de43b1fb65e794e1b15d764b9</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
     
     
     <summary type="html">Welcome to my blog, enter password to read.</summary>
@@ -377,27 +398,6 @@
     
     
     <category term="-office" scheme="https://zzygeo.cn/tags/office/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Youtube视频下载</title>
-    <link href="https://zzygeo.cn/2020/09/26/Youbute%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/"/>
-    <id>https://zzygeo.cn/2020/09/26/Youbute%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/</id>
-    <published>2020-09-26T04:57:33.000Z</published>
-    <updated>2021-03-13T17:48:54.238Z</updated>
-    
-    <content type="html"><![CDATA[<p><font color=# ff size=23 face="黑体">Youtube视频下载</font>&lt;/p&gt;</p><h1 id="1-4K视频下载"><a href="#1-4K视频下载" class="headerlink" title="1.4K视频下载"></a>1.4K视频下载</h1><p><a href="https://distillvideo.com/">下载地址</a></p><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h1 id="2-油猴插件脚本"><a href="#2-油猴插件脚本" class="headerlink" title="2.油猴插件脚本"></a>2.油猴插件脚本</h1><p>参考我的这篇<a href="https://zzygeo.gitee.io/2020/09/26/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BB%A5%E5%8F%8A%E6%8F%92%E4%BB%B6/">博客</a>油猴插件</p><hr><h1 id="3-1080p下载"><a href="#3-1080p下载" class="headerlink" title="3.1080p下载"></a>3.1080p下载</h1><p><a href="https://www.y2mate.com/en60/">下载地址</a></p><hr><h1 id="4-视频字幕下载"><a href="#4-视频字幕下载" class="headerlink" title="4.视频字幕下载"></a>4.视频字幕下载</h1><p><a href="https://www.findyoutube.net/">下载地址</a><br>版权限制，目前下载为VTT格式，需要在Subtitle Edit里将VTT转为SRT格式。</p><hr><h1 id="5-Subtitle-Edit-vvt-srt"><a href="#5-Subtitle-Edit-vvt-srt" class="headerlink" title="5.Subtitle Edit(vvt-srt)"></a>5.Subtitle Edit(vvt-srt)</h1><p><a href="https://www.nikse.dk/subtitleedit/">下载地址</a><br>可以VTT2SRT SRT2VTT,有强大的字幕编辑功能。</p><hr><h1 id="6-Arctime-制作内嵌字幕视频"><a href="#6-Arctime-制作内嵌字幕视频" class="headerlink" title="6.Arctime(制作内嵌字幕视频)"></a>6.Arctime(制作内嵌字幕视频)</h1><p><a href="https://arctime.org/">下载地址</a></p><hr>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;font color=# ff size=23 face=&quot;黑体&quot;&gt;Youtube视频下载&lt;/font&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-4K视频下载&quot;&gt;&lt;a href=&quot;#1-4K视频下载&quot; class=&quot;headerlink&quot; title=&quot;1.4K视频下载&quot;&gt;&lt;/a&gt;1.4K视频下载&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://distillvideo.com/&quot;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;</summary>
-    
-    
-    
-    
-    <category term="-Youtube" scheme="https://zzygeo.cn/tags/Youtube/"/>
     
   </entry>
   
