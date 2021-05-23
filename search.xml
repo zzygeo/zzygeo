@@ -67,9 +67,9 @@ void swap(int&amp; val1, int&amp; val2)
 </code></pre>
 <hr>
 ]]></content>
-      <tags>
-        <tag>-C++</tag>
-      </tags>
+      <categories>
+        <category>C++</category>
+      </categories>
   </entry>
   <entry>
     <title>PCL-1-11-Visual-Studio-2019-配置</title>
