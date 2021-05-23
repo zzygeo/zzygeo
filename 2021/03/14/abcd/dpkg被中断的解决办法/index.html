@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		About | 
+		dpkg被中断的解决办法 | 
 	 
 	Callme🍉
 	</title>
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2021/03/14/abcd/dpkg%E8%A2%AB%E4%B8%AD%E6%96%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
 										dpkg被中断的解决办法
 									</a>
@@ -366,24 +366,64 @@ var _hmt = _hmt || [];
 	<div id="content">
 		<h1 id="article-title">
 
-	About
+	dpkg被中断的解决办法
 </h1>
 <div class="article-meta">
 	
 	<span>Regular</span>
-	<span>2021-05-23 23:44:12</span>
+	<span>2021-03-14 01:40:02</span>
 		<div id="article-categories">
     
+		<span>Categories：</span>
+            
+    
 
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/ubuntu/">-ubuntu</a>
+                        </i>
+                    </span>
+                
+            
     
 		</div>
 
 </div>
 
 <div id="article-content">
-	
+	<p>linux系统安装软件是有时会碰到“dpkg 被中断,您必须手工运行 sudo dpkg –configure -a解决此问题”，然而按照提示运行却并没能很好的解决问题。其实导致这个问题的主要原因是因为/var/lib/dpkg/updates文件下的文件有问题，可能是其他软件安装过程或是其他原因导致的，这里删除掉然后重建即可。<br><a id="more"></a></p>
+<pre><code>sudo rm /var/lib/dpkg/updates/*
+sudo apt-get update
+sudo apt-get upgrade
+</code></pre><p>解释：[<em>]sudo apt-get update指令会重新建立这些资料，所以不必担心删除后会出问题；<br>[</em>]sudo apt-get upgrade会更新你的电脑里面已安装的软件的明细，根据软件的明细更新软件到最新版。<br>PS：“dpkg ”是“Debian Packager ”的简写。为 “Debian” 专门开发的套件管理系统，方便软件的安装、更新及移除。所有源自“Debian”的“Linux ”发行版都使用 “dpkg”</p>
+<p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/coolcooljob/article/details/79964812">博客</a></p>
+<hr>
+
 </div>
 
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2021/03/17/Vscode%E4%B8%BAcmake%E9%85%8D%E7%BD%AEtask-json/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2021/03/14/%E5%AE%89%E8%A3%85snap/">
+                
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
 
 
 

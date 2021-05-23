@@ -1,77 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++源文件和函数分开编写</title>
-    <url>/2021/03/20/C-%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E7%BC%96%E5%86%99/</url>
-    <content><![CDATA[<p>main.cpp</p>
-<a id="more"></a>
-<pre><code class="lang-c++">#include &quot;main.h&quot;
-
-int main()
-&#123;
-    int arr[10] = &#123; 4,3,6,9,1,2,10,8,7,5 &#125;;
-    vector&lt;int&gt; vec(arr, arr + 10);
-    display(vec);
-    bubble_sort(vec);
-    display(vec);
-
-    return 0;
-&#125;
-</code></pre>
-<p>main.h</p>
-<pre><code class="lang-c++">#pragma once
-#include&lt;vector&gt;
-#include&lt;iostream&gt;
-using namespace std;
-
-void bubble_sort(vector&lt;int&gt;&amp;);
-void display(const vector&lt;int&gt;&amp;);
-void swap(int&amp;, int&amp;);
-</code></pre>
-<p>bubble_sort.cpp</p>
-<pre><code class="lang-c++">#include &quot;main.h&quot;
-
-void bubble_sort(vector&lt;int&gt;&amp; vec)
-&#123;
-    for (int i = 0; i &lt; vec.size(); i++)
-        for (int j = i + 1; j &lt; vec.size(); j++)
-        &#123;
-            if (vec[i] &gt; vec[j])
-            &#123;
-                swap(vec[i], vec[j]);
-            &#125;
-        &#125;
-&#125;
-</code></pre>
-<p>display.cpp</p>
-<pre><code class="lang-c++">#include &quot;main.h&quot;
-
-void display(const vector&lt;int&gt;&amp; vec)
-&#123;
-    for (int i = 0; i &lt; vec.size(); i++)
-    &#123;
-        cout &lt;&lt; vec[i] &lt;&lt; &#39; &#39;;
-    &#125;
-    cout &lt;&lt; endl;
-&#125;
-</code></pre>
-<p>swap.cpp</p>
-<pre><code class="lang-c++">#include &quot;main.h&quot;
-
-void swap(int&amp; val1, int&amp; val2)
-&#123;
-    int temp = val1;
-    val1 = val2;
-    val2 = temp;
-&#125;
-</code></pre>
-<hr>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-  </entry>
-  <entry>
     <title>PCL-1-11-Visual-Studio-2019-配置</title>
     <url>/2020/10/04/PCL-1-11-Visual-Studio-2019-%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<font color= ff size=4 face="">
@@ -319,21 +248,6 @@ git config --global --unset https.proxy
 ]]></content>
       <tags>
         <tag>-Youtube</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>dpkg被中断的解决办法</title>
-    <url>/2021/03/14/dpkg%E8%A2%AB%E4%B8%AD%E6%96%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>linux系统安装软件是有时会碰到“dpkg 被中断,您必须手工运行 sudo dpkg –configure -a解决此问题”，然而按照提示运行却并没能很好的解决问题。其实导致这个问题的主要原因是因为/var/lib/dpkg/updates文件下的文件有问题，可能是其他软件安装过程或是其他原因导致的，这里删除掉然后重建即可。<br><a id="more"></a></p>
-<pre><code>sudo rm /var/lib/dpkg/updates/*
-sudo apt-get update
-sudo apt-get upgrade
-</code></pre><p>解释：[<em>]sudo apt-get update指令会重新建立这些资料，所以不必担心删除后会出问题；<br>[</em>]sudo apt-get upgrade会更新你的电脑里面已安装的软件的明细，根据软件的明细更新软件到最新版。<br>PS：“dpkg ”是“Debian Packager ”的简写。为 “Debian” 专门开发的套件管理系统，方便软件的安装、更新及移除。所有源自“Debian”的“Linux ”发行版都使用 “dpkg”</p>
-<p>参考<a href="https://blog.csdn.net/coolcooljob/article/details/79964812">博客</a></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -818,6 +732,92 @@ hexo d
 ]]></content>
       <tags>
         <tag>-资源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++源文件和函数分开编写</title>
+    <url>/2021/03/20/abcd/C-%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E7%BC%96%E5%86%99/</url>
+    <content><![CDATA[<p>main.cpp</p>
+<a id="more"></a>
+<pre><code class="lang-c++">#include &quot;main.h&quot;
+
+int main()
+&#123;
+    int arr[10] = &#123; 4,3,6,9,1,2,10,8,7,5 &#125;;
+    vector&lt;int&gt; vec(arr, arr + 10);
+    display(vec);
+    bubble_sort(vec);
+    display(vec);
+
+    return 0;
+&#125;
+</code></pre>
+<p>main.h</p>
+<pre><code class="lang-c++">#pragma once
+#include&lt;vector&gt;
+#include&lt;iostream&gt;
+using namespace std;
+
+void bubble_sort(vector&lt;int&gt;&amp;);
+void display(const vector&lt;int&gt;&amp;);
+void swap(int&amp;, int&amp;);
+</code></pre>
+<p>bubble_sort.cpp</p>
+<pre><code class="lang-c++">#include &quot;main.h&quot;
+
+void bubble_sort(vector&lt;int&gt;&amp; vec)
+&#123;
+    for (int i = 0; i &lt; vec.size(); i++)
+        for (int j = i + 1; j &lt; vec.size(); j++)
+        &#123;
+            if (vec[i] &gt; vec[j])
+            &#123;
+                swap(vec[i], vec[j]);
+            &#125;
+        &#125;
+&#125;
+</code></pre>
+<p>display.cpp</p>
+<pre><code class="lang-c++">#include &quot;main.h&quot;
+
+void display(const vector&lt;int&gt;&amp; vec)
+&#123;
+    for (int i = 0; i &lt; vec.size(); i++)
+    &#123;
+        cout &lt;&lt; vec[i] &lt;&lt; &#39; &#39;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+</code></pre>
+<p>swap.cpp</p>
+<pre><code class="lang-c++">#include &quot;main.h&quot;
+
+void swap(int&amp; val1, int&amp; val2)
+&#123;
+    int temp = val1;
+    val1 = val2;
+    val2 = temp;
+&#125;
+</code></pre>
+<hr>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>dpkg被中断的解决办法</title>
+    <url>/2021/03/14/abcd/dpkg%E8%A2%AB%E4%B8%AD%E6%96%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>linux系统安装软件是有时会碰到“dpkg 被中断,您必须手工运行 sudo dpkg –configure -a解决此问题”，然而按照提示运行却并没能很好的解决问题。其实导致这个问题的主要原因是因为/var/lib/dpkg/updates文件下的文件有问题，可能是其他软件安装过程或是其他原因导致的，这里删除掉然后重建即可。<br><a id="more"></a></p>
+<pre><code>sudo rm /var/lib/dpkg/updates/*
+sudo apt-get update
+sudo apt-get upgrade
+</code></pre><p>解释：[<em>]sudo apt-get update指令会重新建立这些资料，所以不必担心删除后会出问题；<br>[</em>]sudo apt-get upgrade会更新你的电脑里面已安装的软件的明细，根据软件的明细更新软件到最新版。<br>PS：“dpkg ”是“Debian Packager ”的简写。为 “Debian” 专门开发的套件管理系统，方便软件的安装、更新及移除。所有源自“Debian”的“Linux ”发行版都使用 “dpkg”</p>
+<p>参考<a href="https://blog.csdn.net/coolcooljob/article/details/79964812">博客</a></p>
+<hr>
+]]></content>
+      <tags>
+        <tag>-ubuntu</tag>
       </tags>
   </entry>
 </search>
