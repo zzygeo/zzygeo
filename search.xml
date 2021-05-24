@@ -1,334 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>PCL-1-11-Visual-Studio-2019-配置</title>
-    <url>/2020/10/04/PCL-1-11-Visual-Studio-2019-%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<font color= ff size=4 face="">
-
-<h1 id="1-软件准备"><a href="#1-软件准备" class="headerlink" title="1.软件准备"></a>1.软件准备</h1><p>1.All in one 安装包。</p>
-<p>2.获取All in one 包对应得PDB文件包，用于后期单步调试。<br><a id="more"></a><br>3.获取PCL源码包</p>
-<p>4.安装Visual studio 2019编译器</p>
-<p><img src="/blog_img/PCL配置/1.jpg" alt="示意图"></p>
-<hr>
-<h1 id="2-链接"><a href="#2-链接" class="headerlink" title="2.链接"></a>2.链接</h1><p><a href="https://github.com/PointCloudLibrary/pcl/releases">pcl下载地址</a><br><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">visual studio下载地址</a></p>
-<hr>
-<h1 id="3-安装事项"><a href="#3-安装事项" class="headerlink" title="3.安装事项"></a>3.安装事项</h1><p>为了方便配置，pcl安装目录尽量默认，不默认后续添加目录需要选择对应的位置。</p>
-<p>pcl安装请一定选择创建系统路径，visual studio和cmake安装位置随意，其他选项默认即可。</p>
-<p>pcl安装完成后，请把下载的pcd文件解压，如下图：<br><img src="/blog_img/PCL配置/2.jpg" alt=""></p>
-<p>将所有文件复制，安装到pcl下的BIN文件下<br><img src="/blog_img/PCL配置/3.jpg" alt=""></p>
-<p>检查pcl安装目录下的 3rdParty-OpenNI2是否只有一个安装包（我的是这样），这可能是事先安装过SDK的原因，请卸载了重新安装在OpenNI2下，安装完成如下图：<br><img src="/blog_img/PCL配置/4.jpg" alt=""></p>
-<hr>
-<h1 id="4-关于Visual-studio安装项目"><a href="#4-关于Visual-studio安装项目" class="headerlink" title="4.关于Visual studio安装项目"></a>4.关于Visual studio安装项目</h1><p>我安装了这些负载</p>
-<p><img src="/blog_img/PCL配置/5.png" alt=""></p>
-<hr>
-<h1 id="5-环境配置"><a href="#5-环境配置" class="headerlink" title="5.环境配置"></a>5.环境配置</h1><p>右键我的电脑——高级系统设置-环境变量，在path选项下新建如下几项，根据你pcl安装的位置来：<br><img src="/blog_img/PCL配置/6.jpg" alt=""></p>
-<p>比如我的：<br>C:\Program Files\PCL 1.11.0\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Redist</p>
-<p>在系统变量下，配置如下图：<br><img src="/blog_img/PCL配置/6.png" alt=""><br>比如我的：<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\bin</p>
-<hr>
-<h1 id="6-配置"><a href="#6-配置" class="headerlink" title="6.配置"></a>6.配置</h1><p>打开visual studio，新建一个空项目如图：<br><img src="/blog_img/PCL配置/7.jpg" alt=""></p>
-<p>在release下创建属性表（如果是DEBUG版本请在DEBUG下创建）<br><img src="/blog_img/PCL配置/8.png" alt=""></p>
-<p>切换到解决方案资源管理器，右键-添加-新建项<br><img src="/blog_img/PCL配置/9.png" alt=""></p>
-<p>添加C++文件<br><img src="/blog_img/PCL配置/10.png" alt=""></p>
-<p>接下来配置：<br><img src="/blog_img/PCL配置/11.png" alt=""></p>
-<p>包含目录下添加，建议手点：<br>C:\Program Files\PCL 1.11.0\include\pcl-1.11<br>C:\Program Files\PCL 1.11.0\3rdParty\Boost\include\boost-1_73<br>C:\Program Files\PCL 1.11.0\3rdParty\Eigen\eigen3<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\include<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\include<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\include\vtk-8.2<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Include</p>
-<p>库目录添加：<br>C:\Program Files\PCL 1.11.0\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\Boost\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Lib</p>
-<p>接下来配置：<br><img src="/blog_img/PCL配置/12.jpg" alt=""></p>
-<p>在预处理器定义处添加：<br>BOOST_USE_WINDOWS_H<br>NOMINMAX<br>_CRT_SECURE_NO_DEPRECATE</p>
-<p>在项目属性表（Project_one）和release下创建得属性表（test_one）中把所有选项里得SDL检查全改成否，如下图：</p>
-<p><img src="/blog_img/PCL配置/13.jpg" alt=""></p>
-<p><img src="/blog_img/PCL配置/14.jpg" alt=""></p>
-<hr>
-<h1 id="7-附加依赖项"><a href="#7-附加依赖项" class="headerlink" title="7.附加依赖项"></a>7.附加依赖项</h1><p>将PCL 1.11.0\3rdParty\VTK\lib和PCL 1.11.0\lib这两个文件夹下的lib文件的release版本添加到附加依赖项中（DEBUG版本添加DEBUG类型文件）</p>
-<p><img src="/blog_img/PCL配置/15.png" alt=""></p>
-<p>文件名称我已经归类好了</p>
-<p>release版本：</p>
-<p>pcl_common.lib<br>pcl_features.lib<br>pcl_filters.lib<br>pcl_io.lib<br>pcl_io_ply.lib<br>pcl_kdtree.lib<br>pcl_keypoints.lib<br>pcl_ml.lib<br>pcl_octree.lib<br>pcl_outofcore.lib<br>pcl_people.lib<br>pcl_recognition.lib<br>pcl_registration.lib<br>pcl_sample_consensus.lib<br>pcl_search.lib<br>pcl_segmentation.lib<br>pcl_stereo.lib<br>pcl_surface.lib<br>pcl_tracking.lib<br>pcl_visualization.lib<br>vtkChartsCore-8.2.lib<br>vtkCommonColor-8.2.lib<br>vtkCommonComputationalGeometry-8.2.lib<br>vtkCommonCore-8.2.lib<br>vtkCommonDataModel-8.2.lib<br>vtkCommonExecutionModel-8.2.lib<br>vtkCommonMath-8.2.lib<br>vtkCommonMisc-8.2.lib<br>vtkCommonSystem-8.2.lib<br>vtkCommonTransforms-8.2.lib<br>vtkDICOMParser-8.2.lib<br>vtkDomainsChemistry-8.2.lib<br>vtkDomainsChemistryOpenGL2-8.2.lib<br>vtkdoubleconversion-8.2.lib<br>vtkexodusII-8.2.lib<br>vtkexpat-8.2.lib<br>vtkFiltersAMR-8.2.lib<br>vtkFiltersCore-8.2.lib<br>vtkFiltersExtraction-8.2.lib<br>vtkFiltersFlowPaths-8.2.lib<br>vtkFiltersGeneral-8.2.lib<br>vtkFiltersGeneric-8.2.lib<br>vtkFiltersGeometry-8.2.lib<br>vtkFiltersHybrid-8.2.lib<br>vtkFiltersHyperTree-8.2.lib<br>vtkFiltersImaging-8.2.lib<br>vtkFiltersModeling-8.2.lib<br>vtkFiltersParallel-8.2.lib<br>vtkFiltersParallelImaging-8.2.lib<br>vtkFiltersPoints-8.2.lib<br>vtkFiltersProgrammable-8.2.lib<br>vtkFiltersSelection-8.2.lib<br>vtkFiltersSMP-8.2.lib<br>vtkFiltersSources-8.2.lib<br>vtkFiltersStatistics-8.2.lib<br>vtkFiltersTexture-8.2.lib<br>vtkFiltersTopology-8.2.lib<br>vtkFiltersVerdict-8.2.lib<br>vtkfreetype-8.2.lib<br>vtkGeovisCore-8.2.lib<br>vtkgl2ps-8.2.lib<br>vtkglew-8.2.lib<br>vtkGUISupportMFC-8.2.lib<br>vtkhdf5_hl-8.2.lib<br>vtkhdf5-8.2.lib<br>vtkImagingColor-8.2.lib<br>vtkImagingCore-8.2.lib<br>vtkImagingFourier-8.2.lib<br>vtkImagingGeneral-8.2.lib<br>vtkImagingHybrid-8.2.lib<br>vtkImagingMath-8.2.lib<br>vtkImagingMorphological-8.2.lib<br>vtkImagingSources-8.2.lib<br>vtkImagingStatistics-8.2.lib<br>vtkImagingStencil-8.2.lib<br>vtkInfovisCore-8.2.lib<br>vtkInfovisLayout-8.2.lib<br>vtkInteractionImage-8.2.lib<br>vtkInteractionStyle-8.2.lib<br>vtkInteractionWidgets-8.2.lib<br>vtkIOAMR-8.2.lib<br>vtkIOAsynchronous-8.2.lib<br>vtkIOCityGML-8.2.lib<br>vtkIOCore-8.2.lib<br>vtkIOEnSight-8.2.lib<br>vtkIOExodus-8.2.lib<br>vtkIOExport-8.2.lib<br>vtkIOExportOpenGL2-8.2.lib<br>vtkIOExportPDF-8.2.lib<br>vtkIOGeometry-8.2.lib<br>vtkIOImage-8.2.lib<br>vtkIOImport-8.2.lib<br>vtkIOInfovis-8.2.lib<br>vtkIOLegacy-8.2.lib<br>vtkIOLSDyna-8.2.lib<br>vtkIOMINC-8.2.lib<br>vtkIOMovie-8.2.lib<br>vtkIONetCDF-8.2.lib<br>vtkIOParallel-8.2.lib<br>vtkIOParallelXML-8.2.lib<br>vtkIOPLY-8.2.lib<br>vtkIOSegY-8.2.lib<br>vtkIOSQL-8.2.lib<br>vtkIOTecplotTable-8.2.lib<br>vtkIOVeraOut-8.2.lib<br>vtkIOVideo-8.2.lib<br>vtkIOXML-8.2.lib<br>vtkIOXMLParser-8.2.lib<br>vtkjpeg-8.2.lib<br>vtkjsoncpp-8.2.lib<br>vtklibharu-8.2.lib<br>vtklibxml2-8.2.lib<br>vtklz4-8.2.lib<br>vtklzma-8.2.lib<br>vtkmetaio-8.2.lib<br>vtkNetCDF-8.2.lib<br>vtkogg-8.2.lib<br>vtkParallelCore-8.2.lib<br>vtkpng-8.2.lib<br>vtkproj-8.2.lib<br>vtkpugixml-8.2.lib<br>vtkRenderingAnnotation-8.2.lib<br>vtkRenderingContext2D-8.2.lib<br>vtkRenderingContextOpenGL2-8.2.lib<br>vtkRenderingCore-8.2.lib<br>vtkRenderingExternal-8.2.lib<br>vtkRenderingFreeType-8.2.lib<br>vtkRenderingGL2PSOpenGL2-8.2.lib<br>vtkRenderingImage-8.2.lib<br>vtkRenderingLabel-8.2.lib<br>vtkRenderingLOD-8.2.lib<br>vtkRenderingOpenGL2-8.2.lib<br>vtkRenderingVolume-8.2.lib<br>vtkRenderingVolumeOpenGL2-8.2.lib<br>vtksqlite-8.2.lib<br>vtksys-8.2.lib<br>vtktheora-8.2.lib<br>vtktiff-8.2.lib<br>vtkverdict-8.2.lib<br>vtkViewsContext2D-8.2.lib<br>vtkViewsCore-8.2.lib<br>vtkViewsInfovis-8.2.lib<br>vtkzlib-8.2.lib</p>
-<p>DEBUG版本：</p>
-<p>pcl_commond.lib<br>pcl_featuresd.lib<br>pcl_filtersd.lib<br>pcl_io_plyd.lib<br>pcl_iod.lib<br>pcl_kdtreed.lib<br>pcl_keypointsd.lib<br>pcl_mld.lib<br>pcl_octreed.lib<br>pcl_outofcored.lib<br>pcl_peopled.lib<br>pcl_recognitiond.lib<br>pcl_registrationd.lib<br>pcl_sample_consensusd.lib<br>pcl_searchd.lib<br>pcl_segmentationd.lib<br>pcl_stereod.lib<br>pcl_surfaced.lib<br>pcl_trackingd.lib<br>pcl_visualizationd.lib<br>vtkChartsCore-8.2-gd.lib<br>vtkCommonColor-8.2-gd.lib<br>vtkCommonComputationalGeometry-8.2-gd.lib<br>vtkCommonCore-8.2-gd.lib<br>vtkCommonDataModel-8.2-gd.lib<br>vtkCommonExecutionModel-8.2-gd.lib<br>vtkCommonMath-8.2-gd.lib<br>vtkCommonMisc-8.2-gd.lib<br>vtkCommonSystem-8.2-gd.lib<br>vtkCommonTransforms-8.2-gd.lib<br>vtkDICOMParser-8.2-gd.lib<br>vtkDomainsChemistry-8.2-gd.lib<br>vtkDomainsChemistryOpenGL2-8.2-gd.lib<br>vtkdoubleconversion-8.2-gd.lib<br>vtkexodusII-8.2-gd.lib<br>vtkexpat-8.2-gd.lib<br>vtkFiltersAMR-8.2-gd.lib<br>vtkFiltersCore-8.2-gd.lib<br>vtkFiltersExtraction-8.2-gd.lib<br>vtkFiltersFlowPaths-8.2-gd.lib<br>vtkFiltersGeneral-8.2-gd.lib<br>vtkFiltersGeneric-8.2-gd.lib<br>vtkFiltersGeometry-8.2-gd.lib<br>vtkFiltersHybrid-8.2-gd.lib<br>vtkFiltersHyperTree-8.2-gd.lib<br>vtkFiltersImaging-8.2-gd.lib<br>vtkFiltersModeling-8.2-gd.lib<br>vtkFiltersParallel-8.2-gd.lib<br>vtkFiltersParallelImaging-8.2-gd.lib<br>vtkFiltersPoints-8.2-gd.lib<br>vtkFiltersProgrammable-8.2-gd.lib<br>vtkFiltersSelection-8.2-gd.lib<br>vtkFiltersSMP-8.2-gd.lib<br>vtkFiltersSources-8.2-gd.lib<br>vtkFiltersStatistics-8.2-gd.lib<br>vtkFiltersTexture-8.2-gd.lib<br>vtkFiltersTopology-8.2-gd.lib<br>vtkFiltersVerdict-8.2-gd.lib<br>vtkfreetype-8.2-gd.lib<br>vtkGeovisCore-8.2-gd.lib<br>vtkgl2ps-8.2-gd.lib<br>vtkglew-8.2-gd.lib<br>vtkGUISupportMFC-8.2-gd.lib<br>vtkhdf5_hl-8.2-gd.lib<br>vtkhdf5-8.2-gd.lib<br>vtkImagingColor-8.2-gd.lib<br>vtkImagingCore-8.2-gd.lib<br>vtkImagingFourier-8.2-gd.lib<br>vtkImagingGeneral-8.2-gd.lib<br>vtkImagingHybrid-8.2-gd.lib<br>vtkImagingMath-8.2-gd.lib<br>vtkImagingMorphological-8.2-gd.lib<br>vtkImagingSources-8.2-gd.lib<br>vtkImagingStatistics-8.2-gd.lib<br>vtkImagingStencil-8.2-gd.lib<br>vtkInfovisCore-8.2-gd.lib<br>vtkInfovisLayout-8.2-gd.lib<br>vtkInteractionImage-8.2-gd.lib<br>vtkInteractionStyle-8.2-gd.lib<br>vtkInteractionWidgets-8.2-gd.lib<br>vtkIOAMR-8.2-gd.lib<br>vtkIOAsynchronous-8.2-gd.lib<br>vtkIOCityGML-8.2-gd.lib<br>vtkIOCore-8.2-gd.lib<br>vtkIOEnSight-8.2-gd.lib<br>vtkIOExodus-8.2-gd.lib<br>vtkIOExport-8.2-gd.lib<br>vtkIOExportOpenGL2-8.2-gd.lib<br>vtkIOExportPDF-8.2-gd.lib<br>vtkIOGeometry-8.2-gd.lib<br>vtkIOImage-8.2-gd.lib<br>vtkIOImport-8.2-gd.lib<br>vtkIOInfovis-8.2-gd.lib<br>vtkIOLegacy-8.2-gd.lib<br>vtkIOLSDyna-8.2-gd.lib<br>vtkIOMINC-8.2-gd.lib<br>vtkIOMovie-8.2-gd.lib<br>vtkIONetCDF-8.2-gd.lib<br>vtkIOParallel-8.2-gd.lib<br>vtkIOParallelXML-8.2-gd.lib<br>vtkIOPLY-8.2-gd.lib<br>vtkIOSegY-8.2-gd.lib<br>vtkIOSQL-8.2-gd.lib<br>vtkIOTecplotTable-8.2-gd.lib<br>vtkIOVeraOut-8.2-gd.lib<br>vtkIOVideo-8.2-gd.lib<br>vtkIOXML-8.2-gd.lib<br>vtkIOXMLParser-8.2-gd.lib<br>vtkjpeg-8.2-gd.lib<br>vtkjsoncpp-8.2-gd.lib<br>vtklibharu-8.2-gd.lib<br>vtklibxml2-8.2-gd.lib<br>vtklz4-8.2-gd.lib<br>vtklzma-8.2-gd.lib<br>vtkmetaio-8.2-gd.lib<br>vtkNetCDF-8.2-gd.lib<br>vtkogg-8.2-gd.lib<br>vtkParallelCore-8.2-gd.lib<br>vtkpng-8.2-gd.lib<br>vtkproj-8.2-gd.lib<br>vtkpugixml-8.2-gd.lib<br>vtkRenderingAnnotation-8.2-gd.lib<br>vtkRenderingContext2D-8.2-gd.lib<br>vtkRenderingContextOpenGL2-8.2-gd.lib<br>vtkRenderingCore-8.2-gd.lib<br>vtkRenderingExternal-8.2-gd.lib<br>vtkRenderingFreeType-8.2-gd.lib<br>vtkRenderingGL2PSOpenGL2-8.2-gd.lib<br>vtkRenderingImage-8.2-gd.lib<br>vtkRenderingLabel-8.2-gd.lib<br>vtkRenderingLOD-8.2-gd.lib<br>vtkRenderingOpenGL2-8.2-gd.lib<br>vtkRenderingVolume-8.2-gd.lib<br>vtkRenderingVolumeOpenGL2-8.2-gd.lib<br>vtksqlite-8.2-gd.lib<br>vtksys-8.2-gd.lib<br>vtktheora-8.2-gd.lib<br>vtktiff-8.2-gd.lib<br>vtkverdict-8.2-gd.lib<br>vtkViewsContext2D-8.2-gd.lib<br>vtkViewsCore-8.2-gd.lib<br>vtkViewsInfovis-8.2-gd.lib<br>vtkzlib-8.2-gd.lib</p>
-<h1 id="8-程序测试"><a href="#8-程序测试" class="headerlink" title="8.程序测试"></a>8.程序测试</h1><pre><code>#include &lt;pcl/visualization/cloud_viewer.h&gt;  
-#include &lt;iostream&gt;  
-#include &lt;pcl/io/io.h&gt;  
-#include &lt;pcl/io/pcd_io.h&gt;  
-int user_data;
-void viewerOneOff(pcl::visualization::PCLVisualizer&amp; viewer)
-&#123;
-    viewer.setBackgroundColor(1.0, 0.5, 1.0);
-    pcl::PointXYZ o;
-    o.x = 1.0;
-    o.y = 0;
-    o.z = 0;
-    viewer.addSphere(o, 0.25, &quot;sphere&quot;, 0);
-    std::cout &lt;&lt; &quot;i only run once&quot; &lt;&lt; std::endl;
-&#125;
-void viewerPsycho(pcl::visualization::PCLVisualizer&amp; viewer)
-&#123;
-    static unsigned count = 0;
-    std::stringstream ss;
-    ss &lt;&lt; &quot;Once per viewer loop: &quot; &lt;&lt; count++;
-    viewer.removeShape(&quot;text&quot;, 0);
-    viewer.addText(ss.str(), 200, 300, &quot;text&quot;, 0);
-    //FIXME: possible race condition here:  
-    user_data++;
-&#125;
-int main()
-&#123;
-    pcl::PointCloud&lt;pcl::PointXYZRGBA&gt;::Ptr cloud(new pcl::PointCloud&lt;pcl::PointXYZRGBA&gt;);
-    pcl::io::loadPCDFile(&quot;D:\\Microsoft Visual Studio 10.0\\Projects\\pcl\\pcl\\my_point_cloud.pcd&quot;, *cloud);
-    pcl::visualization::CloudViewer viewer(&quot;Cloud Viewer&quot;);
-    //blocks until the cloud is actually rendered  
-    viewer.showCloud(cloud);
-    //use the following functions to get access to the underlying more advanced/powerful  
-    //PCLVisualizer  
-    //This will only get called once  
-    viewer.runOnVisualizationThreadOnce(viewerOneOff);
-    //This will get called once per visualization iteration  
-    viewer.runOnVisualizationThread(viewerPsycho);
-    while (!viewer.wasStopped())
-    &#123;
-        //you can also do cool processing here  
-        //FIXME: Note that this is running in a separate thread from viewerPsycho  
-        //and you should guard against race conditions yourself...  
-        user_data++;
-    &#125;
-    return 0;
-&#125;
-</code></pre><p>测试结果：</p>
-<p><img src="/blog_img/PCL配置/16.png" alt=""></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-pcl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ubuntu更换源教程</title>
-    <url>/2021/03/14/Ubuntu%E6%9B%B4%E6%8D%A2%E6%BA%90%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>参考<a href="https://blog.csdn.net/weixin_43876206/article/details/100924378">博客</a><br><a id="more"></a></p>
-<h1 id="1-备份源列表"><a href="#1-备份源列表" class="headerlink" title="1.备份源列表"></a>1.备份源列表</h1><pre><code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-</code></pre><h1 id="2-打开sources-list文件"><a href="#2-打开sources-list文件" class="headerlink" title="2.打开sources.list文件"></a>2.打开sources.list文件</h1><pre><code>sudo gedit /etc/apt/sources.list
-</code></pre><h1 id="3-修改sources-list文件"><a href="#3-修改sources-list文件" class="headerlink" title="3.修改sources.list文件"></a>3.修改sources.list文件</h1><pre><code>#  阿里镜像源
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-
-deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-</code></pre><h1 id="4-更新并升级"><a href="#4-更新并升级" class="headerlink" title="4.更新并升级"></a>4.更新并升级</h1><pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade
-</code></pre><h1 id="5-恢复源列表"><a href="#5-恢复源列表" class="headerlink" title="5.恢复源列表"></a>5.恢复源列表</h1><pre><code>sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list
-</code></pre><hr>
-<p>其他的源请自己搜索，这里只放了阿里云的。</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Unable to access &#39;https://gitee.com/自己的项目/&#39;: Could not resolve host: gitee.com问题的解决</title>
-    <url>/2020/10/23/Unable-to-access-https-gitee-com-%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE-Could-not-resolve-host-gitee-com%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<p>果然玩hexo报错是在所难免，就好像我已经长大，读研以后乃至以后得日子，可能总是繁琐常伴。今天在hexo d推到GITEE上时，报了错。<br><a id="more"></a><br>原因是由于爬梯子代理网络的问题，其实折腾了下。具体哪个步骤解决了这个问题，我也不是很清楚，这次做好记录方便以后继续更新把。</p>
-<p>首先我是从这篇<a href="https://blog.csdn.net/weixin_37166398/article/details/101422239?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param">博客</a>里查到了我的ip，然后ping了查到的ip，然后在system32\drives\etc\hosts里添加了   </p>
-<pre><code>IP gitee.com
-</code></pre><p>然而这并没有继续运行成功。<br>然后我有尝试<br>1.管理员身份运行cmd<br>2.输入 </p>
-<pre><code>netsh winsock reset
-</code></pre><p>3.重启</p>
-<p>还有尝试命令行输入  </p>
-<pre><code>git config --global --unset http.proxy 
-git config --global --unset https.proxy
-</code></pre><p>最后发现还是不行，结果我把第一步添加的IP gitee.com删了居然好了。</p>
-<p>所以我觉得问题在以下原因，第一个是我没有在打开代理下hexo d,平时确实是没有注意这个问题，但关闭代理下好像有时候也成功过，但这个问题确实出在了代理的问题上。<br>另外就是我的代理导致了无法上传上去，上述的两个操作我也不知道哪个解决了这个问题，毕竟我先添加了IP，然后再试了这两种清楚的。如果下次再出现这个问题，有了结果再继续补充。</p>
-<p>2020/11/17<br>他妈个头的，翻墙今天又部署不上去了，前面的用了也不好使，又试了一下这个更改DNS的方法成功了，<a href="https://blog.csdn.net/weixin_42476786/article/details/82691934?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf">链接</a>在这</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vscode为cmake配置task.json</title>
-    <url>/2021/03/17/Vscode%E4%B8%BAcmake%E9%85%8D%E7%BD%AEtask-json/</url>
-    <content><![CDATA[<p>来来回回总算是整明白了，还是不能看有些垃圾博客，一知半解的。<br><a id="more"></a><br>主要看的这个<a href="https://www.bilibili.com/video/BV13K411M78v?p=2">视频</a>，真的特别详细，不枉我熬夜看这个玩意。<br>这里主要写一下配置给cmake配置task.json文件的代码,至于理解这个两个文件，上面这个视频已经非常详细了。</p>
-<pre><code>&#123;
-    &quot;version&quot;: &quot;2.0.0&quot;,
-    &quot;options&quot;: &#123;
-        &quot;cwd&quot;: &quot;$&#123;workspaceFolder&#125;/build&quot;
-    &#125;,
-    &quot;tasks&quot;: [
-        &#123;
-            &quot;type&quot;:&quot;shell&quot;,
-            &quot;label&quot;: &quot;cmake&quot;,
-            &quot;command&quot;: &quot;cmake&quot;,
-            &quot;args&quot;: [
-                &quot;..&quot;
-            ]
-        &#125;,
-        &#123;
-            &quot;label&quot;: &quot;make&quot;,
-            &quot;group&quot;:&#123;
-                &quot;kind&quot;: &quot;build&quot;,
-                &quot;isDefault&quot;: true
-            &#125;,
-            &quot;command&quot;: &quot;mingw32-make.exe&quot;,
-            &quot;args&quot;:[
-
-            ]
-        &#125;,
-        &#123;
-            &quot;label&quot;: &quot;Build&quot;,
-            &quot;dependsOn&quot;:[
-                &quot;cmake&quot;,
-                &quot;make&quot;
-            ]
-        &#125;
-    ],
-
-
-&#125;
-</code></pre><p>其实配置Vscode的插件，还是去看官方文档是最合适的。</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-VSCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS code的一些使用心得</title>
-    <url>/2021/04/11/VScode%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<p>这篇博客是用Typora写的，Typora是一款开源、跨平台、免费、轻量化、简单优雅但功能依然强大的一款Markdown编辑器。从我下载上手的第一天，就直接把我破解版的 Markdown2 pro给卸载了，什么玩意，直接爬。哈哈好了，回归正题，今天想记录以及分享的是VS Code这款很猛的编辑器。为什么这么说，VS Code对小白来说算不上友好，而且从官网下载的速度还会被限制（这说明会科学上网真的太重要了，可以说如果不是我去年暑假突然去探索了科学上网，我至今都学不到这个东西，具体怎么上，大家可以看我前面叫做梯子的博客，<a href="https://zzygeo.cn/2020/09/26/%E6%A2%AF%E5%AD%90/">点击链接</a> 。<a id="more"></a></p>
-<h1 id="1-VS-Code初体验"><a href="#1-VS-Code初体验" class="headerlink" title="1.VS Code初体验"></a>1.VS Code初体验</h1><p>讲道理，最开始接触VS Code是20年我刚开始入手博客的时候，在改Hexo Themes 的config.yaml文件的时候，只是把它当作一个高级记事本来用，下载也是因为看了一些博客说VS Code是真香，是宇宙最猛编辑器。所以后来我也开始尝试搜索怎么用VS Code编写C++，怎么用VS Code编写Python。然而这确实难住了我这个小白，第一是很多人写的博客确实不咋样（我的虽然也不咋样，但还是在慢慢变好，尽量写的有头有尾），第二是我确实啥也不懂，什么了解都没有，就这样沉默在了那些博客里，直到翻过年来21.3月我才重新开始捡起来，这会儿我正沉迷在Ubuntu的系统里，更是想把Ubuntu当成主系统来使用，现在嘛，觉得这两个系统都是不可缺少的系统，有什么需求更契合哪个系统就用哪个。这会儿我渐渐体会到了跨平台的魅力，而且跨平台的很多都是开源的，用的人多了起来，自然也就会更加的完善，在这里想感谢这些无名前辈。</p>
-<h1 id="2-VS-Code使用"><a href="#2-VS-Code使用" class="headerlink" title="2.VS Code使用"></a>2.VS Code使用</h1><p>我主要是学一些C++方面的东西，所以VS Code基本都拿来写C++了，当然拿它做一个万能记事本也是很不错的选择。那我还是介绍一些比较主要的东西，一些打开即见的东西就自己探索吧。其实很多设置既可以拿鼠标找到，也可以用快捷键，我觉得那些常用的可以慢慢从鼠标过渡到快捷键，这当然是为了<del>装逼</del> ，不对是为了更丝滑和便捷。</p>
-<p>先贴下我在用的一些拓展，我的原则是，只下载目前能用上的东西，大道至简，事情越简单就会做的更舒服。</p>
-<p><img src="/blog_img/VSCode使用/VSCode拓展.png" alt="VSCode拓展"></p>
-<h2 id="1-Bracket-Pair-Colorizer"><a href="#1-Bracket-Pair-Colorizer" class="headerlink" title="1.Bracket Pair Colorizer"></a>1.Bracket Pair Colorizer</h2><p>这是一款括号匹配的插件</p>
-<h2 id="2-C-的插件"><a href="#2-C-的插件" class="headerlink" title="2.C++的插件"></a>2.C++的插件</h2><p>主要包括 C/C++  CMake的一些插件</p>
-<h2 id="3-简体中文支持"><a href="#3-简体中文支持" class="headerlink" title="3.简体中文支持"></a>3.简体中文支持</h2><p>这个没什么好讲的</p>
-<h2 id="4-主题"><a href="#4-主题" class="headerlink" title="4.主题"></a>4.主题</h2><p>主题我用的One Dark Pro</p>
-<h2 id="5-代码错误检查"><a href="#5-代码错误检查" class="headerlink" title="5.代码错误检查"></a>5.代码错误检查</h2><p>主要是检查变量命名是否符合规范</p>
-<h2 id="6-图标优化"><a href="#6-图标优化" class="headerlink" title="6.图标优化"></a>6.图标优化</h2><p>没什么好讲的，为了更丝滑</p>
-<h1 id="3-利用VSCode进行C-开发"><a href="#3-利用VSCode进行C-开发" class="headerlink" title="3.利用VSCode进行C++开发"></a>3.利用VSCode进行C++开发</h1><p>在这里我就不班门弄斧了，确实我只是进行模仿学习了，建议去看一下这个B站<a href="https://www.bilibili.com/video/BV13K411M78v">视频</a> ，从这里你可以了解launch.json和tasks.json的意义是什么以及怎么对其进行简单的修改。</p>
-<p>在这里我想介绍我碰见的其他的问题。</p>
-<h2 id="1-windows上使用gcc编译"><a href="#1-windows上使用gcc编译" class="headerlink" title="1.windows上使用gcc编译"></a>1.windows上使用gcc编译</h2><p>在windows平台上，我用gcc去进行vscode的开发，不知道是下的版本太次了，还是怎么的，我的gcc编译完了，居然打印不出构造函数以及析构函数的内容，而且在包含string头文件输出时，内容显示也有问题。还有一个问题就是mingw真的很难下，哪怕你翻墙了也很难下。所以我最近都是在用微软的编译器cl.exe去联合vscode去进行代码的编写，怎么做直接看官网（小白可能会碰见一些问题，相信你在看完上面推荐的视频以后，已经可以解决这个问题了），这里贴下<a href="https://code.visualstudio.com/docs">官网链接</a> 。</p>
-<h3 id="1-1-cmd窗口出现中文乱码"><a href="#1-1-cmd窗口出现中文乱码" class="headerlink" title="1.1 cmd窗口出现中文乱码"></a>1.1 cmd窗口出现中文乱码</h3><p><img src="/blog_img/VSCode使用/中文乱码.png" alt="中文乱码"></p>
-<p>类似图上这样，这个问题的原因主要是cmd窗口是gd2312编码的，而vscode默认是UTF-8编码，这两者不匹配，自然会输出成乱码，当然我们可以选择其一进行更改，但是更改cmd并想让它一直默认UTF-8编码，完全不如在vscode里做修改来的方便。<img src="/blog_img/VSCode使用/cmd编码方式.png" alt="cmd编码方式"></p>
-<p>如上图，936是gd2312的编号。</p>
-<p>我们在vscode里点击下方的 UTF-8，然后选择gd2312</p>
-<p><img src="/blog_img/VSCode使用/VSCode更改编码方式.png" alt="VSCode更改编码方式"></p>
-<p>当我再次运行就正常如下图了。<img src="/blog_img/VSCode使用/中文正常输出.png" alt="中文正常输出"></p>
-<h2 id="2-Ubuntu上使用gcc编译"><a href="#2-Ubuntu上使用gcc编译" class="headerlink" title="2.Ubuntu上使用gcc编译"></a>2.Ubuntu上使用gcc编译</h2><p>得益于linux强大的包管理，下载gcc真是不要太方便，但是终端输出的东西总是不太干净，附带一些其他的东西，我这个简洁主义者完全没法接受，探索了下，拓展一个 code run插件就好了，其实也没什么区别，不过是F5变成了 ALT+Ctrl+N而已，或者按F1然后鼠标选择，或者直接点击右上方的运行。</p>
-<h1 id="4-一些题外话"><a href="#4-一些题外话" class="headerlink" title="4.一些题外话"></a>4.一些题外话</h1><p>其实在windowns上完全可以直接使用visual stdio进行开发，简单不用考虑这么多，而在vscode上不仅要自己写tasks.json和launch.json，哪怕一些简单的开发也需要去写Cmake。我觉得有这样的原因，第一，折腾才会进步，多折腾才能理解更深入，了解一下一个程序是进行了那些的步骤才会计算器编译，最后输出成我们能看到的语言，你不仅可以收获技能，还可以收获乐趣。第二，vscode值得你去折腾，它是一个跨平台的产物，群体大，可以自己DIY，碰见错误容易被解决，包括无人小车通过树莓派的一些开发，现在也是推荐去用vscode去做开发去了。第三，当然是他好看啊，而且轻量，可控，我想学C++以及使用linux都是会享受到自己作为超级用户的待遇，很多东西是我自己来控制，这种感觉很nice。</p>
-]]></content>
-      <tags>
-        <tag>-VSCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Youtube视频下载</title>
-    <url>/2020/09/26/Youbute%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/</url>
-    <content><![CDATA[<p><font color=# ff size=23 face="黑体">Youtube视频下载</font>&lt;/p&gt;</p>
-<h1 id="1-4K视频下载"><a href="#1-4K视频下载" class="headerlink" title="1.4K视频下载"></a>1.4K视频下载</h1><p><a href="https://distillvideo.com/">下载地址</a></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h1 id="2-油猴插件脚本"><a href="#2-油猴插件脚本" class="headerlink" title="2.油猴插件脚本"></a>2.油猴插件脚本</h1><p>参考我的这篇<a href="https://zzygeo.gitee.io/2020/09/26/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BB%A5%E5%8F%8A%E6%8F%92%E4%BB%B6/">博客</a>油猴插件</p>
-<hr>
-<h1 id="3-1080p下载"><a href="#3-1080p下载" class="headerlink" title="3.1080p下载"></a>3.1080p下载</h1><p><a href="https://www.y2mate.com/en60/">下载地址</a></p>
-<hr>
-<h1 id="4-视频字幕下载"><a href="#4-视频字幕下载" class="headerlink" title="4.视频字幕下载"></a>4.视频字幕下载</h1><p><a href="https://www.findyoutube.net/">下载地址</a><br>版权限制，目前下载为VTT格式，需要在Subtitle Edit里将VTT转为SRT格式。</p>
-<hr>
-<h1 id="5-Subtitle-Edit-vvt-srt"><a href="#5-Subtitle-Edit-vvt-srt" class="headerlink" title="5.Subtitle Edit(vvt-srt)"></a>5.Subtitle Edit(vvt-srt)</h1><p><a href="https://www.nikse.dk/subtitleedit/">下载地址</a><br>可以VTT2SRT SRT2VTT,有强大的字幕编辑功能。</p>
-<hr>
-<h1 id="6-Arctime-制作内嵌字幕视频"><a href="#6-Arctime-制作内嵌字幕视频" class="headerlink" title="6.Arctime(制作内嵌字幕视频)"></a>6.Arctime(制作内嵌字幕视频)</h1><p><a href="https://arctime.org/">下载地址</a></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-Youtube</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>github设置自己的域名</title>
-    <url>/2021/01/20/github%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D/</url>
+    <url>/2021/01/20/Hexo/github%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D/</url>
     <content><![CDATA[<p>哈哈，上次整了一晚上的没整明白，今天两下就整好了，看来真的进步不错哈哈，至少看东西，解决问题更有耐心也更能看懂了。<br><a id="more"></a></p>
 <h1 id="1-购买域名"><a href="#1-购买域名" class="headerlink" title="1.购买域名"></a>1.购买域名</h1><p>我是买的阿里云的域名，如下图：<br><img src="/blog_img/github设置自己的域名/1.jpg" alt="域名"><br>域名解析如下：<br><img src="/blog_img/github设置自己的域名/2.jpg" alt="域名解析"></p>
 <h1 id="2-github仓库设置域名地址"><a href="#2-github仓库设置域名地址" class="headerlink" title="2.github仓库设置域名地址"></a>2.github仓库设置域名地址</h1><p>在blog目录下的source文件下，创一个叫CNAME的无后缀文件，里面填入你的域名，比如我的   zzygeo.cn    如下图：<br><img src="/blog_img/github设置自己的域名/4.jpg" alt=""><br>如下图，主要是要设置博客上传分支的目录，以及更改你自己的域名（创建CNAME后自动生成），采用https加密。<br><img src="/blog_img/github设置自己的域名/3.jpg" alt=""></p>
 <p>到此就设置完成了！</p>
 <hr>
 ]]></content>
-  </entry>
-  <entry>
-    <title>hexo d 出现错误的用户名和密码的解决办法</title>
-    <url>/2020/10/02/hexo-d-%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>在windows搜索栏输入：控制面板<a id="more"></a>)<br><img src="/blog_img/hexo d时错误用户名和密码解决办法/1.png" alt=""><br>然后点击：<br><img src="/blog_img/hexo d时错误用户名和密码解决办法/2.png" alt=""><br><img src="/blog_img/hexo d时错误用户名和密码解决办法/3.png" alt=""><br><img src="/blog_img/hexo d时错误用户名和密码解决办法/4.png" alt=""></p>
-<p>点进去就可以更改用户名和密码了</p>
-<hr>
-]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
-  </entry>
-  <entry>
-    <title>pcl+vs+cmake编译</title>
-    <url>/2020/12/27/pcl-vs-cmake%E7%BC%96%E8%AF%91/</url>
-    <content><![CDATA[<p>上一篇写的配置可能是最基础的，也是很麻烦，其实可以用cmake来偷个懒，这样就不用附加依赖性已经加入库目录和包含目录了。<br><a id="more"></a></p>
-<h1 id="1-软件准备"><a href="#1-软件准备" class="headerlink" title="1.软件准备"></a>1.软件准备</h1><p>1.All in one 安装包。</p>
-<p>2.获取All in one 包对应得PDB文件包，用于后期单步调试。</p>
-<p>3.安装Visual studio 2019编译器</p>
-<p>4.cmake<br><img src="/blog_img/PCL配置/17.png" alt="示意图"><br><img src="/blog_img/PCL配置/1.jpg" alt="示意图"></p>
-<p>其实源码包用不上，懒得改了，最复杂的方式就是源代码加第三方库进行配置，等我配置好了也会再一篇关于源码方式的配置。</p>
-<hr>
-<h1 id="2-链接"><a href="#2-链接" class="headerlink" title="2.链接"></a>2.链接</h1><p><a href="https://github.com/PointCloudLibrary/pcl/releases">pcl下载地址</a><br><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">visual studio下载地址</a><br><a href="https://cmake.org/download/">cmake下载地址</a></p>
-<hr>
-<h1 id="3-安装事项"><a href="#3-安装事项" class="headerlink" title="3.安装事项"></a>3.安装事项</h1><p>为了方便配置，pcl安装目录尽量默认，不默认后续添加目录需要选择对应的位置。</p>
-<p>pcl安装请一定选择创建系统路径，visual studio和cmake安装位置随意，其他选项默认即可。</p>
-<p>pcl安装完成后，请把下载的pcd文件解压，如下图：<br><img src="/blog_img/PCL配置/2.jpg" alt=""></p>
-<p>将所有文件复制，安装到pcl下的BIN文件下<br><img src="/blog_img/PCL配置/3.jpg" alt=""></p>
-<p>检查pcl安装目录下的 3rdParty-OpenNI2是否只有一个安装包（我的是这样），这可能是事先安装过SDK的原因，请卸载了重新安装在OpenNI2下，安装完成如下图：<br><img src="/blog_img/PCL配置/4.jpg" alt=""></p>
-<p>cmake 安装请选择添加到系统路径，没选的话也可以自己手动添加，添加的方式为cmake目录下bin文件  比如C:\APP\Cmake\bin这样的形式。</p>
-<hr>
-<h1 id="4-关于Visual-studio安装项目"><a href="#4-关于Visual-studio安装项目" class="headerlink" title="4.关于Visual studio安装项目"></a>4.关于Visual studio安装项目</h1><p>我安装了这些负载</p>
-<p><img src="/blog_img/PCL配置/5.png" alt=""></p>
-<hr>
-<h1 id="5-环境配置"><a href="#5-环境配置" class="headerlink" title="5.环境配置"></a>5.环境配置</h1><p>右键我的电脑——高级系统设置-环境变量，在path选项下新建如下几项，根据你pcl安装的位置来：<br><img src="/blog_img/PCL配置/6.jpg" alt=""></p>
-<p>比如我的：<br>C:\Program Files\PCL 1.11.0\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Redist</p>
-<p>在系统变量下，配置如下图：<br><img src="/blog_img/PCL配置/6.png" alt=""><br>比如我的：<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\bin</p>
-<hr>
-<h1 id="6-cmake编译"><a href="#6-cmake编译" class="headerlink" title="6.cmake编译"></a>6.cmake编译</h1><p>以管理员身份运行cmake-gui<br>在你想要的文件下创建一个名为example的文件夹，然后在此目录下创建一个source和cmake_bin文件，比如我的：</p>
-<p><img src="/blog_img/PCL配置/18.png" alt=""></p>
-<p>在source里面创建一个cpp文件和CMakeLists.txt文件。<br>CmakeLists.txt里写入以下内容：</p>
-<pre><code>cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-project(test)
-find_package(PCL 1.4 REQUIRED)
-include_directories($&#123;PCL_INCLUDE_DIRS&#125;)
-link_directories($&#123;PCL_LIBRARY_DIRS&#125;)  
-add_definitions($&#123;PCL_DEFINITIONS&#125;)
-add_executable (test test.cpp)
-target_link_libraries (test $&#123;PCL_LIBRARIES&#125;)
-</code></pre><p>其中这个test就是你创建的测试代码的名字，请保持一致，如果你换别的名字，请把txt文件的名字也一起改了。我的如下：<br><img src="/blog_img/PCL配置/19.png" alt=""></p>
-<p>测试代码请网上去找，我用的是上一篇文件里的（里面有个D盘文件的读取可能会报错，但只要能出彩色的那个图就算配置成功了）。</p>
-<p>跟着步骤添加<br><img src="/blog_img/PCL配置/20.png" alt=""></p>
-<p>点击Configure，选x64<br><img src="/blog_img/PCL配置/21.jpg" alt=""></p>
-<p>再点击一次configure<br><img src="/blog_img/PCL配置/22.jpg" alt=""></p>
-<p>点击Generate,出现Generating done.<br><img src="/blog_img/PCL配置/23.png" alt=""></p>
-<p>找到cmake_bin底下的test_sln 打开。<br><img src="/blog_img/PCL配置/24.jpg" alt=""></p>
-<p>将test设置为启动项，并调试。<br><img src="/blog_img/PCL配置/25.png" alt=""></p>
-<p><img src="/blog_img/PCL配置/26.jpg" alt=""></p>
-<hr>
-]]></content>
-      <categories>
-        <category>pcl</category>
-      </categories>
-      <tags>
-        <tag>-pcl</tag>
-      </tags>
   </entry>
   <entry>
     <title>markdown语法</title>
-    <url>/2020/09/24/markdown%E8%AF%AD%E6%B3%95/</url>
+    <url>/2020/09/24/Hexo/markdown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h1><a id="more"></a>
 <pre><code># 一级标题
 ## 二级标题
@@ -439,40 +126,264 @@ target_link_libraries (test $&#123;PCL_LIBRARIES&#125;)
 <p><font color=#00 size=23 face="黑体">我是黑体，颜色#0099ff 字号23</font>&lt;/p&gt;</p>
 <hr>
 ]]></content>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
+      <categories>
+        <category>Hexo</category>
+      </categories>
   </entry>
   <entry>
-    <title>ubuntu安装gcc依赖关系报错</title>
-    <url>/2021/03/14/ubuntu%E5%AE%89%E8%A3%85gcc%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<p>使用aptitude包依赖管理工具替代apt处理，看其他的博客说这个得慎用，不过用来安装gcc倒是没啥问题。<br><a id="more"></a></p>
-<pre><code>sudo apt-get install aptitude
-sudo aptitude install gcc g++
-</code></pre><p>解决方案里选择no,yes,yes.<br>参考<a href="https://blog.csdn.net/CLZHIT/article/details/104508894">博客</a></p>
+    <title>新电脑上部署hexo</title>
+    <url>/2020/10/02/Hexo/%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E9%83%A8%E7%BD%B2hexo/</url>
+    <content><![CDATA[<h1 id="1-安装必要软件"><a href="#1-安装必要软件" class="headerlink" title="1. 安装必要软件"></a>1. 安装必要软件</h1><p>安装 Git 客户端<br>安装 node JS</p>
+<a id="more"></a>
 <hr>
-]]></content>
-      <tags>
-        <tag>-ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ubuntu安装vim依赖关系报错</title>
-    <url>/2021/03/14/ubuntu%E5%AE%89%E8%A3%85vim%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<p>按如下步骤进行就可：<br><a id="more"></a></p>
-<pre><code>sudo apt-get purge vim-common
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install vim
+<h1 id="2-拷贝源文件"><a href="#2-拷贝源文件" class="headerlink" title="2. 拷贝源文件"></a>2. 拷贝源文件</h1><p>将初始电脑上个人博客文件夹下这几个文件夹拷到当前新电脑的准备设置的博客路径下。</p>
+<pre><code>_config.yml
+package.json
+scaffolds/
+source/
+themes/
+</code></pre><hr>
+<h1 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h1><p>在 cmd 下输入下面指令安装 hexo:</p>
+<pre><code>npm install -g hexo
+</code></pre><hr>
+<h1 id="4-在新博客路径下，安装三方依赖库"><a href="#4-在新博客路径下，安装三方依赖库" class="headerlink" title="4. 在新博客路径下，安装三方依赖库"></a>4. 在新博客路径下，安装三方依赖库</h1><pre><code>npm install
+npm install hexo-deployer-git --save //文章部署到 git 的模块
+npm install 主题需要的插件
+</code></pre><p><strong>千万别hxeo init</strong>，不然你就拉在裤子里了！！！</p>
+<hr>
+<h1 id="5-GITHUB-gitee-添加-SSH-KEYS"><a href="#5-GITHUB-gitee-添加-SSH-KEYS" class="headerlink" title="5. GITHUB/gitee 添加 SSH KEYS"></a>5. GITHUB/gitee 添加 SSH KEYS</h1><p>在GitHub/gitee的ssh keys那里再添加一个当前电脑的环境生成的key，但是可别把原来的电脑删掉了啊。<br>首先在本地创建 SSH Keys:</p>
+<pre><code>ssh-keygen -t rsa -C “xxxx@xxxx.com“
+</code></pre><p>后面的邮箱即为 github/gitee注册邮箱，也是你登录Github的邮箱（其实无关紧要，只是为了辨识生成的用户名），之后会要求确认路径和输入密码，一路回车就行。<br>成功的话会在git bash页面下看到生成的 .ssh文件夹路径，进去，打开 id_rsa.pub，复制里面的key（全选）即可。然后拷贝到 Github/gitee 的 SSH Keys(这里要添加一个新的)<br>然后在终端中，我们再次测试下公钥有没有添加成功：</p>
+<pre><code>ssh -T git@gitee.com 
+</code></pre><p>会弹出确认命令，输入yes,会弹出你的名字等等，会出现：</p>
+<pre><code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>然后：</p>
+<pre><code>hexo g
+hexo s
+hexo d
 </code></pre><hr>
 ]]></content>
-      <tags>
-        <tag>-ubuntu</tag>
-      </tags>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>hexo d 出现错误的用户名和密码的解决办法</title>
+    <url>/2020/10/02/Hexo/hexo-d-%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>在windows搜索栏输入：控制面板<a id="more"></a>)<br><img src="/blog_img/hexo d时错误用户名和密码解决办法/1.png" alt=""><br>然后点击：<br><img src="/blog_img/hexo d时错误用户名和密码解决办法/2.png" alt=""><br><img src="/blog_img/hexo d时错误用户名和密码解决办法/3.png" alt=""><br><img src="/blog_img/hexo d时错误用户名和密码解决办法/4.png" alt=""></p>
+<p>点进去就可以更改用户名和密码了</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>pcl+vs+cmake编译</title>
+    <url>/2020/12/27/PCL/pcl-vs-cmake%E7%BC%96%E8%AF%91/</url>
+    <content><![CDATA[<p>上一篇写的配置可能是最基础的，也是很麻烦，其实可以用cmake来偷个懒，这样就不用附加依赖性已经加入库目录和包含目录了。<br><a id="more"></a></p>
+<h1 id="1-软件准备"><a href="#1-软件准备" class="headerlink" title="1.软件准备"></a>1.软件准备</h1><p>1.All in one 安装包。</p>
+<p>2.获取All in one 包对应得PDB文件包，用于后期单步调试。</p>
+<p>3.安装Visual studio 2019编译器</p>
+<p>4.cmake<br><img src="/blog_img/PCL配置/17.png" alt="示意图"><br><img src="/blog_img/PCL配置/1.jpg" alt="示意图"></p>
+<p>其实源码包用不上，懒得改了，最复杂的方式就是源代码加第三方库进行配置，等我配置好了也会再一篇关于源码方式的配置。</p>
+<hr>
+<h1 id="2-链接"><a href="#2-链接" class="headerlink" title="2.链接"></a>2.链接</h1><p><a href="https://github.com/PointCloudLibrary/pcl/releases">pcl下载地址</a><br><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">visual studio下载地址</a><br><a href="https://cmake.org/download/">cmake下载地址</a></p>
+<hr>
+<h1 id="3-安装事项"><a href="#3-安装事项" class="headerlink" title="3.安装事项"></a>3.安装事项</h1><p>为了方便配置，pcl安装目录尽量默认，不默认后续添加目录需要选择对应的位置。</p>
+<p>pcl安装请一定选择创建系统路径，visual studio和cmake安装位置随意，其他选项默认即可。</p>
+<p>pcl安装完成后，请把下载的pcd文件解压，如下图：<br><img src="/blog_img/PCL配置/2.jpg" alt=""></p>
+<p>将所有文件复制，安装到pcl下的BIN文件下<br><img src="/blog_img/PCL配置/3.jpg" alt=""></p>
+<p>检查pcl安装目录下的 3rdParty-OpenNI2是否只有一个安装包（我的是这样），这可能是事先安装过SDK的原因，请卸载了重新安装在OpenNI2下，安装完成如下图：<br><img src="/blog_img/PCL配置/4.jpg" alt=""></p>
+<p>cmake 安装请选择添加到系统路径，没选的话也可以自己手动添加，添加的方式为cmake目录下bin文件  比如C:\APP\Cmake\bin这样的形式。</p>
+<hr>
+<h1 id="4-关于Visual-studio安装项目"><a href="#4-关于Visual-studio安装项目" class="headerlink" title="4.关于Visual studio安装项目"></a>4.关于Visual studio安装项目</h1><p>我安装了这些负载</p>
+<p><img src="/blog_img/PCL配置/5.png" alt=""></p>
+<hr>
+<h1 id="5-环境配置"><a href="#5-环境配置" class="headerlink" title="5.环境配置"></a>5.环境配置</h1><p>右键我的电脑——高级系统设置-环境变量，在path选项下新建如下几项，根据你pcl安装的位置来：<br><img src="/blog_img/PCL配置/6.jpg" alt=""></p>
+<p>比如我的：<br>C:\Program Files\PCL 1.11.0\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Redist</p>
+<p>在系统变量下，配置如下图：<br><img src="/blog_img/PCL配置/6.png" alt=""><br>比如我的：<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\bin</p>
+<hr>
+<h1 id="6-cmake编译"><a href="#6-cmake编译" class="headerlink" title="6.cmake编译"></a>6.cmake编译</h1><p>以管理员身份运行cmake-gui<br>在你想要的文件下创建一个名为example的文件夹，然后在此目录下创建一个source和cmake_bin文件，比如我的：</p>
+<p><img src="/blog_img/PCL配置/18.png" alt=""></p>
+<p>在source里面创建一个cpp文件和CMakeLists.txt文件。<br>CmakeLists.txt里写入以下内容：</p>
+<pre><code>cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+project(test)
+find_package(PCL 1.4 REQUIRED)
+include_directories($&#123;PCL_INCLUDE_DIRS&#125;)
+link_directories($&#123;PCL_LIBRARY_DIRS&#125;)  
+add_definitions($&#123;PCL_DEFINITIONS&#125;)
+add_executable (test test.cpp)
+target_link_libraries (test $&#123;PCL_LIBRARIES&#125;)
+</code></pre><p>其中这个test就是你创建的测试代码的名字，请保持一致，如果你换别的名字，请把txt文件的名字也一起改了。我的如下：<br><img src="/blog_img/PCL配置/19.png" alt=""></p>
+<p>测试代码请网上去找，我用的是上一篇文件里的（里面有个D盘文件的读取可能会报错，但只要能出彩色的那个图就算配置成功了）。</p>
+<p>跟着步骤添加<br><img src="/blog_img/PCL配置/20.png" alt=""></p>
+<p>点击Configure，选x64<br><img src="/blog_img/PCL配置/21.jpg" alt=""></p>
+<p>再点击一次configure<br><img src="/blog_img/PCL配置/22.jpg" alt=""></p>
+<p>点击Generate,出现Generating done.<br><img src="/blog_img/PCL配置/23.png" alt=""></p>
+<p>找到cmake_bin底下的test_sln 打开。<br><img src="/blog_img/PCL配置/24.jpg" alt=""></p>
+<p>将test设置为启动项，并调试。<br><img src="/blog_img/PCL配置/25.png" alt=""></p>
+<p><img src="/blog_img/PCL配置/26.jpg" alt=""></p>
+<hr>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Ubuntu更换源教程</title>
+    <url>/2021/03/14/Ubuntu/Ubuntu%E6%9B%B4%E6%8D%A2%E6%BA%90%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>参考<a href="https://blog.csdn.net/weixin_43876206/article/details/100924378">博客</a><br><a id="more"></a></p>
+<h1 id="1-备份源列表"><a href="#1-备份源列表" class="headerlink" title="1.备份源列表"></a>1.备份源列表</h1><pre><code>sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+</code></pre><h1 id="2-打开sources-list文件"><a href="#2-打开sources-list文件" class="headerlink" title="2.打开sources.list文件"></a>2.打开sources.list文件</h1><pre><code>sudo gedit /etc/apt/sources.list
+</code></pre><h1 id="3-修改sources-list文件"><a href="#3-修改sources-list文件" class="headerlink" title="3.修改sources.list文件"></a>3.修改sources.list文件</h1><pre><code>#  阿里镜像源
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+</code></pre><h1 id="4-更新并升级"><a href="#4-更新并升级" class="headerlink" title="4.更新并升级"></a>4.更新并升级</h1><pre><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre><h1 id="5-恢复源列表"><a href="#5-恢复源列表" class="headerlink" title="5.恢复源列表"></a>5.恢复源列表</h1><pre><code>sudo cp /etc/apt/sources.list.bak /etc/apt/sources.list
+</code></pre><hr>
+<p>其他的源请自己搜索，这里只放了阿里云的。</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>PCL-1-11-Visual-Studio-2019-配置</title>
+    <url>/2020/10/04/PCL/PCL-1-11-Visual-Studio-2019-%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="1-软件准备"><a href="#1-软件准备" class="headerlink" title="1.软件准备"></a>1.软件准备</h1><p>1.All in one 安装包。</p>
+<p>2.获取All in one 包对应得PDB文件包，用于后期单步调试。<br><a id="more"></a><br>3.获取PCL源码包</p>
+<p>4.安装Visual studio 2019编译器</p>
+<p><img src="/blog_img/PCL配置/1.jpg" alt="示意图"></p>
+<hr>
+<h1 id="2-链接"><a href="#2-链接" class="headerlink" title="2.链接"></a>2.链接</h1><p><a href="https://github.com/PointCloudLibrary/pcl/releases">pcl下载地址</a><br><a href="https://visualstudio.microsoft.com/zh-hans/downloads/">visual studio下载地址</a></p>
+<hr>
+<h1 id="3-安装事项"><a href="#3-安装事项" class="headerlink" title="3.安装事项"></a>3.安装事项</h1><p>为了方便配置，pcl安装目录尽量默认，不默认后续添加目录需要选择对应的位置。</p>
+<p>pcl安装请一定选择创建系统路径，visual studio和cmake安装位置随意，其他选项默认即可。</p>
+<p>pcl安装完成后，请把下载的pcd文件解压，如下图：<br><img src="/blog_img/PCL配置/2.jpg" alt=""></p>
+<p>将所有文件复制，安装到pcl下的BIN文件下<br><img src="/blog_img/PCL配置/3.jpg" alt=""></p>
+<p>检查pcl安装目录下的 3rdParty-OpenNI2是否只有一个安装包（我的是这样），这可能是事先安装过SDK的原因，请卸载了重新安装在OpenNI2下，安装完成如下图：<br><img src="/blog_img/PCL配置/4.jpg" alt=""></p>
+<hr>
+<h1 id="4-关于Visual-studio安装项目"><a href="#4-关于Visual-studio安装项目" class="headerlink" title="4.关于Visual studio安装项目"></a>4.关于Visual studio安装项目</h1><p>我安装了这些负载</p>
+<p><img src="/blog_img/PCL配置/5.png" alt=""></p>
+<hr>
+<h1 id="5-环境配置"><a href="#5-环境配置" class="headerlink" title="5.环境配置"></a>5.环境配置</h1><p>右键我的电脑——高级系统设置-环境变量，在path选项下新建如下几项，根据你pcl安装的位置来：<br><img src="/blog_img/PCL配置/6.jpg" alt=""></p>
+<p>比如我的：<br>C:\Program Files\PCL 1.11.0\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Redist</p>
+<p>在系统变量下，配置如下图：<br><img src="/blog_img/PCL配置/6.png" alt=""><br>比如我的：<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Tools<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\bin<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\bin<br>C:\Program Files\PCL 1.11.0\bin</p>
+<hr>
+<h1 id="6-配置"><a href="#6-配置" class="headerlink" title="6.配置"></a>6.配置</h1><p>打开visual studio，新建一个空项目如图：<br><img src="/blog_img/PCL配置/7.jpg" alt=""></p>
+<p>在release下创建属性表（如果是DEBUG版本请在DEBUG下创建）<br><img src="/blog_img/PCL配置/8.png" alt=""></p>
+<p>切换到解决方案资源管理器，右键-添加-新建项<br><img src="/blog_img/PCL配置/9.png" alt=""></p>
+<p>添加C++文件<br><img src="/blog_img/PCL配置/10.png" alt=""></p>
+<p>接下来配置：<br><img src="/blog_img/PCL配置/11.png" alt=""></p>
+<p>包含目录下添加，建议手点：<br>C:\Program Files\PCL 1.11.0\include\pcl-1.11<br>C:\Program Files\PCL 1.11.0\3rdParty\Boost\include\boost-1_73<br>C:\Program Files\PCL 1.11.0\3rdParty\Eigen\eigen3<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\include<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\include<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\include\vtk-8.2<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Include</p>
+<p>库目录添加：<br>C:\Program Files\PCL 1.11.0\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\Boost\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\FLANN\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\Qhull\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\VTK\lib<br>C:\Program Files\PCL 1.11.0\3rdParty\OpenNI2\Lib</p>
+<p>接下来配置：<br><img src="/blog_img/PCL配置/12.jpg" alt=""></p>
+<p>在预处理器定义处添加：<br>BOOST_USE_WINDOWS_H<br>NOMINMAX<br>_CRT_SECURE_NO_DEPRECATE</p>
+<p>在项目属性表（Project_one）和release下创建得属性表（test_one）中把所有选项里得SDL检查全改成否，如下图：</p>
+<p><img src="/blog_img/PCL配置/13.jpg" alt=""></p>
+<p><img src="/blog_img/PCL配置/14.jpg" alt=""></p>
+<hr>
+<h1 id="7-附加依赖项"><a href="#7-附加依赖项" class="headerlink" title="7.附加依赖项"></a>7.附加依赖项</h1><p>将PCL 1.11.0\3rdParty\VTK\lib和PCL 1.11.0\lib这两个文件夹下的lib文件的release版本添加到附加依赖项中（DEBUG版本添加DEBUG类型文件）</p>
+<p><img src="/blog_img/PCL配置/15.png" alt=""></p>
+<p>文件名称我已经归类好了</p>
+<p>release版本：</p>
+<p>pcl_common.lib<br>pcl_features.lib<br>pcl_filters.lib<br>pcl_io.lib<br>pcl_io_ply.lib<br>pcl_kdtree.lib<br>pcl_keypoints.lib<br>pcl_ml.lib<br>pcl_octree.lib<br>pcl_outofcore.lib<br>pcl_people.lib<br>pcl_recognition.lib<br>pcl_registration.lib<br>pcl_sample_consensus.lib<br>pcl_search.lib<br>pcl_segmentation.lib<br>pcl_stereo.lib<br>pcl_surface.lib<br>pcl_tracking.lib<br>pcl_visualization.lib<br>vtkChartsCore-8.2.lib<br>vtkCommonColor-8.2.lib<br>vtkCommonComputationalGeometry-8.2.lib<br>vtkCommonCore-8.2.lib<br>vtkCommonDataModel-8.2.lib<br>vtkCommonExecutionModel-8.2.lib<br>vtkCommonMath-8.2.lib<br>vtkCommonMisc-8.2.lib<br>vtkCommonSystem-8.2.lib<br>vtkCommonTransforms-8.2.lib<br>vtkDICOMParser-8.2.lib<br>vtkDomainsChemistry-8.2.lib<br>vtkDomainsChemistryOpenGL2-8.2.lib<br>vtkdoubleconversion-8.2.lib<br>vtkexodusII-8.2.lib<br>vtkexpat-8.2.lib<br>vtkFiltersAMR-8.2.lib<br>vtkFiltersCore-8.2.lib<br>vtkFiltersExtraction-8.2.lib<br>vtkFiltersFlowPaths-8.2.lib<br>vtkFiltersGeneral-8.2.lib<br>vtkFiltersGeneric-8.2.lib<br>vtkFiltersGeometry-8.2.lib<br>vtkFiltersHybrid-8.2.lib<br>vtkFiltersHyperTree-8.2.lib<br>vtkFiltersImaging-8.2.lib<br>vtkFiltersModeling-8.2.lib<br>vtkFiltersParallel-8.2.lib<br>vtkFiltersParallelImaging-8.2.lib<br>vtkFiltersPoints-8.2.lib<br>vtkFiltersProgrammable-8.2.lib<br>vtkFiltersSelection-8.2.lib<br>vtkFiltersSMP-8.2.lib<br>vtkFiltersSources-8.2.lib<br>vtkFiltersStatistics-8.2.lib<br>vtkFiltersTexture-8.2.lib<br>vtkFiltersTopology-8.2.lib<br>vtkFiltersVerdict-8.2.lib<br>vtkfreetype-8.2.lib<br>vtkGeovisCore-8.2.lib<br>vtkgl2ps-8.2.lib<br>vtkglew-8.2.lib<br>vtkGUISupportMFC-8.2.lib<br>vtkhdf5_hl-8.2.lib<br>vtkhdf5-8.2.lib<br>vtkImagingColor-8.2.lib<br>vtkImagingCore-8.2.lib<br>vtkImagingFourier-8.2.lib<br>vtkImagingGeneral-8.2.lib<br>vtkImagingHybrid-8.2.lib<br>vtkImagingMath-8.2.lib<br>vtkImagingMorphological-8.2.lib<br>vtkImagingSources-8.2.lib<br>vtkImagingStatistics-8.2.lib<br>vtkImagingStencil-8.2.lib<br>vtkInfovisCore-8.2.lib<br>vtkInfovisLayout-8.2.lib<br>vtkInteractionImage-8.2.lib<br>vtkInteractionStyle-8.2.lib<br>vtkInteractionWidgets-8.2.lib<br>vtkIOAMR-8.2.lib<br>vtkIOAsynchronous-8.2.lib<br>vtkIOCityGML-8.2.lib<br>vtkIOCore-8.2.lib<br>vtkIOEnSight-8.2.lib<br>vtkIOExodus-8.2.lib<br>vtkIOExport-8.2.lib<br>vtkIOExportOpenGL2-8.2.lib<br>vtkIOExportPDF-8.2.lib<br>vtkIOGeometry-8.2.lib<br>vtkIOImage-8.2.lib<br>vtkIOImport-8.2.lib<br>vtkIOInfovis-8.2.lib<br>vtkIOLegacy-8.2.lib<br>vtkIOLSDyna-8.2.lib<br>vtkIOMINC-8.2.lib<br>vtkIOMovie-8.2.lib<br>vtkIONetCDF-8.2.lib<br>vtkIOParallel-8.2.lib<br>vtkIOParallelXML-8.2.lib<br>vtkIOPLY-8.2.lib<br>vtkIOSegY-8.2.lib<br>vtkIOSQL-8.2.lib<br>vtkIOTecplotTable-8.2.lib<br>vtkIOVeraOut-8.2.lib<br>vtkIOVideo-8.2.lib<br>vtkIOXML-8.2.lib<br>vtkIOXMLParser-8.2.lib<br>vtkjpeg-8.2.lib<br>vtkjsoncpp-8.2.lib<br>vtklibharu-8.2.lib<br>vtklibxml2-8.2.lib<br>vtklz4-8.2.lib<br>vtklzma-8.2.lib<br>vtkmetaio-8.2.lib<br>vtkNetCDF-8.2.lib<br>vtkogg-8.2.lib<br>vtkParallelCore-8.2.lib<br>vtkpng-8.2.lib<br>vtkproj-8.2.lib<br>vtkpugixml-8.2.lib<br>vtkRenderingAnnotation-8.2.lib<br>vtkRenderingContext2D-8.2.lib<br>vtkRenderingContextOpenGL2-8.2.lib<br>vtkRenderingCore-8.2.lib<br>vtkRenderingExternal-8.2.lib<br>vtkRenderingFreeType-8.2.lib<br>vtkRenderingGL2PSOpenGL2-8.2.lib<br>vtkRenderingImage-8.2.lib<br>vtkRenderingLabel-8.2.lib<br>vtkRenderingLOD-8.2.lib<br>vtkRenderingOpenGL2-8.2.lib<br>vtkRenderingVolume-8.2.lib<br>vtkRenderingVolumeOpenGL2-8.2.lib<br>vtksqlite-8.2.lib<br>vtksys-8.2.lib<br>vtktheora-8.2.lib<br>vtktiff-8.2.lib<br>vtkverdict-8.2.lib<br>vtkViewsContext2D-8.2.lib<br>vtkViewsCore-8.2.lib<br>vtkViewsInfovis-8.2.lib<br>vtkzlib-8.2.lib</p>
+<p>DEBUG版本：</p>
+<p>pcl_commond.lib<br>pcl_featuresd.lib<br>pcl_filtersd.lib<br>pcl_io_plyd.lib<br>pcl_iod.lib<br>pcl_kdtreed.lib<br>pcl_keypointsd.lib<br>pcl_mld.lib<br>pcl_octreed.lib<br>pcl_outofcored.lib<br>pcl_peopled.lib<br>pcl_recognitiond.lib<br>pcl_registrationd.lib<br>pcl_sample_consensusd.lib<br>pcl_searchd.lib<br>pcl_segmentationd.lib<br>pcl_stereod.lib<br>pcl_surfaced.lib<br>pcl_trackingd.lib<br>pcl_visualizationd.lib<br>vtkChartsCore-8.2-gd.lib<br>vtkCommonColor-8.2-gd.lib<br>vtkCommonComputationalGeometry-8.2-gd.lib<br>vtkCommonCore-8.2-gd.lib<br>vtkCommonDataModel-8.2-gd.lib<br>vtkCommonExecutionModel-8.2-gd.lib<br>vtkCommonMath-8.2-gd.lib<br>vtkCommonMisc-8.2-gd.lib<br>vtkCommonSystem-8.2-gd.lib<br>vtkCommonTransforms-8.2-gd.lib<br>vtkDICOMParser-8.2-gd.lib<br>vtkDomainsChemistry-8.2-gd.lib<br>vtkDomainsChemistryOpenGL2-8.2-gd.lib<br>vtkdoubleconversion-8.2-gd.lib<br>vtkexodusII-8.2-gd.lib<br>vtkexpat-8.2-gd.lib<br>vtkFiltersAMR-8.2-gd.lib<br>vtkFiltersCore-8.2-gd.lib<br>vtkFiltersExtraction-8.2-gd.lib<br>vtkFiltersFlowPaths-8.2-gd.lib<br>vtkFiltersGeneral-8.2-gd.lib<br>vtkFiltersGeneric-8.2-gd.lib<br>vtkFiltersGeometry-8.2-gd.lib<br>vtkFiltersHybrid-8.2-gd.lib<br>vtkFiltersHyperTree-8.2-gd.lib<br>vtkFiltersImaging-8.2-gd.lib<br>vtkFiltersModeling-8.2-gd.lib<br>vtkFiltersParallel-8.2-gd.lib<br>vtkFiltersParallelImaging-8.2-gd.lib<br>vtkFiltersPoints-8.2-gd.lib<br>vtkFiltersProgrammable-8.2-gd.lib<br>vtkFiltersSelection-8.2-gd.lib<br>vtkFiltersSMP-8.2-gd.lib<br>vtkFiltersSources-8.2-gd.lib<br>vtkFiltersStatistics-8.2-gd.lib<br>vtkFiltersTexture-8.2-gd.lib<br>vtkFiltersTopology-8.2-gd.lib<br>vtkFiltersVerdict-8.2-gd.lib<br>vtkfreetype-8.2-gd.lib<br>vtkGeovisCore-8.2-gd.lib<br>vtkgl2ps-8.2-gd.lib<br>vtkglew-8.2-gd.lib<br>vtkGUISupportMFC-8.2-gd.lib<br>vtkhdf5_hl-8.2-gd.lib<br>vtkhdf5-8.2-gd.lib<br>vtkImagingColor-8.2-gd.lib<br>vtkImagingCore-8.2-gd.lib<br>vtkImagingFourier-8.2-gd.lib<br>vtkImagingGeneral-8.2-gd.lib<br>vtkImagingHybrid-8.2-gd.lib<br>vtkImagingMath-8.2-gd.lib<br>vtkImagingMorphological-8.2-gd.lib<br>vtkImagingSources-8.2-gd.lib<br>vtkImagingStatistics-8.2-gd.lib<br>vtkImagingStencil-8.2-gd.lib<br>vtkInfovisCore-8.2-gd.lib<br>vtkInfovisLayout-8.2-gd.lib<br>vtkInteractionImage-8.2-gd.lib<br>vtkInteractionStyle-8.2-gd.lib<br>vtkInteractionWidgets-8.2-gd.lib<br>vtkIOAMR-8.2-gd.lib<br>vtkIOAsynchronous-8.2-gd.lib<br>vtkIOCityGML-8.2-gd.lib<br>vtkIOCore-8.2-gd.lib<br>vtkIOEnSight-8.2-gd.lib<br>vtkIOExodus-8.2-gd.lib<br>vtkIOExport-8.2-gd.lib<br>vtkIOExportOpenGL2-8.2-gd.lib<br>vtkIOExportPDF-8.2-gd.lib<br>vtkIOGeometry-8.2-gd.lib<br>vtkIOImage-8.2-gd.lib<br>vtkIOImport-8.2-gd.lib<br>vtkIOInfovis-8.2-gd.lib<br>vtkIOLegacy-8.2-gd.lib<br>vtkIOLSDyna-8.2-gd.lib<br>vtkIOMINC-8.2-gd.lib<br>vtkIOMovie-8.2-gd.lib<br>vtkIONetCDF-8.2-gd.lib<br>vtkIOParallel-8.2-gd.lib<br>vtkIOParallelXML-8.2-gd.lib<br>vtkIOPLY-8.2-gd.lib<br>vtkIOSegY-8.2-gd.lib<br>vtkIOSQL-8.2-gd.lib<br>vtkIOTecplotTable-8.2-gd.lib<br>vtkIOVeraOut-8.2-gd.lib<br>vtkIOVideo-8.2-gd.lib<br>vtkIOXML-8.2-gd.lib<br>vtkIOXMLParser-8.2-gd.lib<br>vtkjpeg-8.2-gd.lib<br>vtkjsoncpp-8.2-gd.lib<br>vtklibharu-8.2-gd.lib<br>vtklibxml2-8.2-gd.lib<br>vtklz4-8.2-gd.lib<br>vtklzma-8.2-gd.lib<br>vtkmetaio-8.2-gd.lib<br>vtkNetCDF-8.2-gd.lib<br>vtkogg-8.2-gd.lib<br>vtkParallelCore-8.2-gd.lib<br>vtkpng-8.2-gd.lib<br>vtkproj-8.2-gd.lib<br>vtkpugixml-8.2-gd.lib<br>vtkRenderingAnnotation-8.2-gd.lib<br>vtkRenderingContext2D-8.2-gd.lib<br>vtkRenderingContextOpenGL2-8.2-gd.lib<br>vtkRenderingCore-8.2-gd.lib<br>vtkRenderingExternal-8.2-gd.lib<br>vtkRenderingFreeType-8.2-gd.lib<br>vtkRenderingGL2PSOpenGL2-8.2-gd.lib<br>vtkRenderingImage-8.2-gd.lib<br>vtkRenderingLabel-8.2-gd.lib<br>vtkRenderingLOD-8.2-gd.lib<br>vtkRenderingOpenGL2-8.2-gd.lib<br>vtkRenderingVolume-8.2-gd.lib<br>vtkRenderingVolumeOpenGL2-8.2-gd.lib<br>vtksqlite-8.2-gd.lib<br>vtksys-8.2-gd.lib<br>vtktheora-8.2-gd.lib<br>vtktiff-8.2-gd.lib<br>vtkverdict-8.2-gd.lib<br>vtkViewsContext2D-8.2-gd.lib<br>vtkViewsCore-8.2-gd.lib<br>vtkViewsInfovis-8.2-gd.lib<br>vtkzlib-8.2-gd.lib</p>
+<h1 id="8-程序测试"><a href="#8-程序测试" class="headerlink" title="8.程序测试"></a>8.程序测试</h1><pre><code>#include &lt;pcl/visualization/cloud_viewer.h&gt;  
+#include &lt;iostream&gt;  
+#include &lt;pcl/io/io.h&gt;  
+#include &lt;pcl/io/pcd_io.h&gt;  
+int user_data;
+void viewerOneOff(pcl::visualization::PCLVisualizer&amp; viewer)
+&#123;
+    viewer.setBackgroundColor(1.0, 0.5, 1.0);
+    pcl::PointXYZ o;
+    o.x = 1.0;
+    o.y = 0;
+    o.z = 0;
+    viewer.addSphere(o, 0.25, &quot;sphere&quot;, 0);
+    std::cout &lt;&lt; &quot;i only run once&quot; &lt;&lt; std::endl;
+&#125;
+void viewerPsycho(pcl::visualization::PCLVisualizer&amp; viewer)
+&#123;
+    static unsigned count = 0;
+    std::stringstream ss;
+    ss &lt;&lt; &quot;Once per viewer loop: &quot; &lt;&lt; count++;
+    viewer.removeShape(&quot;text&quot;, 0);
+    viewer.addText(ss.str(), 200, 300, &quot;text&quot;, 0);
+    //FIXME: possible race condition here:  
+    user_data++;
+&#125;
+int main()
+&#123;
+    pcl::PointCloud&lt;pcl::PointXYZRGBA&gt;::Ptr cloud(new pcl::PointCloud&lt;pcl::PointXYZRGBA&gt;);
+    pcl::io::loadPCDFile(&quot;D:\\Microsoft Visual Studio 10.0\\Projects\\pcl\\pcl\\my_point_cloud.pcd&quot;, *cloud);
+    pcl::visualization::CloudViewer viewer(&quot;Cloud Viewer&quot;);
+    //blocks until the cloud is actually rendered  
+    viewer.showCloud(cloud);
+    //use the following functions to get access to the underlying more advanced/powerful  
+    //PCLVisualizer  
+    //This will only get called once  
+    viewer.runOnVisualizationThreadOnce(viewerOneOff);
+    //This will get called once per visualization iteration  
+    viewer.runOnVisualizationThread(viewerPsycho);
+    while (!viewer.wasStopped())
+    &#123;
+        //you can also do cool processing here  
+        //FIXME: Note that this is running in a separate thread from viewerPsycho  
+        //and you should guard against race conditions yourself...  
+        user_data++;
+    &#125;
+    return 0;
+&#125;
+</code></pre><p>测试结果：</p>
+<p><img src="/blog_img/PCL配置/16.png" alt=""></p>
+<hr>
+]]></content>
+      <categories>
+        <category>PCL</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Unable to access &#39;https://gitee.com/自己的项目/&#39;: Could not resolve host: gitee.com问题的解决</title>
+    <url>/2020/10/23/Ubuntu/Unable-to-access-https-gitee-com-%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE-Could-not-resolve-host-gitee-com%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<p>果然玩hexo报错是在所难免，就好像我已经长大，读研以后乃至以后得日子，可能总是繁琐常伴。今天在hexo d推到GITEE上时，报了错。<br><a id="more"></a><br>原因是由于爬梯子代理网络的问题，其实折腾了下。具体哪个步骤解决了这个问题，我也不是很清楚，这次做好记录方便以后继续更新把。</p>
+<p>首先我是从这篇<a href="https://blog.csdn.net/weixin_37166398/article/details/101422239?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param">博客</a>里查到了我的ip，然后ping了查到的ip，然后在system32\drives\etc\hosts里添加了   </p>
+<pre><code>IP gitee.com
+</code></pre><p>然而这并没有继续运行成功。<br>然后我有尝试<br>1.管理员身份运行cmd<br>2.输入 </p>
+<pre><code>netsh winsock reset
+</code></pre><p>3.重启</p>
+<p>还有尝试命令行输入  </p>
+<pre><code>git config --global --unset http.proxy 
+git config --global --unset https.proxy
+</code></pre><p>最后发现还是不行，结果我把第一步添加的IP gitee.com删了居然好了。</p>
+<p>所以我觉得问题在以下原因，第一个是我没有在打开代理下hexo d,平时确实是没有注意这个问题，但关闭代理下好像有时候也成功过，但这个问题确实出在了代理的问题上。<br>另外就是我的代理导致了无法上传上去，上述的两个操作我也不知道哪个解决了这个问题，毕竟我先添加了IP，然后再试了这两种清楚的。如果下次再出现这个问题，有了结果再继续补充。</p>
+<p>2020/11/17<br>他妈个头的，翻墙今天又部署不上去了，前面的用了也不好使，又试了一下这个更改DNS的方法成功了，<a href="https://blog.csdn.net/weixin_42476786/article/details/82691934?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.add_param_isCf">链接</a>在这</p>
+<hr>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
   </entry>
   <entry>
     <title>ubuntu下的firefox无法播放视频解决方案</title>
-    <url>/2021/03/14/ubuntu%E4%B8%8B%E7%9A%84firefox%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <url>/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E7%9A%84firefox%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<h1 id="1-下载flash的tar-gz文件"><a href="#1-下载flash的tar-gz文件" class="headerlink" title="1.下载flash的tar.gz文件"></a>1.下载flash的tar.gz文件</h1><p>直接去<a href="https://www.flash.cn/">官网链接</a>下载<br><a id="more"></a></p>
 <h1 id="2-解压tar-gz文件"><a href="#2-解压tar-gz文件" class="headerlink" title="2.解压tar.gz文件"></a>2.解压tar.gz文件</h1><pre><code>tar -zxvf filename.tar.gz
 </code></pre><p>注意filename.tar.gz就是你下载的文件的名字，可以直接复制下载包名字。</p>
@@ -482,26 +393,113 @@ sudo cp -r usr/* /usr
 </code></pre><h1 id="4-缺少依赖报错解决"><a href="#4-缺少依赖报错解决" class="headerlink" title="4.缺少依赖报错解决"></a>4.缺少依赖报错解决</h1><pre><code>sudo apt-get install ffmpeg  //ffmpeg支持H.264解码
 </code></pre><hr>
 ]]></content>
-      <tags>
-        <tag>-ubuntu</tag>
-      </tags>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>dpkg被中断的解决办法</title>
+    <url>/2021/03/14/Ubuntu/dpkg%E8%A2%AB%E4%B8%AD%E6%96%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<p>linux系统安装软件是有时会碰到“dpkg 被中断,您必须手工运行 sudo dpkg –configure -a解决此问题”，然而按照提示运行却并没能很好的解决问题。其实导致这个问题的主要原因是因为/var/lib/dpkg/updates文件下的文件有问题，可能是其他软件安装过程或是其他原因导致的，这里删除掉然后重建即可。<br><a id="more"></a></p>
+<pre><code>sudo rm /var/lib/dpkg/updates/*
+sudo apt-get update
+sudo apt-get upgrade
+</code></pre><p>解释：[<em>]sudo apt-get update指令会重新建立这些资料，所以不必担心删除后会出问题；<br>[</em>]sudo apt-get upgrade会更新你的电脑里面已安装的软件的明细，根据软件的明细更新软件到最新版。<br>PS：“dpkg ”是“Debian Packager ”的简写。为 “Debian” 专门开发的套件管理系统，方便软件的安装、更新及移除。所有源自“Debian”的“Linux ”发行版都使用 “dpkg”</p>
+<p>参考<a href="https://blog.csdn.net/coolcooljob/article/details/79964812">博客</a></p>
+<hr>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>ubuntu安装gcc依赖关系报错</title>
+    <url>/2021/03/14/Ubuntu/ubuntu%E5%AE%89%E8%A3%85gcc%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<p>使用aptitude包依赖管理工具替代apt处理，看其他的博客说这个得慎用，不过用来安装gcc倒是没啥问题。<br><a id="more"></a></p>
+<pre><code>sudo apt-get install aptitude
+sudo aptitude install gcc g++
+</code></pre><p>解决方案里选择no,yes,yes.<br>参考<a href="https://blog.csdn.net/CLZHIT/article/details/104508894">博客</a></p>
+<hr>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
   </entry>
   <entry>
     <title>ubuntu下解决wps2019缺少字体问题</title>
-    <url>/2021/03/14/ubuntu%E4%B8%8B%E8%A7%A3%E5%86%B3wps2019%E7%BC%BA%E5%B0%91%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98/</url>
+    <url>/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E8%A7%A3%E5%86%B3wps2019%E7%BC%BA%E5%B0%91%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>主要参考<a href="https://blog.csdn.net/sunmengke1101/article/details/103436997">博客</a><br><a id="more"></a></p>
 <h1 id="1-准备字体包"><a href="#1-准备字体包" class="headerlink" title="1.准备字体包"></a>1.准备字体包</h1><p><a href="https://wws.lanzous.com/iBIiqmwnvve">下载链接</a></p>
 <h1 id="2-解压到指定目录下"><a href="#2-解压到指定目录下" class="headerlink" title="2.解压到指定目录下"></a>2.解压到指定目录下</h1><pre><code>sudo unzip wps_symbol_fonts.zip -d /home/&lt;user&gt;/usr/share/fonts
 </code></pre><h1 id="3-到解压的根目录下安装"><a href="#3-到解压的根目录下安装" class="headerlink" title="3.到解压的根目录下安装"></a>3.到解压的根目录下安装</h1><p>依次打开每个文件并点击安装即可</p>
 <hr>
 ]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>ubuntu安装vim依赖关系报错</title>
+    <url>/2021/03/14/Ubuntu/ubuntu%E5%AE%89%E8%A3%85vim%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<p>按如下步骤进行就可：<br><a id="more"></a></p>
+<pre><code>sudo apt-get purge vim-common
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install vim
+</code></pre><hr>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>安装snap以及常用命令</title>
+    <url>/2021/03/14/Ubuntu/%E5%AE%89%E8%A3%85snap/</url>
+    <content><![CDATA[<h1 id="1-安装snap"><a href="#1-安装snap" class="headerlink" title="1.安装snap"></a>1.安装snap</h1><a id="more"></a>
+<pre><code>sudo apt-get install snapd
+sudo apt-get install snapcraft
+</code></pre><h1 id="2-常用命令"><a href="#2-常用命令" class="headerlink" title="2.常用命令"></a>2.常用命令</h1><pre><code>//列出已经安装的snap包
+sudo snap list
+
+//搜索要安装的snap包
+sudo snap find &lt;text to search&gt;
+
+//安装一个snap包
+sudo snap install &lt;snap name&gt;
+
+//更新一个snap包，如果你后面不加包的名字的话那就是更新所有的snap包
+sudo snap refresh &lt;snap name&gt;
+
+//把一个包还原到以前安装的版本
+sudo snap revert &lt;snap name&gt;
+
+//删除一个snap包
+sudo snap remove &lt;snap name&gt;
+</code></pre><hr>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>我的Office激活码</title>
+    <url>/2020/09/26/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84Office%E6%BF%80%E6%B4%BB%E7%A0%81/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">Enter password to read.</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="03c1ac4465e4cf3a48495d4bf2e5305f5459e5aa002e29362a916042d55d3feb">a40b706f3ef3cecdee82bde9ce2bd4514c0daefd2ecc9a0471c6dd32fb89c21dd33d989c9838561713a671711864b0b1a1a4480b4508e9ff8837f455c5dce0fe5f300a44bdd7e4e87f4cf4ad6a977b3a2e1fb4941673530eba42a436b7ddbc2a833161220ce856a9c50b0f0a00948c6120e291cacc8235d9112cea2d0ff237ff547ad3c0557cede69bb6e0acac70ff7e8dfd7357b4b0819f29e0b32a89991ff85dbb291e5440a99f3e89272087d1a7bad163b67007c9db378d5b7519efb4bc6adfc98224fb4ce577a17143fe36acb2235be6db2fbdd89c6784c0966f78aecbf7df789c5ac3fbdc42aad6b3332ae1ff1e862ad8340e40571113b1a0f03023896f1f4e9d0282ddc48e33f8992ebced357dfafab8477f1b7ddb0c479b4ef223cd7aa6c3b47bac939edf42c2ea6eeb5976a6c37e76ad4ac9a7c25cf6e5f0161cbe47578cd75de43b1fb65e794e1b15d764b9</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
-        <tag>-ubuntu</tag>
+        <tag>-office</tag>
       </tags>
   </entry>
   <entry>
     <title>ubuntu配置C/C++开发环境</title>
-    <url>/2021/03/14/ubuntu%E9%85%8D%E7%BD%AEC-C-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+    <url>/2021/03/14/Ubuntu/ubuntu%E9%85%8D%E7%BD%AEC-C-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<h1 id="1-在代码文件夹下建立两个文件"><a href="#1-在代码文件夹下建立两个文件" class="headerlink" title="1.在代码文件夹下建立两个文件"></a>1.在代码文件夹下建立两个文件</h1><p>launch.json 以及 tasks.json<br><a id="more"></a></p>
 <h1 id="2-给这个两个文件配置文件"><a href="#2-给这个两个文件配置文件" class="headerlink" title="2.给这个两个文件配置文件"></a>2.给这个两个文件配置文件</h1><p>launch.json:</p>
 <pre><code>&#123;    // Use IntelliSense to learn about possible attributes.
@@ -548,177 +546,13 @@ sudo cp -r usr/* /usr
 </code></pre><p>参考<a href="https://blog.csdn.net/suiyueruge1314/article/details/106125949">博客</a></p>
 <hr>
 ]]></content>
-  </entry>
-  <entry>
-    <title>关于入门博客的一些事</title>
-    <url>/2020/09/24/%E5%85%B3%E4%BA%8E%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%8B/</url>
-    <content><![CDATA[<p>这算是我的第二个博客了，第一部署在Github上，都是基于hexo来搭建的，不过部署在在Github上有这样的问题：<a id="more"></a>  </p>
-<ol>
-<li>上传到GitHub上很慢，毕竟是国外的服务器。  </li>
-<li>有时候Github会抽风，很多时候国内没法访问，必须得上梯子才能上去，还是很不方便的。  </li>
-</ol>
-<p>所以在用魔改butterfly主题后，直接给我hexo整崩了（主要还是太菜，看不懂大佬写的东西），在此非常感谢那些<strong>无名英雄</strong>，我们只是走在了别人走好的路上。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><!--more--></h2><p>这次部署在gitee（码云）上，还是很方便的，一个是访问速度确实快，但是需要手动去gitee pages服务更新。第二个是gitee现在的用户也很多了，也见到一些写了几年博客的大佬从github转到了gitee。<br>我是在8月初入坑hexo的，当时什么都不懂，对着B站看视频，别人干啥我跟着干。现在还算有了一些进步吧，好歹能看懂一些config文件了，毕竟在我搞崩hexo后，直接重装了系统重头再来，为此我熬了2天的夜。</p>
-<hr>
-<p>这次选择的是比较简洁的yilia主题，开发者已经不再提供更新了，后续有基于yilia的plus版本以及各种进阶，在csdn直接就可以搜到。</p>
-<hr>
-<p>话有些多，有些没逻辑。但是写博客的初心呢，有以下的一些原因：</p>
-<ul>
-<li>写东西是一个回顾的过程，在解决一个问题以后，以后很有可能继续碰见，当你头皮发麻时，想到你以前完美的记录这个过程，这个问题自然会迎刃而解。</li>
-<li>好的博客可以给你找工作加分，一个hr如何去辨识出哪些人是善于思考，善于总结的人，我想博客就是一个很好的媒介，也是了解你具有哪些技术的手段。</li>
-<li>博客可以锻炼文笔，虽然我文字功底很烂，但是初衷是希望可以通俗易懂，希望我写的东西可以帮你解决了一个甚至一些问题。</li>
-</ul>
-<p>在这两天看了这么多博客以后，有好有差，当然博主可能只是记录而已，他能看懂就行，但我希望自己以后写的东西可以仔细一些。</p>
-<hr>
-<p>更新：<br>yilia是什么（laji），butterfly是真的香，干掉重来。</p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-情感</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装snap以及常用命令</title>
-    <url>/2021/03/14/%E5%AE%89%E8%A3%85snap/</url>
-    <content><![CDATA[<h1 id="1-安装snap"><a href="#1-安装snap" class="headerlink" title="1.安装snap"></a>1.安装snap</h1><a id="more"></a>
-<pre><code>sudo apt-get install snapd
-sudo apt-get install snapcraft
-</code></pre><h1 id="2-常用命令"><a href="#2-常用命令" class="headerlink" title="2.常用命令"></a>2.常用命令</h1><pre><code>//列出已经安装的snap包
-sudo snap list
-
-//搜索要安装的snap包
-sudo snap find &lt;text to search&gt;
-
-//安装一个snap包
-sudo snap install &lt;snap name&gt;
-
-//更新一个snap包，如果你后面不加包的名字的话那就是更新所有的snap包
-sudo snap refresh &lt;snap name&gt;
-
-//把一个包还原到以前安装的版本
-sudo snap revert &lt;snap name&gt;
-
-//删除一个snap包
-sudo snap remove &lt;snap name&gt;
-</code></pre><hr>
-]]></content>
-      <tags>
-        <tag>-ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的Office激活码</title>
-    <url>/2020/09/26/%E6%88%91%E7%9A%84Office%E6%BF%80%E6%B4%BB%E7%A0%81/</url>
-    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">Enter password to read.</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="03c1ac4465e4cf3a48495d4bf2e5305f5459e5aa002e29362a916042d55d3feb">a40b706f3ef3cecdee82bde9ce2bd4514c0daefd2ecc9a0471c6dd32fb89c21dd33d989c9838561713a671711864b0b1a1a4480b4508e9ff8837f455c5dce0fe5f300a44bdd7e4e87f4cf4ad6a977b3a2e1fb4941673530eba42a436b7ddbc2a833161220ce856a9c50b0f0a00948c6120e291cacc8235d9112cea2d0ff237ff547ad3c0557cede69bb6e0acac70ff7e8dfd7357b4b0819f29e0b32a89991ff85dbb291e5440a99f3e89272087d1a7bad163b67007c9db378d5b7519efb4bc6adfc98224fb4ce577a17143fe36acb2235be6db2fbdd89c6784c0966f78aecbf7df789c5ac3fbdc42aad6b3332ae1ff1e862ad8340e40571113b1a0f03023896f1f4e9d0282ddc48e33f8992ebced357dfafab8477f1b7ddb0c479b4ef223cd7aa6c3b47bac939edf42c2ea6eeb5976a6c37e76ad4ac9a7c25cf6e5f0161cbe47578cd75de43b1fb65e794e1b15d764b9</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
-      <tags>
-        <tag>-office</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>梯子</title>
-    <url>/2020/09/26/%E6%A2%AF%E5%AD%90/</url>
-    <content><![CDATA[<p>名称：meilink羊圈  </p>
-<p><a id="more"></a>下载地址：<br><img src="/blog_img/梯子/1.png" alt="VPN"><br>页面浏览：<br><img src="/blog_img/梯子/2.png" alt="">  </p>
-<p><strong>自己根据需求去购买相应的套餐，一般来说最便宜的一档已经够用了</strong></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-VPN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新电脑上部署hexo</title>
-    <url>/2020/10/02/%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E9%83%A8%E7%BD%B2hexo/</url>
-    <content><![CDATA[<h1 id="1-安装必要软件"><a href="#1-安装必要软件" class="headerlink" title="1. 安装必要软件"></a>1. 安装必要软件</h1><p>安装 Git 客户端<br>安装 node JS</p>
-<a id="more"></a>
-<hr>
-<h1 id="2-拷贝源文件"><a href="#2-拷贝源文件" class="headerlink" title="2. 拷贝源文件"></a>2. 拷贝源文件</h1><p>将初始电脑上个人博客文件夹下这几个文件夹拷到当前新电脑的准备设置的博客路径下。</p>
-<pre><code>_config.yml
-package.json
-scaffolds/
-source/
-themes/
-</code></pre><hr>
-<h1 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h1><p>在 cmd 下输入下面指令安装 hexo:</p>
-<pre><code>npm install -g hexo
-</code></pre><hr>
-<h1 id="4-在新博客路径下，安装三方依赖库"><a href="#4-在新博客路径下，安装三方依赖库" class="headerlink" title="4. 在新博客路径下，安装三方依赖库"></a>4. 在新博客路径下，安装三方依赖库</h1><pre><code>npm install
-npm install hexo-deployer-git --save //文章部署到 git 的模块
-npm install 主题需要的插件
-</code></pre><p><strong>千万别hxeo init</strong>，不然你就拉在裤子里了！！！</p>
-<hr>
-<h1 id="5-GITHUB-gitee-添加-SSH-KEYS"><a href="#5-GITHUB-gitee-添加-SSH-KEYS" class="headerlink" title="5. GITHUB/gitee 添加 SSH KEYS"></a>5. GITHUB/gitee 添加 SSH KEYS</h1><p>在GitHub/gitee的ssh keys那里再添加一个当前电脑的环境生成的key，但是可别把原来的电脑删掉了啊。<br>首先在本地创建 SSH Keys:</p>
-<pre><code>ssh-keygen -t rsa -C “xxxx@xxxx.com“
-</code></pre><p>后面的邮箱即为 github/gitee注册邮箱，也是你登录Github的邮箱（其实无关紧要，只是为了辨识生成的用户名），之后会要求确认路径和输入密码，一路回车就行。<br>成功的话会在git bash页面下看到生成的 .ssh文件夹路径，进去，打开 id_rsa.pub，复制里面的key（全选）即可。然后拷贝到 Github/gitee 的 SSH Keys(这里要添加一个新的)<br>然后在终端中，我们再次测试下公钥有没有添加成功：</p>
-<pre><code>ssh -T git@gitee.com 
-</code></pre><p>会弹出确认命令，输入yes,会弹出你的名字等等，会出现：</p>
-<pre><code>Hi username! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
-</code></pre><p>然后：</p>
-<pre><code>hexo g
-hexo s
-hexo d
-</code></pre><hr>
-]]></content>
-      <tags>
-        <tag>-hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浏览器以及插件</title>
-    <url>/2020/09/26/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BB%A5%E5%8F%8A%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="1-浏览器：Google-chrome"><a href="#1-浏览器：Google-chrome" class="headerlink" title="1.浏览器：Google chrome"></a>1.浏览器：Google chrome</h1><p>请大家百度自行下载，想去官网下载请看我的这篇<a href="https://zzygeo.gitee.io/2020/09/26/%E6%A2%AF%E5%AD%90/">博客</a>去翻墙<br><a id="more"></a><br><strong>主要想介绍的是一些需要更改的选项</strong>    </p>
-<ol>
-<li>更改搜索引擎，默认的是google的，这里需要我们改成百度的，不然你每次就只能先翻墙才能搜索。在设置里找到搜素引擎，默认设置为百度。<br><img src="/blog_img/浏览器以及插件/19.png" alt=""></li>
-<li>在翻墙以后，浏览器将会打开代理模式，如下图：<br><img src="/blog_img/浏览器以及插件/20.png" alt=""><br><img src="/blog_img/浏览器以及插件/21.png" alt=""><br>但是在你不翻墙的时候，他也是这样设置，这就会导致你使用浏览器的时候，搜东西出现连接不上服务器的问题。这时候你需要设置成这样：<br><img src="/blog_img/浏览器以及插件/22.png" alt=""></li>
-</ol>
-<hr>
-<h1 id="2-google浏览器的一些好用插件"><a href="#2-google浏览器的一些好用插件" class="headerlink" title="2.google浏览器的一些好用插件"></a>2.google浏览器的一些好用插件</h1><p><strong>注意：在你下载插件的时候，必须先翻墙，不然你无法打开拓展程序商店</strong><br>不多BB直接整活<br>先找到插件搜索地方，如下图：<br><img src="/blog_img/浏览器以及插件/1.png" alt=""><br><img src="/blog_img/浏览器以及插件/2.png" alt=""></p>
-<hr>
-<h2 id="1-Adblock-Plus"><a href="#1-Adblock-Plus" class="headerlink" title="1.Adblock Plus"></a>1.Adblock Plus</h2><p><img src="/blog_img/浏览器以及插件/3.png" alt=""></p>
-<p>有效去除浏览器广告</p>
-<hr>
-<h2 id="2-Awesome-Screenshot"><a href="#2-Awesome-Screenshot" class="headerlink" title="2.Awesome Screenshot"></a>2.Awesome Screenshot</h2><p><img src="/blog_img/浏览器以及插件/4.png" alt=""></p>
-<p>可以录频，包括桌面的，浏览器页面的等等，需要先注册账号，录频后的视频会放在你的账户里，可以自行下载。</p>
-<hr>
-<h2 id="3-Free-Download-manager"><a href="#3-Free-Download-manager" class="headerlink" title="3.Free Download manager"></a>3.Free Download manager</h2><p>这是一款强大的下载器，速度快而且方便，速度比迅雷更快，更关键的是在你翻墙以后，迅雷的扩展程序有些国外的资源他是不支持下载的，但是这个可以。<br>下载器官网如下：<br><img src="/blog_img/浏览器以及插件/16.png" alt=""></p>
-<p>在安装完成后，打开<strong>设置</strong>选项，可以关联扩展，如图：<br><img src="/blog_img/浏览器以及插件/17.png" alt=""></p>
-<p>当然你也可以直接到应用商店下载：<br><img src="/blog_img/浏览器以及插件/5.png" alt=""></p>
-<p><strong>建议先下载下载器再去下载google扩展程序，这样就可以自动关联了，正好我想下一个腾讯视频，效果如图：</strong><br><img src="/blog_img/浏览器以及插件/18.png" alt=""><br>每次下载你可以自行选择下载地址，很方便管理你的应用。</p>
-<hr>
-<h2 id="4-Google翻译"><a href="#4-Google翻译" class="headerlink" title="4.Google翻译"></a>4.Google翻译</h2><p><img src="/blog_img/浏览器以及插件/6.png" alt=""><br>不多介绍了</p>
-<hr>
-<h2 id="5-Imagus"><a href="#5-Imagus" class="headerlink" title="5.Imagus"></a>5.Imagus</h2><p><img src="/blog_img/浏览器以及插件/7.png" alt=""></p>
-<p>imagus主要就是在你鼠标停留在图片上时，自动放大图片，比如在你购物时：<br><img src="/blog_img/浏览器以及插件/23.png" alt=""></p>
-<hr>
-<h2 id="6-Infinity-新标签页"><a href="#6-Infinity-新标签页" class="headerlink" title="6.Infinity 新标签页"></a>6.Infinity 新标签页</h2><p><img src="/blog_img/浏览器以及插件/8.png" alt=""></p>
-<p>它可以更换你的浏览器壁纸，可以添加常用网站，看起来很简洁很舒服。效果如下：<br><img src="/blog_img/浏览器以及插件/9.png" alt=""></p>
-<hr>
-<h2 id="7-one-Tab"><a href="#7-one-Tab" class="headerlink" title="7.one Tab"></a>7.one Tab</h2><p><img src="/blog_img/浏览器以及插件/10.png" alt=""></p>
-<p>当你在打开数十个网页时，图片变小看不清网页信息，如何切换到你想要的页面的，one tab就可以实现，效果如下：<br><img src="/blog_img/浏览器以及插件/24.png" alt=""></p>
-<hr>
-<h2 id="8-tampermonkey"><a href="#8-tampermonkey" class="headerlink" title="8.tampermonkey"></a>8.tampermonkey</h2><p><img src="/blog_img/浏览器以及插件/11.png" alt=""><br>油猴是一个强大的工具，其中内置了很多的功能，甚至油猴有插件可以直接拦截百度网盘，将百度网盘的资源以free download 下载。（想到百度网盘原来几K让冲超级会员的嘴脸就想骂他，虽然在上半年提供可以勾选通道，但是也只有100-200k，属实垃圾）。<br>这次我就以一个YOUTUBE视频下载插件为例介绍一下。</p>
-<p>打开油猴页面，搜素插件如图，安装插件：<br><img src="/blog_img/浏览器以及插件/13.png" alt=""><br>之后在我打开一个YOUTUBE视频，可以看到出现了下载链接：<br><img src="/blog_img/浏览器以及插件/15.png" alt=""></p>
-<hr>
-<h2 id="9-关灯看视频"><a href="#9-关灯看视频" class="headerlink" title="9.关灯看视频"></a>9.关灯看视频</h2><p>在你晚上看B站，看YOUTUBE视频时，可以选择，效果如图：<br><img src="/blog_img/浏览器以及插件/14.png" alt=""></p>
-<hr>
-<h2 id="10-fatkun图片下载"><a href="#10-fatkun图片下载" class="headerlink" title="10.fatkun图片下载"></a>10.fatkun图片下载</h2><p>可以一键下载多张图片<br><img src="/blog_img/浏览器以及插件/25.png" alt=""><br><img src="/blog_img/浏览器以及插件/26.png" alt=""></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-浏览器插件</tag>
-      </tags>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
   </entry>
   <entry>
     <title>资源</title>
-    <url>/2020/10/04/%E8%B5%84%E6%BA%90/</url>
+    <url>/2020/10/04/%E5%85%B6%E4%BB%96/%E8%B5%84%E6%BA%90/</url>
     <content><![CDATA[<p>准备把一些资源都放在这个博客下，持续更新，有需要得自取。</p>
 <h1 id="1-Linux学习笔记"><a href="#1-Linux学习笔记" class="headerlink" title="1.Linux学习笔记"></a>1.Linux学习笔记</h1><p><a href="https://wws.lanzous.com/iKIZfh7eeuh">链接</a></p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h1 id="2-cloud-compare中文版使用手册"><a href="#2-cloud-compare中文版使用手册" class="headerlink" title="2.cloud compare中文版使用手册"></a>2.cloud compare中文版使用手册</h1><p><a href="https://wws.lanzous.com/imyXlh3nide">链接</a></p>
@@ -728,96 +562,16 @@ hexo d
 <p><a href="http://www.ai-start.com/dl2017/">吴恩达深度学习笔记</a></p>
 <hr>
 <h1 id="4-壁纸"><a href="#4-壁纸" class="headerlink" title="4.壁纸"></a>4.壁纸</h1><p><a href="https://wallhaven.cc/">地址</a></p>
+<h1 id="5-1080p下载"><a href="#5-1080p下载" class="headerlink" title="5.1080p下载"></a>5.1080p下载</h1><p><a href="https://www.y2mate.com/en60/">下载地址</a></p>
 <hr>
-]]></content>
-      <tags>
-        <tag>-资源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++源文件和函数分开编写</title>
-    <url>/2021/03/20/abcd/C-%E6%BA%90%E6%96%87%E4%BB%B6%E5%92%8C%E5%87%BD%E6%95%B0%E5%88%86%E5%BC%80%E7%BC%96%E5%86%99/</url>
-    <content><![CDATA[<p>main.cpp</p>
-<a id="more"></a>
-<pre><code class="lang-c++">#include &quot;main.h&quot;
-
-int main()
-&#123;
-    int arr[10] = &#123; 4,3,6,9,1,2,10,8,7,5 &#125;;
-    vector&lt;int&gt; vec(arr, arr + 10);
-    display(vec);
-    bubble_sort(vec);
-    display(vec);
-
-    return 0;
-&#125;
-</code></pre>
-<p>main.h</p>
-<pre><code class="lang-c++">#pragma once
-#include&lt;vector&gt;
-#include&lt;iostream&gt;
-using namespace std;
-
-void bubble_sort(vector&lt;int&gt;&amp;);
-void display(const vector&lt;int&gt;&amp;);
-void swap(int&amp;, int&amp;);
-</code></pre>
-<p>bubble_sort.cpp</p>
-<pre><code class="lang-c++">#include &quot;main.h&quot;
-
-void bubble_sort(vector&lt;int&gt;&amp; vec)
-&#123;
-    for (int i = 0; i &lt; vec.size(); i++)
-        for (int j = i + 1; j &lt; vec.size(); j++)
-        &#123;
-            if (vec[i] &gt; vec[j])
-            &#123;
-                swap(vec[i], vec[j]);
-            &#125;
-        &#125;
-&#125;
-</code></pre>
-<p>display.cpp</p>
-<pre><code class="lang-c++">#include &quot;main.h&quot;
-
-void display(const vector&lt;int&gt;&amp; vec)
-&#123;
-    for (int i = 0; i &lt; vec.size(); i++)
-    &#123;
-        cout &lt;&lt; vec[i] &lt;&lt; &#39; &#39;;
-    &#125;
-    cout &lt;&lt; endl;
-&#125;
-</code></pre>
-<p>swap.cpp</p>
-<pre><code class="lang-c++">#include &quot;main.h&quot;
-
-void swap(int&amp; val1, int&amp; val2)
-&#123;
-    int temp = val1;
-    val1 = val2;
-    val2 = temp;
-&#125;
-</code></pre>
+<h1 id="6-视频字幕下载"><a href="#6-视频字幕下载" class="headerlink" title="6.视频字幕下载"></a>6.视频字幕下载</h1><p><a href="https://www.findyoutube.net/">下载地址</a><br>版权限制，目前下载为VTT格式，需要在Subtitle Edit里将VTT转为SRT格式。</p>
 <hr>
+<h1 id="7-Subtitle-Edit-vvt-srt"><a href="#7-Subtitle-Edit-vvt-srt" class="headerlink" title="7.Subtitle Edit(vvt-srt)"></a>7.Subtitle Edit(vvt-srt)</h1><p><a href="https://www.nikse.dk/subtitleedit/">下载地址</a><br>可以VTT2SRT SRT2VTT,有强大的字幕编辑功能。</p>
+<hr>
+<h1 id="8-Arctime-制作内嵌字幕视频"><a href="#8-Arctime-制作内嵌字幕视频" class="headerlink" title="8.Arctime(制作内嵌字幕视频)"></a>8.Arctime(制作内嵌字幕视频)</h1><p><a href="https://arctime.org/">下载地址</a></p>
 ]]></content>
       <categories>
-        <category>C++</category>
+        <category>资源</category>
       </categories>
-  </entry>
-  <entry>
-    <title>dpkg被中断的解决办法</title>
-    <url>/2021/03/14/abcd/dpkg%E8%A2%AB%E4%B8%AD%E6%96%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
-    <content><![CDATA[<p>linux系统安装软件是有时会碰到“dpkg 被中断,您必须手工运行 sudo dpkg –configure -a解决此问题”，然而按照提示运行却并没能很好的解决问题。其实导致这个问题的主要原因是因为/var/lib/dpkg/updates文件下的文件有问题，可能是其他软件安装过程或是其他原因导致的，这里删除掉然后重建即可。<br><a id="more"></a></p>
-<pre><code>sudo rm /var/lib/dpkg/updates/*
-sudo apt-get update
-sudo apt-get upgrade
-</code></pre><p>解释：[<em>]sudo apt-get update指令会重新建立这些资料，所以不必担心删除后会出问题；<br>[</em>]sudo apt-get upgrade会更新你的电脑里面已安装的软件的明细，根据软件的明细更新软件到最新版。<br>PS：“dpkg ”是“Debian Packager ”的简写。为 “Debian” 专门开发的套件管理系统，方便软件的安装、更新及移除。所有源自“Debian”的“Linux ”发行版都使用 “dpkg”</p>
-<p>参考<a href="https://blog.csdn.net/coolcooljob/article/details/79964812">博客</a></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>-ubuntu</tag>
-      </tags>
   </entry>
 </search>
