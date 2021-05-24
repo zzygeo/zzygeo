@@ -1013,11 +1013,24 @@ public class TestTemplate &#123;
 &#125;
 </code></pre>
 <h1 id="7-接口"><a href="#7-接口" class="headerlink" title="7.接口"></a>7.接口</h1><h2 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h2><p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1621823722.5mjdgmqmdco0.jpg" alt="1621823722"></p>
-<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1621823894(1" alt="1621823894(1)">.fm1qv1y5h4g.jpg)</p>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1621824114(1" alt="1621824114(1)">.43t6bv1hp3s.jpg)</p>
-<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1621824144(1" alt="1621824144(1)">.3u5mo5l0azy0.jpg)</p>
-<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1621824207(1" alt="1621824207(1)">.2i3tb3qvixm0.jpg)</p>
-<h2 id="接口的多态特性"><a href="#接口的多态特性" class="headerlink" title="接口的多态特性"></a>接口的多态特性</h2><p><img src="https://raw.githubusercontent.com/zzygeo/images/master/1621824272(1" alt="1621824272(1)">.476pn3g818u0.jpg)</p>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>1）接口不能被实例化</p>
+<p>2）接口中的所有方法是public方法，接口中抽象方法，可以不用abstract修饰</p>
+<p>3）一个普通类实现接口，就必须将该接口的所有方法都实现</p>
+<p>4）抽象了实现接口，可以不用实现接口的方法</p>
+<p>5）一个类同时可以实现多个接口</p>
+<p>6）接口中的属性，只能是final的，而且是public static final 修饰符，因此必须初始化</p>
+<p>7）接口中属性的访问形式：接口名.属性名</p>
+<p>8）接口不能继承其他的类，但是可以继承多个别的接口</p>
+<p>9）接口的修饰符只能是public和默认，这一点和类的修饰符是一样的</p>
+<p>接口和继承解决的问题不同</p>
+<p>继承的价值主要在于：解决代码的复用性和可维护性</p>
+<p>接口的价值主要在于：设计，设计好各种规范，让其他类去实现这些方法。即更加的灵活</p>
+<p>接口比继承更加灵活</p>
+<p>接口比继承更加灵活，继承是满足is -a的关系, 而接口只 需满足 like -a的关系</p>
+<p>接口在一定程度上实现代码解耦（即：接口规范性+动态绑定机制）</p>
+<h2 id="接口的多态特性"><a href="#接口的多态特性" class="headerlink" title="接口的多态特性"></a>接口的多态特性</h2><p>接口既可以接受A对象，又可以接受相机对象，就体现了接口，多态</p>
+<p>一个接口的数组里，既可以存放A对象，也可以存放B对象，也体现了多态特性，这里还设计到向上转型和向下转型</p>
+<p>接口存在多态传递现象</p>
 ]]></content>
       <categories>
         <category>Java基础</category>
