@@ -1031,6 +1031,257 @@ public class TestTemplate &#123;
 <h2 id="接口的多态特性"><a href="#接口的多态特性" class="headerlink" title="接口的多态特性"></a>接口的多态特性</h2><p>接口既可以接受A对象，又可以接受相机对象，就体现了接口，多态</p>
 <p>一个接口的数组里，既可以存放A对象，也可以存放B对象，也体现了多态特性，这里还设计到向上转型和向下转型</p>
 <p>接口存在多态传递现象</p>
+<h1 id="8-内部类"><a href="#8-内部类" class="headerlink" title="8.内部类"></a>8.内部类</h1><h2 id="介绍-6"><a href="#介绍-6" class="headerlink" title="介绍"></a>介绍</h2><p>如果定义类在局部位置（方法/代码块）：（1）局部内部类 （2）匿名内部类</p>
+<p>定义在成员位置：（1）成员内部类 （2）静态内部类</p>
+<p>一个类的内部类又完整的嵌套了另一个类结构 。被嵌套的类称为内部类（inner class），嵌套其他类的类称为外部类（outer class）。是我们类的第五大成员，内部类的最大特点就是可以直接访问私有属性，并且可以体现类和类之间的包含关系，是学习的难点。</p>
+<p>入门代码：</p>
+<pre><code class="lang-java">package com.zzy.innerclass;
+
+public class InnerClass01 &#123;//外部其他类
+    public static void main(String[] args) &#123;
+
+    &#125;
+&#125;
+
+class Outer&#123;//外部类
+    private int n1 = 100;
+    public void m1()&#123;
+        System.out.println(&quot;m1()&quot;);
+    &#125;
+
+    public Outer(int n1) &#123;
+        this.n1 = n1;
+    &#125;
+
+    &#123;
+        System.out.println(&quot;Outer的代码块哦&quot;);
+    &#125;
+
+    class Inner&#123;
+        //内部类
+    &#125;
+&#125;
+</code></pre>
+<h2 id="局部内部类的使用"><a href="#局部内部类的使用" class="headerlink" title="局部内部类的使用"></a>局部内部类的使用</h2><p>局部内部类是定义在外部类的局部位置，比如方法中，并且有类名</p>
+<ol>
+<li>可以直接访问外部类的所有成员，包含私有的</li>
+<li>不能添加访问修饰符，因为它的地位就是一个局部变量。局部变量是不能使用修饰符的。但是可以使用final修饰，因为局部变量也可以使用final</li>
+<li>作用域：仅仅在定义它的方法或者代码块中</li>
+<li>局部访问类—访问外部类的成员—可以==直接访问==</li>
+<li>外部类—访问—局部内部类成员   访问方式：创建对象，再访问</li>
+<li>外部其他类—不能访问—局部内部类（因为局部内部类也是一个局部变量）</li>
+<li>如果外部类和局部内部类的成员重名，默认遵守就近原则，如果想访问外部类的成员，可以使用（外部类名.this.成员）去访问</li>
+</ol>
+<p>记住：</p>
+<ul>
+<li>局部内部类定义在方法中/代码块</li>
+<li>作用域在方法体或者代码块中</li>
+<li>本质仍然是一个类</li>
+</ul>
+<pre><code class="lang-java">package com.zzy.innerclass;
+/*
+演示局部内部类
+ */
+public class LocalInnerClass &#123;
+    public static void main(String[] args) &#123;
+        Outer02 outer02 = new Outer02();
+        outer02.m1();
+        System.out.println(&quot;outer02 hashcode = &quot; + outer02);
+    &#125;
+&#125;
+
+class Outer02&#123;
+    private int n1 = 100;
+    private void m2()&#123;
+        System.out.println(&quot;m2()&quot;);
+    &#125;
+    public void m1()&#123;//方法
+        //局部内部类是定义在外部类的局部位置，通常在方法
+        class Inner02&#123;
+            //局部内部类
+            //可以直接访问外部内的所有成员，包含私有的
+            //局部内部类的作用域在定义的方法或者代码块里面
+            private int n1 = 800;
+            public void f1()&#123;
+                System.out.println(&quot;n1 = &quot; + n1 + &quot; n1 = &quot; + Outer02.this.n1);
+                System.out.println(&quot;Outer02.this hashcode = &quot; + Outer02.this);
+                m2();
+            &#125;
+        &#125;
+
+        //外部类在方法中，可以创建Inner02对象的实例，然后调用方法
+        Inner02 inner02 = new Inner02();
+        inner02.f1();
+
+    &#125;
+&#125;
+</code></pre>
+<h2 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h2><p>（1）本质是类 （2）内部类 （3）该类没有名字（其实是类名加$） (4)同时还是一个对象</p>
+<p>匿名内部类是定义在外部类的局部位置，比如方法中，并且没有类名</p>
+<pre><code class="lang-java">package com.zzy.innerclass;
+
+/**
+ * 演示匿名内部类的使用
+ */
+public class AnonymousInnerClass &#123;
+    public static void main(String[] args) &#123;
+        Outer04 outer04 = new Outer04();
+        outer04.method();
+    &#125;
+&#125;
+
+class Outer04&#123;//外部类
+    private int n1 = 10;
+
+    public void method()&#123;
+        //基于接口的匿名内部类
+        //这个基于接口的类我只使用一次就不用了,则在其他外部类去写这个类有点浪费
+        //可以使用匿名内部类来简化开发
+        //编译类型？ IA
+        //运行类型：是系统自动分配的，但是可以用类.getclass()进行查看
+        //jdk底层在创建匿名内部类的时候，立马就创建了Outer$1的实例，并且把地址返回给接收new对象的对象
+        //匿名内部类只能使用一次，注意区别实例和匿明内部类的区别
+        IA tiger = new  IA()&#123;
+            @Override
+            public void cry()&#123;
+                System.out.println(&quot;老虎叫唤...&quot;);
+            &#125;
+        &#125;;
+        System.out.println(&quot;tiger的运行类型：&quot; + tiger.getClass());
+        tiger.cry();
+
+        //基于类的匿名内部类
+        Father baba = new Father(&quot;baba&quot;)&#123;
+            @Override
+            public void test() &#123;
+                System.out.println(&quot;匿名内部类重写了test方法&quot;);
+            &#125;
+        &#125;;
+        System.out.println(&quot;baba的运行类型&quot; + baba.getClass());
+        baba.test();
+    &#125;
+&#125;
+
+interface IA&#123;//接口
+    public abstract void cry();
+
+&#125;
+
+class Father&#123;
+    public Father(String name)&#123;//构造器
+
+    &#125;
+
+    public void test()&#123;//方法
+        System.out.println(&quot;父类的test方法&quot;);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="匿名内部类的使用细节"><a href="#匿名内部类的使用细节" class="headerlink" title="匿名内部类的使用细节"></a>匿名内部类的使用细节</h2><ol>
+<li>匿名内部类的语法比较奇特，它既是一个类的定义，同时本身也是一个对象，从语法上，它既有定义类的特征，也有创建对象的特征</li>
+<li>可以直接访问外部类的所有成员，包含私有的</li>
+<li>不能添加访问修饰符，因为它的地位就是一个局部变量</li>
+<li>作用域：仅仅定义在它的方法或者代码块中</li>
+<li>匿名内部类—访问—&gt;外部类成员【直接访问】</li>
+<li>外部其他类—不能访问—&gt;匿名内部类【因为匿名内部类地位是一个局部变量】</li>
+<li>如果外部类和匿名内部类的成员重名时，匿名内部类访问的话，遵循就近一致原则，如果想访问外部类的成员，可以使用（外部类名.this.成员）去访问</li>
+</ol>
+<pre><code class="lang-java">package com.zzy.innerclass;
+
+public class AnonymousInnerClassDetails &#123;
+    public static void main(String[] args) &#123;
+        Outer05 outer05 = new Outer05();
+        outer05.f1();
+    &#125;
+&#125;
+
+class Outer05&#123;
+    private int n1 = 99;
+    public void f1()&#123;
+        //创建一个基于类的匿名内部类
+        Person person = new Person()&#123;//编译类型Person,运行类型是匿名对象
+            @Override
+            public void hi()&#123;
+                System.out.println(&quot;匿名内部类重写了 hi方法&quot;);
+            &#125;
+        &#125;;
+        person.hi();
+
+        new Person()&#123;//编译类型Person,运行类型是匿名对象
+            @Override
+            public void hi()&#123;
+                System.out.println(&quot;匿名内部类重写了 hi方法&quot;);
+            &#125;
+
+            @Override
+            public void ok(String name) &#123;
+                super.ok(name);
+            &#125;
+        &#125;.ok(&quot;小周&quot;);
+    &#125;
+&#125;
+class Person&#123;
+    public void hi()&#123;
+        System.out.println(&quot;Person hi()&quot;);
+    &#125;
+
+    public void ok(String name)&#123;
+        System.out.println(&quot;name = &quot; + name);
+    &#125;
+
+&#125;
+</code></pre>
+<h2 id="匿名内部类的最佳实践"><a href="#匿名内部类的最佳实践" class="headerlink" title="匿名内部类的最佳实践"></a>匿名内部类的最佳实践</h2><p>当做实参直接传递，简洁高效</p>
+<pre><code class="lang-java">package com.zzy.innerclass;
+
+public class InnerClassExercise01 &#123;
+    public static void main(String[] args) &#123;
+        f1(new AA() &#123;//当做实参直接传递，简洁高效
+            @Override
+            public void show() &#123;
+                System.out.println(&quot;匿名内部类&quot;);
+            &#125;
+        &#125;);
+    &#125;
+
+    //静态方法,形参是接口类型
+    public static void f1(AA aa)&#123;
+        aa.show();
+    &#125;
+&#125;
+
+interface AA&#123;
+    public abstract void show();
+&#125;
+</code></pre>
+<pre><code class="lang-java">package com.zzy.innerclass;
+
+public class InnerClassExercise02 &#123;
+    public static void main(String[] args) &#123;
+        alarmclock(new Bell() &#123;//匿名内部类作为实参
+            @Override
+            public void ring() &#123;
+                System.out.println(&quot;懒猪起床了&quot;);
+            &#125;
+        &#125;);
+
+        alarmclock(new Bell() &#123;
+            @Override
+            public void ring() &#123;
+                System.out.println(&quot;小伙伴上课了&quot;);
+            &#125;
+        &#125;);
+    &#125;
+
+    public static void alarmclock(Bell bell)&#123;
+        bell.ring();
+    &#125;
+&#125;
+
+interface Bell&#123;
+    public abstract void ring();
+&#125;
+</code></pre>
 ]]></content>
       <categories>
         <category>Java基础</category>
