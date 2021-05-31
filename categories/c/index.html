@@ -380,242 +380,25 @@ var _hmt = _hmt || [];
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/dpkg%E8%A2%AB%E4%B8%AD%E6%96%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+			<a href="/2021/05/31/C++/C-%E7%9F%A5%E8%AF%86%E7%82%B9/">
 				<h2 class="index-title">
-					dpkg被中断的解决办法
+					C-知识点
 				</h2>
 				<div class="index-brief">
-					
-sudo rm /var/lib/dpkg/updates/*
-sudo apt-get update
-sudo apt-get upgrade
-解释：[]sudo apt-get update指令会重新建立这些资料，所以不必担心删除后会出问题；[]sudo apt-get upgrade会更新你
+					1. cin.clear()是用来更改cin的状态标示符的。
+cin.sync（）是用来清除缓存区的数据流的。如果标示符没有改变那么即使清除了数据流也无法输入。所以两个要联合起来使用。
+我们定义要输入到的变量是整型,但如果我们输入了英文字母或者汉字,那就会发生错误,cin里有个方法能检测这个错误,就
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2021-03-14</span>
+				    <span>2021-05-31</span>
                     
                             
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/%E5%AE%89%E8%A3%85snap/">
-				<h2 class="index-title">
-					安装snap
-				</h2>
-				<div class="index-brief">
-					sudo apt-get install snapd
-sudo apt-get install snapcraft
-2.常用命令//列出已经安装的snap包
-sudo snap list
-
-//搜索要安装的snap包
-sudo snap find &lt;text to search&gt;
-
-//
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-03-14</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/ubuntu%E9%85%8D%E7%BD%AEC-C-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
-				<h2 class="index-title">
-					ubuntu配置C-C-开发环境
-				</h2>
-				<div class="index-brief">
-					
-2.给这个两个文件配置文件launch.json:
-&#123;    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-03-14</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/ubuntu%E5%AE%89%E8%A3%85gcc%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/">
-				<h2 class="index-title">
-					ubuntu安装gcc依赖关系报错
-				</h2>
-				<div class="index-brief">
-					
-sudo apt-get install aptitude
-sudo aptitude install gcc g++
-解决方案里选择no,yes,yes.参考博客
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-03-14</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/ubuntu%E5%AE%89%E8%A3%85vim%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/">
-				<h2 class="index-title">
-					ubuntu安装vim依赖关系报错
-				</h2>
-				<div class="index-brief">
-					
-sudo apt-get purge vim-common
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install vim
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-03-14</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E7%9A%84firefox%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-				<h2 class="index-title">
-					ubuntu下的firefox无法播放视频解决方案
-				</h2>
-				<div class="index-brief">
-					
-2.解压tar.gz文件tar -zxvf filename.tar.gz
-注意filename.tar.gz就是你下载的文件的名字，可以直接复制下载包名字。
-3.移动解压文件夹先进入安装包目录下,然后
-sudo cp libflashplayer.so /usr/lib/firefox/brow
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-03-14</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E8%A7%A3%E5%86%B3wps2019%E7%BC%BA%E5%B0%91%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98/">
-				<h2 class="index-title">
-					ubuntu下解决wps2019缺少字体问题
-				</h2>
-				<div class="index-brief">
-					
-1.准备字体包下载链接
-2.解压到指定目录下sudo unzip wps_symbol_fonts.zip -d /home/&lt;user&gt;/usr/share/fonts
-3.到解压的根目录下安装依次打开每个文件并点击安装即可
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-03-14</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/Ubuntu%E6%9B%B4%E6%8D%A2%E6%BA%90%E6%95%99%E7%A8%8B/">
-				<h2 class="index-title">
-					Ubuntu更换源教程
-				</h2>
-				<div class="index-brief">
-					
-1.备份源列表sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-2.打开sources.list文件sudo gedit /etc/apt/sources.list
-3.修改sources.list文件#  阿里镜像源
-
-deb htt
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-03-14</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
+                                        <a href="/categories/C/">C++</a>
 										
                                     </span>
                                 
