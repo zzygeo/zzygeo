@@ -581,6 +581,7 @@ sudo snap remove &lt;snap name&gt;
     <content><![CDATA[<p>查看类的结构：ctrl+f12</p>
 <p>查看类的继承图：ctrl+alt+shift+u</p>
 <p>查看函数参数：ctrl+p</p>
+<p>查看函数介绍：ctrl+q</p>
 <p>格式化代码：ctrl+shift+l</p>
 <p>代码补全：alt+/</p>
 <p>提示关键字：alt+shift+/</p>
@@ -1289,7 +1290,7 @@ interface Bell&#123;
   </entry>
   <entry>
     <title>C++知识点</title>
-    <url>/2021/05/31/C++/C-%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <url>/2021/05/31/C++/C++%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
     <content><![CDATA[<h1 id="1-cin-clear"><a href="#1-cin-clear" class="headerlink" title="1. cin.clear()"></a>1. cin.clear()</h1><p>是用来更改cin的状态标示符的。</p>
 <p>cin.sync（）是用来清除缓存区的数据流的。<br>如果标示符没有改变那么即使清除了数据流也无法输入。所以两个要联合起来使用。</p>
 <p>我们定义要输入到的变量是整型,但如果我们输入了英文字母或者汉字,那就会发生错误,cin里有个方法能检测这个错误,就是cin.rdstate(); 当cin.rdstate()返回0(即ios::goodbit)时表示无错误,可以继续输入或者操作,若返回4则发生非致命错误即ios::failbit,则不能继续输入或操作.而cin.clear则可以控制我们此时cin里对这个问题的一个标识.语发如下: cin.clear(标识符); 标识符号为:</p>
@@ -1318,9 +1319,1003 @@ int main()
 &#125;
 </code></pre>
 <p>上面的cin.clear()默认参数为0,即无错误,正常操作.当我们输入英文字母’k’时,它的状态标识改为fail,即错误,用cout对用户输出信息,再用cin.clear让错误标识改回为0,让我们可以继续输入,再清空流数据继续输入.如果我们没有了cin.clear,则会进入死循环,其过程为我们输入了英文字母,它的状态标识便为fail,当运行到条件判断时,便总是回到错误的条件表示里,并且我们再也没办法输入,因为错误的表示关闭了cin,所以会进入死循环.</p>
+<h1 id="2-常量指针和指针常量"><a href="#2-常量指针和指针常量" class="headerlink" title="2. 常量指针和指针常量"></a>2. 常量指针和指针常量</h1><p>在第一次听黑马C++的时候，是按老师的说法自己记忆的，而在回顾C++ primer plus时，对这个的理解才更加深刻，先看两者的声明。</p>
+<pre><code class="lang-c++">int sloth =3;
+const int* ps = &amp;sloth;        // a pointer to const int
+int* const finger = &amp;sloth;    // a const pointer to int
+</code></pre>
+<p>根据英文的理解比中文好的多， a pointer to const int 代表这个指针指向的常量是不可以改变的，但是这个指针是指向却是可以改变的。</p>
+<p>第二个表明这个指针它是一个常量，它是没法改变的，但是他指向的值却是可以改变的，记住这个英文的注解就可以了。</p>
 ]]></content>
       <categories>
         <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript基础</title>
+    <url>/2021/06/08/JavaScript/JavaScript/</url>
+    <content><![CDATA[<h1 id="1-JavaScript介绍"><a href="#1-JavaScript介绍" class="headerlink" title="1.JavaScript介绍"></a>1.JavaScript介绍</h1><p>JavaScript实现包含了三个部分，ECMAScript, DOM和BOM</p>
+<p>ECMAScript：JavaScript语法</p>
+<p>DOM：页面文档对象模型</p>
+<p>BOM：浏览器对象模型</p>
+<p>JS的特点</p>
+<p>1.解释性语言—写完了直接运行，不用去编译</p>
+<p>2.类似于C和Java的语法结构</p>
+<p>3.动态语言</p>
+<p>4.基于原型的面向对象</p>
+<p>浏览器执行JS简介</p>
+<p>浏览器分为两部分，渲染引擎和JS引擎</p>
+<p>渲染引擎：用来解析HTML和CSS，俗称内核，比如chrome浏览器的blink,老版本的webkit</p>
+<p>JS引擎：也称为JS解释器。用来读取网页中的JavaScript代码，对其处理后运行，比如chrome浏览器的V8</p>
+<h1 id="2-JS有三种书写位置"><a href="#2-JS有三种书写位置" class="headerlink" title="2. JS有三种书写位置"></a>2. JS有三种书写位置</h1><p>1.行内式JS</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;button&quot; value=&quot;点我试试&quot; onclick=&quot;alert(&#39;hello world&#39;)&quot;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol>
+<li>可以将单行或者少量JS代码写在HTML标签的事件属性中（以on开头的属性），如onclik</li>
+<li>注意单双引号的使用：在HTML中我们推荐使用双引号, JS中我们推荐使用单引号</li>
+<li>可读性差，在html中编写JS大量代码时，不方便阅读</li>
+<li>引号易错，引号多层嵌套匹配时，非常容易弄混</li>
+<li>特殊情况下使用</li>
+</ol>
+<p>2.内嵌式JS</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        alert(&#39;hello world!&#39;)
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol>
+<li>可以将多行JS代码写到<script>标签中</li>
+<li>内嵌JS是学习时常用的方式</li>
+</ol>
+<p>3.外部JS文件</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+   &lt;script src=&quot;hello.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol>
+<li>利于HTML页面代码结构化，把大段JS代码独立到HTML页面之外，既美观，也方便文件级别的复用</li>
+<li>引用外部JS文件的script标签中间不可以写代码</li>
+<li>适用于JS代码量比价大的情况</li>
+</ol>
+<h1 id="3-JavaScript输入输出语句"><a href="#3-JavaScript输入输出语句" class="headerlink" title="3. JavaScript输入输出语句"></a>3. JavaScript输入输出语句</h1><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        // 这是一个输入框
+        prompt(&#39;请输入年龄&#39;);
+        // alert弹出警示框
+        alert(&#39;计算的结果是&#39;);
+        // console 控制台输出 给程序员测试用的,f12进入开发者模式可见
+        console.log(&#39;这是程序员能看到的&#39;);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="4-数据类型"><a href="#4-数据类型" class="headerlink" title="4. 数据类型"></a>4. 数据类型</h1><p>JavaScript是一种弱类型或者说动态语言，这意味着不用提前声明变量的类型，==在程序运行过程中，类型会被自动确定。==</p>
+<p>JavaScript==拥有动态类型，同时也意味着相同的变量可用作不同的类型==</p>
+<p>数值型：==isNaN()==可以用来判断非数字，如果是数字返回的是false, 如果不是数字返回的是true</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        console.log(isNaN(5)); //false
+        console.log(isNaN(&#39;str&#39;)) //true
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>字符串长度，直接变量名.length，注意==这里没有括号==。</p>
+<p>布尔类型参与加法运算当做0或1来看待</p>
+<p>变量声明未赋值，就是undefined未定义数据类型</p>
+<p>undefined和数字相加，最后的结果是NaN</p>
+<p>typeof可以检测变量属于什么类型</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script&gt;
+        var num = 10;
+        var str = &#39;明天会更好！&#39;;
+        console.log(typeof(num));
+        console.log(typeof(str));
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>prompt取过来的值是 字符型的</p>
+<h1 id="5-数据类型转换"><a href="#5-数据类型转换" class="headerlink" title="5. 数据类型转换"></a>5. 数据类型转换</h1><p>转换为字符串型</p>
+<p>1.把数值型转换为字符串类型 toString();</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+    var age = 10;
+    var str = age.toString();
+    console.log(str);
+    console.log(typeof str);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>2.利用String()方法</p>
+<p>3.利用+拼接字符串的方法实现转换效果</p>
+<p>==一般使用的都是第三种方式进行转换，这一方法也称为隐式转换==</p>
+<p>转换为数值型</p>
+<p>1.通过parseInt函数进行转换，把String转换成整数类型</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+    var age = prompt(&#39;请输入您的年龄&#39;);
+    console.log(parseInt(age));
+    console.log(parseInt(&#39;120px&#39;)); //parseInt方法会直接去掉字母，但必须是以数字打头
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>2.通过parseFloat可以把String转换为浮点型</p>
+<p>3.可以通过Number()进行转换</p>
+<p>4.利用算数运算 - *  / 隐式转换</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+      console.log(&#39;12&#39; - 0);
+      console.log(&#39;123&#39; - &#39;120&#39;);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>转换为布尔型</p>
+<p>使用Boolean()函数</p>
+<p>代表空、否定的值会被转换为false，如’’、0、NaN、null、undefined</p>
+<p>其他的值全部会转换成true</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+      console.log(Boolean(&#39;&#39;));
+      console.log(Boolean(0));
+      console.log(Boolean(NaN));
+      console.log(Boolean(null));
+      console.log(Boolean(undefined));
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="6-运算符"><a href="#6-运算符" class="headerlink" title="6. 运算符"></a>6. 运算符</h1><p>=== </p>
+<p>!==     全等 要求值和数据类型都一致</p>
+<p>运算符优先级</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+<th>顺序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>小括号</td>
+<td>()</td>
+</tr>
+<tr>
+<td>2</td>
+<td>一元运算符</td>
+<td>++ — !</td>
+</tr>
+<tr>
+<td>3</td>
+<td>算数运算符</td>
+<td>先 * / % 后+ -</td>
+</tr>
+<tr>
+<td>4</td>
+<td>关系运算符</td>
+<td>&gt; &gt;= &lt; &lt;=</td>
+</tr>
+<tr>
+<td>5</td>
+<td>相等运算符</td>
+<td>== != ===  !==</td>
+</tr>
+<tr>
+<td>6</td>
+<td>逻辑运算符</td>
+<td>先&amp;&amp; 后\</td>
+<td>\</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>赋值运算符</td>
+<td>=</td>
+</tr>
+<tr>
+<td>8</td>
+<td>逗号运算符</td>
+<td>，</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="7-流程控制"><a href="#7-流程控制" class="headerlink" title="7. 流程控制"></a>7. 流程控制</h1><p>和Java语法类似</p>
+<h1 id="8-数组"><a href="#8-数组" class="headerlink" title="8. 数组"></a>8. 数组</h1><p>创建数组的方式有两种</p>
+<pre><code class="lang-javascript">var arr = new Array();
+var arr1 = [];
+var arr2 = [1, 2, &#39;zzy&#39;, true];
+</code></pre>
+<p>注意JavaScript里的数组是==可以混用数据类型的==</p>
+<pre><code class="lang-javascript">console.log(arr1);    //这里打印的不是地址，包含整个数组的信息
+</code></pre>
+<p>==新增数组元素：修改索引值，追加数组元素==，push方法也可以</p>
+<h1 id="9-函数"><a href="#9-函数" class="headerlink" title="9. 函数"></a>9. 函数</h1><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+      function getsum(num1, num2)&#123;
+          var sum = 0;
+          for (var i = num1; i &lt;= num2 ; i++) &#123;
+              sum += i;
+          &#125;
+          return sum;
+      &#125;
+
+      console.log(getsum(10, 20));
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>讲道理，这语法有点无耻</p>
+<p>函数与数组</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+      function getmax(arr)&#123;
+          var max = arr[0];
+          for (var i = 0; i &lt; arr.length; i++) &#123;
+              if (arr[i] &gt; max)&#123;
+                  max = arr[i];
+              &#125;
+          &#125;
+          return max;
+      &#125;
+      var re = getmax([5, 2, 99, 101, 67, 77]);
+      console.log(re);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>脚本语言就是有点无耻</p>
+<p>return 只能返回一个值，传多个以传入的最后一个值为准</p>
+<p>函数都是有返回值的</p>
+<p>1.如果有return则返回return后面的值</p>
+<p>2.如果没有return则返回undefined</p>
+<p>break, continue,return的区别</p>
+<p>break:结束当前的循环体</p>
+<p>continue:跳出本次循环，继续执行下次循环</p>
+<p>return:不仅可以退出循环，还能够返回return语句中的值，同时还可以结束当前的函数体内的代码</p>
+<h1 id="10-arguments"><a href="#10-arguments" class="headerlink" title="10. arguments"></a>10. arguments</h1><p>在强调一遍脚本语言很无耻。</p>
+<p>当我们==不确定有多少个参数传递时==，可以用arguments来获取。在JavaScript中，arguments实际上它是当前函数的一个内置对象。==所有函数都内置了一个arguments对象，arguments对象中存储了传递的所有实参==</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     function fn()&#123;
+         console.log(arguments);    //arguments是伪数组，没有一些方法，如pop(),
+         console.log(arguments[2]);
+     &#125;
+     fn(1, 2, 3);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="11-作用域"><a href="#11-作用域" class="headerlink" title="11. 作用域"></a>11. 作用域</h1><p>就是代码名字（变量）在某个范围内起作用和效果，目的是为了提高程序的可靠性，更重要的是减少命名冲突</p>
+<p>全局作用域：整个script标签 或者是一个单数的js文件</p>
+<p>局部作用域：在函数内部就是局部作用域，这个代码的名字只在函数内部起效果和作用</p>
+<p>==注意：如果在函数内部，没有声明直接赋值的变量也属于全局变量==</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     function fn()&#123;
+         var num1 =10;
+         num2 = 20;
+     &#125;
+     fn();
+     console.log(num2);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="12-预解析"><a href="#12-预解析" class="headerlink" title="12. 预解析"></a>12. 预解析</h1><p>JavaScript代码是由浏览器中的JavaScript解释器来执行的。JavaScript解析器在运行JavaScript的时候分为两步：==预解析和代码执行==。</p>
+<p>预解析 js解释器==会把js里面所有的var还有function提升到当前作用域的最前面==</p>
+<p>代码执行：按照代码书写的顺序从上往下执行</p>
+<p>预解析分为变量预解析（变量提升）和函数预解析（函数提升）</p>
+<p>变量提升就是把所有的变量声明提升到当前的作用域最前面,==不提升赋值操作==</p>
+<p>函数提升就是把所有的函数声明（感觉js的声明好像也包含了定义的意思）提升到当前作用域的最前面，==不调用函数==</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     var a = 18;
+     f1();
+     function f1()&#123;
+         var b = 9;
+         console.log(a);
+         console.log(b);
+         var a = &#39;123&#39;;
+     &#125;
+
+     /*
+     var a;
+     function f1()&#123;
+        var b;
+        var a;
+        b = 9;
+        console.log(a); //undefined
+        console.log(b); //9
+        a = &#39;123&#39;;
+     &#125;
+     a =18;
+     f1();
+      */
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+    f1();
+    console.log(c);
+    console.log(b);
+    console.log(a);
+    function f1()&#123;
+        var a = b = c = 9;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    &#125;
+
+    /*
+     function f1()&#123;
+        //相当于var a =9, b =9, c = 9; 函数内部不声明直接赋值相当于全局变量
+        var a;
+        a = b = c = 9;
+        console.log(a); //9
+        console.log(b); //9
+        console.log(c); //9
+    &#125;
+    f1();
+    console.log(c); //9
+    console.log(b); //9
+    console.log(a); //报错
+     */
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="13-对象"><a href="#13-对象" class="headerlink" title="13. 对象"></a>13. 对象</h1><p>创建对象的三种方式:</p>
+<p>利用对象字面量创建对象{}</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+      //1.利用对象字面量创建对象&#123;&#125;
+      // var obj =&#123;&#125;;
+    var obj = &#123;
+        uname: &#39;杰克船长&#39;,
+        age: 18,
+        sex: &#39;男&#39;,
+        sayHi: function ()&#123;
+            console.log(&#39;hi~&#39;)
+        &#125;
+    &#125;
+    /*
+    细节： 里面的属性和方法采用键值对的形式 属性名： 属性值
+    多个属性或方法中间用逗号隔开
+    方法冒号后面跟的是一个匿名函数
+     */
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>利用new Object创建对象</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     var obj = new Object();
+     obj.uname = &#39;杰克船长&#39;;
+     obj.age = 18;
+     obj.sex = &#39;男&#39;;
+     obg.sayHi = function ()&#123;
+         console.log(&#39;hi~&#39;);
+     &#125;
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>利用构造函数创建对象</p>
+<p>为什么需要构造函数来创建对象：因为前面两种创建对象的方式一次只能创建一个对象，因此可以利用函数的方法，重复这些相同的代码，我们就把这个函数称为构造函数</p>
+<p>构造函数：就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     function Star(uname, age, sex)&#123;
+         this.name = uname;
+         this.age = age;
+         this.sex = sex;
+         this.sing = function (sang)&#123;
+             console.log(sang)
+         &#125;
+     &#125;
+     var ldh = new Star(&#39;刘德华&#39;, 18, &#39;男&#39;);
+     console.log(typeof ldh);
+     console.log(ldh.name);
+     console.log(ldh.sex);
+     ldh.sing(&#39;冰雨&#39;);
+     var zxy = new Star(&#39;张学友&#39;, 19, &#39;男&#39;);
+     console.log(zxy.name);
+     zxy.sing(&#39;吻别&#39;);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>细节：</p>
+<p>构造函数名字首字母要大写</p>
+<p>==构造函数不需要return就可以返回结果==</p>
+<p>调用构造函数，必须使用new</p>
+<p>构造函数和对象区别：</p>
+<p>构造函数是泛指的某一大类，它类似于java语言里的类</p>
+<p>对象是一个具体的事物</p>
+<p>遍历对象</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     var obj = &#123;
+         name: &#39;杰克船长&#39;,
+         age: 18,
+         sex: &#39;男&#39;
+     &#125;
+
+     for (var k in obj)&#123;
+         console.log(k);    // 输入k，输出的是属性名
+         console.log(obj[k]);   //obj[k], 得到的是属性值
+     &#125;
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="14-内置对象"><a href="#14-内置对象" class="headerlink" title="14. 内置对象"></a>14. 内置对象</h1><p>JavaScript的对象分为3种：自定义对象、内置对象、浏览器对象</p>
+<p>前面两种对象是JS基础内容，属于ECMAScript；第三个浏览器对象属于我们JS独有的</p>
+<p>内置对象就是指JS语言自带的一些对象，这些对象供开发者使用，并提供了一些常用的或是最基本而必要的功能（属性和方法）</p>
+<p>MDN：</p>
+<p>Mozilla开发者网络提供了有关开放网络技术的信息，包括HTML、CSS和万维网以及HTML5应用的API</p>
+<p><a href="https://developer.mozilla.org/zh-CN/">MDN</a></p>
+<h2 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+      console.log(Math.floor(5.1)); //向下取整, 5
+      console.log(Math.ceil(5.1));  //向上取整, 6
+      console.log(Math.round(-3.1));    //就近取整, -3
+      console.log(Math.round(-3.5));    //搞个坐标轴从左到右看, -3
+      console.log(Math.round(5.5));     //6
+      console.log(Math.abs(-2.3));      //2.3
+      console.log(Math.random());
+      function getRandomIntInclusive(min, max) &#123;
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min + 1) + min);
+      &#125;
+
+      console.log(getRandomIntInclusive(1, 10));
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><p>Date日期对象是一个构造函数，必须使用new来调用创建我们的日期对象</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     var date = new Date();
+     console.log(date);
+     var date1 = new Date(1999,1,11); //返回的月份会比输入的多1个月，0-11开始进行计算
+     console.log(date1);
+     var date2 = new Date(&#39;1998-11-24 22:11:34&#39;);
+     console.log(date2);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     var date = new Date();
+     console.log(date.getFullYear());
+     console.log(date.getMonth() + 1);
+     console.log(date.getDate());
+     console.log(date.getDay()); //周一返回的是1 周六返回的是6，但是周日返回的是0
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>时间戳（指距离1970年1月1号00:00过去的毫秒数）</p>
+<p>==var date = +new Date(); 可以直接获取时间戳==</p>
+<p>其他方法不再赘述，查阅MDN文档即可</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     function conutDown(time) &#123;
+         var inputTime = +new Date(time);
+         var nowTime = Date.now();
+         var times = (inputTime - nowTime) / 1000;
+         var d = parseInt( times / 60 / 60 / 24);
+         d = d &lt; 10 ? &#39;0&#39; + d : d;
+         var h = parseInt(times / 60 / 60 % 24);
+         h = h &lt; 10 ? &#39;0&#39; + h : h;
+         var m = parseInt(times / 60 % 60);
+         m = m &lt; 10 ? &#39;0&#39; + m : m;
+         var s = parseInt(times % 60);
+         s = s &lt; 10 ? &#39;0&#39; + s : s;
+         return d + &#39;天&#39; + h + &#39;时&#39; + m + &#39;分&#39; + s + &#39;秒&#39;;
+     &#125;
+
+     console.log(conutDown(&#39;2021-6-7 21:00:00&#39;));
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><p>push: 尾插 pop: 尾删     unshift: 头插 shift: 头删</p>
+<p>sort:排序 reverse: 翻转</p>
+<p>==升序降序的写法：==</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+    var arr1 = [13, 4, 77, 1, 7];
+    var arr2 = [13, 3, 77, 7, 1];
+    arr1.sort(function (a, b) &#123;//仿函数,升序
+        return a - b;
+    &#125;);
+    arr2.sort(function (a, b) &#123;//仿函数,降序
+        return b -a;
+    &#125;)
+    console.log(arr1);
+    console.log(arr2);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>数组去重</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+    function unique(arr) &#123;//利用indexOf去判断
+        var arr1 = [];
+        for (var i = 0; i &lt; arr.length; i++) &#123;
+            if (arr1.indexOf(arr[i]) == -1)&#123;
+                arr1.push(arr[i]);
+            &#125;
+        &#125;
+        return arr1;
+    &#125;
+    var arr = unique([1, 2, 3, 5, 1, 2, 2, 7 ,8 ,9]);
+    console.log(arr);
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>数组转换成字符串</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+      //1.第一种方法
+      var arr = [1, 2, 3];
+      console.log(arr.toString());
+      //2第二种方法,使用join,可以自己指定分隔符
+      console.log(arr.join(&#39;-&#39;));
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="15-基本包装类型"><a href="#15-基本包装类型" class="headerlink" title="15. 基本包装类型"></a>15. 基本包装类型</h1><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;script&gt;
+     var str = &#39;andy&#39;;
+     console.log(str.length); //4
+     //对象才有属性和方法， 复杂的数据类型才有属性和方法
+     //简单数据类型会具有length属性，是因为简单数据类型被包装成了复杂数据类型
+     //步骤如下：
+     var temp = new String(&#39;andy&#39;);
+     //临时变量复制给str
+     str = temp;
+     //销毁临时变量
+     temp = null;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="16-字符串的不可变性"><a href="#16-字符串的不可变性" class="headerlink" title="16. 字符串的不可变性"></a>16. 字符串的不可变性</h1><p>字符串不可变性是指里面的值不可变，虽然看上去内容改变了，但其实是地址变了，内存中新开辟了一个内存空间，所以大量使用字符串拼接会出现效率问题。</p>
+<p>根据字符返回位置：</p>
+<pre><code class="lang-javascript">var str = &#39;春天来了，这是春天的气息&#39;;
+console.log(str.indexOf(&#39;春&#39;));
+console.log(str.indexOf(&#39;春&#39;, 3));    //从索引号是3的位置开始往后查找
+</code></pre>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;script&gt;
+        var arr = [&#39;red&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;green&#39;, &#39;pink&#39;, &#39;red&#39;];
+        var index = arr.indexOf(&#39;red&#39;);
+        // console.log(arr.indexOf(&#39;red&#39;));
+        var num = 0;
+        while (index != -1) &#123;
+            console.log(index);
+            num++;
+            index = arr.indexOf(&#39;red&#39;, index + 1);
+        &#125;
+        console.log(&#39;red出现的次数为：&#39; + num);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>根据位置返回字符：</p>
+<ol>
+<li>charAt(index);    返回指定位置的字符</li>
+</ol>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;script&gt;
+        var str = &#39;andy&#39;;
+        for (var i = 0; i &lt; str.length; i++) &#123;
+            console.log(str.charAt(i));
+        &#125;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>2.charCodeAt(index)    返回指定位置处的ASCII码,用于判断用户按下了哪个键</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;script&gt;
+        var str = &#39;andy&#39;;
+        for (var i = 0; i &lt; str.length; i++) &#123;
+            console.log(str.charCodeAt(i));
+        &#125;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>3.str[index];    获取指定位置处字符,H5新增的写法</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;script&gt;
+        var str = &#39;andy&#39;;
+        for (var i = 0; i &lt; str.length; i++) &#123;
+            console.log(str[i]);
+        &#125;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;script&gt;
+       var o = &#123;
+           age: 18
+       &#125;
+       if (o[&#39;age&#39;]) &#123;//判断类里是否有该属性
+           console.log(&#39;里面有该属性&#39;);
+       &#125;else &#123;
+           console.log(&#39;没有该属性&#39;);
+       &#125;
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;script&gt;
+      //统计出现次数最多的字符
+      var str = &#39;abcoefoxyozzopp&#39;;
+      var o = &#123;&#125;;
+      for (var i = 0; i &lt; str.length; i++) &#123;
+          var val = str[i];
+          if (o[val]) &#123;
+              o[val]++;
+          &#125;else &#123;
+              o[val] = 1;
+          &#125;
+      &#125;
+      console.log(o)
+      //2. 遍历对象
+        var max = 0;
+        var ch = &#39;&#39;;
+        for (var k in o) &#123;
+            if (o[k] &gt; max)&#123;
+                max = o[k];
+                ch = k;
+            &#125;
+        &#125;
+        console.log(max);
+        console.log(ch);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>字符串操作方法</p>
+<p>1.concat(‘字符串1’，’字符串2’);  等效于+, +更常用</p>
+<p>2.substr(start, length);    从start位置开始，length取的个数</p>
+<p>3.slice(start, end);    从start位置开始，截取到end位置，end取不到</p>
+<p>4.substring(start, end);    从start位置开始，截取到end位置，end取不到，基本和slice相同，但是不接受负值</p>
+<p>5.替换字符 replace(‘被替换的字符’, ‘替换为的字符’);   它只会替换第一个字符</p>
+<p>6.字符转换为数组 split(‘分隔符’);</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;script&gt;
+        var str = &#39;red&#39;;
+        console.log(str.concat(&#39;blue&#39;));
+
+        var str1 = &#39;改革春风吹满地&#39;;
+        console.log(str1.substr(2, 2)); //第一个2是索引号，第二个2是截取的数量
+
+        var str2 = &#39;andyandy&#39;;
+        console.log(str2.replace(&#39;a&#39;, &#39;b&#39;));    //它只会替换第一个字母
+        //利用循环可以全部替换
+        var str3 = &#39;abcoefoxyozzopp&#39;;
+        while (str3.indexOf(&#39;o&#39;) != -1)&#123;//替换后不断复制给自己，继续进行替换
+            str3 = str3.replace(&#39;o&#39;, &#39;*&#39;);
+        &#125;
+        console.log(str3);
+        var str4 = &#39;red, pink, blue&#39;;   //字符串转换为数组，前面有join把数组转换为字符串
+        console.log(str4.split(&#39;,&#39;));
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="17-数据类型分配"><a href="#17-数据类型分配" class="headerlink" title="17. 数据类型分配"></a>17. 数据类型分配</h1><p>简单数据类型里有一个是特殊的，就是null,他是一个空对象，在当初设计的时候写错了，后来都使用了，也就这样规定了,一般初始化对象时使用</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;title&lt;/title&gt;
+    &lt;script&gt;
+        var num = null;
+        console.log(typeof num);    //返回的是Object
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>堆和栈</p>
+<p>1、栈：由操作系统自动分配释放存放函数的参数值、局部变量的值等。</p>
+<p>2、堆：存储复杂类型（对象），一般由程序员分配释放，若程序员不释放，由垃圾回收器机制回收</p>
+<p>引用类型（复杂数据类型）：通过new关键字创建的对象，如Object、Array、Date等</p>
+<p>引用类型变量里（栈空间）里存放的是地址，真正的对象实例存放在堆空间中</p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
       </categories>
   </entry>
 </search>
