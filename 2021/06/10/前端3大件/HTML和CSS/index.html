@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		JavaScript基础 | 
 	 
 	CallMe🍉
 	</title>
@@ -399,7 +401,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2021/06/10/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/HTML%E5%92%8CCSS/">
 										HTML和CSS
 									</a>
@@ -426,81 +428,134 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<div id="index">
-	
-		<div class="index-li">
-			<a href="/2021/05/24/Java%E5%9F%BA%E7%A1%80/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/">
-				<h2 class="index-title">
-					面向对象高级部分
-				</h2>
-				<div class="index-brief">
-					1.类变量和类方法介绍
-==类变量可以通过类名直接来访问==
-==堆区 or 静态域==，需要看jdk的版本
+		<h1 id="article-title">
 
-==不管static变量在哪里，共识（1）static变量是同一个类所有对象共享 （2）static类变量，在类加载的时候就生成了==
-package com.zzy.static_;
+	HTML和CSS
+</h1>
+<div class="article-meta">
+	
+	<span>Regular</span>
+	<span>2021-06-10 01:01:30</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/HTML-CSS/">HTML-CSS</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
 
+    
+		<span>Tags：</span>
+            
+    
+		</div>
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-05-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Java基础/">Java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/05/24/Java%E5%9F%BA%E7%A1%80/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-				<h2 class="index-title">
-					IDEA快捷键
-				</h2>
-				<div class="index-brief">
-					查看类的结构：ctrl+f12
-查看类的继承图：ctrl+alt+shift+u
-查看函数参数：ctrl+p
-查看函数介绍：ctrl+q
-格式化代码：ctrl+shift+l
-代码补全：alt+/
-提示关键字：alt+shift+/
-万能结错/生成返回值变量：alt+enter
-查看继承结构：ctr
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-05-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Java基础/">Java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
 </div>
 
+<div id="article-content">
+	<h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>网站是指因特网上根据一定的规则，使用html等制作的用于展示特定内容相关的网页集合。</p>
+<p>网页是网站中的一页，通常是HTML格式的文件，它要通过浏览器来阅读。</p>
+<p>网页是构成网站的基本元素，它通常由图片、链接、文字、声音、视频等元素组成。</p>
+<p>什么是HTML：HTML指的是超文本标记语言，它是用来描述网页的一种语言。</p>
+<p>标记语言是一套标记标签（markup tag）</p>
+<p>所谓超文本，有两层含义：</p>
+<ol>
+<li><p>它可以加入图片、声音、动画、多媒体等内容（超越了文本限制）。</p>
+</li>
+<li><p>它还可以从一个文件跳转到另一个文件，与世界各地主机链接。</p>
+</li>
+</ol>
+<p>前端==》浏览器渲染==》web端展示</p>
+<p>Web标准是由W3C组织和其他标准化制定的一系列标准的集合。</p>
+<p>Web标准的构成：</p>
+<p>主要包括结构(Structure)、表现(Presentation)、行为(Behavior)三个方面</p>
+<p>结构：结构用于对网页元素进行整理和分类，现阶段主要学的是HTML。</p>
+<p>表现：表现用于设置网页元素的版式、颜色、大小等外观样式，主要是指CSS</p>
+<p>行为：行为是指网页模型的定义及交互的编写，现阶段主要学的是JavaScript</p>
+<p>Web标准提出的最佳体验方案：结构、样式、行为相分离。</p>
+<p>也就是：结构写到HTML文件中，表现写到CSS文件中，行为写到JavaScript文件中。</p>
+<p>相比较而言，三者中结构最重要。</p>
+<h1 id="HTML语法"><a href="#HTML语法" class="headerlink" title="HTML语法"></a>HTML语法</h1><p>所有的标签都包含在&lt;&gt;里，而且大部分情况下都是成对出现的</p>
+<pre><code class="lang-html">&lt;html&gt;&lt;/html&gt;  //双标签
+
+&lt;br /&gt;      //单标签
+</code></pre>
+<p>包含关系：可以简单理解为父子关系</p>
+<pre><code class="lang-html">&lt;head&gt;
+   &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+<p>并列关系：理解为兄弟关系</p>
+<pre><code class="lang-html">&lt;head&gt;&lt;/head&gt;
+
+&lt;body&gt;&lt;/body&gt;
+</code></pre>
+<h1 id="HTML基本结构标签"><a href="#HTML基本结构标签" class="headerlink" title="HTML基本结构标签"></a>HTML基本结构标签</h1><p>每个网页都会有一个基本的结构标签（也称为骨架标签），页面内容也是在这些基本标签上书写。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><html></html></th>
+<th>HTML标签</th>
+<th>HTML标签</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><head></head></td>
+<td>文档的头部</td>
+<td>注意在head标签中我们必须设置的标签是title</td>
+</tr>
+<tr>
+<td><title></title></td>
+<td>文档的标题</td>
+<td>让页面拥有一个属于自己的网页标题</td>
+</tr>
+<tr>
+<td><body></body></td>
+<td>文档的主体</td>
+<td>元素包含文档的所有内容，页面内容基本都是放到body里面的</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2021/06/10/Cesium/Cesiun%E5%AD%A6%E4%B9%A0/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Cesiun学习
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2021/06/08/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/JavaScript/">
+                JavaScript
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>

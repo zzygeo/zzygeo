@@ -1333,7 +1333,121 @@ int* const finger = &amp;sloth;    // a const pointer to int
   </entry>
   <entry>
     <title>JavaScript基础</title>
-    <url>/2021/06/08/JavaScript/JavaScript/</url>
+    <url>/2021/06/10/Cesium/Cesiun%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="1-Cesium下载及安装"><a href="#1-Cesium下载及安装" class="headerlink" title="1. Cesium下载及安装"></a>1. Cesium下载及安装</h1><p>先把源码下下来，同时会用到node和git两个软件，在下载完以后，运行</p>
+<pre><code>npm install    //安装cesium所需的一些依赖
+</code></pre><p>源码都是放在Source这个文件下的，其中有很多模块，每个模块下有很多的类。根目录下的Cesium.js就是链接了所有的类，可以直接通过这个文件访问所有类。</p>
+<p>在运行 以下代码之前，先安装gulp.</p>
+<p><a href="https://www.gulpjs.com.cn/">gulp</a></p>
+<pre><code class="lang-bash">npm run build
+</code></pre>
+<p>通过源码编译的cesium，document文档需要自己去创建，运行以下代码：</p>
+<pre><code class="lang-bash">npm run generateDocumentation
+</code></pre>
+<h1 id="2-cesiumWidget"><a href="#2-cesiumWidget" class="headerlink" title="2. cesiumWidget"></a>2. cesiumWidget</h1><p>CesiumWidget内部创建的对象主要有以下几个部分：</p>
+<pre><code class="lang-mermaid">graph LR
+A[Cesium]--&gt;B[cesiumWidget]
+B--&gt;C[clock]
+B--&gt;D[container]
+B--&gt;E[canvas]
+B--&gt;F[screenSpaceEvenHandler]
+B--&gt;G[scene]
+G--&gt;H[global]--&gt;I[_surface]
+G--&gt;J[primitives]
+G--&gt;K[groundPrimitives]
+G--&gt;Y[环境对象]
+Y--&gt;a[skyBox]
+Y--&gt;b[skyAtmosphere]
+Y--&gt;c[sun]
+Y--&gt;d[sunBloom]
+Y--&gt;e[moon]
+Y--&gt;f[background]
+</code></pre>
+<p>clock用来记录时间，毕竟三维场景需要进行动态展示，需要通过时间来确定某一帧的绘制内容。container则是构造函数的参数，也就是传入的div。canvas则是在container上构建的Canvas的对象，可以据此获取WebGL绘制的比划。screenSpaceEventHandler则是对Canvas对象上各种鼠标的交互时间的封装，方便传递给三维场景。三维场景干之后可以据此改变相机姿态等。scene最重要，它承载着整个三维场景中的对象。</p>
+<p>Scene中装载了所有的三维对象</p>
+<p>Scene中有一些==内置==的图元对象：地球（Global）、skyBox（天空盒）、sun、moon等，另外还有两个用来由用户自行控制存放对象的数组：primitives和groundPrimitives, ==scene里本身是没有时间的概念的==</p>
+<h1 id="3-3D-Model"><a href="#3-3D-Model" class="headerlink" title="3. 3D-Model"></a>3. 3D-Model</h1>]]></content>
+      <categories>
+        <category>Cesiun</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript基础</title>
+    <url>/2021/06/10/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/HTML%E5%92%8CCSS/</url>
+    <content><![CDATA[<h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>网站是指因特网上根据一定的规则，使用html等制作的用于展示特定内容相关的网页集合。</p>
+<p>网页是网站中的一页，通常是HTML格式的文件，它要通过浏览器来阅读。</p>
+<p>网页是构成网站的基本元素，它通常由图片、链接、文字、声音、视频等元素组成。</p>
+<p>什么是HTML：HTML指的是超文本标记语言，它是用来描述网页的一种语言。</p>
+<p>标记语言是一套标记标签（markup tag）</p>
+<p>所谓超文本，有两层含义：</p>
+<ol>
+<li><p>它可以加入图片、声音、动画、多媒体等内容（超越了文本限制）。</p>
+</li>
+<li><p>它还可以从一个文件跳转到另一个文件，与世界各地主机链接。</p>
+</li>
+</ol>
+<p>前端==》浏览器渲染==》web端展示</p>
+<p>Web标准是由W3C组织和其他标准化制定的一系列标准的集合。</p>
+<p>Web标准的构成：</p>
+<p>主要包括结构(Structure)、表现(Presentation)、行为(Behavior)三个方面</p>
+<p>结构：结构用于对网页元素进行整理和分类，现阶段主要学的是HTML。</p>
+<p>表现：表现用于设置网页元素的版式、颜色、大小等外观样式，主要是指CSS</p>
+<p>行为：行为是指网页模型的定义及交互的编写，现阶段主要学的是JavaScript</p>
+<p>Web标准提出的最佳体验方案：结构、样式、行为相分离。</p>
+<p>也就是：结构写到HTML文件中，表现写到CSS文件中，行为写到JavaScript文件中。</p>
+<p>相比较而言，三者中结构最重要。</p>
+<h1 id="HTML语法"><a href="#HTML语法" class="headerlink" title="HTML语法"></a>HTML语法</h1><p>所有的标签都包含在&lt;&gt;里，而且大部分情况下都是成对出现的</p>
+<pre><code class="lang-html">&lt;html&gt;&lt;/html&gt;  //双标签
+
+&lt;br /&gt;      //单标签
+</code></pre>
+<p>包含关系：可以简单理解为父子关系</p>
+<pre><code class="lang-html">&lt;head&gt;
+   &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+<p>并列关系：理解为兄弟关系</p>
+<pre><code class="lang-html">&lt;head&gt;&lt;/head&gt;
+
+&lt;body&gt;&lt;/body&gt;
+</code></pre>
+<h1 id="HTML基本结构标签"><a href="#HTML基本结构标签" class="headerlink" title="HTML基本结构标签"></a>HTML基本结构标签</h1><p>每个网页都会有一个基本的结构标签（也称为骨架标签），页面内容也是在这些基本标签上书写。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><html></html></th>
+<th>HTML标签</th>
+<th>HTML标签</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><head></head></td>
+<td>文档的头部</td>
+<td>注意在head标签中我们必须设置的标签是title</td>
+</tr>
+<tr>
+<td><title></title></td>
+<td>文档的标题</td>
+<td>让页面拥有一个属于自己的网页标题</td>
+</tr>
+<tr>
+<td><body></body></td>
+<td>文档的主体</td>
+<td>元素包含文档的所有内容，页面内容基本都是放到body里面的</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+      <categories>
+        <category>HTML-CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript基础</title>
+    <url>/2021/06/08/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/JavaScript/</url>
     <content><![CDATA[<h1 id="1-JavaScript介绍"><a href="#1-JavaScript介绍" class="headerlink" title="1.JavaScript介绍"></a>1.JavaScript介绍</h1><p>JavaScript实现包含了三个部分，ECMAScript, DOM和BOM</p>
 <p>ECMAScript：JavaScript语法</p>
 <p>DOM：页面文档对象模型</p>

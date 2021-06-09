@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		JavaScript基础 | 
 	 
 	CallMe🍉
 	</title>
@@ -153,7 +155,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2021/06/10/Cesium/Cesiun%E5%AD%A6%E4%B9%A0/">
 										Cesiun学习
 									</a>
@@ -426,81 +428,95 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<div id="index">
-	
-		<div class="index-li">
-			<a href="/2021/05/24/Java%E5%9F%BA%E7%A1%80/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86/">
-				<h2 class="index-title">
-					面向对象高级部分
-				</h2>
-				<div class="index-brief">
-					1.类变量和类方法介绍
-==类变量可以通过类名直接来访问==
-==堆区 or 静态域==，需要看jdk的版本
+		<h1 id="article-title">
 
-==不管static变量在哪里，共识（1）static变量是同一个类所有对象共享 （2）static类变量，在类加载的时候就生成了==
-package com.zzy.static_;
+	Cesiun学习
+</h1>
+<div class="article-meta">
+	
+	<span>Regular</span>
+	<span>2021-06-10 01:02:30</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Cesiun/">Cesiun</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
 
+    
+		<span>Tags：</span>
+            
+    
+		</div>
 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-05-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Java基础/">Java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/05/24/Java%E5%9F%BA%E7%A1%80/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-				<h2 class="index-title">
-					IDEA快捷键
-				</h2>
-				<div class="index-brief">
-					查看类的结构：ctrl+f12
-查看类的继承图：ctrl+alt+shift+u
-查看函数参数：ctrl+p
-查看函数介绍：ctrl+q
-格式化代码：ctrl+shift+l
-代码补全：alt+/
-提示关键字：alt+shift+/
-万能结错/生成返回值变量：alt+enter
-查看继承结构：ctr
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-05-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Java基础/">Java基础</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
 </div>
 
+<div id="article-content">
+	<h1 id="1-Cesium下载及安装"><a href="#1-Cesium下载及安装" class="headerlink" title="1. Cesium下载及安装"></a>1. Cesium下载及安装</h1><p>先把源码下下来，同时会用到node和git两个软件，在下载完以后，运行</p>
+<pre><code>npm install    //安装cesium所需的一些依赖
+</code></pre><p>源码都是放在Source这个文件下的，其中有很多模块，每个模块下有很多的类。根目录下的Cesium.js就是链接了所有的类，可以直接通过这个文件访问所有类。</p>
+<p>在运行 以下代码之前，先安装gulp.</p>
+<p><a target="_blank" rel="noopener" href="https://www.gulpjs.com.cn/">gulp</a></p>
+<pre><code class="lang-bash">npm run build
+</code></pre>
+<p>通过源码编译的cesium，document文档需要自己去创建，运行以下代码：</p>
+<pre><code class="lang-bash">npm run generateDocumentation
+</code></pre>
+<h1 id="2-cesiumWidget"><a href="#2-cesiumWidget" class="headerlink" title="2. cesiumWidget"></a>2. cesiumWidget</h1><p>CesiumWidget内部创建的对象主要有以下几个部分：</p>
+<pre><code class="lang-mermaid">graph LR
+A[Cesium]--&gt;B[cesiumWidget]
+B--&gt;C[clock]
+B--&gt;D[container]
+B--&gt;E[canvas]
+B--&gt;F[screenSpaceEvenHandler]
+B--&gt;G[scene]
+G--&gt;H[global]--&gt;I[_surface]
+G--&gt;J[primitives]
+G--&gt;K[groundPrimitives]
+G--&gt;Y[环境对象]
+Y--&gt;a[skyBox]
+Y--&gt;b[skyAtmosphere]
+Y--&gt;c[sun]
+Y--&gt;d[sunBloom]
+Y--&gt;e[moon]
+Y--&gt;f[background]
+</code></pre>
+<p>clock用来记录时间，毕竟三维场景需要进行动态展示，需要通过时间来确定某一帧的绘制内容。container则是构造函数的参数，也就是传入的div。canvas则是在container上构建的Canvas的对象，可以据此获取WebGL绘制的比划。screenSpaceEventHandler则是对Canvas对象上各种鼠标的交互时间的封装，方便传递给三维场景。三维场景干之后可以据此改变相机姿态等。scene最重要，它承载着整个三维场景中的对象。</p>
+<p>Scene中装载了所有的三维对象</p>
+<p>Scene中有一些==内置==的图元对象：地球（Global）、skyBox（天空盒）、sun、moon等，另外还有两个用来由用户自行控制存放对象的数组：primitives和groundPrimitives, ==scene里本身是没有时间的概念的==</p>
+<h1 id="3-3D-Model"><a href="#3-3D-Model" class="headerlink" title="3. 3D-Model"></a>3. 3D-Model</h1>
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2021/06/10/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/HTML%E5%92%8CCSS/">
+                HTML和CSS
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>
