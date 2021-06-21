@@ -143,6 +143,15 @@ var _hmt = _hmt || [];
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2021/06/21/C++/Visual%20Studio%E6%B7%BB%E5%8A%A0%E5%BA%93/">
+										Visual Studio添加库
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -460,15 +469,12 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h1 id="1-Cesium下载及安装"><a href="#1-Cesium下载及安装" class="headerlink" title="1. Cesium下载及安装"></a>1. Cesium下载及安装</h1><p>先把源码下下来，同时会用到node和git两个软件，在下载完以后，运行</p>
-<pre><code>npm install    //安装cesium所需的一些依赖
-</code></pre><p>源码都是放在Source这个文件下的，其中有很多模块，每个模块下有很多的类。根目录下的Cesium.js就是链接了所有的类，可以直接通过这个文件访问所有类。</p>
-<p>在运行 以下代码之前，先安装gulp.</p>
+	<h1 id="1-Cesium下载及安装"><a href="#1-Cesium下载及安装" class="headerlink" title="1. Cesium下载及安装"></a>1. Cesium下载及安装</h1><p>先会用到node和git两个软件.</p>
+<p>在运行以下代码之前，先安装gulp.</p>
 <p><a target="_blank" rel="noopener" href="https://www.gulpjs.com.cn/">gulp</a></p>
-<pre><code class="lang-bash">npm run build
-</code></pre>
-<p>通过源码编译的cesium，document文档需要自己去创建，运行以下代码：</p>
-<pre><code class="lang-bash">npm run generateDocumentation
+<pre><code class="lang-bash">git clone https://github.com/CesiumGS/cesium.git    //源码下载
+npm install    //安装cesium所需的一些依赖
+npm run release    //会把所有的东西封装成一个文件
 </code></pre>
 <h1 id="2-cesiumWidget"><a href="#2-cesiumWidget" class="headerlink" title="2. cesiumWidget"></a>2. cesiumWidget</h1><p>CesiumWidget内部创建的对象主要有以下几个部分：</p>
 <pre><code class="lang-mermaid">graph LR
@@ -492,12 +498,32 @@ Y--&gt;f[background]
 <p>clock用来记录时间，毕竟三维场景需要进行动态展示，需要通过时间来确定某一帧的绘制内容。container则是构造函数的参数，也就是传入的div。canvas则是在container上构建的Canvas的对象，可以据此获取WebGL绘制的比划。screenSpaceEventHandler则是对Canvas对象上各种鼠标的交互时间的封装，方便传递给三维场景。三维场景干之后可以据此改变相机姿态等。scene最重要，它承载着整个三维场景中的对象。</p>
 <p>Scene中装载了所有的三维对象</p>
 <p>Scene中有一些==内置==的图元对象：地球（Global）、skyBox（天空盒）、sun、moon等，另外还有两个用来由用户自行控制存放对象的数组：primitives和groundPrimitives, ==scene里本身是没有时间的概念的==</p>
-<h1 id="3-3D-Model"><a href="#3-3D-Model" class="headerlink" title="3. 3D-Model"></a>3. 3D-Model</h1>
+<h1 id="3-cesium搭建发布环境"><a href="#3-cesium搭建发布环境" class="headerlink" title="3. cesium搭建发布环境"></a>3. cesium搭建发布环境</h1><p>先安装express</p>
+<pre><code class="lang-bash">npm install express
+</code></pre>
+<p>创建server.js文件</p>
+<pre><code class="lang-javascript">var http = require(&quot;http&quot;);
+var express = require(&quot;express&quot;);
+const path = require(&#39;path&#39;);
+
+var app = express();
+app.use(express.static(path.join(__dirname, &#39;&#39;)));
+
+app.listen(4111, () =&gt; &#123;
+  console.log(`http://localhost:4111`)
+&#125;)
+</code></pre>
+
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
+            
+              <a href="/2021/06/21/C++/Visual%20Studio%E6%B7%BB%E5%8A%A0%E5%BA%93/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Visual Studio添加库
+              </a>
             
         </div>
         <div class="item right">

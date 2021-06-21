@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		ubuntu下的firefox无法播放视频解决方案 | 
+		C++知识点 | 
 	 
 	CallMe🍉
 	</title>
@@ -144,7 +144,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2021/06/21/C++/Visual%20Studio%E6%B7%BB%E5%8A%A0%E5%BA%93/">
 										Visual Studio添加库
 									</a>
@@ -316,7 +316,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E7%9A%84firefox%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
 										ubuntu下的firefox无法播放视频解决方案
 									</a>
@@ -439,12 +439,12 @@ var _hmt = _hmt || [];
 	<div id="content">
 		<h1 id="article-title">
 
-	ubuntu下的firefox无法播放视频解决方案
+	Visual Studio添加库
 </h1>
 <div class="article-meta">
 	
 	<span>Regular</span>
-	<span>2021-03-14 01:09:31</span>
+	<span>2021-06-21 18:56:30</span>
 		<div id="article-categories">
     
 		<span>Categories：</span>
@@ -452,7 +452,7 @@ var _hmt = _hmt || [];
                 
                     <span>
                         <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/Ubuntu/">Ubuntu</a>
+                        <a href="/categories/C/">C++</a>
                         </i>
                       
                     </span>
@@ -469,14 +469,13 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h1 id="1-下载flash的tar-gz文件"><a href="#1-下载flash的tar-gz文件" class="headerlink" title="1.下载flash的tar.gz文件"></a>1.下载flash的tar.gz文件</h1><p>直接去<a target="_blank" rel="noopener" href="https://www.flash.cn/">官网链接</a>下载<br><a id="more"></a></p>
-<h1 id="2-解压tar-gz文件"><a href="#2-解压tar-gz文件" class="headerlink" title="2.解压tar.gz文件"></a>2.解压tar.gz文件</h1><pre><code>tar -zxvf filename.tar.gz
-</code></pre><p>注意filename.tar.gz就是你下载的文件的名字，可以直接复制下载包名字。</p>
-<h1 id="3-移动解压文件夹"><a href="#3-移动解压文件夹" class="headerlink" title="3.移动解压文件夹"></a>3.移动解压文件夹</h1><p>先进入安装包目录下,然后</p>
-<pre><code>sudo cp libflashplayer.so /usr/lib/firefox/browser/plugins
-sudo cp -r usr/* /usr
-</code></pre><h1 id="4-缺少依赖报错解决"><a href="#4-缺少依赖报错解决" class="headerlink" title="4.缺少依赖报错解决"></a>4.缺少依赖报错解决</h1><pre><code>sudo apt-get install ffmpeg  //ffmpeg支持H.264解码
-</code></pre><hr>
+	<p>为了==能够识别头文件和dll文件==，需要将文件目录位置放入系统变量里</p>
+<p>项目属性-》VC++Directions里Include Directions里加入==库所在文件夹==以及==头文件所在文件夹== </p>
+<p>项目属性-》VC++Directions里Library Directions里加入存放==lib文件夹目录==：</p>
+<p>项目属性-》VC++Directions里Library Directions里加入存放==lib文件夹目录==：</p>
+<p>项目属性-》Linker-》Input里加入==lib文件的名称==：</p>
+<p>lib和dll简介:</p>
+<p>(1)lib是编译时需要的，dll是运行时需要的。<br>如果要完成源代码的编译，有lib就够了。<br>如果也使动态连接的程序运行起来，有dll就够了。<br>在开发和调试阶段，当然最好都有。<br>(2)一般的动态库程序有lib文件和dll文件。lib文件是必须在编译期就连接到应用程序中的，而dll文件是运行期才会被调用的。如果有dll文件，那么对应的lib文件一般是一些索引信息，具体的实现在dll文件中。如果只有lib文件，那么这个lib文件是静态编译出来的，索引和实现都在其中。静态编译的lib文件有好处：给用户安装时就不需要再挂动态库了。但也有缺点，就是导致应用程序比较大，而且失去了动态库的灵活性，在版本升级时，同时要发布新的应用程序才行。<br>(3)在动态库的情况下，有两个文件，一个是引入库（.LIB）文件，一个是DLL文件，引入库文件包含被DLL导出的函数的名称和位置，DLL包含实际的函数和数据，应用程序使用LIB文件链接到所需要使用的DLL文件，库中的函数和数据并不复制到可执行文件中，因此在应用程序的可执行文件中，存放的不是被调用的函数代码，而是DLL中所要调用的函数的内存地址，这样当一个或多个应用程序运行是再把程序代码和被调用的函数代码链接起来，从而节省了内存资源。从上面的说明可以看出，DLL和.LIB文件必须随应用程序一起发行，否则应用程序将会产生错误。</p>
 
 </div>
 
@@ -484,16 +483,11 @@ sudo cp -r usr/* /usr
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2021/03/14/Ubuntu/ubuntu%E5%AE%89%E8%A3%85vim%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  ubuntu安装vim依赖关系报错
-              </a>
-            
         </div>
         <div class="item right">
             
-              <a href="/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E8%A7%A3%E5%86%B3wps2019%E7%BC%BA%E5%B0%91%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98/">
-                ubuntu下解决wps2019缺少字体问题
+              <a href="/2021/06/10/Cesium/Cesiun%E5%AD%A6%E4%B9%A0/">
+                Cesiun学习
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
