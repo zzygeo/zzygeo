@@ -152,6 +152,15 @@ var _hmt = _hmt || [];
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
+							<ul>
+								<li class="file">
+									<a href="/2021/06/29/C++/%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/">
+										摄影测量
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
 								</li>
 								
 							</ul>
@@ -2239,6 +2248,574 @@ div &#123;
 <p>如果只指定一个数值，那么该数值一定是x坐标，另一个默认垂直居中</p>
 <p>3.参数是混合单位：</p>
 <p>如果指定的两个值是精确单位和方位名词混合使用，则第一个值是x坐标，第二个值是y坐标</p>
+<h3 id="背景图像固定"><a href="#背景图像固定" class="headerlink" title="背景图像固定"></a>背景图像固定</h3><p>background-attachment属性设置背景图像是否固定或者随页面的其余部分滚动。</p>
+<pre><code>background-attachment:scroll | fixed
+</code></pre><p>scroll：背景图像是随着对象内容滚动</p>
+<p>fixed：背景图像固定</p>
+<h3 id="背景的复合写法"><a href="#背景的复合写法" class="headerlink" title="背景的复合写法"></a>背景的复合写法</h3><p>为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background中。</p>
+<p>当使用简写属性时，没有特定的顺序要求，一般习惯约定顺序为：</p>
+<p>background:背景颜色 背景图片地址 背景平铺 背景图片滚动 背景图片位置；</p>
+<h3 id="背景色半透明"><a href="#背景色半透明" class="headerlink" title="背景色半透明"></a>背景色半透明</h3><p>CSS3为我们提供了背景颜色半透明效果</p>
+<pre><code>background: rgba(0,0,0,0.3);
+</code></pre><p>最后一个参数是alpha透明度，取值范围在0~1之间。</p>
+<h2 id="css的三大特性"><a href="#css的三大特性" class="headerlink" title="css的三大特性"></a>css的三大特性</h2><p>CSS有三个非常重要的特性：层叠性、继承性、优先级。</p>
+<h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>相同的选择器给设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。层叠主要解决样式冲突的问题</p>
+<p>层叠性原则：</p>
+<ul>
+<li>样式冲突，遵循的原则是就近原则，哪个样式离结构近，就执行哪个样式。</li>
+<li>样式不冲突，不会层叠。</li>
+</ul>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+       div &#123;
+           /* red会被覆盖，而font-size会起作用 */
+           color: red;
+           font-size: 20px;
+       &#125;
+       div &#123;
+           color: pink;
+       &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;长江后浪推前浪，前浪死在沙滩上&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>css中的继承：子标签会继承父标签的某些样式，如文本颜色和字号。</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+       div &#123;
+           color: red;
+           font-size: 20px;
+       &#125;
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;p&gt;子类&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>恰当的使用继承可以简化代码，降低css样式的复杂性。</li>
+<li>子元素可以继承父元素的样式（text-, font-, line- 这些元素开头的可以继承，以及color属性）</li>
+</ul>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+       body &#123;
+           /* 这里的1.5指的是1.5倍 */
+           font: 12px/1.5 &#39;Microsoft YaHei&#39;;
+           color: pink;
+       &#125;
+
+      div &#123;
+          font-size: 14px;
+      &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;粉红色的回忆&lt;/div&gt;
+    &lt;p&gt;粉红色的回忆&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li>行高可以跟单位也可以不跟单位。</li>
+<li>如果子元素没有设置行高，则会继承父元素的行高为1.5。</li>
+<li>此时子元素的行高是：当前子元素的文字大小*1.5。</li>
+<li>body行高1.5这样写法最大的优势就是里面子元素可以根据文字大小自动调整行高。</li>
+</ul>
+<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>当同一个元素指定多个选择器，就会有优先级的产生。</p>
+<p>选择器相同，则执行层叠性</p>
+<p>选择器不同，则根据选择器权重执行</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>选择器权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>继承或者*</td>
+<td>0000</td>
+</tr>
+<tr>
+<td>元素选择器</td>
+<td>0001</td>
+</tr>
+<tr>
+<td>类选择器、伪类选择器</td>
+<td>0010</td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>0100</td>
+</tr>
+<tr>
+<td>行内样式，style=””</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>！important</td>
+<td>最高</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div &#123;
+            color: red!important;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style=&quot;color: blue;&quot;&gt;粉红色的回忆&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>链接元素是特殊的，因为它默认自己就有蓝色下划线的样式。</p>
+<h3 id="权重叠加"><a href="#权重叠加" class="headerlink" title="权重叠加"></a>权重叠加</h3><p>如果是复合选择器，则会有权重叠加，需要计算权重。</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        /* 复合选择器会有权重叠加的问题 */
+        /* 0001 */
+        li &#123;
+            color: red;
+        &#125;
+        /* 0001 + 0001 = 0002 */
+        ul li &#123;
+            color: pink;
+        &#125;
+        /* 0010 + 0001 = 0011 */
+        .nav li &#123;
+            color: deeppink;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;ul class=&quot;nav&quot;&gt;
+        &lt;li&gt;大猪蹄子&lt;/li&gt;
+        &lt;li&gt;大肘子&lt;/li&gt;
+        &lt;li&gt;猪尾巴&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>页面布局要学习三大核心，盒子模型、浮动和定位。</p>
+<p>网页布局过程：</p>
+<p>1.先准备好相关的网页元素，网页元素基本都是盒子Box。</p>
+<p>2.利用css设置好盒子样式，然后摆放到相应位置。</p>
+<p>3.往盒子里面装内容。</p>
+<p>盒子模型组成：</p>
+<p>所谓盒子模型：就是把HTML页面中的布局元素看作一个矩形的盒子，也就是一个盛装内容的容器。CSS盒子模型本质上是一个盒子，封装周围HTML元素，它包括：边框、外边距、内边距和实际内容。</p>
+<p>组成部分：</p>
+<p>border边框、content内容、padding内边距、margin外边距</p>
+<h3 id="border"><a href="#border" class="headerlink" title="border"></a>border</h3><p>border可以设置元素的边框。边框由三部分组成：边框宽度、边框样式、边框颜色</p>
+<pre><code>border: border-with | border-style | border-color
+</code></pre><p>border-style属性：solid(实线)、dashed(虚线)、dotted(点线),其他样式查阅文档</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+       div &#123;
+            width: 300px;
+            height: 200px;
+            border-width: 5px;
+            border-style: dotted;
+            border-color: red;
+       &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h3 id="表格细线边框"><a href="#表格细线边框" class="headerlink" title="表格细线边框"></a>表格细线边框</h3><p>border-collapse属性控制浏览器绘制表格边框的方式。它控制相邻单元格的边框。</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        table &#123;
+            width: 500px;
+            height: 250px;
+        &#125;
+        th &#123;
+            height: 35px;
+        &#125;
+        table,
+        th, td &#123;
+            border: 1px solid red;
+            font-size: 14px;
+            text-align: center;
+            border-collapse: collapse;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table align=&quot;center&quot; cellspacing=&quot;0&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;排名&lt;/th&gt;
+                &lt;th&gt;关键词&lt;/th&gt;
+                &lt;th&gt;搜索人数&lt;/th&gt;
+                &lt;th&gt;链接&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;西游记&lt;/td&gt;
+                &lt;td&gt;四大名著&lt;/td&gt;
+                &lt;td&gt;100&lt;/td&gt;
+                &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;西游记&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;水浒传&lt;/td&gt;
+                &lt;td&gt;四大名著&lt;/td&gt;
+                &lt;td&gt;120&lt;/td&gt;
+                &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;水浒传&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;三国演义&lt;/td&gt;
+                &lt;td&gt;四大名著&lt;/td&gt;
+                &lt;td&gt;160&lt;/td&gt;
+                &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;三国演义&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+                &lt;td&gt;红楼梦&lt;/td&gt;
+                &lt;td&gt;四大名著&lt;/td&gt;
+                &lt;td&gt;50&lt;/td&gt;
+                &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;红楼梦&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>边框会影响盒子的实际大小</p>
+<p>边框会额外增加盒子的实际大小。因此有两种方案解决：</p>
+<p>1.测量盒子大小的时候，不量边框。</p>
+<p>2.如果测量的时候包含了边框，则需要减去边框高度。</p>
+<h3 id="内边距padding"><a href="#内边距padding" class="headerlink" title="内边距padding"></a>内边距padding</h3><p>padding属性用于设置内边距，即边框与内容之间的距离。</p>
+<p>padding-left: 左内边距    padding-right：右内边距    padding-top: 上内边距    padding-bottom：下内边距</p>
+<p>如果盒子本身没有指定width/height属性，则此时padding不会撑开盒子大小。</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div &#123;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding-left: 20px;
+            padding-top: 20px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;盒子内容是content盒子内容是content盒子内容是content&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="内边距复合写法"><a href="#内边距复合写法" class="headerlink" title="内边距复合写法"></a>内边距复合写法</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>值的个数</th>
+<th>表达意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>padding:5px</td>
+<td>1个值，代表上下左右都有5像素内边距</td>
+</tr>
+<tr>
+<td>padding:5px 10px</td>
+<td>2个值，代表上下内边距是5像素，左右内边距是10像素</td>
+</tr>
+<tr>
+<td>padding:5px 10px 20px</td>
+<td>3个值，代表上内边距5像素，左右边距10像素，下内边距20像素</td>
+</tr>
+<tr>
+<td>padding:5px 10px 20px 30px</td>
+<td>4个值，上是5像素，右10像素，下20像素，左是30像素，顺时针</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div &#123;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 5px 10px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;盒子内容是content盒子内容是content盒子内容是content&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>细节：</p>
+<p>1.内容和边框有了距离，添加了内边距。</p>
+<p>2.padding影响了盒子实际大小。</p>
+<p>也就是说，如果盒子已经有了宽度和高度，此时再指定内边框，会撑大盒子。</p>
+<p>如果保证盒子跟效果图大小保持一致，则让width/height减去多出来的内边距大小即可。</p>
+<h3 id="新浪导航栏"><a href="#新浪导航栏" class="headerlink" title="新浪导航栏"></a>新浪导航栏</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+    &lt;style&gt;
+        .nav &#123;
+            height: 41px;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            line-height: 41px;
+        &#125;
+        .nav a &#123;
+            /* a属于行内元素，想要指定高度需要进行格式转换 */
+            display: inline-block;
+            height: 41px;
+            text-decoration: none;
+            font-size: 12px;
+            color: #4c4c4c;
+            padding: 0 20px;
+        &#125;
+        .nav a:hover &#123;
+            color: #ff8500;
+        &#125;
+    &lt;/style&gt;
+&lt;body&gt;
+    &lt;div class=&quot;nav&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;新浪导航&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;手机新浪网&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;移动客户端&lt;/a&gt;
+        &lt;a href=&quot;#&quot;&gt;微博&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="外边框margin"><a href="#外边框margin" class="headerlink" title="外边框margin"></a>外边框margin</h3><p>margin属性用于设置外边距，即控制盒子和盒子之间的距离。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>margin-left</td>
+<td>左外边距</td>
+</tr>
+<tr>
+<td>margin-right</td>
+<td>右外边距</td>
+</tr>
+<tr>
+<td>margin-top</td>
+<td>上外边距</td>
+</tr>
+<tr>
+<td>margin-bottom</td>
+<td>下外边距</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div &#123;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        &#125;
+        .one &#123;
+            margin-bottom: 20px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;one&quot;&gt;1&lt;/div&gt;
+    &lt;div&gt;2&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>margin的简写属性和padding是一样的</p>
+<h3 id="外边距典型应用"><a href="#外边距典型应用" class="headerlink" title="外边距典型应用"></a>外边距典型应用</h3><p>外边距可以让块级盒子水平居中，但是必须满足两个条件:</p>
+<p>1.盒子必须指定了宽度</p>
+<p>2.喝点左右外边距都设置为auto</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .nav &#123;
+            width: 900px;
+            height: 200px;
+            background-color: pink;
+            /* 保证左右auto就可以实现水平居中 */
+            margin: 0 auto;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;nav&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h3><p>使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。</p>
+<p>嵌套块元素垂直外边距的塌陷</p>
+<p>对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。</p>
+<p>解决方案：</p>
+<p>1.可以为父元素定义上边框。</p>
+<p>2.可以为父元素定义内边距。</p>
+<p>3.可以为父元素添加 overflow:hidden</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .father &#123;
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+            margin-top: 50px;
+            /* border: 1px solid transparent; */
+            /* padding: 1px; */
+            overflow: hidden;
+        &#125;
+        .son &#123;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-top: 100px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;father&quot;&gt;
+        &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h3><p>网页元素很多都带有默认的内外边距，而且不同浏览器默认的也不一致。因此我们在布局钱，首先要清除下网页元素的内外边距。</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        * &#123;
+            margin: 0;
+            padding: 0;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    123
+    &lt;ul&gt;
+        &lt;li&gt;前后端冲&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>细节：行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内块元素就可以了。</p>
 
 </div>
 
