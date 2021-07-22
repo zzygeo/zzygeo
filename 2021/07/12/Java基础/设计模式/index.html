@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		ubuntu下解决wps2019缺少字体问题 | 
+		设计模式 | 
 	 
 	CallMe🍉
 	</title>
@@ -258,7 +258,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2021/07/12/Java%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
 										设计模式
 									</a>
@@ -343,7 +343,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E8%A7%A3%E5%86%B3wps2019%E7%BC%BA%E5%B0%91%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98/">
 										ubuntu下解决wps2019缺少字体问题
 									</a>
@@ -457,12 +457,12 @@ var _hmt = _hmt || [];
 	<div id="content">
 		<h1 id="article-title">
 
-	ubuntu下解决wps2019缺少字体问题
+	设计模式
 </h1>
 <div class="article-meta">
 	
 	<span>Regular</span>
-	<span>2021-03-14 00:56:33</span>
+	<span>2021-07-12 16:24:14</span>
 		<div id="article-categories">
     
 		<span>Categories：</span>
@@ -470,7 +470,7 @@ var _hmt = _hmt || [];
                 
                     <span>
                         <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/Ubuntu/">Ubuntu</a>
+                        <a href="/categories/Java/">Java</a>
                         </i>
                       
                     </span>
@@ -487,11 +487,137 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<p>主要参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/sunmengke1101/article/details/103436997">博客</a><br><a id="more"></a></p>
-<h1 id="1-准备字体包"><a href="#1-准备字体包" class="headerlink" title="1.准备字体包"></a>1.准备字体包</h1><p><a target="_blank" rel="noopener" href="https://wws.lanzous.com/iBIiqmwnvve">下载链接</a></p>
-<h1 id="2-解压到指定目录下"><a href="#2-解压到指定目录下" class="headerlink" title="2.解压到指定目录下"></a>2.解压到指定目录下</h1><pre><code>sudo unzip wps_symbol_fonts.zip -d /home/&lt;user&gt;/usr/share/fonts
-</code></pre><h1 id="3-到解压的根目录下安装"><a href="#3-到解压的根目录下安装" class="headerlink" title="3.到解压的根目录下安装"></a>3.到解压的根目录下安装</h1><p>依次打开每个文件并点击安装即可</p>
-<hr>
+	<h1 id="1-单例模式"><a href="#1-单例模式" class="headerlink" title="1.单例模式"></a>1.单例模式</h1><p>饿汉式：</p>
+<pre><code class="lang-java">package com.zzy.singel;
+
+public class Single01 &#123;
+    public static void main(String[] args) &#123;
+//        通过方法可以直接获取对象
+        GirlFriend instance01 = GirlFriend.getInstance();
+        System.out.println(instance01);
+    &#125;
+&#125;
+
+class GirlFriend &#123;
+    private String name;
+//为了能够在静态方法中，返回gf对象，需要将其设置为static
+    private  static GirlFriend gf = new GirlFriend(&quot;小红&quot;);
+//    设计模式--&gt;单例模式[饿汉式]
+//    如何只new一个girlfriend
+//    1.将构造器私有化
+//    2.在类的内部直接创建
+//    3.提供一个公共的static方法，返回gf对象
+//    这种对象一般都是重量级的对象，饿汉式可能造成资源浪费
+    private GirlFriend(String name) &#123;
+        this.name = name;
+    &#125;
+
+    public static GirlFriend getInstance() &#123;
+        return gf;
+    &#125;
+
+    @Override
+    public String toString() &#123;
+        return &quot;GirlFriend&#123;&quot; +
+                &quot;name=&#39;&quot; + name + &#39;\&#39;&#39; +
+                &#39;&#125;&#39;;
+    &#125;
+&#125;
+</code></pre>
+<p>饱汉式：</p>
+<pre><code class="lang-java">package com.zzy.singel;
+
+public class single02 &#123;
+    public static void main(String[] args) &#123;
+        Cat cat = Cat.getInstance();
+        System.out.println(cat);
+    &#125;
+&#125;
+
+//希望在程序运行中，只能创建一个Cat对象
+//饱汉式的方法在调用类的属性的时候，不会创建对象，只有调用instance的时候才会创建对象
+class Cat &#123;
+    private String name;
+//  1.仍然将构造器私有化
+//  2.定义一个static静态属性对象
+//  3.提供一个public的static方法，可以返回一个Cat对象
+    private Cat(String name) &#123;
+        this.name = name;
+    &#125;
+
+    private static Cat cat;
+
+    public static Cat getInstance() &#123;
+        if (cat == null) &#123;
+            cat = new Cat(&quot;小白&quot;);
+        &#125;
+        return cat;
+    &#125;
+
+    @Override
+    public String toString() &#123;
+        return &quot;Cat&#123;&quot; +
+                &quot;name=&#39;&quot; + name + &#39;\&#39;&#39; +
+                &#39;&#125;&#39;;
+    &#125;
+&#125;
+</code></pre>
+<p>饿汉式VS饱汉式</p>
+<p>1.二者最重要的区别在于创建对象的时机不同：饿汉式是在类加载的时候就创建了对象实例，而懒汉式是在使用时才创建。</p>
+<p>2.饿汉式不存在线程安全问题，懒汉式存在线程安全问题。</p>
+<p>3.饿汉式存在浪费资源的可能。如果程序员没有使用对象实例，那么饿汉式就会造成资源浪费，懒汉式是使用时才创建，不会存在这个问题。</p>
+<p>4.在javaSE标准类中，java.lang.Runtime就是经典的单例模式。</p>
+<h1 id="2-模板设计模式"><a href="#2-模板设计模式" class="headerlink" title="2.模板设计模式"></a>2.模板设计模式</h1><pre><code class="lang-java">package com.zzy.abstract_;
+
+public class TestTemplate &#123;
+    public static void main(String[] args) &#123;
+        AA aa = new AA();
+        aa.calculateTime();
+        BB bb = new BB();
+        bb.calculateTime();
+    &#125;
+&#125;
+</code></pre>
+<p>父类</p>
+<pre><code class="lang-java">package com.zzy.abstract_;
+
+abstract public class Template &#123;//抽象类-模板设计模式
+    public abstract void job();
+
+    public void calculateTime() &#123;
+        long start = System.currentTimeMillis();
+        job();//动态绑定机制
+        long end = System.currentTimeMillis();
+        System.out.println(&quot;执行时间 &quot; + (end - start));
+    &#125;
+&#125;
+</code></pre>
+<p>子类AA</p>
+<pre><code class="lang-java">package com.zzy.abstract_;
+
+public class AA extends Template &#123;
+    @Override
+    public void job() &#123;//实现了父类的抽象方法
+        int num = 0;
+        for (int i = 0; i &lt; 800000; i++) &#123;
+            num += i;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<p>子类BB</p>
+<pre><code class="lang-java">package com.zzy.abstract_;
+
+public class BB extends Template &#123;
+    @Override
+    public void job() &#123;//这个类也重写了父类的方法
+        int num = 0;
+        for (int i = 1; i &lt; 80000 ; i++) &#123;
+            num *= i;
+        &#125;
+    &#125;
+&#125;
+</code></pre>
 
 </div>
 
@@ -499,16 +625,16 @@ var _hmt = _hmt || [];
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E7%9A%84firefox%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+              <a href="/2021/07/13/Java%E5%9F%BA%E7%A1%80/Java%E7%9F%A5%E8%AF%86%E7%82%B9/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  ubuntu下的firefox无法播放视频解决方案
+                  Java知识点
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2021/03/14/Ubuntu/Ubuntu%E6%9B%B4%E6%8D%A2%E6%BA%90%E6%95%99%E7%A8%8B/">
-                Ubuntu更换源教程
+              <a href="/2021/06/29/C++/%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/">
+                摄影测量
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
