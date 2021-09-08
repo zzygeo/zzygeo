@@ -424,13 +424,13 @@ var _hmt = _hmt || [];
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
-										前端3大件
+										前端
 									</a>
 									
 							<ul>
 								<li class="file">
-									<a href="/2021/06/10/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/HTML%E5%92%8CCSS/">
-										HTML和CSS
+									<a href="/2021/08/25/%E5%89%8D%E7%AB%AF/JS%E7%BB%86%E8%8A%82/">
+										JS细节
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -438,8 +438,17 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
-									<a href="/2021/06/08/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/JavaScript/">
-										JavaScript
+									<a href="/2021/08/17/%E5%89%8D%E7%AB%AF/css%E7%BB%86%E8%8A%82/">
+										css细节
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/07/24/%E5%89%8D%E7%AB%AF/vue%E5%AD%A6%E4%B9%A0/">
+										vue学习
 									</a>
 								</li>
 								<div class="article-toc" style="display: none;"></div>
@@ -1624,6 +1633,11 @@ public class StringMethod &#123;
             System.out.println(i);
         &#125;
 
+        //format可以定义String的输出格式
+        String name = &quot;Han Shun Ping&quot;;
+        String[] s = str.split(&quot; &quot;);
+         String format = String.format(&quot; %s,%s ,%c&quot;, s[2], s[0], s[1].charAt(0));
+        System.out.println(format);
     &#125;
 &#125;
 </code></pre>
@@ -1925,7 +1939,7 @@ public class ArrayMethod02 &#123;
         Integer[] newArr = Arrays.copyOf(arr, arr.length + 1);
         System.out.println(Arrays.toString(newArr));
 
-        //ill 数组填充,使用99替换原来的数组
+        //fill 数组填充,使用99替换原来的数组
         Integer[] num = &#123;9, 3, 2&#125;;
         Arrays.fill(num, 99);
         System.out.println(&quot;数组填充后...&quot;);
@@ -1946,12 +1960,726 @@ public class ArrayMethod02 &#123;
 <p>2.arraycopy：复制数组元素，比较适合底层调用，一般使用Arrays.copyOf完成复制数组</p>
 <p>3.currentTimeMillens:返回当前时间距离1970-1-1的毫秒数</p>
 <p>4.gc:运行垃圾回收机制System.gc();</p>
+<h2 id="BigInteger和BigDecimal"><a href="#BigInteger和BigDecimal" class="headerlink" title="BigInteger和BigDecimal"></a>BigInteger和BigDecimal</h2><pre><code class="lang-java">package com.zzy.bignum_;
+
+import java.math.BigInteger;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class bigInteger &#123;
+    public static void main(String[] args) &#123;
+        //编程中处理很大的整数,用BigInteger
+        BigInteger bigInteger = new BigInteger(&quot;2321546576824343&quot;);
+        System.out.println(bigInteger);
+
+        //在对BigInteger进行加减乘除的时候，需要使用对应的方法，不能直接进行+ - * /
+        BigInteger bigInteger1 = new BigInteger(&quot;100&quot;);
+        BigInteger add = bigInteger.add(bigInteger1);
+        System.out.println(add);
+
+        BigInteger subtract = bigInteger.subtract(bigInteger1);
+        System.out.println(subtract);
+
+        BigInteger multiply = bigInteger.multiply(bigInteger1);
+        System.out.println(multiply);
+
+        BigInteger divide = bigInteger.divide(bigInteger1);
+        System.out.println(divide);
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="lang-java">package com.zzy.bignum_;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class bigDecimal_ &#123;
+    public static void main(String[] args) &#123;
+        //当我们需要保存一个精度很高的数时，double不够用
+        BigDecimal bigDecimal = new BigDecimal(&quot;0.3232545465665454325&quot;);
+        System.out.println(bigDecimal);
+        //再除以小数的时候，可能是一个无限循环的小数，会抛出异常
+        BigDecimal bigDecimal1 = new BigDecimal(&quot;3&quot;);
+        //在调用divide时，指定精度就可以
+        //如果有无限循环小数，就会保留分子的精度
+        bigDecimal = bigDecimal.divide(bigDecimal1, RoundingMode.CEILING);
+        System.out.println(bigDecimal);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="日期类"><a href="#日期类" class="headerlink" title="日期类"></a>日期类</h2><pre><code class="lang-java">package com.zzy.date_;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class Date01 &#123;
+    public static void main(String[] args) throws ParseException &#123;
+        //获取当前的系统时间
+        Date date = new Date();
+        System.out.println(&quot;当前日期 = &quot; + date);
+        //默认输出的日期格式是国外的
+        //用SimpleDateFormat改变的格式是规定好的
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;yyyy年MM月dd日 hh:mm:ss E&quot;);
+        String format = simpleDateFormat.format(date);
+        System.out.println(format);
+
+        //也可以用构造器，输入毫秒数，但是时间是从1970年1月1号00:00开始的
+        Date date1 = new Date(321321);
+        System.out.println(date1);
+
+        //把字符串转成Date
+        String s = &quot;1996年01月01日 10:20:30 星期一&quot;;
+        Date parse = simpleDateFormat.parse(s);
+        System.out.println(simpleDateFormat.format(parse));
+    &#125;
+&#125;
+</code></pre>
+<p>第二代时间</p>
+<pre><code class="lang-java">package com.zzy.date_;
+
+import java.util.Calendar;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class Calender_ &#123;
+    public static void main(String[] args) &#123;
+        //Calender是一个抽象类,并且其构造器是受保护的
+        Calendar c = Calendar.getInstance();
+        //里面有很多字段，从中拿出相应的字段就好了
+        System.out.println(&quot;c = &quot; + c);
+        System.out.println(&quot;年:&quot; + c.get(Calendar.YEAR));
+        //返回月的时候是按照0开始编号的
+        System.out.println(&quot;月：&quot; + c.get(Calendar.MONTH) + 1);
+        System.out.println(&quot;日：&quot; + c.get(Calendar.DAY_OF_MONTH));
+        System.out.println(&quot;小时：&quot; + c.get(Calendar.HOUR));
+        System.out.println(&quot;24小时制：&quot; + c.get(Calendar.HOUR_OF_DAY));
+        System.out.println(&quot;分：&quot; + c.get(Calendar.MINUTE));
+        System.out.println(&quot;秒：&quot; + c.get(Calendar.SECOND));
+
+        //需要自己组合格式
+    &#125;
+&#125;
+</code></pre>
+<p>第三代时间</p>
+<pre><code class="lang-java">package com.zzy.date_;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class LocalTime_ &#123;
+    public static void main(String[] args) &#123;
+        LocalDateTime ldt = LocalDateTime.now();
+        System.out.println(ldt);
+        System.out.println(&quot;年:&quot; + ldt.getYear());
+        System.out.println(&quot;月：&quot; + ldt.getMonth());
+        System.out.println(&quot;月：&quot; + ldt.getMonthValue());
+        System.out.println(&quot;日：&quot; + ldt.getDayOfMonth());
+        System.out.println(&quot;时：&quot; + ldt.getHour());
+        System.out.println(&quot;分：&quot; + ldt.getMinute());
+        System.out.println(&quot;秒：&quot; + ldt.getSecond());
+
+        //获得年月日
+        LocalDate now = LocalDate.now();
+        //获取时分秒
+        LocalTime now2 = LocalTime.now();
+
+        //使用DateTimeFormatter对象进行格式化
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(&quot;yyyy年MM月dd日 HH小时mm分钟ss秒 E&quot;);
+        String s = dtf.format(ldt);
+        System.out.println(s);
+
+        //加减时间
+        LocalDateTime ldt2 = ldt.plusDays(890);
+        System.out.println(dtf.format(ldt2));
+
+        LocalDateTime ldt3 = ldt.minusYears(2);
+        System.out.println(dtf.format(ldt3));
+    &#125;
+&#125;
+</code></pre>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>保存多个数据时使用的是数组，而数组有不足的地方</p>
+<p>数组</p>
+<p>1.长度开始时必须指定，而且一旦指定，不能更改</p>
+<p>2.保存的必须为同一类型的元素</p>
+<p>3.增加或者删除元素比较麻烦</p>
+<p>集合</p>
+<p>1.可以动态保存任意多个对象，使用比较方便。</p>
+<p>2.提供了一系列方便的操作对象的方法：add、remover、set、get</p>
+<p>3.使用集合添加、删除新元素比较简单</p>
+<p>集合主要分为2大类：</p>
+<p>单列集合Collection</p>
+<p>List: ArrayList、LinkedList、Vector</p>
+<p>Set:HashSet、TreeSet</p>
+<p>双列集合：</p>
+<p>Map: HashMap、TreeMap、Hashtable、Properties</p>
+<h2 id="List类的方法"><a href="#List类的方法" class="headerlink" title="List类的方法"></a>List类的方法</h2><pre><code class="lang-java">package com.zzy.collection_;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class Collection01 &#123;
+    public static void main(String[] args) &#123;
+        List list = new ArrayList(); //动态绑定
+        //增加
+        list.add(&quot;jack&quot;);
+        list.add(10);
+        list.add(true);
+        System.out.println(list);
+
+        //删
+        list.remove(0);//删除第一个元素
+        list.remove(true);//删除某个元素
+        System.out.println(list);
+
+        //查找
+        System.out.println(list.contains(10));
+
+        //返回元素的个数
+        System.out.println(list.size());
+
+        //判断是否为空
+        System.out.println(list.isEmpty());
+
+        //清空
+//        list.clear();
+
+        //添加多个对象
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(&quot;红楼梦&quot;);
+        arrayList.add(&quot;三国演义&quot;);
+        list.addAll(arrayList);
+        System.out.println(list);
+
+        //删除多个元素
+        list.removeAll(arrayList);
+        System.out.println(list);
+    &#125;
+&#125;
+</code></pre>
+<p>实现了Iterable接口的可以采用迭代器的方式遍历</p>
+<pre><code class="lang-java">package com.zzy.collection_;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class CollectionIterator &#123;
+    public static void main(String[] args) &#123;
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new Book(&quot;三国演义&quot;, &quot;罗贯中&quot;, 19));
+        arrayList.add(new Book(&quot;红楼梦&quot;, &quot;曹雪芹&quot;, 20));
+        arrayList.add(new Book(&quot;西游记&quot;, &quot;吴世恩&quot;, 22));
+        System.out.println(arrayList);
+
+        //遍历
+        Iterator it = arrayList.iterator();
+
+        while (it.hasNext()) &#123;
+            //因为什么都能存，所以返回的是Object
+            Object obj = it.next();
+            System.out.println(obj); //动态绑定
+        &#125;
+
+        //如果想重新遍历，就要重置迭代器
+        it = arrayList.iterator();
+        while (it.hasNext()) &#123;
+            Object next =  it.next();
+            System.out.println(next);
+        &#125;
+    &#125;
+&#125;
+
+class Book &#123;
+    public String name;
+    public String author;
+    public double price;
+
+    public Book(String name, String author, double price) &#123;
+        this.name = name;
+        this.author = author;
+        this.price = price;
+    &#125;
+
+    @Override
+    public String toString() &#123;
+        return &quot;Book&#123;&quot; +
+                &quot;name=&#39;&quot; + name + &#39;\&#39;&#39; +
+                &quot;, author=&#39;&quot; + author + &#39;\&#39;&#39; +
+                &quot;, price=&quot; + price +
+                &#39;&#125;&#39;;
+    &#125;
+&#125;
+</code></pre>
+<p>==ctrl加J可以提示所有的快捷键==</p>
+<p>List集合类中元素有序，且可重复。</p>
+<p>List集合中的每个元素都有其对应的顺序索引</p>
+<pre><code class="lang-java">package com.zzy.collection_;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class ListMethod &#123;
+    public static void main(String[] args) &#123;
+        List list = new ArrayList();
+        list.add(&quot;老黑&quot;);
+        list.add(&quot;大狗&quot;);
+
+        //在指定位置插入
+        list.add(1, &quot;大黄&quot;);
+        System.out.println(list);
+
+        //加入多个元素
+        List list1 = new ArrayList();
+        list1.add(&quot;lxc&quot;);
+        list1.add(&quot;zy&quot;);
+        list.addAll(1, list1);
+        System.out.println(list);
+
+        //替换
+        list.set(0, &quot;sy&quot;);
+        System.out.println(list);
+
+        //返回集合,返回的是一个前闭后开的范围
+        List returnlist = list.subList(0, 3);
+        System.out.println(returnlist);
+    &#125;
+&#125;
+</code></pre>
+<p>ArrayList效率高,但是是线程不安全的</p>
+<p>ArrayList源码</p>
+<p>1.ArrayList中维护了一个Object类型的数组</p>
+<p>2.当创建ArrayList对象时，如果使用的是无参构造器，则初始elementData容量为0，第一次添加，则扩容elementData为10，如需再次扩容，则扩容elmentData为1.5倍。</p>
+<p>3.如果使用的是制定大小的构造器，则初始化elementData容量为指定大小，如果需要扩容，则直接扩容elementData为1.5倍。</p>
+<p>transient //表示瞬间的、短暂的，表示该属性不会被序列号</p>
+<p>Vector</p>
+<p>1.Vector底层也是一个对象数组， protected Object[] elementData;</p>
+<p>2.Vector是线程安全的</p>
+<p>3.如果是无参，默认为10，满后，就按2倍扩容</p>
+<p>LinkedList</p>
+<p>1.LinkedList底层实现了双向链表和双端队列的特点</p>
+<p>2.可以添加任意元素（元素可以重复），包括null</p>
+<p>3.线程不安全，没有实现同步</p>
+<p>LinkedList底层维护了一个双向链表，两个属性first和last分别指向首节点和尾结点</p>
+<p>每个节点(Node对象)，里面又维护了prev、next、item三个属性，prev指向前一个，通过next指向后一个节点，最近实现双向链表。</p>
+<p>比较方便添加和删除</p>
+<pre><code class="lang-java">package com.zzy.collection_;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class LinkedList01 &#123;
+    public static void main(String[] args) &#123;
+        Node jack = new Node(&quot;jack&quot;);
+        Node tom = new Node(&quot;tom&quot;);
+        Node hsp = new Node(&quot;老韩&quot;);
+        //jack-&gt;tom-&gt;hsp
+        //连接三个结点
+        jack.next = tom;
+        tom.next = hsp;
+        //hsp-&gt;tom-&gt;jack
+        hsp.pre = tom;
+        tom.pre = jack;
+
+        Node first = jack;
+        Node last = hsp;
+
+        //从头到尾遍历
+        while (true) &#123;
+            if (first == null) &#123;//true
+                break;
+            &#125;
+            System.out.println(first);
+            first = first.next; //tom.next = null;
+        &#125;
+
+        //从尾到头遍历
+        while (true) &#123;
+            if (last == null) &#123;
+                break;
+            &#125;
+            System.out.println(last);
+            last = last.pre;
+        &#125;
+
+        //在tom和和老韩之间加入一个对象
+        Node zf = new Node(&quot;张飞&quot;);
+
+        tom.next = zf;
+        zf.next = hsp;
+        hsp.pre = zf;
+        zf.pre = tom;
+
+        first = jack;
+        while (true) &#123;
+            if (first == null) &#123;//true
+                break;
+            &#125;
+            System.out.println(first);
+            first = first.next; //tom.next = null;
+        &#125;
+    &#125;
+&#125;
+
+class Node &#123;
+    public Object item;
+    public Node next; //下一个节点
+    public Node pre; //前一个节点
+
+    public Node(Object item) &#123;
+        this.item = item;
+    &#125;
+
+    public String toString() &#123;
+        return &quot;Node name = &quot; + item;
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="lang-java">package com.zzy.collection_;
+
+import java.util.LinkedList;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class LinkedList02 &#123;
+    public static void main(String[] args) &#123;
+        LinkedList linkedList = new LinkedList();
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        System.out.println(linkedList);
+
+        linkedList.remove();
+        System.out.println(linkedList);
+
+        //修改某个节点对象
+        linkedList.set(1,999);
+        System.out.println(linkedList);
+
+        //得到某个节点对象
+        System.out.println(linkedList.get(0));
+    &#125;
+&#125;
+</code></pre>
+<h2 id="Set类"><a href="#Set类" class="headerlink" title="Set类"></a>Set类</h2><p>1.无序（添加和取出的顺序不一致），没有索引</p>
+<p>2.不允许重复的元素，所以最多包含一个null</p>
+<p>HashSet:</p>
+<p>1.HashSet底层是HashMap</p>
+<p>2.添加一个元素时，先得到hash值，会转成-&gt;索引值</p>
+<p>3.找到存储数据表table，看这个索引位置是否有已经存放的元素</p>
+<p>4.如果没有，直接加入</p>
+<p>5.如果有，调用equals比较，如果相同，就放弃添加，如果不相同，则添加到最后</p>
+<p>6.在Java8中，如果一条链表的元素个数达到TREEIFT_THRESHOLD（默认为8），并且table的大小&gt;=MIN_TREEIFY_CAPACITY（默认64），就会进行树化（红黑树）</p>
+<p>经典题：</p>
+<pre><code class="lang-java">package com.zzy.set_;
+
+import java.util.HashSet;
+import java.util.Objects;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class HashSetExercise02 &#123;
+    public static void main(String[] args) &#123;
+        HashSet hashSet = new HashSet();
+        hashSet.add(new Employee_(&quot;zzy&quot;, 30000,
+                new Employee_().new MyDate(1998, 11, 24)));
+        hashSet.add(new Employee_(&quot;zzy&quot;, 30000,
+                new Employee_().new MyDate(1998, 11, 24)));
+        System.out.println(hashSet);
+    &#125;
+&#125;
+
+class Employee_ &#123;
+    private String name;
+    private double salary;
+    private MyDate birthday;
+
+    public Employee_(String name, double salary, MyDate birthday) &#123;
+        this.name = name;
+        this.salary = salary;
+        this.birthday = birthday;
+    &#125;
+
+    public Employee_()&#123;&#125;
+
+    class MyDate&#123;
+        private int year;
+        private int month;
+        private int day;
+
+        public MyDate(int year, int month, int day) &#123;
+            this.year = year;
+            this.month = month;
+            this.day = day;
+        &#125;
+
+        //通过内部类的hashCode和 equals的重写，套娃使其得到的hashCode依据birthday的内容决定
+        //而不是地址
+        @Override
+        public boolean equals(Object o) &#123;
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            MyDate myDate = (MyDate) o;
+            return year == myDate.year &amp;&amp; month == myDate.month &amp;&amp; day == myDate.day;
+        &#125;
+
+        @Override
+        public int hashCode() &#123;
+            return Objects.hash(year, month, day);
+        &#125;
+    &#125;
+
+    @Override
+    public boolean equals(Object o) &#123;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee_ employee_ = (Employee_) o;
+        return name.equals(employee_.name) &amp;&amp; birthday.equals(employee_.birthday);
+    &#125;
+
+    @Override
+    public int hashCode() &#123;
+        //这里的name是在常量池,但是要保证内部类的所影响的hashCode一致
+        return Objects.hash(name, birthday);
+    &#125;
+&#125;
+</code></pre>
+<p>LinkedHashSet</p>
+<p>1.在LinkedHashSet中维护了一个hash表和双向链表</p>
+<p>2.在某个节点有before和after属性，这样可以形成双向链表</p>
+<p>3.在添加一个元素时，先求hash值，再求索引，确定该元素在table的位置，然后将添加的元素加入到双向链接（如果已经存在，不添加【原则和hashset一样】</p>
+<p>4.这样的话，我们遍历LinkedHashSet也能确保插入顺序和遍历顺序一致</p>
+<p>里面HashMapNode里有内部类LinkedHashMapEntry</p>
+<p>==其实set也是键值对的形式，但是其value是用一个常量填充的==</p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><pre><code class="lang-java">package com.zzy.map_;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+@SuppressWarnings(&#123;&quot;all&quot;&#125;)
+public class Map_ &#123;
+    public static void main(String[] args) &#123;
+        //map接口实现类的特点
+        //1.保存具有映射关系的key-value
+        //无序的，因为底层还是hashMap
+        Map map = new HashMap();
+        map.put(&quot;No1&quot;, &quot;zzy&quot;);
+        map.put(&quot;No2&quot;, &quot;林动&quot;);
+        //当key相同的，会进行替换
+        map.put(&quot;No1&quot;, &quot;韩顺平&quot;);
+        //value值是可以重复的
+        map.put(&quot;No3&quot;, &quot;zzy&quot;);
+        System.out.println(&quot;map = &quot; + map);
+        //Map的key可以为null，value也可以为空，但是key的null只能有一个，value为null可以有多个
+        //key和value之间存在单向一对一关系，即通过指定的key总能找到对应的value
+
+        //通过get方法，传入key，得到相应的value
+        System.out.println(map.get(&quot;No1&quot;));
+    &#125;
+&#125;
+</code></pre>
+<p>Map的源码解析</p>
+<pre><code class="lang-java">package com.zzy.map_;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class MapSource &#123;
+    public static void main(String[] args) &#123;
+        Map map = new HashMap();
+        map.put(&quot;no1&quot;, &quot;韩顺平&quot;);
+        map.put(&quot;no2&quot;, &quot;zzy&quot;);
+
+        //1.k-v是在HashMap$Node里面管理的
+        //2.k-v为了方便程序员的遍历，还会创建EntrySet集合，该集合存放的元素的类型是Entry
+        //3.entrySet中，定义的类型是Map.Entry, 但是实际上存放的还是HashMap$Node,这是因为Ha
+        //HashMap$Node implements Map.Entry
+        //4.当把HashMap$Node 对象放到entrySet 就方便我们遍历,因为Map.entry提供了重要方法
+        //getKey() 和 getValue()
+        Set set = map.entrySet();
+        for (Object obj : set) &#123;
+            Map.Entry entry = (Map.Entry) obj;
+            System.out.println(entry.getKey() + &quot;-&quot; + entry.getValue());
+        &#125;
+
+        //k值收集到了Set里  value收集到了 Collection
+        Set set1 = map.keySet();
+        //KeySet
+        System.out.println(set1.getClass());
+        Collection values = map.values();
+        //Values
+        System.out.println(values.getClass());
+    &#125;
+&#125;
+</code></pre>
+<p>➢扩容机制[和HashSet相同]<br>1) HashMap底层维护了Node类型的数组table,默认为null<br>2)当创建对象时，将加载因子(loadfactor)初始化为0.75.<br>3) 当添加key-val时，通过key的哈希值得到在table的索引。然后判断该索引处是否有元素，<br>如果没有元素直接添加。如果该索引处有元素，继续判断该元素的key是否和准备加入的<br>key相等，如果相等，则直接替换val;如果不相等需要判断是树结构还是链表结构，做出<br>相应处理。如果添加时发现容量不够，则需要扩容。<br>4)第1次添加，则需要扩容table容量为16,临界值(threshold)为12.<br>5)以后再扩容，则需要扩容table容量为原来的2倍，临界值为原来的2倍,即24,依次类推.<br>6)在Java8中，如果一条链表的元素个数超过TREEIFY THRESHOLD(默认是8)，并且<br>table的大小&gt;= MIN TREEIFY CAPACITY(默认64),就会进行树化(红黑树)</p>
+<hr>
+
+<p>Map的接口和常用方法</p>
+<pre><code class="lang-java">package com.zzy.map_;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class MapMethod &#123;
+    public static void main(String[] args) &#123;
+        Map map = new HashMap();
+        map.put(&quot;邓超&quot;, new Book(&quot;&quot;, 100));
+        map.put(&quot;王宝强&quot;, &quot;马蓉&quot;);
+        map.put(&quot;宋喆&quot;, &quot;马蓉&quot;);
+        map.put(&quot;邓超&quot;, &quot;孙俪&quot;);
+        map.put(null, &quot;刘亦菲&quot;);
+        System.out.println(&quot;map=&quot; +map );
+
+        //remove:根据键删除映射关系
+        map.remove(null);
+        System.out.println(&quot;map=&quot; +map );
+
+        //通过键获得值
+        Object val = map.get(&quot;王宝强&quot;);
+        System.out.println(&quot;value = &quot; + val);
+
+        //获取元素个数
+        System.out.println(&quot;size = &quot; + map.size());
+
+        //判断元素是否为空
+        System.out.println(map.isEmpty());
+
+        //清除l-v
+        map.clear();
+
+        //查找键是否存在
+        System.out.println(map.containsKey(&quot;邓超&quot;));
+
+    &#125;
+&#125;
+
+class Book &#123;
+    private String name;
+    private int num;
+
+    public Book(String name, int num) &#123;
+        this.name = name;
+        this.num = num;
+    &#125;
+&#125;
+</code></pre>
+<p>Map的遍历</p>
+<pre><code class="lang-java">package com.zzy.map_;
+
+import java.util.*;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class Mapfor &#123;
+    public static void main(String[] args) &#123;
+        Map map = new HashMap();
+        map.put(&quot;邓超&quot;, new Book(&quot;&quot;, 100));
+        map.put(&quot;王宝强&quot;, &quot;马蓉&quot;);
+        map.put(&quot;宋喆&quot;, &quot;马蓉&quot;);
+        map.put(&quot;邓超&quot;, &quot;孙俪&quot;);
+        map.put(null, &quot;刘亦菲&quot;);
+
+        Set keyset = map.keySet();
+        //第一组,通过key获取vales
+        for (Object o : keyset) &#123;
+            System.out.println(o + &quot;-&quot; + map.get(o));
+        &#125;
+        Iterator it = keyset.iterator();
+        while (it.hasNext()) &#123;
+            Object next =  it.next();
+            System.out.println(next + &quot;-&quot; + map.get(next));
+        &#125;
+
+        //第二组，取出所有的values
+        Collection values = map.values();
+        for (Object o : values) &#123;
+            System.out.println(o);
+        &#125;
+        Iterator it2= values.iterator();
+        while (it2.hasNext()) &#123;
+            Object next =  it2.next();
+            System.out.println(next);
+        &#125;
+
+        //通过EntrySet
+        Set set = map.entrySet();
+        for (Object o : set) &#123;
+            //向下转型
+            Map.Entry entry = (Map.Entry) o;
+            System.out.println(entry.getKey() + &quot;-&quot; + entry.getValue());
+        &#125;
+        Iterator it3 = set.iterator();
+        while (it3.hasNext()) &#123;
+            Object next =  it3.next();
+            Map.Entry entry = (Map.Entry) next;
+            System.out.println(entry.getKey() + &quot;-&quot; +entry.getValue());
+        &#125;
+    &#125;
+&#125;
+</code></pre>
 
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
+            
+              <a href="/2021/07/24/%E5%89%8D%E7%AB%AF/vue%E5%AD%A6%E4%B9%A0/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  vue学习
+              </a>
             
         </div>
         <div class="item right">

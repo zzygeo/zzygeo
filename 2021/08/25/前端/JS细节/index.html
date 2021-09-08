@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		JS细节 | 
+	 
+	CallMe🍉
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "zzygeo.cn";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="CallMe🍉" type="application/atom+xml">
+</head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">CallMe🍉</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/zzygeo" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										C++
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/05/31/C++/C++%E7%9F%A5%E8%AF%86%E7%82%B9/">
+										C++知识点
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/06/21/C++/Visual%20Studio%E6%B7%BB%E5%8A%A0%E5%BA%93/">
+										Visual Studio添加库
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/06/29/C++/%E6%91%84%E5%BD%B1%E6%B5%8B%E9%87%8F/">
+										摄影测量
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Cesium
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/06/10/Cesium/Cesiun%E5%AD%A6%E4%B9%A0/">
+										Cesiun学习
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Hexo
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/01/20/Hexo/github%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D/">
+										github设置自己的域名
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/10/02/Hexo/hexo-d-%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+										hexo-d-出现错误的用户名和密码的解决办法
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/09/24/Hexo/markdown%E8%AF%AD%E6%B3%95/">
+										markdown语法
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/10/02/Hexo/%E6%96%B0%E7%94%B5%E8%84%91%E4%B8%8A%E9%83%A8%E7%BD%B2hexo/">
+										新电脑上部署hexo
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Java基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/05/24/Java%E5%9F%BA%E7%A1%80/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+										IDEA快捷键
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/07/13/Java%E5%9F%BA%E7%A1%80/Java%E7%9F%A5%E8%AF%86%E7%82%B9/">
+										Java知识点
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/07/12/Java%E5%9F%BA%E7%A1%80/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+										设计模式
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										PCL
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/10/04/PCL/PCL-1-11-Visual-Studio-2019-%E9%85%8D%E7%BD%AE/">
+										PCL-1-11-Visual-Studio-2019-配置
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/12/27/PCL/pcl-vs-cmake%E7%BC%96%E8%AF%91/">
+										pcl-vs-cmake编译
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Ubuntu
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/03/14/Ubuntu/Ubuntu%E6%9B%B4%E6%8D%A2%E6%BA%90%E6%95%99%E7%A8%8B/">
+										Ubuntu更换源教程
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/10/23/Ubuntu/Unable-to-access-https-gitee-com-%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE-Could-not-resolve-host-gitee-com%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/">
+										Unable-to-access-https-gitee-com-自己的项目-Could-not-resolve-host-gitee-com问题的解决
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/03/14/Ubuntu/dpkg%E8%A2%AB%E4%B8%AD%E6%96%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+										dpkg被中断的解决办法
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E7%9A%84firefox%E6%97%A0%E6%B3%95%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+										ubuntu下的firefox无法播放视频解决方案
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/03/14/Ubuntu/ubuntu%E4%B8%8B%E8%A7%A3%E5%86%B3wps2019%E7%BC%BA%E5%B0%91%E5%AD%97%E4%BD%93%E9%97%AE%E9%A2%98/">
+										ubuntu下解决wps2019缺少字体问题
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/03/14/Ubuntu/ubuntu%E5%AE%89%E8%A3%85gcc%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/">
+										ubuntu安装gcc依赖关系报错
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/03/14/Ubuntu/ubuntu%E5%AE%89%E8%A3%85vim%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E6%8A%A5%E9%94%99/">
+										ubuntu安装vim依赖关系报错
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/03/14/Ubuntu/ubuntu%E9%85%8D%E7%BD%AEC-C-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+										ubuntu配置C-C-开发环境
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/03/14/Ubuntu/%E5%AE%89%E8%A3%85snap/">
+										安装snap
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										其他
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/09/26/%E5%85%B6%E4%BB%96/%E6%88%91%E7%9A%84Office%E6%BF%80%E6%B4%BB%E7%A0%81/">
+										我的Office激活码
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/10/04/%E5%85%B6%E4%BB%96/%E8%B5%84%E6%BA%90/">
+										资源
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										前端
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/2021/08/25/%E5%89%8D%E7%AB%AF/JS%E7%BB%86%E8%8A%82/">
+										JS细节
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/08/17/%E5%89%8D%E7%AB%AF/css%E7%BB%86%E8%8A%82/">
+										css细节
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/07/24/%E5%89%8D%E7%AB%AF/vue%E5%AD%A6%E4%B9%A0/">
+										vue学习
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+
+	JS细节
+</h1>
+<div class="article-meta">
+	
+	<span>Regular</span>
+	<span>2021-08-25 09:45:30</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+    
+
+    
+		<span>Tags：</span>
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>删除对象中的属性 delete obj.name</p>
+<p>对象的属性名不强制要求遵守标识符的规范，但尽量按照规范使用</p>
+<p>基本数据类型</p>
+<p>String、Number、Boolean、Null、Undefined,存储在栈内存中</p>
+<p>引用数据类型</p>
+<p>Object、它是存储在堆内存中,将一个变量设置为null会断开其指针指向</p>
+<p>基本数据类型比较值，引用数据类型比较地址</p>
+<h2 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h2><pre><code>var obj = &#123;&#125;;
+var obj2 = &#123;
+    name:&quot;猪八戒&quot;,
+    age:18
+&#125;
+</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>如果return语句后不跟任何值就相当于返回一个undefined，如果函数中不写return,则也会返回undefined</p>
+<p>立即执行函数</p>
+<pre><code>(function(a,b,c)&#123;
+      console.log(a+b+c);
+    &#125;)(1,2,3)
+</code></pre><h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>回调函数：由我们自己创建，但是不由我们调用的，称为回调函数</p>
+<h3 id="函数方法call，apply"><a href="#函数方法call，apply" class="headerlink" title="函数方法call，apply"></a>函数方法call，apply</h3><p>函数方法call()、apply(),调用时传入参数，可以改变函数的this指向, call()方法可以将实参在对象之后依次传递，apply()方法需要将实参封装到一个数组中统一传递</p>
+<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><p>arguments是一个类数组对象，它也可以通过索引来操作数据，也可以获取长短，在调用函数时，我们所传递的实参都会在arguments中保存</p>
+<h2 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h2><pre><code>var obj = &#123;
+      name:&#39;张三&#39;,
+      age:18,
+      gender:&#39;男&#39;
+    &#125;
+
+    for (a in obj)&#123;
+      console.log(a);
+      console.log(obj[a]);
+    &#125;
+</code></pre><h2 id="in以及hasOwnProperty"><a href="#in以及hasOwnProperty" class="headerlink" title="in以及hasOwnProperty"></a>in以及hasOwnProperty</h2><pre><code>//使用in检查对象中是否含有某个属性时，如果对象中没有但是原型中有，也会返回true
+    console.log(&quot;name&quot; in mc);
+    //hasOwnProperty是检查自身有没有这个属性的方法
+    console.log(mc.hasOwnProperty(&quot;name&quot;));
+</code></pre><h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>当一个对象不在使用以后，将其设置为null，断开与堆内存的连接，这样垃圾回收机制才会运行</p>
+<h1 id="内建对象"><a href="#内建对象" class="headerlink" title="内建对象"></a>内建对象</h1><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组的存储性能比普通对象要好，在开发中经常使用</p>
+<p>方法：</p>
+<p>arr.join(“-“) arr.join方法可以把数组转成字符串。其中传入的参数是分隔符<br>arr.sort()方法默认会按照Unicode进行排序，在设计到数字的排序时，可能会出现错误，需要自己制定规则排序</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>fromCharAt()</p>
+<pre><code>var result = String.fromCharCode(72);
+    console.log(result);
+</code></pre><h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM操作主要还是寻找相关的API方法，逻辑上不难，主要理解Element、Node、Document的相互关系。</p>
+<p>我们想要操作网页的元素，则必须可以访问到这个元素，html这种树形的结构，我们只要先拿到其文档对象，就可以采用相应的方法对其进行操作。</p>
+<p>浏览器已经为我们提供了文档节点对象，这个对象是winodw属性，可以在页面中直接使用，文档节点代表的是整个网页。</p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件就是用户和浏览器之间的交互行为</p>
+<h2 id="浏览器页面的加载顺序"><a href="#浏览器页面的加载顺序" class="headerlink" title="浏览器页面的加载顺序"></a>浏览器页面的加载顺序</h2><p>浏览器在加载一个页面时，是按照自上向下的顺序加载的，将js代码编写到页面的下部就是为了可以在页面加载完毕以后再执行js代码</p>
+<p>如果想把js代码写在上面，可以给window绑定一个onload事件，该事件对应的响应函数将会在页面加载完成后执行</p>
+<h2 id="事件绑定，获取节点元素"><a href="#事件绑定，获取节点元素" class="headerlink" title="事件绑定，获取节点元素"></a>事件绑定，获取节点元素</h2><p>如果需要读取元素节点属性，直接使用元素.属性名，但class属性不能采用这种方法，读取class属性时需要使用.className</p>
+<pre><code class="lang-html">//获取body标签
+    var body = document.body;
+    console.log(body);
+    //获取Html标签
+    var html = document.documentElement;
+    console.log(html);
+    //document.all代表页面中的所有元素
+    var all = document.all;
+    console.log(all.length);
+    //参数为css选择器，可以查询到对应的元素,但是它只会返回一个元素
+    var div = document.querySelector(&quot;.box1 div&quot;)
+    //返回多个元素，以数组形式返回,即使符合条件的元素只有一个，它也会返回数组
+    var div = document.querySelectorAll(&quot;.box1&quot;)
+</code></pre>
+<h2 id="Dom练习"><a href="#Dom练习" class="headerlink" title="Dom练习"></a>Dom练习</h2><pre><code class="lang-html">&lt;form action=&quot;&quot;&gt;
+    你爱好的运动是?&lt;input type=&quot;checkbox&quot; id=&quot;checkedAllBox&quot;&gt; 全选/全不选
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;items&quot; value=&quot;足球&quot;&gt;足球
+    &lt;input type=&quot;checkbox&quot; name=&quot;items&quot; value=&quot;篮球&quot;&gt;篮球
+    &lt;input type=&quot;checkbox&quot; name=&quot;items&quot; value=&quot;羽毛球&quot;&gt;羽毛球
+    &lt;input type=&quot;checkbox&quot; name=&quot;items&quot; value=&quot;兵乓球&quot;&gt;兵乓球
+    &lt;br&gt;
+    &lt;input type=&quot;button&quot; id=&quot;checkedAllBtn&quot; value=&quot;全选&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;checkedNoBtn&quot; value=&quot;全不选&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;checkedRevBtn&quot; value=&quot;反选&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;sendBtn&quot; value=&quot;提交&quot;&gt;
+  &lt;/form&gt;
+  &lt;script&gt;
+    var checkedAllBtn = document.getElementById(&quot;checkedAllBtn&quot;)
+    var items = document.getElementsByName(&quot;items&quot;)
+    checkedAllBtn.onclick = () =&gt; &#123;
+      items.forEach((value) =&gt; &#123;
+        value.checked = true
+      &#125;)
+    &#125;
+
+    var checkedNoBtn = document.getElementById(&quot;checkedNoBtn&quot;)
+    checkedNoBtn.onclick = () =&gt; &#123;
+      items.forEach((value) =&gt; &#123;
+        value.checked = false
+      &#125;)
+    &#125;
+
+    var checkedRevBtn = document.getElementById(&quot;checkedRevBtn&quot;)
+    checkedRevBtn.onclick = () =&gt; &#123;
+      items.forEach((value) =&gt; &#123;
+        value.checked = !value.checked
+      &#125;)
+    &#125;
+
+    var sendBtn = document.getElementById(&quot;sendBtn&quot;)
+    sendBtn.onclick = () =&gt; &#123;
+      items.forEach((event) =&gt; &#123;
+       if (event.checked === true) &#123;
+          console.log(event.value);
+       &#125;
+      &#125;)
+    &#125;
+
+    var checkedAllBox = document.getElementById(&quot;checkedAllBox&quot;)
+    checkedAllBox.onclick = () =&gt; &#123;
+      items.forEach((event) =&gt; &#123;
+        event.checked = checkedAllBox.checked
+      &#125;)
+    &#125;
+    var num = 0
+    items.forEach((event) =&gt; &#123;
+      event.onclick = () =&gt; &#123;
+        checkedAllBox.checked = true
+        if (!event.checked) &#123;
+          checkedAllBox.checked = false
+        &#125;
+      &#125;
+    &#125;)
+  &lt;/script&gt;
+</code></pre>
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><pre><code class="lang-html">&lt;ul id=&quot;city&quot;&gt;
+    &lt;li&gt;上海&lt;/li&gt;
+    &lt;li&gt;深圳&lt;/li&gt;
+    &lt;li&gt;武汉&lt;/li&gt;
+    &lt;li id=&quot;bj&quot;&gt;北京&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button id=&quot;addCity&quot;&gt;点我添加&lt;/button&gt;
+  &lt;button id=&quot;deleteCity&quot;&gt;点我删除&lt;/button&gt;
+  &lt;script&gt;
+    function myClick(idStr, fun) &#123;
+      var ele = document.getElementById(idStr)
+      ele.onclick = fun
+    &#125;
+    myClick(&quot;addCity&quot;,() =&gt; &#123;
+    //获取父元素节点
+    var city = document.getElementById(&quot;city&quot;);
+    //创建子元素节点
+    var li = document.createElement(&quot;li&quot;);
+    //添加内容
+    li.innerHTML = &quot;广州&quot;;
+    //将子元素追加进去
+    city.appendChild(li)
+    &#125;)
+
+    myClick(&quot;deleteCity&quot;, () =&gt; &#123;
+      var bj = document.getElementById(&quot;bj&quot;)
+      //这种方式来进行删除
+      bj.parentNode.removeChild(bj)
+    &#125;)
+  &lt;/script&gt;
+</code></pre>
+<h2 id="DOM操作css"><a href="#DOM操作css" class="headerlink" title="DOM操作css"></a>DOM操作css</h2><p>拿到element以后直接element.style.height =”300px”修改，在遇见background-color这种时，需要采用驼峰命名backgroundColor，这种设置都是设置的内联样式，有着较高的优先级，在用这种方法进行读取时，也是读的内联样式，因此可能会读取不到样式表中的样式。</p>
+<h1 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h1><p><img src="https://raw.githubusercontent.com/zzygeo/images/master/js运算符优先级.4dxtiok15my0.png" alt="js运算符优先级"></p>
+<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><p>JS中一共有两种作用域<br>全局作用域：</p>
+<ul>
+<li>直接写到script标签中的JS代码，都在全局作用域</li>
+<li>全局作用域在页面打开时创建，在页面关闭时销毁</li>
+<li>在全局作用域中有一个全局对象window，我们可以直接使用，他代表我们浏览器的窗口</li>
+<li>在全局作用域中，创建的变量都会作为window对象的属性保存</li>
+<li>创建的方法都会作为window对象的方法保存</li>
+</ul>
+<p>函数作用域</p>
+<ul>
+<li>调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁</li>
+<li>每调用一次函数就会创建一个新的函数作用域，他们之间是相互独立的</li>
+<li>在函数作用域中可以访问到全局作用域的变量</li>
+<li>访问时遵循就近一致原则</li>
+</ul>
+<h2 id="声明提前"><a href="#声明提前" class="headerlink" title="声明提前"></a>声明提前</h2><p>使用var关键字声明的变量，会在所有的代码执行之前被声明</p>
+<pre><code>    //var a;在执行时会先执行这个
+    console.log(a);
+    var a = 18
+</code></pre><p>函数声明提前</p>
+<p>使用函数声明形式创建的函数function 函数(){},它会在所有的代码执行之前就被创建</p>
+<p>使用函数表达式创建的函数，不会被声明提前，所以不能在声明前被调用</p>
+<pre><code>sum1();//3
+console.log(sum2);//undefined
+var sum2 = function() &#123;
+    return 2 + 3;
+&#125;
+function sum1() &#123;
+    return 1 + 2;
+&#125;
+</code></pre><p>在函数作用域也有声明提前的特性，可以理解为一个小的全局作用域</p>
+<p>没有使用var声明的变量，在方法内部或外部都是全局变量，但如果是在方法内部声明，在方法外部使用之前需要先调用方法，告知系统声明了全局变量后方可在方法外部使用</p>
+<pre><code>function a() &#123;
+      b = 10
+    &#125;
+a()//需要先调用
+console.log(b);
+</code></pre><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>解析器在调用函数每次都会向函数内部传递一个隐含的参数，这个隐含的参数就是this</p>
+<p>根据函数的调用方式的不同，this会指向不同的对象</p>
+<p>以函数的形式调用时，this永远指向的都是window</p>
+<p>以方法的形式调用时，this指向的就是调用该方法的对象</p>
+<p> 当以构造函数的形式调用时，this就是新创建的那个对象</p>
+<h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><p>构造函数的执行流程</p>
+<ol>
+<li>立即创建一个对象</li>
+<li>将新建的对象设置为函数中的this</li>
+<li>执行函数中的代码</li>
+<li>将新建的对象作为返回值返回</li>
+</ol>
+<p>所有的对象都是Object的子类</p>
+<h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><p>原型prototype，我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype，这里存的地址指向这个原型对象</p>
+<p>如果函数作为普通函数调用prototype没有任何作用，当函数通过构造函数调用时，它所创建的对象中都会有一个隐含的属性指向该构造函数的原型对象，可以通过<strong>proto</strong>来访问，原型对象就相当于一个公共的区域，所有同一个类的实例都可以访问到这个原型对象，我们可以将对象中共有的内容，统一设置到原型对象中</p>
+<p>当我们访问对象的一个属性或方法时，它会先在对象自身中寻找，如果有则直接使用，如果没有则会去原型对象中寻找，如果找到则直接使用</p>
+<pre><code>function Person(name, age, gender)&#123;
+      this.name = name;
+      this.age = age;
+      this.gender = gender
+      console.log(this);
+    &#125;
+    var p = new Person(&#39;猪八戒&#39;, 28, &#39;男&#39;);
+    console.log(Person.prototype);
+    console.log(p.__proto__);
+    console.log(Person.prototype == p.__proto__);
+</code></pre><p>可以和java里的static修饰符做比较</p>
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><p>JS里有基本数据类型 String、Number、Boolean、Null、Undefined</p>
+<p>引用数据类型Object</p>
+<p>在JS中为我们提供了三个包装类，通过这三个包装类可以将基本数据类型的数据转换成对象</p>
+<p>String()、Number()、Boolean()</p>
+<p>细节：</p>
+<p>方法和属性只能添加给对象，不能添加给基本数据类型，当我们对一些基本数据类型的值去调用属性和方法时，浏览器会临时使用包装类将其转换成对象，然后再调用对象的属性和方法</p>
+<pre><code>var s = 123;
+s = s.toString();
+console.log(typeof s);
+</code></pre>
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2021/08/17/%E5%89%8D%E7%AB%AF/css%E7%BB%86%E8%8A%82/">
+                css细节
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Regular</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

@@ -702,3715 +702,6 @@ app.listen(4111, () =&gt; &#123;
       </categories>
   </entry>
   <entry>
-    <title>JavaScript基础</title>
-    <url>/2021/06/10/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/HTML%E5%92%8CCSS/</url>
-    <content><![CDATA[<h1 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h1><p>网站是指因特网上根据一定的规则，使用html等制作的用于展示特定内容相关的网页集合。</p>
-<p>网页是网站中的一页，通常是HTML格式的文件，它要通过浏览器来阅读。</p>
-<p>网页是构成网站的基本元素，它通常由图片、链接、文字、声音、视频等元素组成。</p>
-<p>什么是HTML：HTML指的是超文本标记语言，它是用来描述网页的一种语言。</p>
-<p>标记语言是一套标记标签（markup tag）</p>
-<p>所谓超文本，有两层含义：</p>
-<ol>
-<li><p>它可以加入图片、声音、动画、多媒体等内容（超越了文本限制）。</p>
-</li>
-<li><p>它还可以从一个文件跳转到另一个文件，与世界各地主机链接。</p>
-</li>
-</ol>
-<p>前端==》浏览器渲染==》web端展示</p>
-<p>Web标准是由W3C组织和其他标准化制定的一系列标准的集合。</p>
-<p>Web标准的构成：</p>
-<p>主要包括结构(Structure)、表现(Presentation)、行为(Behavior)三个方面</p>
-<p>结构：结构用于对网页元素进行整理和分类，现阶段主要学的是HTML。</p>
-<p>表现：表现用于设置网页元素的版式、颜色、大小等外观样式，主要是指CSS</p>
-<p>行为：行为是指网页模型的定义及交互的编写，现阶段主要学的是JavaScript</p>
-<p>Web标准提出的最佳体验方案：结构、样式、行为相分离。</p>
-<p>也就是：结构写到HTML文件中，表现写到CSS文件中，行为写到JavaScript文件中。</p>
-<p>相比较而言，三者中结构最重要。</p>
-<h1 id="HTML语法"><a href="#HTML语法" class="headerlink" title="HTML语法"></a>HTML语法</h1><p>所有的标签都包含在&lt;&gt;里，而且大部分情况下都是成对出现的</p>
-<pre><code class="lang-html">&lt;html&gt;&lt;/html&gt;  //双标签
-
-&lt;br /&gt;      //单标签
-</code></pre>
-<p>包含关系：可以简单理解为父子关系</p>
-<pre><code class="lang-html">&lt;head&gt;
-   &lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-</code></pre>
-<p>并列关系：理解为兄弟关系</p>
-<pre><code class="lang-html">&lt;head&gt;&lt;/head&gt;
-
-&lt;body&gt;&lt;/body&gt;
-</code></pre>
-<h1 id="HTML基本结构标签"><a href="#HTML基本结构标签" class="headerlink" title="HTML基本结构标签"></a>HTML基本结构标签</h1><p>每个网页都会有一个基本的结构标签（也称为骨架标签），页面内容也是在这些基本标签上书写。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>html</th>
-<th>HTML标签</th>
-<th>HTML标签</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>head</td>
-<td>文档的头部</td>
-<td>注意在head标签中我们必须设置的标签是title</td>
-</tr>
-<tr>
-<td>title</td>
-<td>文档的标题</td>
-<td>让页面拥有一个属于自己的网页标题</td>
-</tr>
-<tr>
-<td>body</td>
-<td>文档的主体</td>
-<td>元素包含文档的所有内容，页面内容基本都是放到body里面的</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><pre><code>&lt;h1&gt; - &lt;h6&gt;    //标题标签
-&lt;p&gt;    //段落标签
-&lt;br /&gt;    //换行标签,它是一个单标签
-</code></pre><h2 id="文本格式化标签"><a href="#文本格式化标签" class="headerlink" title="文本格式化标签"></a>文本格式化标签</h2><pre><code>&lt;strong&gt;或者&lt;b&gt;    //加粗文字
-&lt;em&gt;或者&lt;i&gt;    //文字倾斜
-&lt;del&gt;或者&lt;s&gt;    //删除线
-&lt;ins&gt;或者&lt;u&gt;    //下划线
-</code></pre><h2 id="盒子标签"><a href="#盒子标签" class="headerlink" title="盒子标签"></a>盒子标签</h2><pre><code>&lt;div&gt;    //division的缩写，表示分割
-&lt;span&gt;    //跨度、跨距
-</code></pre><p>特点：</p>
-<p>1.div标签用来布局，==但是一行只能放一个div==,大盒子</p>
-<p>2.span标签用来布局，一行上可以写多个span。小盒子</p>
-<h2 id="图像标签"><a href="#图像标签" class="headerlink" title="图像标签"></a>图像标签</h2><pre><code>&lt;img src=&quot;图像URL&quot; /&gt;    //这是一个单标签
-</code></pre><p>src是img标签的必须属性，它用于指定图像文件的路径和文件名</p>
-<p>还有一些其他的属性值：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>alt</th>
-<th>文本</th>
-<th>替换文本。图像不能显示的文字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td>文本</td>
-<td>提示文本。鼠标放到图像上，显示的文字</td>
-</tr>
-<tr>
-<td>width</td>
-<td>像素</td>
-<td>设置图像的宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>像素</td>
-<td>设置图像的高度</td>
-</tr>
-<tr>
-<td>border</td>
-<td>像素</td>
-<td>设置图像的边框粗细</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>细节：</p>
-<ol>
-<li>图像标签可以拥有多个属性这，必须卸载标签名的后面。</li>
-<li>属性之间部分先后顺序，标签名和属性、属性和属性之间均以空格分开。</li>
-<li>属性采取键值对的格式。</li>
-</ol>
-<h2 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h2><pre><code>//在HTML中，a标签用于定义超链接，作用是从一个页面链接到另一个页面
-&lt;a href=&quot;跳转目标&quot; target=&quot;目标窗口的弹出方法&quot;&gt; 文本或图像&lt;/a&gt;
-</code></pre><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h4&gt;1.外部链接&lt;/h4&gt;
-    target 打开窗口的方式 默认的值是_self 当前窗口打开页面 _blank 新窗口打开页面
-    &lt;a href=&quot;http://qq.com&quot; target=&quot;_blank&quot;&gt;腾讯&lt;/a&gt;
-
-    &lt;h4&gt;2.空链接&lt;/h4&gt;
-    &lt;a href=&quot;#&quot;&gt;公司地址&lt;/a&gt;
-
-    &lt;h4&gt;3.下载链接&lt;/h4&gt;
-    如果href里面地址是一个文件或者压缩包，会下载这个文件
-    &lt;a href=&quot;filename.zip&quot;&gt;&lt;/a&gt;
-
-    &lt;h4&gt;4.网页元素链接&lt;/h4&gt;
-    &lt;a href=&quot;http://baidu.com&quot;&gt;&lt;img src=&quot;img.jpg&quot;/&gt;&lt;/a&gt;
-
-    &lt;h4&gt;5.锚点链接&lt;/h4&gt;
-    实现跳转的效果,先设置id,然后通过#号进行链接
-    &lt;a href=&quot;#two&quot;&gt;个人生活&lt;/a&gt;
-    &lt;h4 id=&quot;two&quot;&gt;&lt;/h4&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><p>代码后的;打了显示不出来，下面的代码都需要加;</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>特殊字符</th>
-<th>描述</th>
-<th>代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>空格符</td>
-<td>&amp;nbsp</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于号</td>
-<td>&amp;lt</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大于号</td>
-<td>&amp;gt</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>和号</td>
-<td>&amp;amp</td>
-</tr>
-<tr>
-<td>￥</td>
-<td>人民币</td>
-<td>&amp;yen</td>
-</tr>
-<tr>
-<td>©</td>
-<td>版权</td>
-<td>&amp;copy</td>
-</tr>
-<tr>
-<td>®</td>
-<td>注册商标</td>
-<td>&amp;reg</td>
-</tr>
-<tr>
-<td>℃</td>
-<td>摄氏度</td>
-<td>&amp;deg</td>
-</tr>
-<tr>
-<td>±</td>
-<td>正负号</td>
-<td>&amp;plusm</td>
-</tr>
-<tr>
-<td>x</td>
-<td>乘号</td>
-<td>&amp;times</td>
-</tr>
-<tr>
-<td>+</td>
-<td>除号</td>
-<td>&amp;divide</td>
-</tr>
-<tr>
-<td>²</td>
-<td>平方</td>
-<td>&amp;sup2</td>
-</tr>
-<tr>
-<td>³</td>
-<td>立方</td>
-<td>&amp;sup3</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><p>表格是用来布局页面的，而不是来展示数据的。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;table&gt;
-        &lt;tr&gt;&lt;th&gt;姓名&lt;/th&gt; &lt;th&gt;性别&lt;/th&gt; &lt;th&gt;年龄&lt;/th&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td&gt;刘德华&lt;/td&gt; &lt;td&gt;男&lt;/td&gt; &lt;td&gt;23&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td&gt;张学友&lt;/td&gt; &lt;td&gt;男&lt;/td&gt; &lt;td&gt;22&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>1.table是用于定义表格的标签。</p>
-<p>2.tr标签用于定义表格中的行，必须嵌套在table标签中</p>
-<p>3.th标签表示HTML表格的表头部分</p>
-<p>4.td用于定义表格中的单元格，必须嵌套在tr</p>
-<h2 id="表格属性"><a href="#表格属性" class="headerlink" title="表格属性"></a>表格属性</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>属性名</th>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>align</td>
-<td>left、center、right</td>
-<td>规定表格相对周围元素的对齐</td>
-</tr>
-<tr>
-<td>border</td>
-<td>1或者””</td>
-<td>规定表格单元是否拥有边框，默认为””，表示没有边款</td>
-</tr>
-<tr>
-<td>cellpadding</td>
-<td>像素值</td>
-<td>规定单元边沿与其内容之间的空白，默认1像素</td>
-</tr>
-<tr>
-<td>cellspacing</td>
-<td>像素值</td>
-<td>规定单元格之间的空白，默认2像素</td>
-</tr>
-<tr>
-<td>width</td>
-<td>像素值或百分比</td>
-<td>规定表格的宽度</td>
-</tr>
-</tbody>
-</table>
-</div>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 属性要写到表格标签table里面去--&gt;
-    &lt;table align=&quot;center&quot; border=&quot;1&quot; cellspacing = 0 width =&quot;500&quot; height=&quot;300&quot;&gt;
-        &lt;tr&gt;&lt;th&gt;姓名&lt;/th&gt; &lt;th&gt;性别&lt;/th&gt; &lt;th&gt;年龄&lt;/th&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td&gt;刘德华&lt;/td&gt; &lt;td&gt;男&lt;/td&gt; &lt;td&gt;23&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td&gt;张学友&lt;/td&gt; &lt;td&gt;男&lt;/td&gt; &lt;td&gt;22&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td&gt;郭富城&lt;/td&gt; &lt;td&gt;男&lt;/td&gt; &lt;td&gt;&lt;a href=&quot;http://baidu.com&quot;&gt;百度&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="表格结构标签"><a href="#表格结构标签" class="headerlink" title="表格结构标签"></a>表格结构标签</h2><p>thead：用于定义表格的头部。thead内部必须拥有tr标签。一般是位于第一行</p>
-<p>tbody：用于定义表格的主体，主要用于放数据本体。</p>
-<p>以上标签都是放在table标签中的</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 属性要写到表格标签table里面去--&gt;
-    &lt;table align=&quot;center&quot; border=&quot;1&quot; cellspacing = 0 width =&quot;500&quot; height=&quot;300&quot;&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th&gt;姓名&lt;/th&gt;
-            &lt;th&gt;性别&lt;/th&gt;
-            &lt;th&gt;年龄&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;th&gt;姓名&lt;/th&gt;
-            &lt;th&gt;性别&lt;/th&gt;
-            &lt;th&gt;年龄&lt;/th&gt;
-        &lt;/tr&gt;
-
-        &lt;tr&gt;
-            &lt;th&gt;姓名&lt;/th&gt;
-            &lt;th&gt;性别&lt;/th&gt;
-            &lt;th&gt;年龄&lt;/th&gt;
-        &lt;/tr&gt;
-
-        &lt;tr&gt;
-            &lt;th&gt;姓名&lt;/th&gt;
-            &lt;th&gt;性别&lt;/th&gt;
-            &lt;th&gt;年龄&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt; 
-    &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="合并单元格"><a href="#合并单元格" class="headerlink" title="合并单元格"></a>合并单元格</h2><p>合并单元格方式：</p>
-<p>跨行合并：rowspan = “合并单元格的个数”</p>
-<p>跨列合并：colspan= “合并单元格的个数”</p>
-<p>目标单元格：</p>
-<p>跨行：最上侧单元格为目标单元格，写合并代码</p>
-<p>跨列：最左侧单元格为目标单元格，写合并代码</p>
-<p>合并单元格三部曲：</p>
-<p>1.先确定时跨行还是跨列合并</p>
-<p>2.找到目标单元格，写上合并方式</p>
-<p>3.删除多余的单元格</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 属性要写到表格标签table里面去--&gt;
-    &lt;table align=&quot;center&quot; border=&quot;1&quot; cellspacing = 0 width =&quot;500&quot; height=&quot;250&quot;&gt;
-        &lt;tr&gt;
-            &lt;th&gt;&lt;/th&gt;
-            &lt;th colspan=&quot;2&quot;&gt;&lt;/th&gt;
-        &lt;/tr&gt;
-
-        &lt;tr&gt;
-            &lt;th rowspan=&quot;2&quot;&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;/th&gt;
-        &lt;/tr&gt;
-
-        &lt;tr&gt;
-            &lt;th&gt;&lt;/th&gt;
-            &lt;th&gt;&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><p>表格是用来显示数据的，那么列表就是用来布局的</p>
-<p>列表最大的特点就是整齐、整洁、有序，它作为布局会更加自由和方便</p>
-<p>根据使用的场景，列表可以分为三大类：无序列表、有序列表和自定义列表</p>
-<p>==无序列表：==</p>
-<p>ul标签表示HTML页面中项目的无序列表，一般会以项目符号呈现列表项，而列表项使用li标签定义</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h4&gt;您喜欢的食物？&lt;/h4&gt;
-    &lt;ul&gt;
-        &lt;li&gt;菠萝&lt;/li&gt;
-        &lt;li&gt;西瓜&lt;/li&gt;
-        &lt;li&gt;荔枝&lt;/li&gt;
-    &lt;/url&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>细节：ul里只能放li标签，li相当于一个容器，可以容纳所有元素，无序列表会带有自己的样式属性，但在实际使用时，我们会使用css来设置。</p>
-<p>==有序列表：==</p>
-<p>ol标签用于定义有序列表，列表排序以数字来显示，li用来定义列表项</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h4&gt;您喜欢的食物？&lt;/h4&gt;
-    &lt;ol&gt;
-        &lt;li&gt;菠萝&lt;/li&gt;
-        &lt;li&gt;西瓜&lt;/li&gt;
-        &lt;li&gt;荔枝&lt;/li&gt;
-    &lt;/ol&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>==定义列表：==</p>
-<p>自定义列表的使用场景：</p>
-<p>自定义列表常用于对术语或名词进行解释和描述，定义列表的列表项前没有任何项目符号。</p>
-<p>在HTML中，dl标签用于定义描述列表，该标签与dt和dd一起使用</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;dl&gt;
-        &lt;dt&gt;关注我们&lt;/dt&gt;
-        &lt;dd&gt;新浪微博&lt;/dd&gt;
-        &lt;dd&gt;官方微信&lt;/dd&gt;
-        &lt;dd&gt;联系我们&lt;/dd&gt;
-    &lt;/dl&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<p>1.dl里面只能放dt和dd</p>
-<p>2.dt和dd个数没有限制，经常是一个dt对应多个dd</p>
-<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>为什么需要表单：</p>
-<p>使用表单目的是为了收集用户信息。</p>
-<p>表单的组成：</p>
-<p>在HTML中，一个完整的表单通常由表单域、表单控件和提示信息三个部分组成</p>
-<p>表单域：</p>
-<p>表单域是一个包含表单元素的区域。</p>
-<p>在HTML标签中，form标签用于定义表单域，以实现用户信息的收集和传递。</p>
-<p>form会把它范围内的表单元素信息提交给服务器</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form action=&quot;demo.php&quot; method=&quot;POST&quot; name=&quot;name1&quot;&gt;
-
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>input标签中，包含一个type属性，根据不同的type属性，输入字段拥有很多种形式。它是一个==单标签==。</p>
-<p>type属性值：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>button</td>
-<td>定义可点击按钮</td>
-</tr>
-<tr>
-<td>checkbox</td>
-<td>定义复选框</td>
-</tr>
-<tr>
-<td>file</td>
-<td>定义输入字段和“浏览”按钮，供文件上传</td>
-</tr>
-<tr>
-<td>hidden</td>
-<td>定义隐藏的输入字段</td>
-</tr>
-<tr>
-<td>image</td>
-<td>定义图像形式的提交按钮</td>
-</tr>
-<tr>
-<td>password</td>
-<td>定义密码字段。该字段中的字符被掩码</td>
-</tr>
-<tr>
-<td>radio</td>
-<td>定义单选按钮</td>
-</tr>
-<tr>
-<td>reset</td>
-<td>定义重置按钮。重置按钮会清楚表单中的所有数据</td>
-</tr>
-<tr>
-<td>submit</td>
-<td>定义提交按钮。提交按钮会把表单数据发送到服务器</td>
-</tr>
-<tr>
-<td>text</td>
-<td>定义单行的输入字段，用户可在其中输入文本。默认宽度为20个字符</td>
-</tr>
-</tbody>
-</table>
-</div>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form&gt;
-        用户名：&lt;input type=&quot;text&quot;&gt; &lt;br&gt;
-        密码：&lt;input type=&quot;password&quot;&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form&gt;
-        用户名：&lt;input type=&quot;text&quot;&gt; &lt;br&gt;
-        密码：&lt;input type=&quot;password&quot;&gt; &lt;br&gt;
-        &lt;!-- radio 单选按钮 可以实现多选1 --&gt;
-        性别：男 &lt;input type=&quot;radio&quot;&gt; 女 &lt;input type=&quot;radio&quot;&gt; &lt;br&gt;
-        &lt;!-- checkbox 多选按钮 --&gt;
-        性别：男 &lt;input type=&quot;checkbox&quot;&gt; 女 &lt;input type=&quot;checkbox&quot;&gt; &lt;br&gt;
-
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>除type属性外，input标签还有很多其他的属性</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>由用户自定义</td>
-<td>定义input元素的名称</td>
-</tr>
-<tr>
-<td>value</td>
-<td>由用户自定义</td>
-<td>规定input元素的值</td>
-</tr>
-<tr>
-<td>checked</td>
-<td>checked</td>
-<td>规定此input元素首次加载时应当被选中</td>
-</tr>
-<tr>
-<td>maxlength</td>
-<td>正整数</td>
-<td>规定输入字段中的字符的最大长度</td>
-</tr>
-</tbody>
-</table>
-</div>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form&gt;
-        用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;请输入您的姓名&quot;&gt; &lt;br&gt;
-        密码：&lt;input type=&quot;password&quot; name=&quot;pwd&quot;&gt; &lt;br&gt;
-        &lt;!-- radio 单选按钮 可以实现多选1 --&gt;
-        &lt;!-- name 是表单元素名字，这里性别单选按钮必须有相同的名字name,才能实现多选1 --&gt;
-        性别：男 &lt;input type=&quot;radio&quot; name=&quot;username&quot; value=&quot;男&quot;&gt; 女 &lt;input type=&quot;radio&quot; name=&quot;username&quot; value=&quot;女&quot;&gt; &lt;br&gt;
-        &lt;!-- checkbox 多选按钮 --&gt;
-        爱好：吃饭 &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; checked=&quot;checked&quot;&gt; 睡觉 &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;&gt; &lt;br&gt;
-        &lt;!-- 点击了提交按钮，可以把 表单域form里面的表单元素里面的值提交给后台服务器 --&gt;
-        &lt;input type=&quot;submit&quot; value=&quot;免费注册&quot;&gt;
-         &lt;br&gt;
-        &lt;!-- 重置按钮可以还原表单元素初始的默认状态 --&gt;
-        &lt;input type=&quot;reset&quot; value=&quot;重新编写&quot;&gt;
-        &lt;br&gt;
-        &lt;!-- 普通按钮 botton 后期结合js 搭配使用 --&gt;
-        &lt;input type=&quot;button&quot; value=&quot;获取短信验证码&quot;&gt;
-        &lt;br&gt;
-        &lt;!-- 文件域 使用场景 上传文件使用的 --&gt;
-        上传头像： &lt;input type=&quot;file&quot;&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<ol>
-<li>单选和复选按钮必须名字相同</li>
-<li>name和value是每个表单元素都有的属性值，主要给后台人员使用</li>
-</ol>
-<h3 id="label"><a href="#label" class="headerlink" title="label"></a>label</h3><p>label标签用于绑定一个表单元素，当点击label标签内的文本时，浏览器就会自动将焦点（光标）转到或者选择对应的表单元素上，用来增加用户体验。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;label for=&quot;name&quot;&gt; 用户名：&lt;/label&gt; &lt;input type=&quot;text&quot; id = &quot;name&quot; &gt;
-    &lt;br&gt;
-    性别：&lt;label for=&quot;male&quot;&gt;男&lt;/label&gt; &lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;male&quot;&gt; 
-        &lt;label for=&quot;female&quot;&gt;女&lt;/label&gt; &lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;female&quot;&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><p>使用场景：在页面中，如果有多个选项让用户选择，并且想要节约页面空间时，可以使用select标签控件定义下拉列表。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form&gt;
-   籍贯：
-   &lt;select &gt;
-       &lt;option&gt;山东&lt;/option&gt;
-       &lt;option&gt;北京&lt;/option&gt;
-       &lt;option&gt;天津&lt;/option&gt;
-       &lt;option selected=&quot;selected&quot;&gt;广东&lt;/option&gt;
-   &lt;/select&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<p>select中至少包含一对option</p>
-<p>在option中定义selected = “selected”时，当前项即为默认选择项</p>
-<h3 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h3><p>使用场景：当用户输入内容较多时，我们就不能使用文本框表单了，此时我们可以使用textarea标签。</p>
-<p>使用多行文本输入控件，可以输入更多的文字，该控件常用于留言板、评论。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form&gt;
-        今日反馈：
-        &lt;textarea cols=&quot;50&quot; rows=&quot;5&quot;&gt;&lt;/textarea&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<p>通过textarea标签可以轻松地创建多行文本输入框</p>
-<p>cols=”每行中的字符数”, rows=”显示的行数”, 我们在实际开发中不会使用，都是用CSS来改变大小。</p>
-<h2 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form&gt;
-        &lt;h4&gt;青春不常在，抓紧谈恋爱&lt;/h4&gt;
-        &lt;table width=&quot;500&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
-            &lt;tr&gt;
-                &lt;td&gt;性别&lt;/td&gt;
-                &lt;td&gt;&lt;input type=&quot;radio&quot; id=&quot;male&quot; name=&quot;sex&quot;&gt; &lt;label for=&quot;male&quot;&gt;男&lt;/label&gt; 
-                    &lt;input type=&quot;radio&quot; id=&quot;female&quot; name=&quot;sex&quot;&gt; &lt;label for=&quot;female&quot;&gt;女&lt;/label&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;生日&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;!-- 年 --&gt;
-                    &lt;select&gt;
-                        &lt;option selected=&quot;selected&quot;&gt;请选择年份--&lt;/option&gt;
-                        &lt;option&gt;1998&lt;/option&gt;
-                        &lt;option&gt;1999&lt;/option&gt;
-                        &lt;option&gt;2000&lt;/option&gt;
-                        &lt;option&gt;2001&lt;/option&gt;
-                        &lt;option&gt;2002&lt;/option&gt;
-                        &lt;option&gt;2003&lt;/option&gt;
-                        &lt;option&gt;2004&lt;/option&gt;
-                        &lt;option&gt;2005&lt;/option&gt;
-                        &lt;option&gt;2006&lt;/option&gt;
-                        &lt;option&gt;2007&lt;/option&gt;
-                        &lt;option&gt;2008&lt;/option&gt;
-                    &lt;/select&gt;
-                    &lt;!-- 月 --&gt;
-                    &lt;select&gt;
-                        &lt;option selected=&quot;selected&quot;&gt;请选择月份--&lt;/option&gt;
-                        &lt;option&gt;1&lt;/option&gt;
-                        &lt;option&gt;2&lt;/option&gt;
-                        &lt;option&gt;3&lt;/option&gt;
-                        &lt;option&gt;4&lt;/option&gt;
-                        &lt;option&gt;5&lt;/option&gt;
-                        &lt;option&gt;6&lt;/option&gt;
-                        &lt;option&gt;7&lt;/option&gt;
-                        &lt;option&gt;8&lt;/option&gt;
-                        &lt;option&gt;9&lt;/option&gt;
-                        &lt;option&gt;10&lt;/option&gt;
-                        &lt;option&gt;11&lt;/option&gt;
-                        &lt;option&gt;12&lt;/option&gt;
-                    &lt;/select&gt;
-                    &lt;!-- 日 --&gt;
-                    &lt;select&gt;
-                        &lt;option selected=&quot;selected&quot;&gt;请选择日--&lt;/option&gt;
-                        &lt;option&gt;1&lt;/option&gt;
-                        &lt;option&gt;2&lt;/option&gt;
-                        &lt;option&gt;3&lt;/option&gt;
-                        &lt;option&gt;4&lt;/option&gt;
-                        &lt;option&gt;5&lt;/option&gt;
-                        &lt;option&gt;6&lt;/option&gt;
-                        &lt;option&gt;7&lt;/option&gt;
-                        &lt;option&gt;8&lt;/option&gt;
-                        &lt;option&gt;9&lt;/option&gt;
-                        &lt;option&gt;10&lt;/option&gt;
-                        &lt;option&gt;11&lt;/option&gt;
-                        &lt;option&gt;12&lt;/option&gt;
-                        &lt;option&gt;13&lt;/option&gt;
-                        &lt;option&gt;14&lt;/option&gt;
-                        &lt;option&gt;15&lt;/option&gt;
-                        &lt;option&gt;16&lt;/option&gt;
-                        &lt;option&gt;17&lt;/option&gt;
-                        &lt;option&gt;18&lt;/option&gt;
-                        &lt;option&gt;19&lt;/option&gt;
-                        &lt;option&gt;20&lt;/option&gt;
-                        &lt;option&gt;21&lt;/option&gt;
-                    &lt;/select&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;所在地区&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;input type=&quot;text&quot; value=&quot;中大&quot;&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;学历&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;input type=&quot;text&quot; value=&quot;幼儿园&quot;&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;喜欢的类型&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;&gt; 妩媚的
-                    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;&gt; 可爱的
-                    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;&gt; 老腊肉
-                    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;&gt; 小鲜肉
-                    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;&gt; 都喜欢
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;自我介绍&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;textarea&gt;&lt;/textarea&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;input type=&quot;submit&quot; value=&quot;免费注册&quot;&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; name=&quot;agreement&quot;&gt; 我同意注册条款和会员加入标准
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;a href=&quot;https://zzygeo.cn&quot; target=&quot;_blank&quot;&gt;我是会员，立即登录&lt;/a&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;&lt;/td&gt;
-                &lt;td&gt;
-                    &lt;h5&gt;我承诺&lt;/h5&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;年满18岁、单身&lt;/li&gt;
-                        &lt;li&gt;抱着严肃的态度&lt;/li&gt;
-                        &lt;li&gt;真诚寻找另外一半&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-
-    &lt;/form&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><p>CSS的主要使用场景就是美化页面、布局页面的。</p>
-<p>1.HTML的局限性</p>
-<p>HTML它只关注内容的语义，虽然HTML可以做简单的样式，但是带来的是无尽的臃肿和繁琐。</p>
-<p>2.CSS也是一种标记语言，CSS主要用于设置HTML页面中的文本内容（字体、大小、对齐方式）、图片的外形（宽高、边框样式、边距等）以及版面的布局和外观显示样式。</p>
-<h2 id="css语法规范"><a href="#css语法规范" class="headerlink" title="css语法规范"></a>css语法规范</h2><p>css规则由两个主要的部分构成：选择器以及一条或多条声明。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        /* 选择器&#123;样式&#125; */
-        /* 给谁改样式&#123;改成什么样式&#125; */
-        p&#123;
-            color: red;
-            font-size: 12px;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;有点意思&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<ul>
-<li>选择器是用于指定css样式的HTML标签，花括号内是对该对象设置的具体样式</li>
-<li>属性和属性值以“键值对”的形式出现</li>
-<li>属性是对指定的对象设置的样式属性，例如字体大小、文本颜色等</li>
-<li>属性和属性值之间用英文“；”分开</li>
-</ul>
-<h2 id="css的代码风格"><a href="#css的代码风格" class="headerlink" title="css的代码风格"></a>css的代码风格</h2><p>1.样式格式书写</p>
-<p>推荐展开式书写，因为更加直观。</p>
-<p>2.样式大小写</p>
-<p>推荐以小写字母书写</p>
-<p>3.空格规范</p>
-<ol>
-<li>属性值前面，冒号后面，保留一个空格</li>
-<li>选择器（标签）和大括号中间保留空格</li>
-</ol>
-<h2 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h2><p>选择器就是根据不同需求把不同的标签选出来，这就是选择器的作用。简单来说，就是选择标签用的。</p>
-<p>选择器分为==基础选择器==和==复合选择器==两个大类。</p>
-<p>基础选择器是由单个选择器组成的</p>
-<p>基础选择器又包括：标签选择器、类选择器、id选择器和通配符选择器。</p>
-<h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        /* 标签选择器：写上标签名 */
-        p &#123;
-            color: green;
-        &#125;
-        div &#123;
-            color: pink;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;男生&lt;/p&gt;
-    &lt;p&gt;男生&lt;/p&gt;
-    &lt;p&gt;男生&lt;/p&gt;
-    &lt;div&gt;女生&lt;/div&gt;
-    &lt;div&gt;女生&lt;/div&gt;
-    &lt;div&gt;女生&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>作用：</p>
-<p>标签选择器可以把某一类标签全部选择出来，比如所有的div标签和所有的span标签。</p>
-<p>优点：</p>
-<p>能快速为页面中同一类型的标签统一设置样式。</p>
-<p>缺点：</p>
-<p>不能设计差异化样式，只能选择全部的当前标签。</p>
-<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>如果想要差异化选择不同的标签，单独选一个或者某几个标签，可以使用类选择器。</p>
-<p>类选择器在HTML中以class属性表示，在css中，类选择器以一个点“.”号显示。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-         /* 类选择器口诀：样式点定义 结构类调用 */
-       .red &#123;
-            color: red;
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;男生&lt;/p&gt;
-    &lt;p&gt;男生&lt;/p&gt;
-    &lt;p&gt;男生&lt;/p&gt;
-    &lt;div class=&quot;red&quot;&gt;女生&lt;/div&gt;
-    &lt;div&gt;女生&lt;/div&gt;
-    &lt;div&gt;女生&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        /* 类选择器口诀：样式点定义 结构类调用 */
-       .red &#123;
-            width: 100px;
-            height: 100px;
-            /* 背景颜色 */
-            background-color: red;
-       &#125;
-       .green &#123;
-           width: 100px;
-           height: 100px;
-           background-color: green;
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;red&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;green&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;red&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="多类名"><a href="#多类名" class="headerlink" title="多类名"></a>多类名</h3><p>我们可以给一个标签指定多个类名，从而达到更多的选择目的。这些类名都可以选出这个标签。简单理解就是一个标签有多个名字。</p>
-<p>多类名的使用方式：</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        /* 类选择器口诀：样式点定义 结构类调用 */
-       .red &#123;
-           color: red;
-       &#125;
-       .green &#123;
-           color: green;
-       &#125;
-       .font35 &#123;
-           font-size: 35px;
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;red font35&quot;&gt;刘德华&lt;/div&gt;
-&lt;/html&gt;
-</code></pre>
-<p>1.在标签class属性中写多个类名</p>
-<p>2.多个类名中间必须用空格分开</p>
-<p>3.这个标签就可以分别具有这些类名的样式</p>
-<p>多类名开发中使用场景：</p>
-<p>1.可以把一些标签元素相同的样式（共同的部分）放到一个类里面</p>
-<p>2.这些标签都可以调用这个公共的类，然后再调用自己独有的类。</p>
-<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><p>id选择器可以为标有特定id的HTML元素指定特定的样式。</p>
-<p>HTML元素以id属性来设置id选择器，CSS中id选择器以“#”来定义。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-       #pink &#123;
-           color: pink;
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;pink&quot;&gt;Jack&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>重点：==id属性只能在每个HTML文档中出现一次。==</p>
-<h3 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h3><p>在CSS中，通配符选择器使用*定义，它表示选取页面中的所有元素。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-       * &#123;
-           color: red;
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;Jack&lt;/div&gt;
-    &lt;span&gt;我的&lt;/span&gt;
-    &lt;ul&gt;
-        &lt;li&gt;还是我的&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<p>通配符选择器不需要调用，自动就给所有的元素使用样式</p>
-<p>特殊情况下才使用，清除所有的元素标签的内外边距</p>
-<h2 id="css字体属性"><a href="#css字体属性" class="headerlink" title="css字体属性"></a>css字体属性</h2><p>css字体属性用于定义字体系列、大小、粗细和文字样式。</p>
-<h3 id="字体系列："><a href="#字体系列：" class="headerlink" title="字体系列："></a>字体系列：</h3><p>css使用font-family属性定义文本的字体系列</p>
-<ol>
-<li>各种字体之间必须使用英文状态下的逗号隔开</li>
-<li>一般情况下，如果有空格隔开的多个单词组成的字体，加引号</li>
-<li>尽量使用系统默认自带字体，保证在任何用户的浏览器中都能正确显示</li>
-<li>一般写在body标签</li>
-</ol>
-<h3 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h3><p>css使用font-size属性定义字体大小</p>
-<ol>
-<li>px（像素）大小是我们网页的最常用的单位</li>
-<li>谷歌浏览器默认的文字大小为16px</li>
-<li>不同浏览器可能默认显示的字号大小不一致，我们尽量给一个明确值大小，不要默认大小</li>
-<li>可以body指定整个页面文字的大小</li>
-</ol>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        body &#123;
-            font-size: 18px;
-            font-family: &#39;Times New Roman&#39;, Times, serif;
-        &#125;
-        /* 标题大小比较特殊，需要单独去设置大小 */
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h2&gt;今天天气真好&lt;/h2&gt;
-    &lt;p&gt;多云&lt;/p&gt;
-    &lt;p&gt;多云&lt;/p&gt;
-    &lt;p&gt;多云&lt;/p&gt;
-    &lt;p&gt;多云&lt;/p&gt;
-    &lt;p&gt;多云&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="字体粗细"><a href="#字体粗细" class="headerlink" title="字体粗细"></a>字体粗细</h3><p>css使用font-weight属性设置文本字体的粗细</p>
-<p>属性值有normal和bold</p>
-<h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><p>font-style</p>
-<p>属性值有三个：noraml、italic、oblique</p>
-<h3 id="简写字体属性"><a href="#简写字体属性" class="headerlink" title="简写字体属性"></a>简写字体属性</h3><p>格式固定：font：font-style    font-weight    font-size/line-height    font-family</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        div &#123;
-            font: italic normal 16px/30px &#39;Microsoft yahei&#39;;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;我要实现深圳中产&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<ol>
-<li>使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，并且各个属性间以空格隔开</li>
-<li>不需要设置的属性可以省略（取默认值），但==必须保留font-size和font-family属性==，否则font属性将不起作用</li>
-</ol>
-<h2 id="css文本属性"><a href="#css文本属性" class="headerlink" title="css文本属性"></a>css文本属性</h2><p>css属性可定义文本的外观，比如文本的颜色、对齐文本、装饰文本、文本缩进、行间距等。</p>
-<h3 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h3><p>color属性用于定义文本的颜色</p>
-<p>表示形式：预定义的颜色值、十六进制、RGB代码</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        div &#123;
-            /* color: #e21cd2; */
-            color: rgb(221, 33, 158);
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;我要实现深圳中产&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="对齐文本"><a href="#对齐文本" class="headerlink" title="对齐文本"></a>对齐文本</h3><p>text-align属性用于设置元素内文本内容的==水平对齐方式==，属性值有left、right、center</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        h2 &#123;
-            text-align: center;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h2&gt;居中对齐的文本&lt;/h2&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="装饰文本"><a href="#装饰文本" class="headerlink" title="装饰文本"></a>装饰文本</h3><p>text-decoration属性规定添加到文本的修饰。可以给文本添加下划线、删除线、上划线等。</p>
-<p>属性值有none、underline、overline、line-through。分别为默认、下划线、上划线、删除线</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        div &#123;
-            text-decoration: underline;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;粉红色的回忆&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="文本缩进"><a href="#文本缩进" class="headerlink" title="文本缩进"></a>文本缩进</h3><p>text-indent属性用来==指定文本的第一行的缩进==，通常是将段落的首行缩进。</p>
-<p>em是一个相对单位，就是当前元素（font-size）1个文字大小，如果当前元素</p>
-<p>没有设置大小，则会按照父元素的1个文字大小。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        p &#123;
-           text-indent: 2em;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;这是第一段&lt;/p&gt;
-    &lt;p&gt;这是第二段&lt;/p&gt;
-    &lt;p&gt;这是第三段&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h3><p>line-height属性用于设置行间的距离（行高）。可以控制文字行与行之间的距离。</p>
-<p>行高由三部分组成，上间距、字高、下间距。</p>
-<h2 id="css三种样式表"><a href="#css三种样式表" class="headerlink" title="css三种样式表"></a>css三种样式表</h2><p>按照css样式书写的位置，css样式表可以分为三大类</p>
-<ol>
-<li>行内样式表（行内式）</li>
-<li>内部样式表（嵌入式）</li>
-<li>外部样式表（链接式）</li>
-</ol>
-<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>内部样式表是写到html页面内部，是将所有的css代码抽取出来，单独放到一个style标签中。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        p &#123;
-           text-indent: 2em;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;这是第一段&lt;/p&gt;
-    &lt;p&gt;这是第二段&lt;/p&gt;
-    &lt;p&gt;这是第三段&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<ol>
-<li>style标签理论上可以放在HTML文档的任何地方，但一般会放在文档的head标签中</li>
-<li>通过此种方式，可以方便控制当前整个页面中的元素样式设置</li>
-<li>代码的结构非常清晰，但是并没有实现结构与样式的完全分离</li>
-</ol>
-<h3 id="行内样式表"><a href="#行内样式表" class="headerlink" title="行内样式表"></a>行内样式表</h3><p>行内样式表（内联样式表）是在元素标签内部的style属性中设定css样式。适合修改简单样式</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div style=&quot;color: red; font-size: 12px;&quot;&gt;给我一个粉红色的回忆&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<ol>
-<li>style其实就是标签的属性值</li>
-<li>在双引号之间，写法要符合css规范</li>
-<li>可以控制当前的标签设置样式</li>
-<li>书写繁琐，并没有体现出结构与样式相分离的思想，不推荐大量使用，只有对当前元素添加简单样式的时候，可以考虑使用</li>
-</ol>
-<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>实际开发都是外部样式表，适合于样式比较多的情况，核心是：样式单独写到css文件之间，之后把css文件引入到HTMl页面中使用。</p>
-<ol>
-<li>新建一个后缀名为.css的样式文件，把所有css代码都放入此文件中。</li>
-<li>在HTML页面中，使用link标签引入这个文件。</li>
-</ol>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;./styles/test.css&quot;&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;毕业快乐&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="lang-css">/* 这个css文件里面只有样式，没有标签 */
-div &#123;
-    color: deeppink;
-&#125;
-</code></pre>
-<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        body &#123;
-            font: 16px/28px &#39;Microsoft yahei&#39;;
-        &#125;
-        h1 &#123;
-            text-align: center;
-            font-weight: normal;
-        &#125;
-        .gray &#123;
-            text-align: center;
-            color: #888888;
-        &#125;
-        a &#123;
-            text-decoration: none;
-        &#125;
-        p &#123;
-            text-indent: 2em;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;总书记挂念的红色老区｜花茂村的“美丽乡愁”&lt;/h1&gt;
-    &lt;div class=&quot;gray&quot;&gt;
-        2021-06-15 来源:&lt;a href=&quot;https://zzygeo.cn&quot; target=&quot;_blank&quot;&gt; 中国天气网&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;input type=&quot;text&quot;&gt; 
-        &lt;input type=&quot;button&quot; value=&quot;搜索&quot;&gt;
-    &lt;/div&gt;
-    &lt;p&gt;编者按：老区苏区孕育了中国革命，是中国共产党的初心之源。习近平总书记曾深情地说：“我是在这样的氛围中耳濡目染走过来的，工作过的很多地方都是老区，对老区的感情是很深厚的。”
-    &lt;/p&gt;
-    &lt;p&gt; 习近平总书记出生于革命军人家庭，成长在陕北黄土高坡，“红色基因”深深融入他的血脉。在地方工作期间，他就一直关注当地老区发展和老区人民生活情况。党的十八大以来，总书记对老区的挂念一如既往，他频频踏上红色土地，看望慰问老区人民。中国共产党成立100周年之际，央视网《天天学习》栏目推出特别策划《总书记挂念的红色老区》，讲述红色故事，展现老区的发展与变迁。
-    &lt;/p&gt;   
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="Emmet语法"><a href="#Emmet语法" class="headerlink" title="Emmet语法"></a>Emmet语法</h2><p>Emmet语法的前身是Zen coding，他使用缩写来提高html/css的编写速度，VsCode内部已经集成该语法</p>
-<p>1.快速生成HTML结构语法</p>
-<ul>
-<li>生成标签，直接输入标签名，按tab键即可</li>
-<li>如果想要生成多个相同标签，加上*号就可以</li>
-<li>如果有父子级关系的标签，可以用&gt; 比如ul&gt;li就可以了</li>
-<li>如果有兄弟关系的标签，用+就可以了，比如div+p</li>
-<li>如果生成带有类名或者id名字的，直接写.demo或者#two tab键就可以了</li>
-<li>如果生成的div类名是有顺序的，可以用自增符号￥</li>
-<li>如果想要在生成的标签内部写内容可以用{}表示</li>
-</ul>
-<p>2.快速生成css样式语法</p>
-<p>css基本采取简写形式即可</p>
-<ul>
-<li>比如w200 按tab 可以生成width:200px;</li>
-<li>比如lh26 按tab 可以生成 line-height:26px;</li>
-</ul>
-<h2 id="css复合选择器"><a href="#css复合选择器" class="headerlink" title="css复合选择器"></a>css复合选择器</h2><p>在css中，可以把选择器分为基础选择器和复合选择器，复合选择器是建立在基础选择器之上，对基础选择器进行组合的。</p>
-<ul>
-<li>复合选择器可以更准确、更高效的选择目标元素（标签）</li>
-<li>复合选择器是由两个或多个基础选择器，通过不同的方式组合而成的</li>
-<li>常用的复合选择器包括：后代选择器、子选择器、并集选择器、伪类选择器等</li>
-</ul>
-<h3 id="后代选择器（重要）"><a href="#后代选择器（重要）" class="headerlink" title="后代选择器（重要）"></a>后代选择器（重要）</h3><p>后代选择器又称为包含选择器，可以选择父元素里面子元素。其写法就是把==外层标签写在前面，内层标签写在后面，中间用空格分隔==。当标签发生嵌套时，内层标签就称为外层标签的后代。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        /* 我想把ol里面的小li选出来改为pink */
-        ol li &#123;
-            color: deeppink;
-        &#125;
-        ol li a &#123;
-            text-decoration: none;
-            color: greenyellow;
-        &#125;
-        .yellow li a &#123;
-            color: aqua;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;ol&gt;
-        &lt;li&gt;我是ol的孩子&lt;/li&gt;
-        &lt;li&gt;我是ol的孩子&lt;/li&gt;
-        &lt;li&gt;我是ol的孩子&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;我是孙子&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-    &lt;ul&gt;
-        &lt;li&gt;我是ul的孩子&lt;/li&gt;
-        &lt;li&gt;我是ul的孩子&lt;/li&gt;
-        &lt;li&gt;我是ul的孩子&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;ol class=&quot;yellow&quot;&gt;
-        &lt;li&gt;我是ol的孩子&lt;/li&gt;
-        &lt;li&gt;我是ol的孩子&lt;/li&gt;
-        &lt;li&gt;我是ol的孩子&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;我是孙子&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<ol>
-<li>元素1和元素2中间用空格隔开</li>
-<li>元素1是父级，元素2是子级，最终选择的是元素2</li>
-<li>元素2可以是儿子，也可以是孙子，只要是元素1的后代即可</li>
-<li>元素1和元素2可以是任意基础选择器</li>
-</ol>
-<h3 id="子选择器（重要）"><a href="#子选择器（重要）" class="headerlink" title="子选择器（重要）"></a>子选择器（重要）</h3><p>子元素选择器只能选择作为某元素的最近一级子元素。简单理解就是选亲儿子元素。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .nav&gt;a &#123;
-            color: deeppink;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;div class=&quot;nav&quot;&gt;
-        &lt;a href=&quot;#&quot;&gt;我是儿子&lt;/a&gt;    
-        &lt;p&gt;
-            &lt;a href=&quot;#&quot;&gt;我是孙子&lt;/a&gt;
-        &lt;/p&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<ol>
-<li>元素1和元素2中间用大于号隔开</li>
-<li>元素1是父级，元素2是子级，最终选择的是元素2</li>
-<li>元素2必须是亲儿子，其孙子、重孙之类都不归他管</li>
-</ol>
-<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><p>并集选择器可以选择多组标签，同时为他们定义相同的样式。通常用于集体声明。</p>
-<p>并集选择器是各选择器通过英文逗号连接而成，任何形式的选择器都可以作为并集选择器的一部分。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        /* 约定的语法规范，并集选择器喜欢竖着写 */
-      a,
-      p &#123;
-          color: red;
-      &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-   &lt;div class=&quot;hot&quot;&gt;
-       &lt;a href=&quot;#&quot;&gt;大肘子&lt;/a&gt;
-       &lt;ul&gt;
-           &lt;li&gt;&lt;a href=&quot;#&quot;&gt;猪头&lt;/a&gt;&lt;/li&gt;
-           &lt;li&gt;&lt;a href=&quot;#&quot;&gt;猪尾巴&lt;/a&gt;&lt;/li&gt;
-       &lt;/ul&gt;
-       &lt;p&gt;四川凉菜&lt;/p&gt;
-   &lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<ol>
-<li>元素1和元素2中间用逗号隔开</li>
-<li>逗号可以理解为和的意思</li>
-<li>并集选择器通常用于集体声明</li>
-</ol>
-<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><p>伪类选择器用于向某些选择器添加特殊的效果，比如给链接添加特殊效果，或选择第1个，第n个元素。</p>
-<p>伪类选择器书写的最大特点是用冒号：表示。</p>
-<p>==链接伪类选择器：==</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        /* 未访问的链接 a:link */
-        a:link &#123;
-            color: #333;
-            text-decoration: none;
-        &#125;
-        /* 访问过的链接 a:visited */
-        a:visited &#123;
-            color: orange;
-        &#125;  
-        /* 选择鼠标经过的链接 a:hover */
-        a:hover &#123;
-            color: skyblue;
-        &#125;
-        /* 选择的是我们鼠标正在按下还没有弹起鼠标的那个链接 */
-        a:active &#123;
-            color: green;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-   &lt;a href=&quot;#&quot;&gt;小猪佩奇&lt;/a&gt;
-   &lt;br&gt;
-   &lt;a href=&quot;https://zzygeo.cn&quot;&gt;myblog&lt;/a&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p>链接伪类选择器注意事项</p>
-<ol>
-<li>为了确保生效，按照LVHA顺序声明：link-visited-hover-active</li>
-<li>因为a链接在浏览器中具有默认样式，所以在实际工作中都需要给链接单独指定样式</li>
-</ol>
-<p>==focus伪类选择器==</p>
-<p>focus伪类选择器用于选取获得焦点的表单元素。</p>
-<p>焦点就是光标，一般情况下 input类表单元素才能获取，因此这个选择器也主要针对于表单元素来说。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        input:focus &#123;
-            background-color: blue;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-   &lt;input type=&quot;text&quot;&gt;
-   &lt;input type=&quot;text&quot;&gt;
-   &lt;input type=&quot;text&quot;&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<h2 id="css的元素显示模式"><a href="#css的元素显示模式" class="headerlink" title="css的元素显示模式"></a>css的元素显示模式</h2><p>了解元素的显示模式可以更好的让我们布局页面。</p>
-<p>什么是元素的显示模式</p>
-<p>作用：网页的标签非常多，在不同的地方会用到不同类型的标签，了解他们的特点可以更好的布局我们的网页。</p>
-<p>元素显示模式就是==标签以什么方式进行显示==，比如div自己占一行，比如一个可以放多个span</p>
-<p>HTML元素一般分为==块元素==和==行内元素==两种类型。</p>
-<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><p>常见的块元素有h1-h6、p、div、ul、ol、li等，其中div标签是最典型的块元素。</p>
-<p>块级元素的特点：</p>
-<ol>
-<li>比较霸道，自己独占一行。</li>
-<li>高度、宽度、外边距以及内边距都可以控制。</li>
-<li>宽度默认是容器（父级宽度）的100%。</li>
-<li>是一个容器及盒子，里面可以放行内或块级元素。</li>
-</ol>
-<p>注意：</p>
-<ol>
-<li>文字类的元素内不能使用块级元素</li>
-<li>p标签主要用于存放文字，因为p里面不能放块级元素，特别是不能放div</li>
-<li>同理，h1-h6等都是文字类块级标签，里面也不能放其他块级元素</li>
-</ol>
-<h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3><p>常见的行内元素有a、strong、b、em、i、del、s、ins、u、span等，其中span标签是最典型的行内元素。有的地方也将行内元素称为内联元素。</p>
-<p>行内元素的特点：</p>
-<ol>
-<li>相邻行内元素在一行上，一行可以显示多个。</li>
-<li>高宽直接设置是无效的。</li>
-<li>默认宽度就是它本身内容的宽度。</li>
-<li>行内元素只能容纳文本或者其他行内元素。</li>
-</ol>
-<p>注意：</p>
-<ol>
-<li>链接里面不能再放链接</li>
-<li>==特殊情况下a里面可以放块级元素，但是给a转换一下块级模式最安全==</li>
-</ol>
-<h3 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h3><p>在行内元素中有几个特殊的标签 image、input、td，他们同时具有块元素和行内元素的特点。有些资料称它们为行内块元素。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        input &#123;
-            width: 200px;
-            height: 30px;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;input type=&quot;text&quot;&gt;
-    &lt;input type=&quot;text&quot;&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p>行内块元素的特点：</p>
-<ol>
-<li>和相邻行内元素（行内块）在一行上，但是他们之间会有空白缝隙。一行可以显示多个（行内元素的特点）</li>
-<li>默认高度就是它本身内容的宽度（行内元素的特点）</li>
-<li>高度、行高、外边距以及内边距都可以控制（块级元素的特点）</li>
-</ol>
-<h2 id="元素显示模式转换"><a href="#元素显示模式转换" class="headerlink" title="元素显示模式转换"></a>元素显示模式转换</h2><p>特殊情况下，我们需要元素模式的转行，简单理解：一个模式的元素需要另外一种模式的特性</p>
-<p>比如想要增加链接a的触发范围。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        a &#123;
-            width: 200px;
-            height: 50px;
-            background-color: rgb(224, 41, 215);
-            /* 把行内元素a转行为块级元素 */
-            display: block;
-        &#125;
-        div &#123;
-            width: 200px;
-            height: 100px;
-            background-color: rgb(255, 0, 0);
-            /* 把块级元素转行为行内元素 */
-            display: inline;
-        &#125;
-        span &#123;
-            width: 200px;
-            height: 50px;
-            background-color: rgb(98, 0, 255);
-            display: inline-block;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 想把a变大，但是行内元素不能设置宽和高 --&gt;
-    &lt;a href=&quot;#&quot;&gt;金星阿姨&lt;/a&gt;
-    &lt;a href=&quot;#&quot;&gt;金星阿姨&lt;/a&gt;
-    &lt;div&gt;我是块级元素&lt;/div&gt;
-    &lt;div&gt;我是块级元素&lt;/div&gt;
-    &lt;span&gt;行内元素&lt;/span&gt;
-    &lt;span&gt;行内元素&lt;/span&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p>转换为块元素：display:block</p>
-<p>转换为行内元素：display:inline</p>
-<p>转行为行内块元素：display:inline-block</p>
-<p>练习：</p>
-<p>css没有给我们提供文字垂直居中的代码，但是可以通过让文字的行高等于盒子的高度，就可以让文字在当前盒子内垂直居中。行高小于盒子高度，文字会偏上，如果行高大于盒子高度，则文字会偏下。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-       a &#123;
-           width: 230px;
-           height: 40px;
-           display: block;
-           background-color:#535758 ;
-           font-size: 14px;
-           color: #fff;
-           text-decoration: none;
-           text-indent: 2em;
-           line-height: 40px;
-       &#125;
-       a:hover &#123;
-           background-color: #ff6f00;
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;a href=&quot;#&quot;&gt;手机 电话卡&lt;/a&gt;
-    &lt;a href=&quot;#&quot;&gt;电视 盒子&lt;/a&gt;
-    &lt;a href=&quot;#&quot;&gt;笔记本 平板&lt;/a&gt;
-    &lt;a href=&quot;#&quot;&gt;出行 穿搭&lt;/a&gt;
-    &lt;a href=&quot;#&quot;&gt;智能 路由器&lt;/a&gt;
-    &lt;a href=&quot;#&quot;&gt;健康 儿童&lt;/a&gt;
-    &lt;a href=&quot;#&quot;&gt;耳机 音响&lt;/a&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<h2 id="css的背景"><a href="#css的背景" class="headerlink" title="css的背景"></a>css的背景</h2><p>通过css背景属性，可以给页面元素添加背景样式。</p>
-<p>背景属性可以设置背景颜色、背景图片、背景平铺、背景图片位置、背景图像固定等。</p>
-<h3 id="背景颜色："><a href="#背景颜色：" class="headerlink" title="背景颜色："></a>背景颜色：</h3><p>background-color      transparent为透明色</p>
-<h3 id="背景图片："><a href="#背景图片：" class="headerlink" title="背景图片："></a>背景图片：</h3><p>background-image属性描述了元素的背景图像。实际开发常见于logo或者一些装饰性的小图片或者超大的背景图片，==优点是非常便于控制位置==。</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-       div &#123;
-           width: 300px;
-           height: 300px;
-           background-image: url(&quot;图片&quot;);
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;&lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre><h3 id="背景平铺"><a href="#背景平铺" class="headerlink" title="背景平铺"></a>背景平铺</h3><p>如果需要在HTML页面上对背景图像进行平铺，可以使用background-repeat属性。</p>
-<pre><code>background-repeat: repeat|no-repeat|repeat-x|repeat-y
-</code></pre><h3 id="背景图片位置"><a href="#背景图片位置" class="headerlink" title="背景图片位置"></a>背景图片位置</h3><p>利用background-position属性可以改变图片在背景中的位置</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>参数值</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>length</td>
-<td>百分数\</td>
-<td>由浮点数字和单位标识符组成的长度值</td>
-</tr>
-<tr>
-<td>position</td>
-<td>top\</td>
-<td>center\</td>
-<td>bottom\</td>
-<td>left\</td>
-<td>center\</td>
-<td>right</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>1.参数是方位名词：</p>
-<p>如果指定的两个值都是方位名词，则两个值前后顺序无关，比如left top和top left效果一致</p>
-<p>如果只指定了一个方位名词，另一个值省略，则第二个值默认居中对齐</p>
-<p>2.参数是精确坐标：</p>
-<p>如果参数值是精确坐标，那么第一个肯定是x坐标，第二个一定是y坐标</p>
-<p>如果只指定一个数值，那么该数值一定是x坐标，另一个默认垂直居中</p>
-<p>3.参数是混合单位：</p>
-<p>如果指定的两个值是精确单位和方位名词混合使用，则第一个值是x坐标，第二个值是y坐标</p>
-<h3 id="背景图像固定"><a href="#背景图像固定" class="headerlink" title="背景图像固定"></a>背景图像固定</h3><p>background-attachment属性设置背景图像是否固定或者随页面的其余部分滚动。</p>
-<pre><code>background-attachment:scroll | fixed
-</code></pre><p>scroll：背景图像是随着对象内容滚动</p>
-<p>fixed：背景图像固定</p>
-<h3 id="背景的复合写法"><a href="#背景的复合写法" class="headerlink" title="背景的复合写法"></a>背景的复合写法</h3><p>为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background中。</p>
-<p>当使用简写属性时，没有特定的顺序要求，一般习惯约定顺序为：</p>
-<p>background:背景颜色 背景图片地址 背景平铺 背景图片滚动 背景图片位置；</p>
-<h3 id="背景色半透明"><a href="#背景色半透明" class="headerlink" title="背景色半透明"></a>背景色半透明</h3><p>CSS3为我们提供了背景颜色半透明效果</p>
-<pre><code>background: rgba(0,0,0,0.3);
-</code></pre><p>最后一个参数是alpha透明度，取值范围在0~1之间。</p>
-<h2 id="css的三大特性"><a href="#css的三大特性" class="headerlink" title="css的三大特性"></a>css的三大特性</h2><p>CSS有三个非常重要的特性：层叠性、继承性、优先级。</p>
-<h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>相同的选择器给设置相同的样式，此时一个样式就会覆盖另一个冲突的样式。层叠主要解决样式冲突的问题</p>
-<p>层叠性原则：</p>
-<ul>
-<li>样式冲突，遵循的原则是就近原则，哪个样式离结构近，就执行哪个样式。</li>
-<li>样式不冲突，不会层叠。</li>
-</ul>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-       div &#123;
-           /* red会被覆盖，而font-size会起作用 */
-           color: red;
-           font-size: 20px;
-       &#125;
-       div &#123;
-           color: pink;
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;长江后浪推前浪，前浪死在沙滩上&lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>css中的继承：子标签会继承父标签的某些样式，如文本颜色和字号。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-       div &#123;
-           color: red;
-           font-size: 20px;
-       &#125;
-
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        &lt;p&gt;子类&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<ul>
-<li>恰当的使用继承可以简化代码，降低css样式的复杂性。</li>
-<li>子元素可以继承父元素的样式（text-, font-, line- 这些元素开头的可以继承，以及color属性）</li>
-</ul>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-       body &#123;
-           /* 这里的1.5指的是1.5倍 */
-           font: 12px/1.5 &#39;Microsoft YaHei&#39;;
-           color: pink;
-       &#125;
-
-      div &#123;
-          font-size: 14px;
-      &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;粉红色的回忆&lt;/div&gt;
-    &lt;p&gt;粉红色的回忆&lt;/p&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<ul>
-<li>行高可以跟单位也可以不跟单位。</li>
-<li>如果子元素没有设置行高，则会继承父元素的行高为1.5。</li>
-<li>此时子元素的行高是：当前子元素的文字大小*1.5。</li>
-<li>body行高1.5这样写法最大的优势就是里面子元素可以根据文字大小自动调整行高。</li>
-</ul>
-<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>当同一个元素指定多个选择器，就会有优先级的产生。</p>
-<p>选择器相同，则执行层叠性</p>
-<p>选择器不同，则根据选择器权重执行</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>选择器权重</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>继承或者*</td>
-<td>0000</td>
-</tr>
-<tr>
-<td>元素选择器</td>
-<td>0001</td>
-</tr>
-<tr>
-<td>类选择器、伪类选择器</td>
-<td>0010</td>
-</tr>
-<tr>
-<td>ID选择器</td>
-<td>0100</td>
-</tr>
-<tr>
-<td>行内样式，style=””</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>！important</td>
-<td>最高</td>
-</tr>
-</tbody>
-</table>
-</div>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        div &#123;
-            color: red!important;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div style=&quot;color: blue;&quot;&gt;粉红色的回忆&lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p>链接元素是特殊的，因为它默认自己就有蓝色下划线的样式。</p>
-<h3 id="权重叠加"><a href="#权重叠加" class="headerlink" title="权重叠加"></a>权重叠加</h3><p>如果是复合选择器，则会有权重叠加，需要计算权重。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        /* 复合选择器会有权重叠加的问题 */
-        /* 0001 */
-        li &#123;
-            color: red;
-        &#125;
-        /* 0001 + 0001 = 0002 */
-        ul li &#123;
-            color: pink;
-        &#125;
-        /* 0010 + 0001 = 0011 */
-        .nav li &#123;
-            color: deeppink;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;ul class=&quot;nav&quot;&gt;
-        &lt;li&gt;大猪蹄子&lt;/li&gt;
-        &lt;li&gt;大肘子&lt;/li&gt;
-        &lt;li&gt;猪尾巴&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><p>页面布局要学习三大核心，盒子模型、浮动和定位。</p>
-<p>网页布局过程：</p>
-<p>1.先准备好相关的网页元素，网页元素基本都是盒子Box。</p>
-<p>2.利用css设置好盒子样式，然后摆放到相应位置。</p>
-<p>3.往盒子里面装内容。</p>
-<p>盒子模型组成：</p>
-<p>所谓盒子模型：就是把HTML页面中的布局元素看作一个矩形的盒子，也就是一个盛装内容的容器。CSS盒子模型本质上是一个盒子，封装周围HTML元素，它包括：边框、外边距、内边距和实际内容。</p>
-<p>组成部分：</p>
-<p>border边框、content内容、padding内边距、margin外边距</p>
-<h3 id="border"><a href="#border" class="headerlink" title="border"></a>border</h3><p>border可以设置元素的边框。边框由三部分组成：边框宽度、边框样式、边框颜色</p>
-<pre><code>border: border-with | border-style | border-color
-</code></pre><p>border-style属性：solid(实线)、dashed(虚线)、dotted(点线),其他样式查阅文档</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-       div &#123;
-            width: 300px;
-            height: 200px;
-            border-width: 5px;
-            border-style: dotted;
-            border-color: red;
-       &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;&lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<h3 id="表格细线边框"><a href="#表格细线边框" class="headerlink" title="表格细线边框"></a>表格细线边框</h3><p>border-collapse属性控制浏览器绘制表格边框的方式。它控制相邻单元格的边框。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        table &#123;
-            width: 500px;
-            height: 250px;
-        &#125;
-        th &#123;
-            height: 35px;
-        &#125;
-        table,
-        th, td &#123;
-            border: 1px solid red;
-            font-size: 14px;
-            text-align: center;
-            border-collapse: collapse;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;table align=&quot;center&quot; cellspacing=&quot;0&quot;&gt;
-        &lt;thead&gt;
-            &lt;tr&gt;
-                &lt;th&gt;排名&lt;/th&gt;
-                &lt;th&gt;关键词&lt;/th&gt;
-                &lt;th&gt;搜索人数&lt;/th&gt;
-                &lt;th&gt;链接&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-            &lt;tr&gt;
-                &lt;td&gt;西游记&lt;/td&gt;
-                &lt;td&gt;四大名著&lt;/td&gt;
-                &lt;td&gt;100&lt;/td&gt;
-                &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;西游记&lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;水浒传&lt;/td&gt;
-                &lt;td&gt;四大名著&lt;/td&gt;
-                &lt;td&gt;120&lt;/td&gt;
-                &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;水浒传&lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;三国演义&lt;/td&gt;
-                &lt;td&gt;四大名著&lt;/td&gt;
-                &lt;td&gt;160&lt;/td&gt;
-                &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;三国演义&lt;/td&gt;
-            &lt;/tr&gt;
-
-            &lt;tr&gt;
-                &lt;td&gt;红楼梦&lt;/td&gt;
-                &lt;td&gt;四大名著&lt;/td&gt;
-                &lt;td&gt;50&lt;/td&gt;
-                &lt;td&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;红楼梦&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<p>边框会影响盒子的实际大小</p>
-<p>边框会额外增加盒子的实际大小。因此有两种方案解决：</p>
-<p>1.测量盒子大小的时候，不量边框。</p>
-<p>2.如果测量的时候包含了边框，则需要减去边框高度。</p>
-<h3 id="内边距padding"><a href="#内边距padding" class="headerlink" title="内边距padding"></a>内边距padding</h3><p>padding属性用于设置内边距，即边框与内容之间的距离。</p>
-<p>padding-left: 左内边距    padding-right：右内边距    padding-top: 上内边距    padding-bottom：下内边距</p>
-<p>如果盒子本身没有指定width/height属性，则此时padding不会撑开盒子大小。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        div &#123;
-            width: 200px;
-            height: 200px;
-            background-color: pink;
-            padding-left: 20px;
-            padding-top: 20px;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;盒子内容是content盒子内容是content盒子内容是content&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="内边距复合写法"><a href="#内边距复合写法" class="headerlink" title="内边距复合写法"></a>内边距复合写法</h3><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>值的个数</th>
-<th>表达意思</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>padding:5px</td>
-<td>1个值，代表上下左右都有5像素内边距</td>
-</tr>
-<tr>
-<td>padding:5px 10px</td>
-<td>2个值，代表上下内边距是5像素，左右内边距是10像素</td>
-</tr>
-<tr>
-<td>padding:5px 10px 20px</td>
-<td>3个值，代表上内边距5像素，左右边距10像素，下内边距20像素</td>
-</tr>
-<tr>
-<td>padding:5px 10px 20px 30px</td>
-<td>4个值，上是5像素，右10像素，下20像素，左是30像素，顺时针</td>
-</tr>
-</tbody>
-</table>
-</div>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        div &#123;
-            width: 200px;
-            height: 200px;
-            background-color: pink;
-            padding: 5px 10px;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;盒子内容是content盒子内容是content盒子内容是content&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<p>1.内容和边框有了距离，添加了内边距。</p>
-<p>2.padding影响了盒子实际大小。</p>
-<p>也就是说，如果盒子已经有了宽度和高度，此时再指定内边框，会撑大盒子。</p>
-<p>如果保证盒子跟效果图大小保持一致，则让width/height减去多出来的内边距大小即可。</p>
-<h3 id="新浪导航栏"><a href="#新浪导航栏" class="headerlink" title="新浪导航栏"></a>新浪导航栏</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-    &lt;style&gt;
-        .nav &#123;
-            height: 41px;
-            border-top: 3px solid #ff8500;
-            border-bottom: 1px solid #edeef0;
-            line-height: 41px;
-        &#125;
-        .nav a &#123;
-            /* a属于行内元素，想要指定高度需要进行格式转换 */
-            display: inline-block;
-            height: 41px;
-            text-decoration: none;
-            font-size: 12px;
-            color: #4c4c4c;
-            padding: 0 20px;
-        &#125;
-        .nav a:hover &#123;
-            color: #ff8500;
-        &#125;
-    &lt;/style&gt;
-&lt;body&gt;
-    &lt;div class=&quot;nav&quot;&gt;
-        &lt;a href=&quot;#&quot;&gt;新浪导航&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;手机新浪网&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;移动客户端&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;微博&lt;/a&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="外边框margin"><a href="#外边框margin" class="headerlink" title="外边框margin"></a>外边框margin</h3><p>margin属性用于设置外边距，即控制盒子和盒子之间的距离。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>margin-left</td>
-<td>左外边距</td>
-</tr>
-<tr>
-<td>margin-right</td>
-<td>右外边距</td>
-</tr>
-<tr>
-<td>margin-top</td>
-<td>上外边距</td>
-</tr>
-<tr>
-<td>margin-bottom</td>
-<td>下外边距</td>
-</tr>
-</tbody>
-</table>
-</div>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        div &#123;
-            width: 200px;
-            height: 200px;
-            background-color: pink;
-        &#125;
-        .one &#123;
-            margin-bottom: 20px;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;one&quot;&gt;1&lt;/div&gt;
-    &lt;div&gt;2&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>margin的简写属性和padding是一样的</p>
-<h3 id="外边距典型应用"><a href="#外边距典型应用" class="headerlink" title="外边距典型应用"></a>外边距典型应用</h3><p>外边距可以让块级盒子水平居中，但是必须满足两个条件:</p>
-<p>1.盒子必须指定了宽度</p>
-<p>2.盒子左右外边距都设置为auto</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .nav &#123;
-            width: 900px;
-            height: 200px;
-            background-color: pink;
-            /* 保证左右auto就可以实现水平居中 */
-            margin: 0 auto;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;nav&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h3><p>使用margin定义块元素的垂直外边距时，可能会出现外边距的合并。</p>
-<p>嵌套块元素垂直外边距的塌陷</p>
-<p>对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。</p>
-<p>解决方案：</p>
-<p>1.可以为父元素定义上边框。</p>
-<p>2.可以为父元素定义内边距。</p>
-<p>3.可以为父元素添加 overflow:hidden</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .father &#123;
-            width: 400px;
-            height: 400px;
-            background-color: purple;
-            margin-top: 50px;
-            /* border: 1px solid transparent; */
-            /* padding: 1px; */
-            overflow: hidden;
-        &#125;
-        .son &#123;
-            width: 200px;
-            height: 200px;
-            background-color: pink;
-            margin-top: 100px;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;father&quot;&gt;
-        &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h3><p>网页元素很多都带有默认的内外边距，而且不同浏览器默认的也不一致。因此我们在布局钱，首先要清除下网页元素的内外边距。</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        * &#123;
-            margin: 0;
-            padding: 0;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    123
-    &lt;ul&gt;
-        &lt;li&gt;前后端冲&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>细节：行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内块元素就可以了。</p>
-<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>有很多的布局效果，标准流没有办法完成，此时就可以利用浮动完成布局。因为浮动可以改变元素标签默认的排列方式。可以让多个块级元素一行内排列显示。</p>
-<p>==网页布局第一准则：多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动。==</p>
-<p>float属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘。</p>
-<pre><code>float: left|right|none;
-</code></pre><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;style&gt;
-        div &#123;
-            width: 200px;
-            height: 200px;
-            background-color: deeppink;
-            float: right;
-        &#125;
-    &lt;/style&gt;
-&lt;/body&gt;
-    &lt;div&gt;1&lt;/div&gt;
-    &lt;div&gt;2&lt;/div&gt;
-    &lt;div&gt;3&lt;/div&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="浮动的特性"><a href="#浮动的特性" class="headerlink" title="浮动的特性"></a>浮动的特性</h3><p>加了浮动之后的元素，会具有很多特性。</p>
-<ol>
-<li>浮动元素会脱离标准流（脱标）</li>
-<li>浮动的元素会一行内显示并且元素顶部对齐。</li>
-<li>浮动的元素会具有行内块元素的特性。</li>
-</ol>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;style&gt;
-        .right &#123;
-            width: 400px;
-            height: 200px;
-            float: left;
-            background-color: azure;
-        &#125;
-        div &#123;
-            width: 200px;
-            height: 200px;
-            background-color: deeppink;
-        &#125;
-    &lt;/style&gt;
-&lt;/body&gt;
-    &lt;div class=&quot;right&quot;&gt;1&lt;/div&gt;
-    &lt;div&gt;2&lt;/div&gt;
-    &lt;div&gt;3&lt;/div&gt;
-&lt;/html&gt;
-</code></pre>
-<h3 id="浮动元素经常和标准流父级搭配使用"><a href="#浮动元素经常和标准流父级搭配使用" class="headerlink" title="浮动元素经常和标准流父级搭配使用"></a>浮动元素经常和标准流父级搭配使用</h3><p>为了约束浮动元素位置，网页布局一般采取的策略是：</p>
-<p>==先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置，符合网页布局第一准则。==</p>
-<h3 id="网页常见布局案例"><a href="#网页常见布局案例" class="headerlink" title="网页常见布局案例"></a>网页常见布局案例</h3><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;style&gt;
-    * &#123;
-        margin: 0;
-        padding: 0;
-    &#125;
-    .top &#123;
-        height: 50px;
-        background-color: gray;
-    &#125;
-    .banner &#123;
-        width: 980px;
-        height: 150px;
-        background-color: gray;
-        margin: 10px auto;
-    &#125;
-    li &#123;
-        list-style: none;
-    &#125;
-    .box &#123;
-        width: 980px;
-        height: 300px;
-        margin: 0 auto;
-        background-color: pink;
-        f
-    &#125;
-    .box li &#123;
-        float: left;
-        width: 237px;
-        height: 300px;
-        background-color: gray;
-        margin-right: 10px;
-    &#125;
-    .box .last &#123;
-        margin-right: 0;
-    &#125;
-    /* 通栏的元素不需要指定宽度 */
-    .footer &#123;
-        height: 200px;
-        background-color: gray;
-        margin-top: 10px;
-    &#125;
-
-&lt;/style&gt;
-&lt;body&gt;
-    &lt;div class=&quot;top&quot;&gt;top&lt;/div&gt;
-    &lt;div class=&quot;banner&quot;&gt;banner&lt;/div&gt;
-    &lt;div class=&quot;box&quot;&gt;
-        &lt;ul&gt;
-            &lt;li&gt;1&lt;/li&gt;
-            &lt;li&gt;2&lt;/li&gt;
-            &lt;li&gt;3&lt;/li&gt;
-            &lt;li class=&#39;last&#39;&gt;4&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
-    &lt;!-- 目前是标准流，自上而下来显示 --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>浮动布局注意点</p>
-<p>1.浮动和标准流的父盒子搭配。</p>
-<p>2.一个元素浮动了，理论上其余的兄弟元素也要浮动。</p>
-<p>一个盒子里面有多个盒子，如果一个盒子浮动了，那么其他兄弟也应该浮动，以防引起问题。</p>
-<p>==浮动的盒子只会影响浮动盒子的后面的标准流，不会影响前面的标准流。==</p>
-<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><p>并不是所有的父盒子都需要给定高度，如新闻稿以及淘宝商品页面。</p>
-<p>当父盒子不给高度时，盒子浮动又不占有位置，最后父级盒子高度为0时，就会影响下面的标准流盒子。</p>
-<pre><code>选择器&#123;clear:属性值;&#125;
-</code></pre><p>清除浮动的策略是：闭合浮动</p>
-<h3 id="清除浮动方法"><a href="#清除浮动方法" class="headerlink" title="清除浮动方法"></a>清除浮动方法</h3><ol>
-<li>额外标签法也称为隔墙法，是W3C推荐的做法。</li>
-<li>父级添加overflow属性</li>
-<li>父级添加after伪元素</li>
-<li>父级添加双伪元素</li>
-</ol>
-<p>1.额外标签法</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .box &#123;
-            width: 600px;
-            margin: 0 auto;
-            background-color: red;
-        &#125;
-        .damao &#123;
-            width: 200px;
-            height: 100px;
-            float: left;
-            background-color: pink;
-        &#125;
-        .ermao &#123;
-            width: 200px;
-            height: 100px;
-            float: left;
-            background-color: pink;
-        &#125;
-        .footer &#123;
-            height: 300px;
-            background-color: aqua;
-        &#125;
-        .clear &#123;
-            clear: both;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;box&quot;&gt;
-        &lt;div class=&quot;damao&quot;&gt;大毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;!--这个新增的元素要求必须是块级元素--&gt;
-        &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>额外标签法会在浮动元素末尾添加一个空的标签。</p>
-<p>优点：通俗易懂，书写方便</p>
-<p>缺点：添加许多无意义的标签。结构化较差</p>
-<p>这个新增的元素要求必须是块级元，不能是行内元素。</p>
-<p>2.给父级添加overflow</p>
-<p>可以给父级添加overflow属性，将其属性值设置为hidden,auto和scroll</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .box &#123;
-            width: 600px;
-            margin: 0 auto;
-            background-color: red;
-            overflow: hidden;
-        &#125;
-        .damao &#123;
-            width: 200px;
-            height: 100px;
-            float: left;
-            background-color: pink;
-        &#125;
-        .ermao &#123;
-            width: 200px;
-            height: 100px;
-            float: left;
-            background-color: pink;
-        &#125;
-        .footer &#123;
-            height: 300px;
-            background-color: aqua;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;box&quot;&gt;
-        &lt;div class=&quot;damao&quot;&gt;大毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>3.：after伪元素法</p>
-<p>:after方式是额外标签法的升级版，也是给父元素添加</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .clearfix::after &#123;
-            content: &quot;&quot;;
-            display: block;
-            height: 0;
-            clear: both;
-            visibility: hidden;
-        &#125;
-        .clearfix &#123;/* IE6, 7专有*/
-            *zoom: 1;
-        &#125;
-        .box &#123;
-            width: 600px;
-            margin: 0 auto;
-            background-color: red;
-        &#125;
-        .damao &#123;
-            width: 200px;
-            height: 100px;
-            float: left;
-            background-color: pink;
-        &#125;
-        .ermao &#123;
-            width: 200px;
-            height: 100px;
-            float: left;
-            background-color: pink;
-        &#125;
-        .footer &#123;
-            height: 300px;
-            background-color: aqua;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;box clearfix&quot;&gt;
-        &lt;div class=&quot;damao&quot;&gt;大毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>优点：没有增加标签，结构更简单</p>
-<p>缺点：照顾低版本浏览器</p>
-<p>3.双伪元素清除浮动</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .clearfix:before,
-        .clearfix:after &#123;
-            content: &quot;&quot;;
-            display: table;
-        &#125;
-        .clearfix:after &#123;
-            clear: both;
-        &#125;
-        .clearfix &#123;/* IE6, 7专有*/
-            *zoom: 1;
-        &#125;
-        .box &#123;
-            width: 600px;
-            margin: 0 auto;
-            background-color: red;
-        &#125;
-        .damao &#123;
-            width: 200px;
-            height: 100px;
-            float: left;
-            background-color: pink;
-        &#125;
-        .ermao &#123;
-            width: 200px;
-            height: 100px;
-            float: left;
-            background-color: pink;
-        &#125;
-        .footer &#123;
-            height: 300px;
-            background-color: aqua;
-        &#125;
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class=&quot;box clearfix&quot;&gt;
-        &lt;div class=&quot;damao&quot;&gt;大毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-        &lt;div class=&quot;ermao&quot;&gt;二毛&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>优点：代码更简洁</p>
-<p>缺点：照顾低版本浏览器</p>
-<h2 id="css属性书写顺序"><a href="#css属性书写顺序" class="headerlink" title="css属性书写顺序"></a>css属性书写顺序</h2><p>建议遵循以下顺序：</p>
-<p>1.布局定位属性: display/position/float/clear/visibility/overflow（建议display第一个写）</p>
-<p>2.自身属性：width/height/margin/padding/border/background</p>
-<p>3.文本属性: color/font/text-decoration/text-align/vertical-align/white-space/break-word</p>
-<p>4.其他属性（css3）:content/cursor/border-radius/box-shadow/text-shadow/background:linear-gradient…</p>
-<h2 id="页面布局整体思路"><a href="#页面布局整体思路" class="headerlink" title="页面布局整体思路"></a>页面布局整体思路</h2><p>为了提高网页制作的效率，布局时通常有以下的整体思路：</p>
-<p>1.必须确定页面的版心（可视区），可以通过测量。</p>
-<p>2.分析页面中的行模块，以及每个行模块中的列模块。</p>
-<p>3.一行中的列模块经常浮动布局，先确定每个列的大小，之后确定列的位置。</p>
-<p>4.制作HTML结构，还是遵循先有结构再有样式的原则。结构永远最重要。</p>
-<h2 id="头部制作"><a href="#头部制作" class="headerlink" title="头部制作"></a>头部制作</h2><p>导航栏注意点：</p>
-<p>实际开发中，不会直接使用链接a而时用li包含链接（li+a）的做法。</p>
-<p>1.li+a语义更清晰，一看就是有条理的列表型内容。</p>
-<p>2.如果直接用a，搜索引擎容易辨别为有堆砌关键字嫌疑。</p>
-]]></content>
-      <categories>
-        <category>HTML-CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript基础</title>
-    <url>/2021/06/08/%E5%89%8D%E7%AB%AF3%E5%A4%A7%E4%BB%B6/JavaScript/</url>
-    <content><![CDATA[<h1 id="1-JavaScript介绍"><a href="#1-JavaScript介绍" class="headerlink" title="1.JavaScript介绍"></a>1.JavaScript介绍</h1><p>JavaScript实现包含了三个部分，ECMAScript, DOM和BOM</p>
-<p>ECMAScript：JavaScript语法</p>
-<p>DOM：页面文档对象模型</p>
-<p>BOM：浏览器对象模型</p>
-<p>JS的特点</p>
-<p>1.解释性语言—写完了直接运行，不用去编译</p>
-<p>2.类似于C和Java的语法结构</p>
-<p>3.动态语言</p>
-<p>4.基于原型的面向对象</p>
-<p>浏览器执行JS简介</p>
-<p>浏览器分为两部分，渲染引擎和JS引擎</p>
-<p>渲染引擎：用来解析HTML和CSS，俗称内核，比如chrome浏览器的blink,老版本的webkit</p>
-<p>JS引擎：也称为JS解释器。用来读取网页中的JavaScript代码，对其处理后运行，比如chrome浏览器的V8</p>
-<h1 id="2-JS有三种书写位置"><a href="#2-JS有三种书写位置" class="headerlink" title="2. JS有三种书写位置"></a>2. JS有三种书写位置</h1><p>1.行内式JS</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;input type=&quot;button&quot; value=&quot;点我试试&quot; onclick=&quot;alert(&#39;hello world&#39;)&quot;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<ol>
-<li>可以将单行或者少量JS代码写在HTML标签的事件属性中（以on开头的属性），如onclik</li>
-<li>注意单双引号的使用：在HTML中我们推荐使用双引号, JS中我们推荐使用单引号</li>
-<li>可读性差，在html中编写JS大量代码时，不方便阅读</li>
-<li>引号易错，引号多层嵌套匹配时，非常容易弄混</li>
-<li>特殊情况下使用</li>
-</ol>
-<p>2.内嵌式JS</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script&gt;
-        alert(&#39;hello world!&#39;)
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<ol>
-<li>可以将多行JS代码写到script标签中</li>
-<li>内嵌JS是学习时常用的方式</li>
-</ol>
-<p>3.外部JS文件</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-   &lt;script src=&quot;hello.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<ol>
-<li>利于HTML页面代码结构化，把大段JS代码独立到HTML页面之外，既美观，也方便文件级别的复用</li>
-<li>引用外部JS文件的script标签中间不可以写代码</li>
-<li>适用于JS代码量比价大的情况</li>
-</ol>
-<h1 id="3-JavaScript输入输出语句"><a href="#3-JavaScript输入输出语句" class="headerlink" title="3. JavaScript输入输出语句"></a>3. JavaScript输入输出语句</h1><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script&gt;
-        // 这是一个输入框
-        prompt(&#39;请输入年龄&#39;);
-        // alert弹出警示框
-        alert(&#39;计算的结果是&#39;);
-        // console 控制台输出 给程序员测试用的,f12进入开发者模式可见
-        console.log(&#39;这是程序员能看到的&#39;);
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="4-数据类型"><a href="#4-数据类型" class="headerlink" title="4. 数据类型"></a>4. 数据类型</h1><p>JavaScript是一种弱类型或者说动态语言，这意味着不用提前声明变量的类型，==在程序运行过程中，类型会被自动确定。==</p>
-<p>JavaScript==拥有动态类型，同时也意味着相同的变量可用作不同的类型==</p>
-<p>数值型：==isNaN()==可以用来判断非数字，如果是数字返回的是false, 如果不是数字返回的是true</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script&gt;
-        console.log(isNaN(5)); //false
-        console.log(isNaN(&#39;str&#39;)) //true
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>字符串长度，直接变量名.length，注意==这里没有括号==。</p>
-<p>布尔类型参与加法运算当做0或1来看待</p>
-<p>变量声明未赋值，就是undefined未定义数据类型</p>
-<p>undefined和数字相加，最后的结果是NaN</p>
-<p>typeof可以检测变量属于什么类型</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script&gt;
-        var num = 10;
-        var str = &#39;明天会更好！&#39;;
-        console.log(typeof(num));
-        console.log(typeof(str));
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>prompt取过来的值是 字符型的</p>
-<h1 id="5-数据类型转换"><a href="#5-数据类型转换" class="headerlink" title="5. 数据类型转换"></a>5. 数据类型转换</h1><p>转换为字符串型</p>
-<p>1.把数值型转换为字符串类型 toString();</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-    var age = 10;
-    var str = age.toString();
-    console.log(str);
-    console.log(typeof str);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>2.利用String()方法</p>
-<p>3.利用+拼接字符串的方法实现转换效果</p>
-<p>==一般使用的都是第三种方式进行转换，这一方法也称为隐式转换==</p>
-<p>转换为数值型</p>
-<p>1.通过parseInt函数进行转换，把String转换成整数类型</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-    var age = prompt(&#39;请输入您的年龄&#39;);
-    console.log(parseInt(age));
-    console.log(parseInt(&#39;120px&#39;)); //parseInt方法会直接去掉字母，但必须是以数字打头
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>2.通过parseFloat可以把String转换为浮点型</p>
-<p>3.可以通过Number()进行转换</p>
-<p>4.利用算数运算 - *  / 隐式转换</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-      console.log(&#39;12&#39; - 0);
-      console.log(&#39;123&#39; - &#39;120&#39;);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>转换为布尔型</p>
-<p>使用Boolean()函数</p>
-<p>代表空、否定的值会被转换为false，如’’、0、NaN、null、undefined</p>
-<p>其他的值全部会转换成true</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-      console.log(Boolean(&#39;&#39;));
-      console.log(Boolean(0));
-      console.log(Boolean(NaN));
-      console.log(Boolean(null));
-      console.log(Boolean(undefined));
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="6-运算符"><a href="#6-运算符" class="headerlink" title="6. 运算符"></a>6. 运算符</h1><p>=== </p>
-<p>!==     全等 要求值和数据类型都一致</p>
-<p>运算符优先级</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>优先级</th>
-<th>运算符</th>
-<th>顺序</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>小括号</td>
-<td>()</td>
-</tr>
-<tr>
-<td>2</td>
-<td>一元运算符</td>
-<td>++ — !</td>
-</tr>
-<tr>
-<td>3</td>
-<td>算数运算符</td>
-<td>先 * / % 后+ -</td>
-</tr>
-<tr>
-<td>4</td>
-<td>关系运算符</td>
-<td>&gt; &gt;= &lt; &lt;=</td>
-</tr>
-<tr>
-<td>5</td>
-<td>相等运算符</td>
-<td>== != ===  !==</td>
-</tr>
-<tr>
-<td>6</td>
-<td>逻辑运算符</td>
-<td>先&amp;&amp; 后\</td>
-<td>\</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>赋值运算符</td>
-<td>=</td>
-</tr>
-<tr>
-<td>8</td>
-<td>逗号运算符</td>
-<td>，</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="7-流程控制"><a href="#7-流程控制" class="headerlink" title="7. 流程控制"></a>7. 流程控制</h1><p>和Java语法类似</p>
-<h1 id="8-数组"><a href="#8-数组" class="headerlink" title="8. 数组"></a>8. 数组</h1><p>创建数组的方式有两种</p>
-<pre><code class="lang-javascript">var arr = new Array();
-var arr1 = [];
-var arr2 = [1, 2, &#39;zzy&#39;, true];
-</code></pre>
-<p>注意JavaScript里的数组是==可以混用数据类型的==</p>
-<pre><code class="lang-javascript">console.log(arr1);    //这里打印的不是地址，包含整个数组的信息
-</code></pre>
-<p>==新增数组元素：修改索引值，追加数组元素==，push方法也可以</p>
-<h1 id="9-函数"><a href="#9-函数" class="headerlink" title="9. 函数"></a>9. 函数</h1><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-      function getsum(num1, num2)&#123;
-          var sum = 0;
-          for (var i = num1; i &lt;= num2 ; i++) &#123;
-              sum += i;
-          &#125;
-          return sum;
-      &#125;
-
-      console.log(getsum(10, 20));
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>讲道理，这语法有点无耻</p>
-<p>函数与数组</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-      function getmax(arr)&#123;
-          var max = arr[0];
-          for (var i = 0; i &lt; arr.length; i++) &#123;
-              if (arr[i] &gt; max)&#123;
-                  max = arr[i];
-              &#125;
-          &#125;
-          return max;
-      &#125;
-      var re = getmax([5, 2, 99, 101, 67, 77]);
-      console.log(re);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>脚本语言就是有点无耻</p>
-<p>return 只能返回一个值，传多个以传入的最后一个值为准</p>
-<p>函数都是有返回值的</p>
-<p>1.如果有return则返回return后面的值</p>
-<p>2.如果没有return则返回undefined</p>
-<p>break, continue,return的区别</p>
-<p>break:结束当前的循环体</p>
-<p>continue:跳出本次循环，继续执行下次循环</p>
-<p>return:不仅可以退出循环，还能够返回return语句中的值，同时还可以结束当前的函数体内的代码</p>
-<h1 id="10-arguments"><a href="#10-arguments" class="headerlink" title="10. arguments"></a>10. arguments</h1><p>在强调一遍脚本语言很无耻。</p>
-<p>当我们==不确定有多少个参数传递时==，可以用arguments来获取。在JavaScript中，arguments实际上它是当前函数的一个内置对象。==所有函数都内置了一个arguments对象，arguments对象中存储了传递的所有实参==</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     function fn()&#123;
-         console.log(arguments);    //arguments是伪数组，没有一些方法，如pop(),
-         console.log(arguments[2]);
-     &#125;
-     fn(1, 2, 3);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="11-作用域"><a href="#11-作用域" class="headerlink" title="11. 作用域"></a>11. 作用域</h1><p>就是代码名字（变量）在某个范围内起作用和效果，目的是为了提高程序的可靠性，更重要的是减少命名冲突</p>
-<p>全局作用域：整个script标签 或者是一个单数的js文件</p>
-<p>局部作用域：在函数内部就是局部作用域，这个代码的名字只在函数内部起效果和作用</p>
-<p>==注意：如果在函数内部，没有声明直接赋值的变量也属于全局变量==</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     function fn()&#123;
-         var num1 =10;
-         num2 = 20;
-     &#125;
-     fn();
-     console.log(num2);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="12-预解析"><a href="#12-预解析" class="headerlink" title="12. 预解析"></a>12. 预解析</h1><p>JavaScript代码是由浏览器中的JavaScript解释器来执行的。JavaScript解析器在运行JavaScript的时候分为两步：==预解析和代码执行==。</p>
-<p>预解析 js解释器==会把js里面所有的var还有function提升到当前作用域的最前面==</p>
-<p>代码执行：按照代码书写的顺序从上往下执行</p>
-<p>预解析分为变量预解析（变量提升）和函数预解析（函数提升）</p>
-<p>变量提升就是把所有的变量声明提升到当前的作用域最前面,==不提升赋值操作==</p>
-<p>函数提升就是把所有的函数声明（感觉js的声明好像也包含了定义的意思）提升到当前作用域的最前面，==不调用函数==</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     var a = 18;
-     f1();
-     function f1()&#123;
-         var b = 9;
-         console.log(a);
-         console.log(b);
-         var a = &#39;123&#39;;
-     &#125;
-
-     /*
-     var a;
-     function f1()&#123;
-        var b;
-        var a;
-        b = 9;
-        console.log(a); //undefined
-        console.log(b); //9
-        a = &#39;123&#39;;
-     &#125;
-     a =18;
-     f1();
-      */
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-    f1();
-    console.log(c);
-    console.log(b);
-    console.log(a);
-    function f1()&#123;
-        var a = b = c = 9;
-        console.log(a);
-        console.log(b);
-        console.log(c);
-    &#125;
-
-    /*
-     function f1()&#123;
-        //相当于var a =9, b =9, c = 9; 函数内部不声明直接赋值相当于全局变量
-        var a;
-        a = b = c = 9;
-        console.log(a); //9
-        console.log(b); //9
-        console.log(c); //9
-    &#125;
-    f1();
-    console.log(c); //9
-    console.log(b); //9
-    console.log(a); //报错
-     */
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="13-对象"><a href="#13-对象" class="headerlink" title="13. 对象"></a>13. 对象</h1><p>创建对象的三种方式:</p>
-<p>利用对象字面量创建对象{}</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-      //1.利用对象字面量创建对象&#123;&#125;
-      // var obj =&#123;&#125;;
-    var obj = &#123;
-        uname: &#39;杰克船长&#39;,
-        age: 18,
-        sex: &#39;男&#39;,
-        sayHi: function ()&#123;
-            console.log(&#39;hi~&#39;)
-        &#125;
-    &#125;
-    /*
-    细节： 里面的属性和方法采用键值对的形式 属性名： 属性值
-    多个属性或方法中间用逗号隔开
-    方法冒号后面跟的是一个匿名函数
-     */
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>利用new Object创建对象</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     var obj = new Object();
-     obj.uname = &#39;杰克船长&#39;;
-     obj.age = 18;
-     obj.sex = &#39;男&#39;;
-     obg.sayHi = function ()&#123;
-         console.log(&#39;hi~&#39;);
-     &#125;
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>利用构造函数创建对象</p>
-<p>为什么需要构造函数来创建对象：因为前面两种创建对象的方式一次只能创建一个对象，因此可以利用函数的方法，重复这些相同的代码，我们就把这个函数称为构造函数</p>
-<p>构造函数：就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     function Star(uname, age, sex)&#123;
-         this.name = uname;
-         this.age = age;
-         this.sex = sex;
-         this.sing = function (sang)&#123;
-             console.log(sang)
-         &#125;
-     &#125;
-     var ldh = new Star(&#39;刘德华&#39;, 18, &#39;男&#39;);
-     console.log(typeof ldh);
-     console.log(ldh.name);
-     console.log(ldh.sex);
-     ldh.sing(&#39;冰雨&#39;);
-     var zxy = new Star(&#39;张学友&#39;, 19, &#39;男&#39;);
-     console.log(zxy.name);
-     zxy.sing(&#39;吻别&#39;);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>细节：</p>
-<p>构造函数名字首字母要大写</p>
-<p>==构造函数不需要return就可以返回结果==</p>
-<p>调用构造函数，必须使用new</p>
-<p>构造函数和对象区别：</p>
-<p>构造函数是泛指的某一大类，它类似于java语言里的类</p>
-<p>对象是一个具体的事物</p>
-<p>遍历对象</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     var obj = &#123;
-         name: &#39;杰克船长&#39;,
-         age: 18,
-         sex: &#39;男&#39;
-     &#125;
-
-     for (var k in obj)&#123;
-         console.log(k);    // 输入k，输出的是属性名
-         console.log(obj[k]);   //obj[k], 得到的是属性值
-     &#125;
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="14-内置对象"><a href="#14-内置对象" class="headerlink" title="14. 内置对象"></a>14. 内置对象</h1><p>JavaScript的对象分为3种：自定义对象、内置对象、浏览器对象</p>
-<p>前面两种对象是JS基础内容，属于ECMAScript；第三个浏览器对象属于我们JS独有的</p>
-<p>内置对象就是指JS语言自带的一些对象，这些对象供开发者使用，并提供了一些常用的或是最基本而必要的功能（属性和方法）</p>
-<p>MDN：</p>
-<p>Mozilla开发者网络提供了有关开放网络技术的信息，包括HTML、CSS和万维网以及HTML5应用的API</p>
-<p><a href="https://developer.mozilla.org/zh-CN/">MDN</a></p>
-<h2 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-      console.log(Math.floor(5.1)); //向下取整, 5
-      console.log(Math.ceil(5.1));  //向上取整, 6
-      console.log(Math.round(-3.1));    //就近取整, -3
-      console.log(Math.round(-3.5));    //搞个坐标轴从左到右看, -3
-      console.log(Math.round(5.5));     //6
-      console.log(Math.abs(-2.3));      //2.3
-      console.log(Math.random());
-      function getRandomIntInclusive(min, max) &#123;
-          min = Math.ceil(min);
-          max = Math.floor(max);
-          return Math.floor(Math.random() * (max - min + 1) + min);
-      &#125;
-
-      console.log(getRandomIntInclusive(1, 10));
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h2><p>Date日期对象是一个构造函数，必须使用new来调用创建我们的日期对象</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     var date = new Date();
-     console.log(date);
-     var date1 = new Date(1999,1,11); //返回的月份会比输入的多1个月，0-11开始进行计算
-     console.log(date1);
-     var date2 = new Date(&#39;1998-11-24 22:11:34&#39;);
-     console.log(date2);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     var date = new Date();
-     console.log(date.getFullYear());
-     console.log(date.getMonth() + 1);
-     console.log(date.getDate());
-     console.log(date.getDay()); //周一返回的是1 周六返回的是6，但是周日返回的是0
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>时间戳（指距离1970年1月1号00:00过去的毫秒数）</p>
-<p>==var date = +new Date(); 可以直接获取时间戳==</p>
-<p>其他方法不再赘述，查阅MDN文档即可</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     function conutDown(time) &#123;
-         var inputTime = +new Date(time);
-         var nowTime = Date.now();
-         var times = (inputTime - nowTime) / 1000;
-         var d = parseInt( times / 60 / 60 / 24);
-         d = d &lt; 10 ? &#39;0&#39; + d : d;
-         var h = parseInt(times / 60 / 60 % 24);
-         h = h &lt; 10 ? &#39;0&#39; + h : h;
-         var m = parseInt(times / 60 % 60);
-         m = m &lt; 10 ? &#39;0&#39; + m : m;
-         var s = parseInt(times % 60);
-         s = s &lt; 10 ? &#39;0&#39; + s : s;
-         return d + &#39;天&#39; + h + &#39;时&#39; + m + &#39;分&#39; + s + &#39;秒&#39;;
-     &#125;
-
-     console.log(conutDown(&#39;2021-6-7 21:00:00&#39;));
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h2><p>push: 尾插 pop: 尾删     unshift: 头插 shift: 头删</p>
-<p>sort:排序 reverse: 翻转</p>
-<p>==升序降序的写法：==</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-    var arr1 = [13, 4, 77, 1, 7];
-    var arr2 = [13, 3, 77, 7, 1];
-    arr1.sort(function (a, b) &#123;//仿函数,升序
-        return a - b;
-    &#125;);
-    arr2.sort(function (a, b) &#123;//仿函数,降序
-        return b -a;
-    &#125;)
-    console.log(arr1);
-    console.log(arr2);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>数组去重</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-    function unique(arr) &#123;//利用indexOf去判断
-        var arr1 = [];
-        for (var i = 0; i &lt; arr.length; i++) &#123;
-            if (arr1.indexOf(arr[i]) == -1)&#123;
-                arr1.push(arr[i]);
-            &#125;
-        &#125;
-        return arr1;
-    &#125;
-    var arr = unique([1, 2, 3, 5, 1, 2, 2, 7 ,8 ,9]);
-    console.log(arr);
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>数组转换成字符串</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-      //1.第一种方法
-      var arr = [1, 2, 3];
-      console.log(arr.toString());
-      //2第二种方法,使用join,可以自己指定分隔符
-      console.log(arr.join(&#39;-&#39;));
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="15-基本包装类型"><a href="#15-基本包装类型" class="headerlink" title="15. 基本包装类型"></a>15. 基本包装类型</h1><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-  &lt;script&gt;
-     var str = &#39;andy&#39;;
-     console.log(str.length); //4
-     //对象才有属性和方法， 复杂的数据类型才有属性和方法
-     //简单数据类型会具有length属性，是因为简单数据类型被包装成了复杂数据类型
-     //步骤如下：
-     var temp = new String(&#39;andy&#39;);
-     //临时变量复制给str
-     str = temp;
-     //销毁临时变量
-     temp = null;
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="16-字符串的不可变性"><a href="#16-字符串的不可变性" class="headerlink" title="16. 字符串的不可变性"></a>16. 字符串的不可变性</h1><p>字符串不可变性是指里面的值不可变，虽然看上去内容改变了，但其实是地址变了，内存中新开辟了一个内存空间，所以大量使用字符串拼接会出现效率问题。</p>
-<p>根据字符返回位置：</p>
-<pre><code class="lang-javascript">var str = &#39;春天来了，这是春天的气息&#39;;
-console.log(str.indexOf(&#39;春&#39;));
-console.log(str.indexOf(&#39;春&#39;, 3));    //从索引号是3的位置开始往后查找
-</code></pre>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-    &lt;script&gt;
-        var arr = [&#39;red&#39;, &#39;blue&#39;, &#39;red&#39;, &#39;green&#39;, &#39;pink&#39;, &#39;red&#39;];
-        var index = arr.indexOf(&#39;red&#39;);
-        // console.log(arr.indexOf(&#39;red&#39;));
-        var num = 0;
-        while (index != -1) &#123;
-            console.log(index);
-            num++;
-            index = arr.indexOf(&#39;red&#39;, index + 1);
-        &#125;
-        console.log(&#39;red出现的次数为：&#39; + num);
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>根据位置返回字符：</p>
-<ol>
-<li>charAt(index);    返回指定位置的字符</li>
-</ol>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-    &lt;script&gt;
-        var str = &#39;andy&#39;;
-        for (var i = 0; i &lt; str.length; i++) &#123;
-            console.log(str.charAt(i));
-        &#125;
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>2.charCodeAt(index)    返回指定位置处的ASCII码,用于判断用户按下了哪个键</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-    &lt;script&gt;
-        var str = &#39;andy&#39;;
-        for (var i = 0; i &lt; str.length; i++) &#123;
-            console.log(str.charCodeAt(i));
-        &#125;
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>3.str[index];    获取指定位置处字符,H5新增的写法</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-    &lt;script&gt;
-        var str = &#39;andy&#39;;
-        for (var i = 0; i &lt; str.length; i++) &#123;
-            console.log(str[i]);
-        &#125;
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-    &lt;script&gt;
-       var o = &#123;
-           age: 18
-       &#125;
-       if (o[&#39;age&#39;]) &#123;//判断类里是否有该属性
-           console.log(&#39;里面有该属性&#39;);
-       &#125;else &#123;
-           console.log(&#39;没有该属性&#39;);
-       &#125;
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-    &lt;script&gt;
-      //统计出现次数最多的字符
-      var str = &#39;abcoefoxyozzopp&#39;;
-      var o = &#123;&#125;;
-      for (var i = 0; i &lt; str.length; i++) &#123;
-          var val = str[i];
-          if (o[val]) &#123;
-              o[val]++;
-          &#125;else &#123;
-              o[val] = 1;
-          &#125;
-      &#125;
-      console.log(o)
-      //2. 遍历对象
-        var max = 0;
-        var ch = &#39;&#39;;
-        for (var k in o) &#123;
-            if (o[k] &gt; max)&#123;
-                max = o[k];
-                ch = k;
-            &#125;
-        &#125;
-        console.log(max);
-        console.log(ch);
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>字符串操作方法</p>
-<p>1.concat(‘字符串1’，’字符串2’);  等效于+, +更常用</p>
-<p>2.substr(start, length);    从start位置开始，length取的个数</p>
-<p>3.slice(start, end);    从start位置开始，截取到end位置，end取不到</p>
-<p>4.substring(start, end);    从start位置开始，截取到end位置，end取不到，基本和slice相同，但是不接受负值</p>
-<p>5.替换字符 replace(‘被替换的字符’, ‘替换为的字符’);   它只会替换第一个字符</p>
-<p>6.字符转换为数组 split(‘分隔符’);</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-    &lt;script&gt;
-        var str = &#39;red&#39;;
-        console.log(str.concat(&#39;blue&#39;));
-
-        var str1 = &#39;改革春风吹满地&#39;;
-        console.log(str1.substr(2, 2)); //第一个2是索引号，第二个2是截取的数量
-
-        var str2 = &#39;andyandy&#39;;
-        console.log(str2.replace(&#39;a&#39;, &#39;b&#39;));    //它只会替换第一个字母
-        //利用循环可以全部替换
-        var str3 = &#39;abcoefoxyozzopp&#39;;
-        while (str3.indexOf(&#39;o&#39;) != -1)&#123;//替换后不断复制给自己，继续进行替换
-            str3 = str3.replace(&#39;o&#39;, &#39;*&#39;);
-        &#125;
-        console.log(str3);
-        var str4 = &#39;red, pink, blue&#39;;   //字符串转换为数组，前面有join把数组转换为字符串
-        console.log(str4.split(&#39;,&#39;));
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h1 id="17-数据类型分配"><a href="#17-数据类型分配" class="headerlink" title="17. 数据类型分配"></a>17. 数据类型分配</h1><p>简单数据类型里有一个是特殊的，就是null,他是一个空对象，在当初设计的时候写错了，后来都使用了，也就这样规定了,一般初始化对象时使用</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;title&lt;/title&gt;
-    &lt;script&gt;
-        var num = null;
-        console.log(typeof num);    //返回的是Object
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>堆和栈</p>
-<p>1、栈：由操作系统自动分配释放存放函数的参数值、局部变量的值等。</p>
-<p>2、堆：存储复杂类型（对象），一般由程序员分配释放，若程序员不释放，由垃圾回收器机制回收</p>
-<p>引用类型（复杂数据类型）：通过new关键字创建的对象，如Object、Array、Date等</p>
-<p>引用类型变量里（栈空间）里存放的是地址，真正的对象实例存放在堆空间中</p>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>C++知识点</title>
     <url>/2021/06/21/C++/Visual%20Studio%E6%B7%BB%E5%8A%A0%E5%BA%93/</url>
     <content><![CDATA[<p>为了==识别dll文件==，需要将其文件目录位置放入系统变量里</p>
@@ -6910,6 +3201,11 @@ public class StringMethod &#123;
             System.out.println(i);
         &#125;
 
+        //format可以定义String的输出格式
+        String name = &quot;Han Shun Ping&quot;;
+        String[] s = str.split(&quot; &quot;);
+         String format = String.format(&quot; %s,%s ,%c&quot;, s[2], s[0], s[1].charAt(0));
+        System.out.println(format);
     &#125;
 &#125;
 </code></pre>
@@ -7211,7 +3507,7 @@ public class ArrayMethod02 &#123;
         Integer[] newArr = Arrays.copyOf(arr, arr.length + 1);
         System.out.println(Arrays.toString(newArr));
 
-        //ill 数组填充,使用99替换原来的数组
+        //fill 数组填充,使用99替换原来的数组
         Integer[] num = &#123;9, 3, 2&#125;;
         Arrays.fill(num, 99);
         System.out.println(&quot;数组填充后...&quot;);
@@ -7232,9 +3528,1952 @@ public class ArrayMethod02 &#123;
 <p>2.arraycopy：复制数组元素，比较适合底层调用，一般使用Arrays.copyOf完成复制数组</p>
 <p>3.currentTimeMillens:返回当前时间距离1970-1-1的毫秒数</p>
 <p>4.gc:运行垃圾回收机制System.gc();</p>
+<h2 id="BigInteger和BigDecimal"><a href="#BigInteger和BigDecimal" class="headerlink" title="BigInteger和BigDecimal"></a>BigInteger和BigDecimal</h2><pre><code class="lang-java">package com.zzy.bignum_;
+
+import java.math.BigInteger;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class bigInteger &#123;
+    public static void main(String[] args) &#123;
+        //编程中处理很大的整数,用BigInteger
+        BigInteger bigInteger = new BigInteger(&quot;2321546576824343&quot;);
+        System.out.println(bigInteger);
+
+        //在对BigInteger进行加减乘除的时候，需要使用对应的方法，不能直接进行+ - * /
+        BigInteger bigInteger1 = new BigInteger(&quot;100&quot;);
+        BigInteger add = bigInteger.add(bigInteger1);
+        System.out.println(add);
+
+        BigInteger subtract = bigInteger.subtract(bigInteger1);
+        System.out.println(subtract);
+
+        BigInteger multiply = bigInteger.multiply(bigInteger1);
+        System.out.println(multiply);
+
+        BigInteger divide = bigInteger.divide(bigInteger1);
+        System.out.println(divide);
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="lang-java">package com.zzy.bignum_;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class bigDecimal_ &#123;
+    public static void main(String[] args) &#123;
+        //当我们需要保存一个精度很高的数时，double不够用
+        BigDecimal bigDecimal = new BigDecimal(&quot;0.3232545465665454325&quot;);
+        System.out.println(bigDecimal);
+        //再除以小数的时候，可能是一个无限循环的小数，会抛出异常
+        BigDecimal bigDecimal1 = new BigDecimal(&quot;3&quot;);
+        //在调用divide时，指定精度就可以
+        //如果有无限循环小数，就会保留分子的精度
+        bigDecimal = bigDecimal.divide(bigDecimal1, RoundingMode.CEILING);
+        System.out.println(bigDecimal);
+    &#125;
+&#125;
+</code></pre>
+<h2 id="日期类"><a href="#日期类" class="headerlink" title="日期类"></a>日期类</h2><pre><code class="lang-java">package com.zzy.date_;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class Date01 &#123;
+    public static void main(String[] args) throws ParseException &#123;
+        //获取当前的系统时间
+        Date date = new Date();
+        System.out.println(&quot;当前日期 = &quot; + date);
+        //默认输出的日期格式是国外的
+        //用SimpleDateFormat改变的格式是规定好的
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;yyyy年MM月dd日 hh:mm:ss E&quot;);
+        String format = simpleDateFormat.format(date);
+        System.out.println(format);
+
+        //也可以用构造器，输入毫秒数，但是时间是从1970年1月1号00:00开始的
+        Date date1 = new Date(321321);
+        System.out.println(date1);
+
+        //把字符串转成Date
+        String s = &quot;1996年01月01日 10:20:30 星期一&quot;;
+        Date parse = simpleDateFormat.parse(s);
+        System.out.println(simpleDateFormat.format(parse));
+    &#125;
+&#125;
+</code></pre>
+<p>第二代时间</p>
+<pre><code class="lang-java">package com.zzy.date_;
+
+import java.util.Calendar;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class Calender_ &#123;
+    public static void main(String[] args) &#123;
+        //Calender是一个抽象类,并且其构造器是受保护的
+        Calendar c = Calendar.getInstance();
+        //里面有很多字段，从中拿出相应的字段就好了
+        System.out.println(&quot;c = &quot; + c);
+        System.out.println(&quot;年:&quot; + c.get(Calendar.YEAR));
+        //返回月的时候是按照0开始编号的
+        System.out.println(&quot;月：&quot; + c.get(Calendar.MONTH) + 1);
+        System.out.println(&quot;日：&quot; + c.get(Calendar.DAY_OF_MONTH));
+        System.out.println(&quot;小时：&quot; + c.get(Calendar.HOUR));
+        System.out.println(&quot;24小时制：&quot; + c.get(Calendar.HOUR_OF_DAY));
+        System.out.println(&quot;分：&quot; + c.get(Calendar.MINUTE));
+        System.out.println(&quot;秒：&quot; + c.get(Calendar.SECOND));
+
+        //需要自己组合格式
+    &#125;
+&#125;
+</code></pre>
+<p>第三代时间</p>
+<pre><code class="lang-java">package com.zzy.date_;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class LocalTime_ &#123;
+    public static void main(String[] args) &#123;
+        LocalDateTime ldt = LocalDateTime.now();
+        System.out.println(ldt);
+        System.out.println(&quot;年:&quot; + ldt.getYear());
+        System.out.println(&quot;月：&quot; + ldt.getMonth());
+        System.out.println(&quot;月：&quot; + ldt.getMonthValue());
+        System.out.println(&quot;日：&quot; + ldt.getDayOfMonth());
+        System.out.println(&quot;时：&quot; + ldt.getHour());
+        System.out.println(&quot;分：&quot; + ldt.getMinute());
+        System.out.println(&quot;秒：&quot; + ldt.getSecond());
+
+        //获得年月日
+        LocalDate now = LocalDate.now();
+        //获取时分秒
+        LocalTime now2 = LocalTime.now();
+
+        //使用DateTimeFormatter对象进行格式化
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern(&quot;yyyy年MM月dd日 HH小时mm分钟ss秒 E&quot;);
+        String s = dtf.format(ldt);
+        System.out.println(s);
+
+        //加减时间
+        LocalDateTime ldt2 = ldt.plusDays(890);
+        System.out.println(dtf.format(ldt2));
+
+        LocalDateTime ldt3 = ldt.minusYears(2);
+        System.out.println(dtf.format(ldt3));
+    &#125;
+&#125;
+</code></pre>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>保存多个数据时使用的是数组，而数组有不足的地方</p>
+<p>数组</p>
+<p>1.长度开始时必须指定，而且一旦指定，不能更改</p>
+<p>2.保存的必须为同一类型的元素</p>
+<p>3.增加或者删除元素比较麻烦</p>
+<p>集合</p>
+<p>1.可以动态保存任意多个对象，使用比较方便。</p>
+<p>2.提供了一系列方便的操作对象的方法：add、remover、set、get</p>
+<p>3.使用集合添加、删除新元素比较简单</p>
+<p>集合主要分为2大类：</p>
+<p>单列集合Collection</p>
+<p>List: ArrayList、LinkedList、Vector</p>
+<p>Set:HashSet、TreeSet</p>
+<p>双列集合：</p>
+<p>Map: HashMap、TreeMap、Hashtable、Properties</p>
+<h2 id="List类的方法"><a href="#List类的方法" class="headerlink" title="List类的方法"></a>List类的方法</h2><pre><code class="lang-java">package com.zzy.collection_;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class Collection01 &#123;
+    public static void main(String[] args) &#123;
+        List list = new ArrayList(); //动态绑定
+        //增加
+        list.add(&quot;jack&quot;);
+        list.add(10);
+        list.add(true);
+        System.out.println(list);
+
+        //删
+        list.remove(0);//删除第一个元素
+        list.remove(true);//删除某个元素
+        System.out.println(list);
+
+        //查找
+        System.out.println(list.contains(10));
+
+        //返回元素的个数
+        System.out.println(list.size());
+
+        //判断是否为空
+        System.out.println(list.isEmpty());
+
+        //清空
+//        list.clear();
+
+        //添加多个对象
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(&quot;红楼梦&quot;);
+        arrayList.add(&quot;三国演义&quot;);
+        list.addAll(arrayList);
+        System.out.println(list);
+
+        //删除多个元素
+        list.removeAll(arrayList);
+        System.out.println(list);
+    &#125;
+&#125;
+</code></pre>
+<p>实现了Iterable接口的可以采用迭代器的方式遍历</p>
+<pre><code class="lang-java">package com.zzy.collection_;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class CollectionIterator &#123;
+    public static void main(String[] args) &#123;
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new Book(&quot;三国演义&quot;, &quot;罗贯中&quot;, 19));
+        arrayList.add(new Book(&quot;红楼梦&quot;, &quot;曹雪芹&quot;, 20));
+        arrayList.add(new Book(&quot;西游记&quot;, &quot;吴世恩&quot;, 22));
+        System.out.println(arrayList);
+
+        //遍历
+        Iterator it = arrayList.iterator();
+
+        while (it.hasNext()) &#123;
+            //因为什么都能存，所以返回的是Object
+            Object obj = it.next();
+            System.out.println(obj); //动态绑定
+        &#125;
+
+        //如果想重新遍历，就要重置迭代器
+        it = arrayList.iterator();
+        while (it.hasNext()) &#123;
+            Object next =  it.next();
+            System.out.println(next);
+        &#125;
+    &#125;
+&#125;
+
+class Book &#123;
+    public String name;
+    public String author;
+    public double price;
+
+    public Book(String name, String author, double price) &#123;
+        this.name = name;
+        this.author = author;
+        this.price = price;
+    &#125;
+
+    @Override
+    public String toString() &#123;
+        return &quot;Book&#123;&quot; +
+                &quot;name=&#39;&quot; + name + &#39;\&#39;&#39; +
+                &quot;, author=&#39;&quot; + author + &#39;\&#39;&#39; +
+                &quot;, price=&quot; + price +
+                &#39;&#125;&#39;;
+    &#125;
+&#125;
+</code></pre>
+<p>==ctrl加J可以提示所有的快捷键==</p>
+<p>List集合类中元素有序，且可重复。</p>
+<p>List集合中的每个元素都有其对应的顺序索引</p>
+<pre><code class="lang-java">package com.zzy.collection_;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class ListMethod &#123;
+    public static void main(String[] args) &#123;
+        List list = new ArrayList();
+        list.add(&quot;老黑&quot;);
+        list.add(&quot;大狗&quot;);
+
+        //在指定位置插入
+        list.add(1, &quot;大黄&quot;);
+        System.out.println(list);
+
+        //加入多个元素
+        List list1 = new ArrayList();
+        list1.add(&quot;lxc&quot;);
+        list1.add(&quot;zy&quot;);
+        list.addAll(1, list1);
+        System.out.println(list);
+
+        //替换
+        list.set(0, &quot;sy&quot;);
+        System.out.println(list);
+
+        //返回集合,返回的是一个前闭后开的范围
+        List returnlist = list.subList(0, 3);
+        System.out.println(returnlist);
+    &#125;
+&#125;
+</code></pre>
+<p>ArrayList效率高,但是是线程不安全的</p>
+<p>ArrayList源码</p>
+<p>1.ArrayList中维护了一个Object类型的数组</p>
+<p>2.当创建ArrayList对象时，如果使用的是无参构造器，则初始elementData容量为0，第一次添加，则扩容elementData为10，如需再次扩容，则扩容elmentData为1.5倍。</p>
+<p>3.如果使用的是制定大小的构造器，则初始化elementData容量为指定大小，如果需要扩容，则直接扩容elementData为1.5倍。</p>
+<p>transient //表示瞬间的、短暂的，表示该属性不会被序列号</p>
+<p>Vector</p>
+<p>1.Vector底层也是一个对象数组， protected Object[] elementData;</p>
+<p>2.Vector是线程安全的</p>
+<p>3.如果是无参，默认为10，满后，就按2倍扩容</p>
+<p>LinkedList</p>
+<p>1.LinkedList底层实现了双向链表和双端队列的特点</p>
+<p>2.可以添加任意元素（元素可以重复），包括null</p>
+<p>3.线程不安全，没有实现同步</p>
+<p>LinkedList底层维护了一个双向链表，两个属性first和last分别指向首节点和尾结点</p>
+<p>每个节点(Node对象)，里面又维护了prev、next、item三个属性，prev指向前一个，通过next指向后一个节点，最近实现双向链表。</p>
+<p>比较方便添加和删除</p>
+<pre><code class="lang-java">package com.zzy.collection_;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class LinkedList01 &#123;
+    public static void main(String[] args) &#123;
+        Node jack = new Node(&quot;jack&quot;);
+        Node tom = new Node(&quot;tom&quot;);
+        Node hsp = new Node(&quot;老韩&quot;);
+        //jack-&gt;tom-&gt;hsp
+        //连接三个结点
+        jack.next = tom;
+        tom.next = hsp;
+        //hsp-&gt;tom-&gt;jack
+        hsp.pre = tom;
+        tom.pre = jack;
+
+        Node first = jack;
+        Node last = hsp;
+
+        //从头到尾遍历
+        while (true) &#123;
+            if (first == null) &#123;//true
+                break;
+            &#125;
+            System.out.println(first);
+            first = first.next; //tom.next = null;
+        &#125;
+
+        //从尾到头遍历
+        while (true) &#123;
+            if (last == null) &#123;
+                break;
+            &#125;
+            System.out.println(last);
+            last = last.pre;
+        &#125;
+
+        //在tom和和老韩之间加入一个对象
+        Node zf = new Node(&quot;张飞&quot;);
+
+        tom.next = zf;
+        zf.next = hsp;
+        hsp.pre = zf;
+        zf.pre = tom;
+
+        first = jack;
+        while (true) &#123;
+            if (first == null) &#123;//true
+                break;
+            &#125;
+            System.out.println(first);
+            first = first.next; //tom.next = null;
+        &#125;
+    &#125;
+&#125;
+
+class Node &#123;
+    public Object item;
+    public Node next; //下一个节点
+    public Node pre; //前一个节点
+
+    public Node(Object item) &#123;
+        this.item = item;
+    &#125;
+
+    public String toString() &#123;
+        return &quot;Node name = &quot; + item;
+    &#125;
+&#125;
+</code></pre>
+<pre><code class="lang-java">package com.zzy.collection_;
+
+import java.util.LinkedList;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class LinkedList02 &#123;
+    public static void main(String[] args) &#123;
+        LinkedList linkedList = new LinkedList();
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        System.out.println(linkedList);
+
+        linkedList.remove();
+        System.out.println(linkedList);
+
+        //修改某个节点对象
+        linkedList.set(1,999);
+        System.out.println(linkedList);
+
+        //得到某个节点对象
+        System.out.println(linkedList.get(0));
+    &#125;
+&#125;
+</code></pre>
+<h2 id="Set类"><a href="#Set类" class="headerlink" title="Set类"></a>Set类</h2><p>1.无序（添加和取出的顺序不一致），没有索引</p>
+<p>2.不允许重复的元素，所以最多包含一个null</p>
+<p>HashSet:</p>
+<p>1.HashSet底层是HashMap</p>
+<p>2.添加一个元素时，先得到hash值，会转成-&gt;索引值</p>
+<p>3.找到存储数据表table，看这个索引位置是否有已经存放的元素</p>
+<p>4.如果没有，直接加入</p>
+<p>5.如果有，调用equals比较，如果相同，就放弃添加，如果不相同，则添加到最后</p>
+<p>6.在Java8中，如果一条链表的元素个数达到TREEIFT_THRESHOLD（默认为8），并且table的大小&gt;=MIN_TREEIFY_CAPACITY（默认64），就会进行树化（红黑树）</p>
+<p>经典题：</p>
+<pre><code class="lang-java">package com.zzy.set_;
+
+import java.util.HashSet;
+import java.util.Objects;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class HashSetExercise02 &#123;
+    public static void main(String[] args) &#123;
+        HashSet hashSet = new HashSet();
+        hashSet.add(new Employee_(&quot;zzy&quot;, 30000,
+                new Employee_().new MyDate(1998, 11, 24)));
+        hashSet.add(new Employee_(&quot;zzy&quot;, 30000,
+                new Employee_().new MyDate(1998, 11, 24)));
+        System.out.println(hashSet);
+    &#125;
+&#125;
+
+class Employee_ &#123;
+    private String name;
+    private double salary;
+    private MyDate birthday;
+
+    public Employee_(String name, double salary, MyDate birthday) &#123;
+        this.name = name;
+        this.salary = salary;
+        this.birthday = birthday;
+    &#125;
+
+    public Employee_()&#123;&#125;
+
+    class MyDate&#123;
+        private int year;
+        private int month;
+        private int day;
+
+        public MyDate(int year, int month, int day) &#123;
+            this.year = year;
+            this.month = month;
+            this.day = day;
+        &#125;
+
+        //通过内部类的hashCode和 equals的重写，套娃使其得到的hashCode依据birthday的内容决定
+        //而不是地址
+        @Override
+        public boolean equals(Object o) &#123;
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            MyDate myDate = (MyDate) o;
+            return year == myDate.year &amp;&amp; month == myDate.month &amp;&amp; day == myDate.day;
+        &#125;
+
+        @Override
+        public int hashCode() &#123;
+            return Objects.hash(year, month, day);
+        &#125;
+    &#125;
+
+    @Override
+    public boolean equals(Object o) &#123;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee_ employee_ = (Employee_) o;
+        return name.equals(employee_.name) &amp;&amp; birthday.equals(employee_.birthday);
+    &#125;
+
+    @Override
+    public int hashCode() &#123;
+        //这里的name是在常量池,但是要保证内部类的所影响的hashCode一致
+        return Objects.hash(name, birthday);
+    &#125;
+&#125;
+</code></pre>
+<p>LinkedHashSet</p>
+<p>1.在LinkedHashSet中维护了一个hash表和双向链表</p>
+<p>2.在某个节点有before和after属性，这样可以形成双向链表</p>
+<p>3.在添加一个元素时，先求hash值，再求索引，确定该元素在table的位置，然后将添加的元素加入到双向链接（如果已经存在，不添加【原则和hashset一样】</p>
+<p>4.这样的话，我们遍历LinkedHashSet也能确保插入顺序和遍历顺序一致</p>
+<p>里面HashMapNode里有内部类LinkedHashMapEntry</p>
+<p>==其实set也是键值对的形式，但是其value是用一个常量填充的==</p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><pre><code class="lang-java">package com.zzy.map_;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+@SuppressWarnings(&#123;&quot;all&quot;&#125;)
+public class Map_ &#123;
+    public static void main(String[] args) &#123;
+        //map接口实现类的特点
+        //1.保存具有映射关系的key-value
+        //无序的，因为底层还是hashMap
+        Map map = new HashMap();
+        map.put(&quot;No1&quot;, &quot;zzy&quot;);
+        map.put(&quot;No2&quot;, &quot;林动&quot;);
+        //当key相同的，会进行替换
+        map.put(&quot;No1&quot;, &quot;韩顺平&quot;);
+        //value值是可以重复的
+        map.put(&quot;No3&quot;, &quot;zzy&quot;);
+        System.out.println(&quot;map = &quot; + map);
+        //Map的key可以为null，value也可以为空，但是key的null只能有一个，value为null可以有多个
+        //key和value之间存在单向一对一关系，即通过指定的key总能找到对应的value
+
+        //通过get方法，传入key，得到相应的value
+        System.out.println(map.get(&quot;No1&quot;));
+    &#125;
+&#125;
+</code></pre>
+<p>Map的源码解析</p>
+<pre><code class="lang-java">package com.zzy.map_;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class MapSource &#123;
+    public static void main(String[] args) &#123;
+        Map map = new HashMap();
+        map.put(&quot;no1&quot;, &quot;韩顺平&quot;);
+        map.put(&quot;no2&quot;, &quot;zzy&quot;);
+
+        //1.k-v是在HashMap$Node里面管理的
+        //2.k-v为了方便程序员的遍历，还会创建EntrySet集合，该集合存放的元素的类型是Entry
+        //3.entrySet中，定义的类型是Map.Entry, 但是实际上存放的还是HashMap$Node,这是因为Ha
+        //HashMap$Node implements Map.Entry
+        //4.当把HashMap$Node 对象放到entrySet 就方便我们遍历,因为Map.entry提供了重要方法
+        //getKey() 和 getValue()
+        Set set = map.entrySet();
+        for (Object obj : set) &#123;
+            Map.Entry entry = (Map.Entry) obj;
+            System.out.println(entry.getKey() + &quot;-&quot; + entry.getValue());
+        &#125;
+
+        //k值收集到了Set里  value收集到了 Collection
+        Set set1 = map.keySet();
+        //KeySet
+        System.out.println(set1.getClass());
+        Collection values = map.values();
+        //Values
+        System.out.println(values.getClass());
+    &#125;
+&#125;
+</code></pre>
+<p>➢扩容机制[和HashSet相同]<br>1) HashMap底层维护了Node类型的数组table,默认为null<br>2)当创建对象时，将加载因子(loadfactor)初始化为0.75.<br>3) 当添加key-val时，通过key的哈希值得到在table的索引。然后判断该索引处是否有元素，<br>如果没有元素直接添加。如果该索引处有元素，继续判断该元素的key是否和准备加入的<br>key相等，如果相等，则直接替换val;如果不相等需要判断是树结构还是链表结构，做出<br>相应处理。如果添加时发现容量不够，则需要扩容。<br>4)第1次添加，则需要扩容table容量为16,临界值(threshold)为12.<br>5)以后再扩容，则需要扩容table容量为原来的2倍，临界值为原来的2倍,即24,依次类推.<br>6)在Java8中，如果一条链表的元素个数超过TREEIFY THRESHOLD(默认是8)，并且<br>table的大小&gt;= MIN TREEIFY CAPACITY(默认64),就会进行树化(红黑树)</p>
+<hr>
+
+<p>Map的接口和常用方法</p>
+<pre><code class="lang-java">package com.zzy.map_;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class MapMethod &#123;
+    public static void main(String[] args) &#123;
+        Map map = new HashMap();
+        map.put(&quot;邓超&quot;, new Book(&quot;&quot;, 100));
+        map.put(&quot;王宝强&quot;, &quot;马蓉&quot;);
+        map.put(&quot;宋喆&quot;, &quot;马蓉&quot;);
+        map.put(&quot;邓超&quot;, &quot;孙俪&quot;);
+        map.put(null, &quot;刘亦菲&quot;);
+        System.out.println(&quot;map=&quot; +map );
+
+        //remove:根据键删除映射关系
+        map.remove(null);
+        System.out.println(&quot;map=&quot; +map );
+
+        //通过键获得值
+        Object val = map.get(&quot;王宝强&quot;);
+        System.out.println(&quot;value = &quot; + val);
+
+        //获取元素个数
+        System.out.println(&quot;size = &quot; + map.size());
+
+        //判断元素是否为空
+        System.out.println(map.isEmpty());
+
+        //清除l-v
+        map.clear();
+
+        //查找键是否存在
+        System.out.println(map.containsKey(&quot;邓超&quot;));
+
+    &#125;
+&#125;
+
+class Book &#123;
+    private String name;
+    private int num;
+
+    public Book(String name, int num) &#123;
+        this.name = name;
+        this.num = num;
+    &#125;
+&#125;
+</code></pre>
+<p>Map的遍历</p>
+<pre><code class="lang-java">package com.zzy.map_;
+
+import java.util.*;
+
+/**
+ * @autho: 周钟炎
+ * @version: 1.0
+ */
+public class Mapfor &#123;
+    public static void main(String[] args) &#123;
+        Map map = new HashMap();
+        map.put(&quot;邓超&quot;, new Book(&quot;&quot;, 100));
+        map.put(&quot;王宝强&quot;, &quot;马蓉&quot;);
+        map.put(&quot;宋喆&quot;, &quot;马蓉&quot;);
+        map.put(&quot;邓超&quot;, &quot;孙俪&quot;);
+        map.put(null, &quot;刘亦菲&quot;);
+
+        Set keyset = map.keySet();
+        //第一组,通过key获取vales
+        for (Object o : keyset) &#123;
+            System.out.println(o + &quot;-&quot; + map.get(o));
+        &#125;
+        Iterator it = keyset.iterator();
+        while (it.hasNext()) &#123;
+            Object next =  it.next();
+            System.out.println(next + &quot;-&quot; + map.get(next));
+        &#125;
+
+        //第二组，取出所有的values
+        Collection values = map.values();
+        for (Object o : values) &#123;
+            System.out.println(o);
+        &#125;
+        Iterator it2= values.iterator();
+        while (it2.hasNext()) &#123;
+            Object next =  it2.next();
+            System.out.println(next);
+        &#125;
+
+        //通过EntrySet
+        Set set = map.entrySet();
+        for (Object o : set) &#123;
+            //向下转型
+            Map.Entry entry = (Map.Entry) o;
+            System.out.println(entry.getKey() + &quot;-&quot; + entry.getValue());
+        &#125;
+        Iterator it3 = set.iterator();
+        while (it3.hasNext()) &#123;
+            Object next =  it3.next();
+            Map.Entry entry = (Map.Entry) next;
+            System.out.println(entry.getKey() + &quot;-&quot; +entry.getValue());
+        &#125;
+    &#125;
+&#125;
+</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
       </categories>
+  </entry>
+  <entry>
+    <title>JS细节</title>
+    <url>/2021/08/25/%E5%89%8D%E7%AB%AF/JS%E7%BB%86%E8%8A%82/</url>
+    <content><![CDATA[<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>删除对象中的属性 delete obj.name</p>
+<p>对象的属性名不强制要求遵守标识符的规范，但尽量按照规范使用</p>
+<p>基本数据类型</p>
+<p>String、Number、Boolean、Null、Undefined,存储在栈内存中</p>
+<p>引用数据类型</p>
+<p>Object、它是存储在堆内存中,将一个变量设置为null会断开其指针指向</p>
+<p>基本数据类型比较值，引用数据类型比较地址</p>
+<h2 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h2><pre><code>var obj = &#123;&#125;;
+var obj2 = &#123;
+    name:&quot;猪八戒&quot;,
+    age:18
+&#125;
+</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>如果return语句后不跟任何值就相当于返回一个undefined，如果函数中不写return,则也会返回undefined</p>
+<p>立即执行函数</p>
+<pre><code>(function(a,b,c)&#123;
+      console.log(a+b+c);
+    &#125;)(1,2,3)
+</code></pre><h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>回调函数：由我们自己创建，但是不由我们调用的，称为回调函数</p>
+<h3 id="函数方法call，apply"><a href="#函数方法call，apply" class="headerlink" title="函数方法call，apply"></a>函数方法call，apply</h3><p>函数方法call()、apply(),调用时传入参数，可以改变函数的this指向, call()方法可以将实参在对象之后依次传递，apply()方法需要将实参封装到一个数组中统一传递</p>
+<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><p>arguments是一个类数组对象，它也可以通过索引来操作数据，也可以获取长短，在调用函数时，我们所传递的实参都会在arguments中保存</p>
+<h2 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h2><pre><code>var obj = &#123;
+      name:&#39;张三&#39;,
+      age:18,
+      gender:&#39;男&#39;
+    &#125;
+
+    for (a in obj)&#123;
+      console.log(a);
+      console.log(obj[a]);
+    &#125;
+</code></pre><h2 id="in以及hasOwnProperty"><a href="#in以及hasOwnProperty" class="headerlink" title="in以及hasOwnProperty"></a>in以及hasOwnProperty</h2><pre><code>//使用in检查对象中是否含有某个属性时，如果对象中没有但是原型中有，也会返回true
+    console.log(&quot;name&quot; in mc);
+    //hasOwnProperty是检查自身有没有这个属性的方法
+    console.log(mc.hasOwnProperty(&quot;name&quot;));
+</code></pre><h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>当一个对象不在使用以后，将其设置为null，断开与堆内存的连接，这样垃圾回收机制才会运行</p>
+<h1 id="内建对象"><a href="#内建对象" class="headerlink" title="内建对象"></a>内建对象</h1><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组的存储性能比普通对象要好，在开发中经常使用</p>
+<p>方法：</p>
+<p>arr.join(“-“) arr.join方法可以把数组转成字符串。其中传入的参数是分隔符<br>arr.sort()方法默认会按照Unicode进行排序，在设计到数字的排序时，可能会出现错误，需要自己制定规则排序</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>fromCharAt()</p>
+<pre><code>var result = String.fromCharCode(72);
+    console.log(result);
+</code></pre><h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM操作主要还是寻找相关的API方法，逻辑上不难，主要理解Element、Node、Document的相互关系。</p>
+<p>我们想要操作网页的元素，则必须可以访问到这个元素，html这种树形的结构，我们只要先拿到其文档对象，就可以采用相应的方法对其进行操作。</p>
+<p>浏览器已经为我们提供了文档节点对象，这个对象是winodw属性，可以在页面中直接使用，文档节点代表的是整个网页。</p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件就是用户和浏览器之间的交互行为</p>
+<h2 id="浏览器页面的加载顺序"><a href="#浏览器页面的加载顺序" class="headerlink" title="浏览器页面的加载顺序"></a>浏览器页面的加载顺序</h2><p>浏览器在加载一个页面时，是按照自上向下的顺序加载的，将js代码编写到页面的下部就是为了可以在页面加载完毕以后再执行js代码</p>
+<p>如果想把js代码写在上面，可以给window绑定一个onload事件，该事件对应的响应函数将会在页面加载完成后执行</p>
+<h2 id="事件绑定，获取节点元素"><a href="#事件绑定，获取节点元素" class="headerlink" title="事件绑定，获取节点元素"></a>事件绑定，获取节点元素</h2><p>如果需要读取元素节点属性，直接使用元素.属性名，但class属性不能采用这种方法，读取class属性时需要使用.className</p>
+<pre><code class="lang-html">//获取body标签
+    var body = document.body;
+    console.log(body);
+    //获取Html标签
+    var html = document.documentElement;
+    console.log(html);
+    //document.all代表页面中的所有元素
+    var all = document.all;
+    console.log(all.length);
+    //参数为css选择器，可以查询到对应的元素,但是它只会返回一个元素
+    var div = document.querySelector(&quot;.box1 div&quot;)
+    //返回多个元素，以数组形式返回,即使符合条件的元素只有一个，它也会返回数组
+    var div = document.querySelectorAll(&quot;.box1&quot;)
+</code></pre>
+<h2 id="Dom练习"><a href="#Dom练习" class="headerlink" title="Dom练习"></a>Dom练习</h2><pre><code class="lang-html">&lt;form action=&quot;&quot;&gt;
+    你爱好的运动是?&lt;input type=&quot;checkbox&quot; id=&quot;checkedAllBox&quot;&gt; 全选/全不选
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;items&quot; value=&quot;足球&quot;&gt;足球
+    &lt;input type=&quot;checkbox&quot; name=&quot;items&quot; value=&quot;篮球&quot;&gt;篮球
+    &lt;input type=&quot;checkbox&quot; name=&quot;items&quot; value=&quot;羽毛球&quot;&gt;羽毛球
+    &lt;input type=&quot;checkbox&quot; name=&quot;items&quot; value=&quot;兵乓球&quot;&gt;兵乓球
+    &lt;br&gt;
+    &lt;input type=&quot;button&quot; id=&quot;checkedAllBtn&quot; value=&quot;全选&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;checkedNoBtn&quot; value=&quot;全不选&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;checkedRevBtn&quot; value=&quot;反选&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;sendBtn&quot; value=&quot;提交&quot;&gt;
+  &lt;/form&gt;
+  &lt;script&gt;
+    var checkedAllBtn = document.getElementById(&quot;checkedAllBtn&quot;)
+    var items = document.getElementsByName(&quot;items&quot;)
+    checkedAllBtn.onclick = () =&gt; &#123;
+      items.forEach((value) =&gt; &#123;
+        value.checked = true
+      &#125;)
+    &#125;
+
+    var checkedNoBtn = document.getElementById(&quot;checkedNoBtn&quot;)
+    checkedNoBtn.onclick = () =&gt; &#123;
+      items.forEach((value) =&gt; &#123;
+        value.checked = false
+      &#125;)
+    &#125;
+
+    var checkedRevBtn = document.getElementById(&quot;checkedRevBtn&quot;)
+    checkedRevBtn.onclick = () =&gt; &#123;
+      items.forEach((value) =&gt; &#123;
+        value.checked = !value.checked
+      &#125;)
+    &#125;
+
+    var sendBtn = document.getElementById(&quot;sendBtn&quot;)
+    sendBtn.onclick = () =&gt; &#123;
+      items.forEach((event) =&gt; &#123;
+       if (event.checked === true) &#123;
+          console.log(event.value);
+       &#125;
+      &#125;)
+    &#125;
+
+    var checkedAllBox = document.getElementById(&quot;checkedAllBox&quot;)
+    checkedAllBox.onclick = () =&gt; &#123;
+      items.forEach((event) =&gt; &#123;
+        event.checked = checkedAllBox.checked
+      &#125;)
+    &#125;
+    var num = 0
+    items.forEach((event) =&gt; &#123;
+      event.onclick = () =&gt; &#123;
+        checkedAllBox.checked = true
+        if (!event.checked) &#123;
+          checkedAllBox.checked = false
+        &#125;
+      &#125;
+    &#125;)
+  &lt;/script&gt;
+</code></pre>
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><pre><code class="lang-html">&lt;ul id=&quot;city&quot;&gt;
+    &lt;li&gt;上海&lt;/li&gt;
+    &lt;li&gt;深圳&lt;/li&gt;
+    &lt;li&gt;武汉&lt;/li&gt;
+    &lt;li id=&quot;bj&quot;&gt;北京&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button id=&quot;addCity&quot;&gt;点我添加&lt;/button&gt;
+  &lt;button id=&quot;deleteCity&quot;&gt;点我删除&lt;/button&gt;
+  &lt;script&gt;
+    function myClick(idStr, fun) &#123;
+      var ele = document.getElementById(idStr)
+      ele.onclick = fun
+    &#125;
+    myClick(&quot;addCity&quot;,() =&gt; &#123;
+    //获取父元素节点
+    var city = document.getElementById(&quot;city&quot;);
+    //创建子元素节点
+    var li = document.createElement(&quot;li&quot;);
+    //添加内容
+    li.innerHTML = &quot;广州&quot;;
+    //将子元素追加进去
+    city.appendChild(li)
+    &#125;)
+
+    myClick(&quot;deleteCity&quot;, () =&gt; &#123;
+      var bj = document.getElementById(&quot;bj&quot;)
+      //这种方式来进行删除
+      bj.parentNode.removeChild(bj)
+    &#125;)
+  &lt;/script&gt;
+</code></pre>
+<h2 id="DOM操作css"><a href="#DOM操作css" class="headerlink" title="DOM操作css"></a>DOM操作css</h2><p>拿到element以后直接element.style.height =”300px”修改，在遇见background-color这种时，需要采用驼峰命名backgroundColor，这种设置都是设置的内联样式，有着较高的优先级，在用这种方法进行读取时，也是读的内联样式，因此可能会读取不到样式表中的样式。</p>
+<h1 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h1><p><img src="https://raw.githubusercontent.com/zzygeo/images/master/js运算符优先级.4dxtiok15my0.png" alt="js运算符优先级"></p>
+<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><p>JS中一共有两种作用域<br>全局作用域：</p>
+<ul>
+<li>直接写到script标签中的JS代码，都在全局作用域</li>
+<li>全局作用域在页面打开时创建，在页面关闭时销毁</li>
+<li>在全局作用域中有一个全局对象window，我们可以直接使用，他代表我们浏览器的窗口</li>
+<li>在全局作用域中，创建的变量都会作为window对象的属性保存</li>
+<li>创建的方法都会作为window对象的方法保存</li>
+</ul>
+<p>函数作用域</p>
+<ul>
+<li>调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁</li>
+<li>每调用一次函数就会创建一个新的函数作用域，他们之间是相互独立的</li>
+<li>在函数作用域中可以访问到全局作用域的变量</li>
+<li>访问时遵循就近一致原则</li>
+</ul>
+<h2 id="声明提前"><a href="#声明提前" class="headerlink" title="声明提前"></a>声明提前</h2><p>使用var关键字声明的变量，会在所有的代码执行之前被声明</p>
+<pre><code>    //var a;在执行时会先执行这个
+    console.log(a);
+    var a = 18
+</code></pre><p>函数声明提前</p>
+<p>使用函数声明形式创建的函数function 函数(){},它会在所有的代码执行之前就被创建</p>
+<p>使用函数表达式创建的函数，不会被声明提前，所以不能在声明前被调用</p>
+<pre><code>sum1();//3
+console.log(sum2);//undefined
+var sum2 = function() &#123;
+    return 2 + 3;
+&#125;
+function sum1() &#123;
+    return 1 + 2;
+&#125;
+</code></pre><p>在函数作用域也有声明提前的特性，可以理解为一个小的全局作用域</p>
+<p>没有使用var声明的变量，在方法内部或外部都是全局变量，但如果是在方法内部声明，在方法外部使用之前需要先调用方法，告知系统声明了全局变量后方可在方法外部使用</p>
+<pre><code>function a() &#123;
+      b = 10
+    &#125;
+a()//需要先调用
+console.log(b);
+</code></pre><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>解析器在调用函数每次都会向函数内部传递一个隐含的参数，这个隐含的参数就是this</p>
+<p>根据函数的调用方式的不同，this会指向不同的对象</p>
+<p>以函数的形式调用时，this永远指向的都是window</p>
+<p>以方法的形式调用时，this指向的就是调用该方法的对象</p>
+<p> 当以构造函数的形式调用时，this就是新创建的那个对象</p>
+<h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><p>构造函数的执行流程</p>
+<ol>
+<li>立即创建一个对象</li>
+<li>将新建的对象设置为函数中的this</li>
+<li>执行函数中的代码</li>
+<li>将新建的对象作为返回值返回</li>
+</ol>
+<p>所有的对象都是Object的子类</p>
+<h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><p>原型prototype，我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype，这里存的地址指向这个原型对象</p>
+<p>如果函数作为普通函数调用prototype没有任何作用，当函数通过构造函数调用时，它所创建的对象中都会有一个隐含的属性指向该构造函数的原型对象，可以通过<strong>proto</strong>来访问，原型对象就相当于一个公共的区域，所有同一个类的实例都可以访问到这个原型对象，我们可以将对象中共有的内容，统一设置到原型对象中</p>
+<p>当我们访问对象的一个属性或方法时，它会先在对象自身中寻找，如果有则直接使用，如果没有则会去原型对象中寻找，如果找到则直接使用</p>
+<pre><code>function Person(name, age, gender)&#123;
+      this.name = name;
+      this.age = age;
+      this.gender = gender
+      console.log(this);
+    &#125;
+    var p = new Person(&#39;猪八戒&#39;, 28, &#39;男&#39;);
+    console.log(Person.prototype);
+    console.log(p.__proto__);
+    console.log(Person.prototype == p.__proto__);
+</code></pre><p>可以和java里的static修饰符做比较</p>
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><p>JS里有基本数据类型 String、Number、Boolean、Null、Undefined</p>
+<p>引用数据类型Object</p>
+<p>在JS中为我们提供了三个包装类，通过这三个包装类可以将基本数据类型的数据转换成对象</p>
+<p>String()、Number()、Boolean()</p>
+<p>细节：</p>
+<p>方法和属性只能添加给对象，不能添加给基本数据类型，当我们对一些基本数据类型的值去调用属性和方法时，浏览器会临时使用包装类将其转换成对象，然后再调用对象的属性和方法</p>
+<pre><code>var s = 123;
+s = s.toString();
+console.log(typeof s);
+</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>css细节</title>
+    <url>/2021/08/17/%E5%89%8D%E7%AB%AF/css%E7%BB%86%E8%8A%82/</url>
+    <content><![CDATA[<h1 id="div"><a href="#div" class="headerlink" title="div"></a>div</h1><p>div设置100%依赖于父级，back-img要占满整个屏幕设置background-size: cover; background-repeat: no-repeat;</p>
+<p>要固定div的相对位置，使用absolute属性</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>vue学习</title>
+    <url>/2021/07/24/%E5%89%8D%E7%AB%AF/vue%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="入门介绍"><a href="#入门介绍" class="headerlink" title="入门介绍"></a>入门介绍</h1><p>Vue是一套用于构建用户界面的渐进式JavaScript框架</p>
+<p>采用组件化模式，提高代码复用率，且让代码更好维护</p>
+<p>传统采用命令式编码，需要编码人员自己DOM，声明式编码可以直接写入</p>
+<p>使用虚拟DOM +优秀的Diff算法，尽量复用DOM节点</p>
+<p>学习Vue之间要掌握的JavaScript基础知识:</p>
+<p>ES6语法规范、ES6模板化、包管理器、原型、原型链、数组常用方法、axios、promise</p>
+<h1 id="vue2细节"><a href="#vue2细节" class="headerlink" title="vue2细节"></a>vue2细节</h1><h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><p>v-bind可以动态绑定，将Vue和html属性绑定</p>
+<p>v-model可以完成双向绑定,但是v-model只能用在表单类元素上（输入类元素）</p>
+<p>v-on:click简写为@click v-moel:value简写为v-model</p>
+<p>vue参考了MVVM模型，M：model对应data中的数据 V:view模板  VM:viewModer：vue实例对象</p>
+<h2 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;style&gt;
+    *&#123;
+      margin-top: 20px;
+    &#125;
+    .demo1&#123;
+      height: 50px;
+      background-color: blue;
+    &#125;
+    .box1&#123;
+      padding: 5px;
+      background-color: pink;
+    &#125;
+    .box2&#123;
+      padding: 5;
+      background-color: orange;
+    &#125;
+    .list&#123;
+      width: 200px;
+      height: 200px;
+      background-color: deeppink;
+      overflow: auto;
+    &#125;
+    .list li&#123;
+      height: 100px;
+    &#125;
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!--
+    Vue中的事件修饰符：
+    1.prevent: 阻止默认事件
+    2.stop: 阻止事件冒泡
+    3.once: 事件只触发一次
+    4.capture: 使用事件的捕获方式
+    5.self: 只有event.target是当前操作的元素时才触发事件
+    6.passive: 事件的默认行为立即执行，无需等待事件回调执行完毕
+  --&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;h2&gt;欢迎来到&#123;&#123;name&#125;&#125;学习&lt;/h2&gt;
+    &lt;!-- 组织默认事件 --&gt;
+    &lt;a href=&quot;http://zzygeo.cn&quot; @click.prevent=&quot;showInfo&quot;&gt;点我提示信息&lt;/a&gt;
+    &lt;!-- 阻止事件冒泡 --&gt;
+    &lt;div class=&quot;demo1&quot; @click=&quot;showInfo&quot;&gt;
+      &lt;button @click.stop=&quot;showInfo&quot;&gt;点我提示信息&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- 事件只触发一次 --&gt;
+    &lt;button @click.once=&quot;showInfo&quot;&gt;点我提示信息&lt;/button&gt;
+    &lt;!-- 使用事件的捕获模式,捕获阶段是由外往内的，冒泡阶段是由内往外的，先捕获再冒泡,capture就是让其
+    在捕获阶段就执行
+    --&gt;
+    &lt;div class=&quot;box1&quot; @click.capture=&quot;showMessage(1)&quot;&gt;
+      div1
+      &lt;div class=&quot;box2&quot; @click=&quot;showMessage(2)&quot;&gt;
+        div2
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- 只有event.target是当前操作的元素时才触发事件,button导致的冒泡不会影响div --&gt;
+    &lt;div class=&quot;demo1&quot; @click.self=&quot;showInfo&quot;&gt;
+      &lt;button @click=&quot;showInfo&quot;&gt;点我提示信息&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- 事件的默认行为立即执行，无需等待事件回调执行完毕 --&gt;
+    &lt;ul @wheel.passive=&quot;demo&quot; class=&quot;list&quot;&gt;
+      &lt;li&gt;1&lt;/li&gt;
+      &lt;li&gt;2&lt;/li&gt;
+      &lt;li&gt;3&lt;/li&gt;
+      &lt;li&gt;4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          name:&#39;尚硅谷&#39;
+        &#125;
+      &#125;,
+      methods:&#123;
+        showInfo:function(e)&#123;
+          // e.preventDefault()
+          alert(&#39;同学你好&#39;)
+        &#125;,
+        showMessage:function(msg)&#123;
+        console.log(msg);
+      &#125;,
+      demo:function()&#123;//先等待回调，然后再执行，这里会浪费大量的时间
+        for (let index = 0; index &lt; 100000; index++) &#123;
+          console.log(&#39;#&#39;);
+        &#125;
+        console.log(&#39;@&#39;);
+      &#125;
+      &#125;
+    &#125;)
+    vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- 
+    1.Vue中常见的按键别名:
+    回车=&gt;enter
+    删除=&gt;delete
+    退出=&gt;esc
+    空格=&gt;space
+    换行=&gt;tab（特殊，配合keydown使用）
+    上=&gt;up
+    下=&gt;down
+    左=&gt;left
+    右=&gt;right
+    2.Vue未提供别名的按键，可以使用原始的key值去绑定，但注意要转成keytab-case（短横线命名）
+
+    3.系统修饰键（用法特殊）：ctrl、alt、shift、meta
+    1) 配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他件，时间才被触发
+    2) 配合keydown使用：正常触发事件
+
+    4.系统修饰按键后还可以跟指定按键
+   --&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;h2&gt;欢迎来到&#123;&#123;name&#125;&#125;来学习&lt;/h2&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;按下回车提示输入&quot; @keyup.ctrl.y=&quot;showInfo&quot;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    // Vue.config.keyCodes.huiche = 13; //也可以自定义按键
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          name:&#39;Vue&#39;
+        &#125;
+      &#125;,
+      methods:&#123;
+        showInfo:function(e)&#123;//这个e是键盘事件类
+          // if (e.keyCode !== 13) return //这个可以用enter代替
+          console.log(e.target.value);
+        &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;);
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><pre><code class="lang-html">computed:&#123;
+    fullName:&#123;
+    //fullName被读取时，get就会被调用，且返回值就会作为fullName的值
+    //get什么时候调用 1.初次读取fullName时  2.所依赖的数据发生变化时，这里用了缓存
+    get:function()&#123;//计算属性   Vue在这里把this指给了vm这个对象
+        console.log(&#39;set被调用了&#39;);
+        return this.firstName + &#39;-&#39; + this.lastName; 
+    &#125;,
+    //set在fullName被修改的时候被调用
+    set:function(value)&#123;
+        console.log(&#39;set&#39;, value);
+        const arr = value.split(&#39;-&#39;);
+        this.firstName = arr[0];
+        this.lastName = arr[1];
+    &#125;
+&#125;
+</code></pre>
+<h2 id="监视属性"><a href="#监视属性" class="headerlink" title="监视属性"></a>监视属性</h2><p>在监视对象里的值改变时，默认的浅层监视监测不到数据变化，因此不能重新解析模板，需要开启深度监视deep:true</p>
+<p>watch和computed在改变属性时候的区别</p>
+<p>watch可以进行异步计算，如时间延迟函数</p>
+<h2 id="class与style绑定"><a href="#class与style绑定" class="headerlink" title="class与style绑定"></a>class与style绑定</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;style&gt;
+    .basic&#123;
+      height: 100px;
+      width: 200px;
+      border: 1px solid black;
+    &#125;
+    .happy&#123;
+      border: 4px solid red;
+      background-color: rgba( 255, 255, 0, 0.644);
+      background: linear-gradient(30deg, yellow,pink,orange,yellow);
+    &#125;
+    .sad&#123;
+      border: 4px solid green;
+      background-color: rgba( 255, 255, 0, 0.644);
+      background: linear-gradient(30deg, yellow,pink,orange,yellow);
+    &#125;
+    .normal&#123;
+      border: 4px solid blue;
+      background-color: rgba( 255, 255, 0, 0.644);
+      background: linear-gradient(30deg, yellow,pink,orange,yellow);
+    &#125;
+    .color1&#123;
+      background-color: antiquewhite;
+    &#125;
+    .color2&#123;
+      background-color: aqua;
+    &#125;
+    .color3&#123;
+      background-color: chartreuse;
+    &#125;
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;!-- 绑定class样式--字符串写法，适用于：样式的类名不确定，需要动态指定 --&gt;
+    &lt;div  class=&quot;basic&quot; :class=&quot;mood&quot; @click=&quot;changeMood&quot;&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt; &lt;br&gt; &lt;br&gt;
+
+    &lt;!-- 绑定class样式--数组写法,适用于：要绑定的样式个数不确定，名字也不确定 --&gt;
+    &lt;div  class=&quot;basic&quot; :class=&quot;classArr&quot;&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt; &lt;br&gt; &lt;br&gt;
+
+    &lt;!-- 绑定class样式--对象写法,适用于：要绑定的样式个数确定，名字也确定，但要动态决定用不用 --&gt;
+    &lt;div  class=&quot;basic&quot; :class=&quot;classObj&quot;&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt; &lt;br&gt; &lt;br&gt;
+
+    &lt;!-- 绑定style --&gt;
+    &lt;div  class=&quot;basic&quot; :style=&quot;styleObj&quot;&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          name:&#39;尚硅谷&#39;,
+          mood:&#39;happy&#39;,
+          classArr:[&#39;color1&#39;, &#39;color2&#39;, &#39;color3&#39;],
+          classObj:&#123;
+            color1:false,
+            color2:false
+          &#125;,
+          styleObj:&#123;
+            fontSize:&#39;40px&#39;
+          &#125;
+        &#125;
+      &#125;,
+      methods:&#123;
+        changeMood()&#123;
+          var arr = [&#39;happy&#39;, &#39;sad&#39;, &#39;normal&#39;];
+          var index = Math.floor(Math.random() * 3);
+          this.mood = arr[index];
+        &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><pre><code class="lang-html">&lt;!-- 使用v-show做条件渲染,隐藏，频率高的情况下使用 --&gt;
+&lt;h2 v-show=&quot;false&quot;&gt;欢迎来到&#123;&#123;name&#125;&#125;&lt;/h2&gt;
+
+&lt;!-- 使用v-if做条件渲染，彻底删除，频率低的情况下使用 --&gt;
+&lt;h2 v-if=&quot;false&quot;&gt;欢迎来到&#123;&#123;name&#125;&#125;&lt;/h2&gt;
+
+&lt;!-- v-else-if与v-else --&gt;
+&lt;!-- 需要连着写才有效果 --&gt;
+&lt;h2 v-if=&quot;n === 1&quot;&gt;n=1&lt;/h2&gt;
+&lt;h2 v-else-if=&quot;n == 2&quot;&gt;n=2&lt;/h2&gt;
+&lt;h2 v-else-if=&quot;n == 3&quot;&gt;n=3&lt;/h2&gt;
+&lt;h2 v-else&gt;哈哈&lt;/h2&gt;
+&lt;button @click=&quot;n++&quot;&gt;点我n+1&lt;/button&gt;
+
+&lt;!-- template可以当div盒子用，但在渲染的时候又不影响页面的布局，但它只能配合v-if用 --&gt;
+</code></pre>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;!-- 遍历数组 --&gt;
+    &lt;h2&gt;人员列表&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;!-- p是值，index是索引,给每个li分不同的id --&gt;
+      &lt;li v-for=&quot;(p,index) in personArr&quot; :key=&quot;index&quot;&gt;
+        &#123;&#123;p.name&#125;&#125;-&#123;&#123;p.age&#125;&#125;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;br&gt;
+    &lt;!-- 遍历对象 --&gt;
+    &lt;h2&gt;汽车属性&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;!-- 第一个是val,第二个是key --&gt;
+      &lt;li v-for=&quot;(val,key) in Car&quot; :key=&quot;key&quot;&gt;
+        &#123;&#123;key&#125;&#125; - &#123;&#123;val&#125;&#125;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- 遍历字符串 --&gt;
+    &lt;h2&gt;遍历字符串&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(val,index) in str&quot; :key=&quot;index&quot;&gt;
+        &#123;&#123;val&#125;&#125;-&#123;&#123;index&#125;&#125;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;!-- 遍历数字 --&gt;
+    &lt;h2&gt;遍历数字&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(num,index) in 6&quot; :key=&quot;index&quot;&gt;
+        &#123;&#123;index&#125;&#125;-&#123;&#123;num&#125;&#125;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          personArr:[
+            &#123;id:&#39;001&#39;, name:&#39;张三&#39;,age:18&#125;,
+            &#123;id:&#39;002&#39;, name:&#39;李四&#39;,age:18&#125;,
+            &#123;id:&#39;003&#39;, name:&#39;王五&#39;,age:19&#125;    
+          ],
+          Car:&#123;
+            name:&#39;奥迪A8&#39;,
+            price:&#39;70万&#39;,
+            color:&#39;黑色&#39;
+          &#125;,
+          str:&#39;hello&#39;
+        &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<p>key的原理</p>
+<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/index作为key.7fprri03nn40.png" alt="index作为key"></p>
+<p><img src="https://raw.githubusercontent.com/zzygeo/images/master/id作为key.79a32p8aifk0.png" alt="id作为key"></p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;!-- 
+      虚拟DOM发生改变会存在对比算法，虚拟DOM中内容没变，直接使用之间的真实DOM
+      若虚拟DOM中内容变了，则生成新的真实DOM，随后替换掉页面中之前的真实DOM
+      所以对数据不进行逆序添加、逆序删除等操作的时候，使用index作为key是可以的，
+      一般最好使用每条数据的唯一标识作为key
+     --&gt;
+    &lt;!-- 遍历数组 --&gt;
+    &lt;h2&gt;人员列表&lt;/h2&gt;
+    &lt;button @click=&quot;add&quot;&gt;点击&lt;/button&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(p,index) in personArr&quot; :key=&quot;index&quot;&gt;
+        &#123;&#123;p.name&#125;&#125;-&#123;&#123;p.age&#125;&#125;&lt;input type=&quot;text&quot;&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          personArr:[
+            &#123;id:&#39;001&#39;, name:&#39;张三&#39;,age:18&#125;,
+            &#123;id:&#39;002&#39;, name:&#39;李四&#39;,age:18&#125;,
+            &#123;id:&#39;003&#39;, name:&#39;王五&#39;,age:19&#125;    
+          ]
+        &#125;
+      &#125;,
+      methods:&#123;
+        add()&#123;
+          const  p = &#123;id:&quot;004&quot;, name:&quot;老刘&quot;,age:30&#125;;
+          this.personArr.unshift(p);
+        &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<p>列表过滤：</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- watch实现 --&gt;
+  &lt;!-- &lt;div id=&quot;root&quot;&gt;
+    &lt;h2&gt;人员列表&lt;/h2&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;请输入名字&quot; v-model=&quot;keyWord&quot;&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(p, index) in filPersonArr&quot; :key=&quot;p.id&quot;&gt;
+        &#123;&#123;p.name&#125;&#125;-&#123;&#123;p.age&#125;&#125;-&#123;&#123;p.sex&#125;&#125;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          personArr:[
+            &#123;name:&#39;马冬梅&#39;, age:19, sex:&#39;女&#39;,id:&#39;001&#39;&#125;,
+            &#123;name:&#39;周冬雨&#39;, age:20, sex:&#39;女&#39;,id:&#39;002&#39;&#125;,
+            &#123;name:&#39;周杰伦&#39;, age:21, sex:&#39;男&#39;,id:&#39;003&#39;&#125;,
+            &#123;name:&#39;温兆伦&#39;, age:22, sex:&#39;男&#39;,id:&#39;004&#39;&#125;
+          ],
+          keyWord:&#39;&#39;,
+          filPersonArr:[]
+        &#125;
+      &#125;,
+      watch:&#123;
+        keyWord:&#123;
+          immediate:true,
+          handler(newVal)&#123;
+            this.filPersonArr = this.personArr.filter((p)=&gt;&#123;
+            return p.name.indexOf(newVal) &gt; -1;
+            &#125;)
+        &#125;    
+        &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;) --&gt;
+    &lt;!-- computed实现 --&gt;
+    &lt;div id=&quot;root&quot;&gt;
+      &lt;h2&gt;人员列表&lt;/h2&gt;
+      &lt;input type=&quot;text&quot; placeholder=&quot;请输入名字&quot; v-model=&quot;keyWord&quot;&gt;
+      &lt;ul&gt;
+        &lt;li v-for=&quot;(p, index) in filPersonArr&quot; :key=&quot;p.id&quot;&gt;
+          &#123;&#123;p.name&#125;&#125;-&#123;&#123;p.age&#125;&#125;-&#123;&#123;p.sex&#125;&#125;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+    &lt;script&gt;
+      Vue.config.productionTip = false;
+      const vm = new Vue(&#123;
+        data:function()&#123;
+          return&#123;
+            personArr:[
+              &#123;name:&#39;马冬梅&#39;, age:19, sex:&#39;女&#39;,id:&#39;001&#39;&#125;,
+              &#123;name:&#39;周冬雨&#39;, age:20, sex:&#39;女&#39;,id:&#39;002&#39;&#125;,
+              &#123;name:&#39;周杰伦&#39;, age:21, sex:&#39;男&#39;,id:&#39;003&#39;&#125;,
+              &#123;name:&#39;温兆伦&#39;, age:22, sex:&#39;男&#39;,id:&#39;004&#39;&#125;
+            ],
+            keyWord:&#39;&#39;
+          &#125;
+        &#125;,
+        computed:&#123;
+          filPersonArr:&#123;
+            get()&#123;
+              return this.personArr.filter((p)=&gt;&#123;
+                return p.name.indexOf(this.keyWord) &gt; -1;
+              &#125;)
+            &#125;
+          &#125;
+        &#125;
+      &#125;);
+      vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<p>列表排序</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;h2&gt;人员列表&lt;/h2&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;请输入名字&quot; v-model=&quot;keyWord&quot;&gt;
+    &lt;button @click=&quot;order=1&quot;&gt;年龄升序&lt;/button&gt;
+    &lt;button @click=&quot;order=2&quot;&gt;年龄降序&lt;/button&gt;
+    &lt;button @click=&quot;order=0&quot;&gt;原顺序&lt;/button&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(p, index) in filPersonArr&quot; :key=&quot;p.id&quot;&gt;
+        &#123;&#123;p.name&#125;&#125;-&#123;&#123;p.age&#125;&#125;-&#123;&#123;p.sex&#125;&#125;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          personArr:[
+            &#123;name:&#39;马冬梅&#39;, age:19, sex:&#39;女&#39;,id:&#39;001&#39;&#125;,
+            &#123;name:&#39;周冬雨&#39;, age:21, sex:&#39;女&#39;,id:&#39;002&#39;&#125;,
+            &#123;name:&#39;周杰伦&#39;, age:20, sex:&#39;男&#39;,id:&#39;003&#39;&#125;,
+            &#123;name:&#39;温兆伦&#39;, age:22, sex:&#39;男&#39;,id:&#39;004&#39;&#125;
+          ],
+          keyWord:&#39;&#39;,
+          order:0
+        &#125;
+      &#125;,
+      computed:&#123;
+        filPersonArr:&#123;
+          get()&#123;
+            const arr = this.personArr.filter((p)=&gt;&#123;
+              return p.name.indexOf(this.keyWord) &gt; -1;
+            &#125;)
+            if (this.order)&#123;
+              arr.sort((a, b)=&gt;&#123;
+                return this.order === 1 ? a.age - b.age : b.age - a.age;
+              &#125;)
+            &#125;
+            return arr;
+          &#125;
+        &#125;
+      &#125;,
+    &#125;);
+    vm.$mount(&#39;#root&#39;)
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="Vue监测对象以及数组"><a href="#Vue监测对象以及数组" class="headerlink" title="Vue监测对象以及数组"></a>Vue监测对象以及数组</h2><p>Vue是通过一个递归给data里面的数据增加set和get方法，想给Vue添加一个reactive属性,可以调用Vue.set或者vm.$set，但给Vue添加reactive属性时，不能是Vue或者Vue._date</p>
+<p>对数组进行监测的时候，对直接进行赋值所进行的修改并没有提供set和get方法，而是对操作数组的7组方法进行了包裹，从而在进行虚拟DOM那一套，当然也可以通过Vue.set和vm.$set去数组去进行修改</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!--  --&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;h1&gt;学生信息&lt;/h1&gt;
+    &lt;button @click=&quot;student.age++&quot;&gt;年龄+1岁&lt;/button&gt; &lt;br&gt;
+    &lt;button @click=&quot;addSex&quot;&gt;添加性别，默认值：男&lt;/button&gt; &lt;br&gt;
+    &lt;button @click=&quot;addFriend&quot;&gt;在列表首位添加一个朋友&lt;/button&gt; &lt;br&gt;
+    &lt;button @click=&quot;replacename&quot;&gt;修改第一个朋友的名字为：张三&lt;/button&gt; &lt;br&gt;
+    &lt;button @click=&quot;addHobby&quot;&gt;添加一个爱好&lt;/button&gt; &lt;br&gt;
+    &lt;button @click=&quot;spliceHobby&quot;&gt;修改第一个爱好为：开车&lt;/button&gt; &lt;br&gt;
+    &lt;button @click=&quot;remove&quot;&gt;过滤掉爱好中的抽烟&lt;/button&gt; &lt;br&gt;
+
+    &lt;h3&gt;姓名：&#123;&#123;student.name&#125;&#125;&lt;/h3&gt;
+    &lt;h3&gt;年龄：&#123;&#123;student.age&#125;&#125;&lt;/h3&gt;
+    &lt;h3 v-if=&quot;student.sex&quot;&gt;性别：&#123;&#123;student.sex&#125;&#125;&lt;/h3&gt;
+    &lt;h3&gt;爱好：&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(h,index) in student.hobby&quot; :key=&quot;index&quot;&gt;&#123;&#123;h&#125;&#125;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h3&gt;朋友们：&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li v-for=&quot;(f,index) in student.friends&quot; :key=&quot;index&quot;&gt;&#123;&#123;f.name&#125;&#125;-&#123;&#123;f.age&#125;&#125;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          student:&#123;
+            name:&#39;tom&#39;,
+            age:18,
+            hobby:[&#39;抽烟&#39;, &#39;喝酒&#39;, &#39;烫头&#39;],
+            friends:[
+              &#123;name:&#39;jerry&#39;,age:35&#125;,
+              &#123;name:&#39;tony&#39;,age:36&#125;
+            ]
+          &#125;
+        &#125;
+      &#125;,
+      methods:&#123;
+        addSex()&#123;
+          this.$set(this.student,&#39;sex&#39;,&#39;男&#39;);
+        &#125;,
+        addFriend()&#123;
+          this.student.friends.unshift(&#123;name:&#39;jack&#39;,age:70&#125;);
+        &#125;,
+        replacename()&#123;
+          this.student.friends[0].name = &#39;张三&#39;;
+        &#125;,
+        addHobby()&#123;
+          this.student.hobby.push(&#39;打麻将&#39;);
+        &#125;,
+        spliceHobby()&#123;
+          this.student.hobby.splice(0, 1, &#39;开车&#39;);
+        &#125;,
+        remove()&#123;
+          this.student.hobby = this.student.hobby.filter((p)=&gt;&#123;
+            return p !== &#39;抽烟&#39;;
+          &#125;)
+        &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="收集表单数据"><a href="#收集表单数据" class="headerlink" title="收集表单数据"></a>收集表单数据</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- 
+    收集表单数据:
+    若: &lt;input type=&quot;text&quot;/&gt;, 则v-mode1收集的是value值，用户输入的就是value值。
+    若: &lt;input type=&quot;radio&quot; /&gt;，则v-mode1收集的是value值，且要给标签配置value值。
+    若: &lt;input type=&quot; checkbox&quot;/&gt;
+      1.没有配置input的value属性，那么收集的就是checked (勾选or 未勾选，是布尔值)
+      2.配置input的value属性:
+        (1)v-mode1的初始值是非数组，那么收集的就是checked (勾选or未勾选，是布尔值)
+        (2)v-mode1的初始值是数组，那么收集的的就是value组成的数组
+    备注: v-mode1的 三个修饰符:
+      lazy:失去焦点再收集数据
+      number:输入字符串转为有效的数字
+      trim:输入首尾空格过滤
+   --&gt;
+  &lt;div id=&quot;root&quot;&gt;
+  &lt;form @submit.prevent=&quot;demo&quot;&gt;
+    &lt;label for=&quot;name&quot; &gt;账号：&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;name&quot; v-model.trim=&quot;userInfo.account&quot;&gt;
+    &lt;br&gt;
+    &lt;label for=&quot;password&quot; &gt;密码：&lt;/label&gt;
+    &lt;input type=&quot;password&quot; id=&quot;password&quot; v-model=&quot;userInfo.password&quot;&gt;
+    &lt;br&gt;
+    &lt;label for=&quot;age&quot; &gt;年龄：&lt;/label&gt;
+    &lt;!-- v-model也是有修饰符的 --&gt;
+    &lt;input type=&quot;number&quot; id=&quot;age&quot; v-model.number=&quot;userInfo.age&quot;&gt;
+    &lt;br&gt;
+    性别：
+    男&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot; v-model=&quot;userInfo.sex&quot;&gt;
+    女&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot; v-model=&quot;userInfo.sex&quot;&gt;
+    &lt;br&gt;
+    爱好：
+    学习&lt;input type=&quot;checkbox&quot; v-model=&quot;userInfo.hobby&quot; value=&quot;study&quot;&gt;
+    打游戏&lt;input type=&quot;checkbox&quot; v-model=&quot;userInfo.hobby&quot; value=&quot;game&quot;&gt;
+    吃饭&lt;input type=&quot;checkbox&quot; v-model=&quot;userInfo.hobby&quot; value=&quot;eat&quot;&gt;
+    &lt;br&gt;
+    所属校区
+    &lt;select v-model=&quot;userInfo.city&quot;&gt;
+      &lt;option value=&quot;&quot;&gt;请选择校区&lt;/option&gt;
+      &lt;option value=&quot;bj&quot;&gt;北京&lt;/option&gt;
+      &lt;option value=&quot;sh&quot;&gt;上海&lt;/option&gt;
+      &lt;option value=&quot;sz&quot;&gt;深圳&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;br&gt;
+    其他信息：
+    &lt;textarea v-model.lazy=&quot;userInfo.other&quot;&gt;&lt;/textarea&gt;
+    &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; v-model=&quot;userInfo.agree&quot;&gt; 阅读并接受&lt;a href=&quot;#&quot;&gt;《用户协议》&lt;/a&gt;
+    &lt;button&gt;提交&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          userInfo:&#123;
+            account:&#39;&#39;,
+            password:&#39;&#39;,
+            sex:&#39;male&#39;,
+            hobby:[],
+            city:&#39;bj&#39;,
+            other:&#39;&#39;,
+            agree:&#39;&#39;,
+            age:0
+          &#125;
+        &#125;
+      &#125;,
+      methods:&#123;
+        demo()&#123;
+          console.log(JSON.stringify(this.userInfo));
+        &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;../js/dayjs.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- 
+    过滤器:
+    定义:对要显示的数据进行特定格式化后再显示(适用于一些简单逻辑的处理)。
+    语法:
+      1.注册过滤器: Vue.filter(name,callback)或new Vue&#123;filters:&#123;&#125;&#125;
+      2.使用过滤器: &#123;&#123; XXX | 过滤器名&#125;&#125; 或v-bind:属性= &quot;xx| 过滤器名&quot;
+    备注:
+      1.过滤器也可以接收额外参数、多个过滤器也可以串联
+      2.并没有改变原本的数据，是产生新的对应的数据
+
+   --&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;h2&gt;显示格式化后的时间&lt;/h2&gt;
+    &lt;h3&gt;现在是：&#123;&#123;time | timeFormater&#125;&#125;&lt;/h3&gt;
+    &lt;h3&gt;现在是：&#123;&#123;time | timeFormater('YYYY年MM月DD日')&#125;&#125;&lt;/h3&gt;
+    &lt;!-- 这里的mySlice会接受timeFormater返回的值进行处理 --&gt;
+    &lt;h3&gt;现在是：&#123;&#123;time | timeFormater('YYYY年MM月DD日') | mySlice&#125;&#125;&lt;/h3&gt;
+    &lt;h3 :x=&quot;msg | mySlice&quot;&gt;演示过滤器在绑定语法中的使用&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    //全局过滤器
+    Vue.filter(&#39;mySlice&#39;,function(value)&#123;
+      return value.slice(0, 4);
+    &#125;)
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          time:1627532248020, //时间戳
+          msg:&#39;Hello World!&#39;
+        &#125;
+      &#125;,
+      filters:&#123;
+        timeFormater(value, str=&#39;YYYY年MM月DD日 HH:mm:ss&#39;)&#123;//返回值把整个框替换掉,value就是time值，在上面不写也会传入
+          return dayjs(value).format(str);
+        &#125;,
+        //局部过滤器
+        // mySlice(value)&#123;
+        //   return value.slice(0,4);
+        // &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;);
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="内置指令"><a href="#内置指令" class="headerlink" title="内置指令"></a>内置指令</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;style&gt;
+    [v-cloak]&#123;
+      display: none;
+    &#125;
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- 
+    v-text直接替换掉文本内容
+    v-html直接结构的解析,存在安全性问题
+    v-cloak指令(没有值) :
+    1.本质是一个特殊属性，Vue实例创建完毕并接管容器后，会删掉v- cloak属性。
+    2.使用css配合v-cloak可以解决网速慢时页面展示出( &#123;xx&#125; &#125;的问题。
+    v-pre跳过其所在节点的编译过程，没有使用指令语法，没有使用插值语法的节点
+   --&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;div&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;
+    &lt;div v-cloak&gt;&#123;&#123;name&#125;&#125;&lt;/div&gt;
+    &lt;div v-text=&quot;name&quot;&gt;&lt;/div&gt; 
+    &lt;div v-html=&quot;str&quot;&gt;&lt;/div&gt;
+    &lt;h2 v-once=&quot;handle&quot;&gt;初始化的n值是：&#123;&#123;n&#125;&#125;&lt;/h2&gt; 
+    &lt;h2&gt;当前的n值是：&#123;&#123;n&#125;&#125;&lt;/h2&gt;
+    &lt;button @click=&quot;n++&quot;&gt;点我n+1&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          name:&#39;尚硅谷&#39;,
+          str:&#39;&lt;h2&gt;你好啊！&lt;/h2&gt;&#39;,
+          n:1
+        &#125;
+      &#125;
+    &#125;);
+    vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;h2&gt;当前的n值是：&lt;span v-text=&quot;n&quot;&gt;&lt;/span&gt;&lt;/h2&gt;
+    &lt;!-- 指令名由几个单词组成的写法 --&gt;
+    &lt;h2&gt;放大10倍的n值是：&lt;span v-big-number=&quot;n&quot;&gt;&lt;/span&gt;&lt;/h2&gt;
+    &lt;button @click=&quot;n++&quot;&gt;点我n+1&lt;/button&gt;
+    &lt;br&gt;
+    &lt;input type=&quot;text&quot; v-fbind=&quot;n&quot;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    //全局指令
+    Vue.directive(&#39;fbind&#39;,&#123;
+          bind(element, binding)&#123;//绑定时调用
+            element.value = binding.value;
+          &#125;,
+          inserted(element,binding)&#123;//指令所在元素被插入页面时
+            element.focus();
+          &#125;,
+          update(element, binding)&#123;//指令所在模板被重新解析时调用
+            element.value = binding.value;
+          &#125;
+        &#125;)
+      Vue.directive(&#39;big-number&#39;,function(element,binding)&#123;
+        element.innerText = binding.value * 10;
+      &#125;)
+    const vm = new Vue(&#123;
+      data:function()&#123;
+        return&#123;
+          n:1
+        &#125;
+      &#125;,
+      //这个自定义指令是局部的
+      // directives:&#123;
+        //big函数何时被调用，1.指令与元素成功绑定时 2.指令所在的模板被重新解析时
+        //这里面的this都是window，因为这些操作都是自己做的DOM
+        // &#39;big-number&#39;(element,binding)&#123;
+        //   element.innerText = binding.value * 10;
+        // &#125;,
+        // fbind:&#123;
+        //   bind(element, binding)&#123;//绑定时调用
+        //     element.value = binding.value;
+        //   &#125;,
+        //   inserted(element,binding)&#123;//指令所在元素被插入页面时
+        //     element.focus();
+        //   &#125;,
+        //   update(element, binding)&#123;//指令所在模板被重新解析时调用
+        //     element.value = binding.value;
+        //   &#125;
+        // &#125;
+        // &#125;
+
+    &#125;);
+    vm.$mount(&#39;#root&#39;)
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+  &lt;script src=&quot;../js/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- 常用的生命周期钩子:
+    1. mounted: 发送ajax请求、启动定时器、绑定自定义事件、订阅消息等[初始化操作]。
+    2. beforeDestroy:清除定时器、解绑自定义事件、取消订阅消息等[收尾工作]。
+    关于销毁Vue实例
+    1.销毁后借助Vue开发者工具看不到任何信息。
+    2.销毁后自定义事件会失效，但原生DOM事件依然有效。
+    3.一般不会在beforeDestroy操作数据，因为即便操作数据，也不会再触发更新流程了。
+ --&gt;
+  &lt;div id=&quot;root&quot;&gt;
+    &lt;h2&gt;当前的n值是：&#123;&#123;n&#125;&#125;&lt;/h2&gt;
+    &lt;button @click=&quot;add&quot;&gt;点我n+1&lt;/button&gt;
+    &lt;button @click=&quot;destroy&quot;&gt;点我销毁vm&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    Vue.config.productionTip = false;
+    new Vue(&#123;
+      el:&#39;#root&#39;,
+      data:function()&#123;
+        return&#123;
+          n:1
+        &#125;
+      &#125;,
+      methods:&#123;
+        add()&#123;
+          this.n++;
+        &#125;,
+        destroy()&#123;
+          this.$destroy();
+        &#125;
+      &#125;,
+      beforeCreate() &#123;
+        console.log(this);
+      &#125;,
+      created() &#123;
+        console.log(this);
+      &#125;,
+      beforeMount() &#123;
+        console.log(&#39;beforeMount&#39;);
+      &#125;,
+      mounted() &#123;
+        console.log(&#39;mounted&#39;);
+      &#125;,
+      beforeUpdate() &#123;
+        console.log(&#39;beforeUpdate&#39;);
+      &#125;,
+      updated() &#123;
+        console.log(&#39;updated&#39;);
+      &#125;,
+      beforeDestroy() &#123;
+        console.log(&#39;beforedestroy&#39;);
+        console.log(this.n);
+      &#125;,
+      destroyed() &#123;
+        console.log(&#39;destroy&#39;);
+      &#125;,
+    &#125;);
+  &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="element-ui"><a href="#element-ui" class="headerlink" title="element-ui"></a>element-ui</h2><p>按需引入</p>
+<pre><code class="lang-javascript">module.exports = &#123;
+  presets: [
+    &#39;@vue/cli-plugin-babel/preset&#39;,
+    [&quot;@babel/preset-env&quot;, &#123; &quot;modules&quot;: false &#125;]
+  ],
+  plugins: [
+    [
+      &quot;component&quot;,
+      &#123;
+        &quot;libraryName&quot;: &quot;element-ui&quot;,
+        &quot;styleLibraryName&quot;: &quot;theme-chalk&quot;
+      &#125;
+    ]
+  ]
+&#125;
+</code></pre>
+]]></content>
+      <tags>
+        <tag>vue</tag>
+      </tags>
   </entry>
 </search>
