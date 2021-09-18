@@ -8,8 +8,6 @@
 	<!-- title -->
 	
 	<title>
-	
-		C++知识点 | 
 	 
 	立志做个全栈
 	</title>
@@ -135,7 +133,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2021/05/31/C++/C++%E7%9F%A5%E8%AF%86%E7%82%B9/">
 										C++知识点
 									</a>
@@ -473,103 +471,46 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<h1 id="article-title">
-
-	C++知识点
-</h1>
-<div class="article-meta">
+		<div id="index">
 	
-	<span>Regular</span>
-	<span>2021-05-31 11:22:15</span>
-		<div id="article-categories">
-    
-		<span>Categories：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/C/">C++</a>
-                        </i>
-                      
-                    </span>
-                
-            
-    
+		<div class="index-li">
+			<a href="/2021/09/13/%E5%89%8D%E7%AB%AF/ES6-11/">
+				<h2 class="index-title">
+					ES6-11
+				</h2>
+				<div class="index-brief">
+					let和const
+变量不能重复声明
 
-    
-		<span>Tags：</span>
-            
-    
-		</div>
+块级作用域
 
+不存在变量提升
+
+不影响作用域链
+
+
+&#123;
+      let school = &quot;中山大学&quot;;
+      function fn() &#123;
+        console.log(school);
+    
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2021-09-13</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+	
+	<div id="index-paginator">
+		
+	</div>
 </div>
 
-<div id="article-content">
-	<h1 id="1-cin-clear"><a href="#1-cin-clear" class="headerlink" title="1. cin.clear()"></a>1. cin.clear()</h1><p>是用来更改cin的状态标示符的。</p>
-<p>cin.sync（）是用来清除缓存区的数据流的。<br>如果标示符没有改变那么即使清除了数据流也无法输入。所以两个要联合起来使用。</p>
-<p>我们定义要输入到的变量是整型,但如果我们输入了英文字母或者汉字,那就会发生错误,cin里有个方法能检测这个错误,就是cin.rdstate(); 当cin.rdstate()返回0(即ios::goodbit)时表示无错误,可以继续输入或者操作,若返回4则发生非致命错误即ios::failbit,则不能继续输入或操作.而cin.clear则可以控制我们此时cin里对这个问题的一个标识.语发如下: cin.clear(标识符); 标识符号为:</p>
-<p>goodbit 无错误<br>Eofbit 已到达文件尾<br>failbit 非致命的输入/输出错误，可挽回<br>badbit　致命的输入/输出错误,无法挽回 若在输入输出类里.需要加ios::标识符号<br>通过cin.clear,我们能确认它的内部标识符,如果输入错误则能重新输入.结合真正的清空数据流方法cin.sync(),请看下例:</p>
-<pre><code class="lang-c++">include &lt;iostream&gt;
-using namespace std; 
-int main()  
-&#123;         
-    int a;         
-    while(1)         
-    &#123;                 
-        cin&gt;&gt;a;                 
-        if(!cin)            //条件可改写为cin.fail()                 
-        &#123;                         
-            cout&lt;&lt;&quot;输入有错!请重新输入&quot;&lt;&lt;endl;                         
-            cin.clear();                          
-            cin.sync();   //清空流                 
-        &#125;                 
-        else                 
-        &#123;                         
-            cout&lt;&lt;a;                         
-            break;                 
-        &#125;         
-    &#125;         
-    system(&quot;pause&quot;); 
-&#125;
-</code></pre>
-<p>上面的cin.clear()默认参数为0,即无错误,正常操作.当我们输入英文字母’k’时,它的状态标识改为fail,即错误,用cout对用户输出信息,再用cin.clear让错误标识改回为0,让我们可以继续输入,再清空流数据继续输入.如果我们没有了cin.clear,则会进入死循环,其过程为我们输入了英文字母,它的状态标识便为fail,当运行到条件判断时,便总是回到错误的条件表示里,并且我们再也没办法输入,因为错误的表示关闭了cin,所以会进入死循环.</p>
-<h1 id="2-常量指针和指针常量"><a href="#2-常量指针和指针常量" class="headerlink" title="2. 常量指针和指针常量"></a>2. 常量指针和指针常量</h1><p>在第一次听黑马C++的时候，是按老师的说法自己记忆的，而在回顾C++ primer plus时，对这个的理解才更加深刻，先看两者的声明。</p>
-<pre><code class="lang-c++">int sloth =3;
-const int* ps = &amp;sloth;        // a pointer to const int
-int* const finger = &amp;sloth;    // a const pointer to int
-</code></pre>
-<p>根据英文的理解比中文好的多， a pointer to const int 代表这个指针指向的常量是不可以改变的，但是这个指针是指向却是可以改变的。</p>
-<p>第二个表明这个指针它是一个常量，它是没法改变的，但是他指向的值却是可以改变的，记住这个英文的注解就可以了。</p>
-
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2021/06/10/Cesium/Cesiun%E5%AD%A6%E4%B9%A0/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Cesiun学习
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2021/05/24/Java%E5%9F%BA%E7%A1%80/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-                IDEA快捷键
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
-    </div>
-
-
-
-
-<script>
-	
-	
-</script>
 	</div>
 	<div id="footer">
 	<p>

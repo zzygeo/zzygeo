@@ -427,6 +427,15 @@ var _hmt = _hmt || [];
 									
 							<ul>
 								<li class="file">
+									<a href="/2021/09/13/%E5%89%8D%E7%AB%AF/ES6-11/">
+										ES6-11
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
 									<a href="/2021/08/25/%E5%89%8D%E7%AB%AF/JS%E7%BB%86%E8%8A%82/">
 										JS细节
 									</a>
@@ -465,6 +474,38 @@ var _hmt = _hmt || [];
 		<div id="index">
 	
 		<div class="index-li">
+			<a href="/2021/09/13/%E5%89%8D%E7%AB%AF/ES6-11/">
+				<h2 class="index-title">
+					ES6-11
+				</h2>
+				<div class="index-brief">
+					let和const
+变量不能重复声明
+
+块级作用域
+
+不存在变量提升
+
+不影响作用域链
+
+
+&#123;
+      let school = &quot;中山大学&quot;;
+      function fn() &#123;
+        console.log(school);
+    
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2021-09-13</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+		<div class="index-li">
 			<a href="/2021/08/25/%E5%89%8D%E7%AB%AF/JS%E7%BB%86%E8%8A%82/">
 				<h2 class="index-title">
 					JS细节
@@ -472,10 +513,12 @@ var _hmt = _hmt || [];
 				<div class="index-brief">
 					对象删除对象中的属性 delete obj.name
 对象的属性名不强制要求遵守标识符的规范，但尽量按照规范使用
-基本数据类型
-String、Number、Boolean、Null、Undefined,存储在栈内存中
-引用数据类型
-Object、它是存储在堆内存中,将一个变量设置为null会断开其指
+访问对象里的属性有两种方法：
+1.通过.来访问
+2.通过[]来访问
+访问对象里的方法只能通过.来进行访问。
+数据类型基本数据类型
+String、Number、Boolean、Null、U
 					...
 				</div>
 			</a>
@@ -755,40 +798,6 @@ sudo rm /var/lib/dpkg/updates/*
 sudo apt-get update
 sudo apt-get upgrade
 解释：[]sudo apt-get update指令会重新建立这些资料，所以不必担心删除后会出问题；[]sudo apt-get upgrade会更新你
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2021-03-14</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/Ubuntu/">Ubuntu</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2021/03/14/Ubuntu/%E5%AE%89%E8%A3%85snap/">
-				<h2 class="index-title">
-					安装snap
-				</h2>
-				<div class="index-brief">
-					sudo apt-get install snapd
-sudo apt-get install snapcraft
-2.常用命令//列出已经安装的snap包
-sudo snap list
-
-//搜索要安装的snap包
-sudo snap find &lt;text to search&gt;
-
-//
 					...
 				</div>
 			</a>

@@ -490,7 +490,7 @@ sudo snap remove &lt;snap name&gt;
     <label for="hbePass">Enter password to read.</label>
     <div class="bottom-line"></div>
   </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="03c1ac4465e4cf3a48495d4bf2e5305f5459e5aa002e29362a916042d55d3feb">a40b706f3ef3cecdee82bde9ce2bd4514c0daefd2ecc9a0471c6dd32fb89c21dd33d989c9838561713a671711864b0b1a1a4480b4508e9ff8837f455c5dce0fe5f300a44bdd7e4e87f4cf4ad6a977b3a2e1fb4941673530eba42a436b7ddbc2a833161220ce856a9c50b0f0a00948c6120e291cacc8235d9112cea2d0ff237ff547ad3c0557cede69bb6e0acac70ff7e8dfd7357b4b0819f29e0b32a89991ff85dbb291e5440a99f3e89272087d1a7bad163b67007c9db378d5b7519efb4bc6adfc98224fb4ce577a17143fe36acb2235be6db2fbdd89c6784c0966f78aecbf7df789c5ac3fbdc42aad6b3332ae1ff1e862ad8340e40571113b1a0f03023896f1f4e9d0282ddc48e33f8992ebced357dfafab8477f1b7ddb0c479b4ef223cd7aa6c3b47bac939edf42c2ea6eeb5976a6c37e76ad4ac9a7c25cf6e5f0161cbe47578cd75de43b1fb65e794e1b15d764b9</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="8896adb0b14435a87dfca3d6aa0b0f714c095a6dc8bb149b363b64dc1c09a4ce">a40b706f3ef3cecdee82bde9ce2bd4514c0daefd2ecc9a0471c6dd32fb89c21dd33d989c9838561713a671711864b0b1a1a4480b4508e9ff8837f455c5dce0fe5f300a44bdd7e4e87f4cf4ad6a977b3a2e1fb4941673530eba42a436b7ddbc2a833161220ce856a9c50b0f0a00948c6120e291cacc8235d9112cea2d0ff237ff547ad3c0557cede69bb6e0acac70ff7e8dfd7357b4b0819f29e0b32a89991ff85dbb291e5440a99f3e89272087d1a7bad163b67007c9db378d5b7519efb4bc6adfc98224fb4ce577a17143fe36acb2235be6db2fbdd89c6784c0966f78aecbf7df789c5ac3fbdc42aad6b3332ae1ff1e862ad8340e40571113b1a0f03023896f1f4e9d0282ddc48e33f8992ebced357dfafab8477f1b7ddb0c479b4ef223cd7aa6c3b47bac939edf42c2ea6eeb5976a6c37e76ad4ac9a7c25cf6e5f0161cbe474b844f9f5aac68420cd9c0d2772ee879fa77d13cf4e12c6ca9abee8f00f04f8e744939f178fec537b3aa17a80c606fb7</script>
 </div>
 <script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <tags>
@@ -4247,7 +4247,11 @@ public class Mapfor &#123;
     <url>/2021/08/25/%E5%89%8D%E7%AB%AF/JS%E7%BB%86%E8%8A%82/</url>
     <content><![CDATA[<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>删除对象中的属性 delete obj.name</p>
 <p>对象的属性名不强制要求遵守标识符的规范，但尽量按照规范使用</p>
-<p>基本数据类型</p>
+<p>访问对象里的属性有两种方法：</p>
+<p>1.通过.来访问</p>
+<p>2.通过[]来访问</p>
+<p>访问对象里的方法只能通过.来进行访问。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>基本数据类型</p>
 <p>String、Number、Boolean、Null、Undefined,存储在栈内存中</p>
 <p>引用数据类型</p>
 <p>Object、它是存储在堆内存中,将一个变量设置为null会断开其指针指向</p>
@@ -4286,7 +4290,7 @@ var obj2 = &#123;
 <h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>fromCharAt()</p>
 <pre><code>var result = String.fromCharCode(72);
     console.log(result);
-</code></pre><h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM操作主要还是寻找相关的API方法，逻辑上不难，主要理解Element、Node、Document的相互关系。</p>
+</code></pre><h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM操作主要还是寻找相关的API方法，逻辑上不难，主要理解Element、Node、Event的相互关系。</p>
 <p>我们想要操作网页的元素，则必须可以访问到这个元素，html这种树形的结构，我们只要先拿到其文档对象，就可以采用相应的方法对其进行操作。</p>
 <p>浏览器已经为我们提供了文档节点对象，这个对象是winodw属性，可以在页面中直接使用，文档节点代表的是整个网页。</p>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>事件就是用户和浏览器之间的交互行为</p>
@@ -4475,7 +4479,258 @@ console.log(b);
 <pre><code>var s = 123;
 s = s.toString();
 console.log(typeof s);
-</code></pre>]]></content>
+</code></pre><h1 id="事件-1"><a href="#事件-1" class="headerlink" title="事件"></a>事件</h1><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;JS对象&lt;/title&gt;
+  &lt;style&gt;
+    #box1&#123;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      position: absolute;
+    &#125;
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body style=&quot;height: 1000px;&quot;&gt;
+  &lt;div id=&quot;box1&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+    var box1 = document.getElementById(&quot;box1&quot;)
+    //鼠标事件调用时，会传入一个event参数
+    document.onmousemove = function(event) &#123;
+    //clientX、clientY是按照浏览器的可视窗口来看的，因此当出现滚动条了以后就有问题了
+    //pageX、pageY是相对这个body的高度的
+    var st2 = document.documentElement.scrollTop;
+    var left = event.clientX;
+    var top = event.clientY;
+    box1.style.left = left + st2 + &quot;px&quot;;
+    box1.style.top = top + st2 + &quot;px&quot;;
+   &#125;
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><p>当事件发生后，这个事件就要开始传播(从里到外或者从外向里)。为什么要传播呢？因为事件源本身（可能）并没有处理事件的能力，即处理事件的函数（方法）并未绑定在该事件源上。例如我们点击一个按钮时，就会产生一个click事件，但这个按钮本身可能不能处理这个事件，事件必须从这个按钮传播出去，从而到达能够处理这个事件的代码中（例如我们给按钮的onclick属性赋一个函数的名字，就是让这个函数去处理该按钮的click事件），或者按钮的父级绑定有事件函数，当该点击事件发生在按钮上，按钮本身并无处理事件函数，则传播到父级去处理。</p>
+<h2 id="事件委派"><a href="#事件委派" class="headerlink" title="事件委派"></a>事件委派</h2><p>指将事件统一绑定给元素的共同的祖先元素，这样当后代元素上的事件触发时，会一直冒泡到祖先元素，从而通过祖先元素的响应函数来处理事件。</p>
+<p>好处：事件委派是利用了冒泡，通过委派可以减少事件绑定的次数，提高程序的性能。</p>
+<pre><code class="lang-html">&lt;button id=&quot;bt1&quot;&gt;点击添加超链接&lt;/button&gt;
+  &lt;ul id=&quot;u1&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;link&quot;&gt;超链接3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;script&gt;
+    var allA = document.getElementsByTagName(&quot;a&quot;)
+    var u1 = document.getElementById(&quot;u1&quot;)
+    for (var i = 0; i &lt; allA.length; i++) &#123;
+      u1.onclick = function (event) &#123;
+        console.log(event.target);
+        if (event.target.className == &quot;link&quot;) &#123;
+          alert(&quot;我是A的单击响应函数...&quot;)
+        &#125;
+      &#125;
+    &#125;
+    var bt1 = document.getElementById(&quot;bt1&quot;)
+    bt1.onclick = function () &#123;
+      var li = document.createElement(&quot;li&quot;)
+      li.innerHTML = &quot;&lt;a href=&#39;javascript:;&#39; class=&#39;link&#39;&gt;新链接&lt;/a&gt;&quot;
+      u1.appendChild(li)
+    &#125;
+  &lt;/script&gt;
+</code></pre>
+<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><pre><code class="lang-html">&lt;button id=&quot;btn01&quot;&gt;点我一下&lt;/button&gt;
+    &lt;script&gt;
+        let btn01 = document.getElementById(&quot;btn01&quot;)
+        /*
+        通过这种方式绑定的点击事件，只能绑定一个
+         */
+
+        btn01.onclick = function() &#123;
+            console.log(&quot;@&quot;);
+        &#125;
+
+        /*btn01.onclick = function() &#123;
+            console.log(&quot;!&quot;);
+        &#125;*/
+
+        /*addEventListener()
+        * 通过这个方法也可以为元素绑定响应函数
+        * 参数：
+        *   1.事件的字符串,不要on
+        *   2.回调函数
+        *   3.是否在捕获阶段触发事件，需要一个布尔值，一般都传false
+        * */
+        btn01.addEventListener(&quot;click&quot;,function () &#123;
+            alert(1)
+        &#125;)
+
+        btn01.addEventListener(&quot;click&quot;,function () &#123;
+            alert(2)
+        &#125;)
+    &lt;/script&gt;
+</code></pre>
+<h2 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h2><pre><code class="lang-html">&lt;div id=&quot;box1&quot;&gt;
+    &lt;div id=&quot;box2&quot;&gt;
+        &lt;div id=&quot;box3&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    /*
+    * 事件的传播
+    *   关于事件的传播，网景公司和微软公司有着不同的理解
+    *   微软公司认为事件应该是由内向外传播，也就是当事件触发时，应该先触发当前元素上的事件
+    *   然后再向当前元素的祖先元素上传播，也就是说事件应该在冒泡阶段再执行
+    *
+    *   网景公司认为事件应该是由外向内传播的，也就是当前时间触发时，应该先触发当前元素的最外层
+    *   的事件，然后再向内传播给后代元素
+    *   W3C综合了两个公司的方案，将事件传播分成了3个阶段
+    *   1.在捕获阶段，从最外层的祖先元素，向目标元素进行事件的捕获，但是默认不触发事件
+    *   2.目标阶段，事件捕获到目标元素，开始触发事件
+    *   3.冒泡阶段，事件从目标元素向外开始触发事件
+    * IE8及以下的浏览器中没有捕获阶段*/
+    let btn1 = document.getElementById(&quot;box1&quot;)
+    let btn2 = document.getElementById(&quot;box2&quot;)
+    let btn3 = document.getElementById(&quot;box3&quot;)
+    btn1.onclick = function () &#123;
+        alert(&quot;1&quot;);
+    &#125;
+    btn2.onclick = function () &#123;
+        alert(&quot;2&quot;);
+    &#125;
+    btn3.onclick = function () &#123;
+        alert(&quot;3&quot;);
+    &#125;
+&lt;/script&gt;
+</code></pre>
+<h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><pre><code class="lang-html">&lt;input type=&quot;text&quot; id=&quot;box1&quot;&gt;
+    &lt;script&gt;
+        let box1 = document.getElementById(&quot;box1&quot;)
+        box1.onkeydown = function (event) &#123;
+            console.log(&quot;键盘按下了...&quot;)
+            console.log(event.key)
+        &#125;
+    &lt;/script&gt;
+</code></pre>
+<p>把几个键盘事件记住就行</p>
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><p>BOM即浏览器对象，BOM可以使我们通过JS来操作浏览器，在BOM中为我们提供了一组对象，用来完成对浏览器的操作。</p>
+<p>window:代表的是整个浏览器，同时window也是网页中的全局对象</p>
+<p>Navigator:代表的是当前浏览器的信息，通过该对象可以来识别不同的浏览器</p>
+<p>Location:代表当前浏览器的地址栏信息,通过Location可以获取地址栏信息，或者操作浏览器页面跳转</p>
+<p>History:代表浏览器的历史记录，可以通过该对象来操作浏览器的历史记录，由于隐私原因，该对象不能获取到具体的历史记录</p>
+<p>Screen：代表用户的屏幕的信息，通过该对象可以获取到用户的显示器的相关的信息</p>
+<h1 id="定时作用"><a href="#定时作用" class="headerlink" title="定时作用"></a>定时作用</h1><p>案例,鼠标事件控制div盒子移动</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        #box1&#123;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;box1&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        let box1 = document.getElementById(&quot;box1&quot;);
+        let dir = &#39;&#39;;
+        let speed = 10;
+        setInterval(() =&gt; &#123;
+            switch (dir) &#123;
+                case &quot;ArrowUp&quot;:
+                    box1.style.top = box1.offsetTop - speed + &quot;px&quot;;
+                    break;
+                case &quot;ArrowDown&quot;:
+                    box1.style.top = box1.offsetTop + speed + &quot;px&quot;;
+                    break;
+                case &quot;ArrowRight&quot;:
+                    box1.style.left = box1.offsetLeft + speed + &quot;px&quot;;
+                    break;
+                case &quot;ArrowLeft&quot;:
+                    box1.style.left = box1.offsetLeft - speed + &quot;px&quot;;
+                    break;
+            &#125;
+        &#125;,30)
+        document.onkeydown = function (event) &#123;
+            if (event.ctrlKey) &#123;
+                speed = 50;
+            &#125;else &#123;
+                speed = 10;
+            &#125;
+            dir = event.key;
+        &#125;
+        document.onkeyup = function () &#123;
+            dir = &#39;&#39;;
+        &#125;
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="类的操作"><a href="#类的操作" class="headerlink" title="类的操作"></a>类的操作</h1><pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;style&gt;
+        .b1 &#123;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        &#125;
+        .b2&#123;
+            width: 200px;
+            background-color: orange;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button id=&quot;btn01&quot;&gt;点我修改box的样式&lt;/button&gt;
+    &lt;br&gt;&lt;/br&gt;
+    &lt;div id=&quot;box1&quot; class=&quot;b1&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    let btn01 = document.getElementById(&quot;btn01&quot;);
+    let box1 = document.getElementById(&quot;box1&quot;);
+    btn01.onclick = function () &#123;
+        /*
+        * 通过style属性来修改元素的样式，每修改一个样式，浏览器就要重新渲染一次页面
+        * 这样执行的性能是比较差的*/
+        /*box1.style.width = &quot;200px&quot;;
+        box1.style.height = &quot;300px&quot;;
+        box1.style.backgroundColor = &quot;orange&quot;;*/
+
+        /*我们可以通过修改元素的class属性来间接的修改样式*/
+        // box1.className = &quot;b2&quot;;
+
+        /*要适用两种类，可以追加,但是会追加多个属性，需要做个判断*/
+        let reg = /\bb2\b/;
+        if (!reg.test(box1.className)) &#123;
+            box1.className += &quot; &quot; + &quot;b2&quot;;
+        &#125;
+
+        /*要删除某个类，直接将其替换置空就行*/
+    &#125;
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>JS中的对象只有JS自己认识，其他的语言都不认识。</p>
+<p>JSON就是一个特殊格式的字符串，这个字符串可以被任意的语言所识别，并且可以转换成任意语言中的对象，JSON在开发中主要用来数据的交互。</p>
+<p>JSON- JavaScript Object Notation</p>
+<p>JSON和JS对象的格式一样，只不过JSON字符串中的属性名必须加双引号，其他的和JS语法一致。</p>
+<p>JSON分类</p>
+<p>1.对象{}</p>
+<p>2.数组[]</p>
+<p>JSON.parse(json)可以将JSON转换成js对象</p>
+<p>JSON.stringify()可以将JS对象转换成JSON字符串</p>
+]]></content>
   </entry>
   <entry>
     <title>css细节</title>
@@ -5475,5 +5730,1007 @@ console.log(typeof s);
       <tags>
         <tag>vue</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>ES6-11</title>
+    <url>/2021/09/13/%E5%89%8D%E7%AB%AF/ES6-11/</url>
+    <content><![CDATA[<h1 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h1><ol>
+<li><p>变量不能重复声明</p>
+</li>
+<li><p>块级作用域</p>
+</li>
+<li><p>不存在变量提升</p>
+</li>
+<li><p>不影响作用域链</p>
+</li>
+</ol>
+<pre><code class="lang-js">&#123;
+      let school = &quot;中山大学&quot;;
+      function fn() &#123;
+        console.log(school);
+      &#125;
+      fn();
+    &#125;
+</code></pre>
+<p>案例</p>
+<pre><code class="lang-js">let item = document.getElementsByClassName(&quot;item&quot;);
+    for (var i = 0; i &lt; item.length; i++) &#123;
+      //这个i是在全局作用域,回调函数在函数点击时触发，这时候i已经成3了
+      item[i].onclick = function() &#123;
+        item[i].style.backgroundColor = &quot;black&quot;;
+      &#125;
+    &#125;
+</code></pre>
+<p>const细节：</p>
+<ol>
+<li>一定要赋初始值</li>
+<li>一般常量使用大写</li>
+<li>常量的值不能修改</li>
+<li>块级作用域</li>
+<li>对于数组和对象的元素修改，不算做对常量的修改，不会报错</li>
+</ol>
+<h1 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h1><pre><code class="lang-js">const F4 = [&#39;大狗&#39;,&#39;二狗&#39;,&#39;死狗&#39;,&#39;狗贼&#39;];
+let [xiao, liu, zhao, song] = F4;
+
+console.log(xiao);
+console.log(liu);
+</code></pre>
+<pre><code class="lang-js">const zhao = &#123;
+      name: &#39;赵本山&#39;,
+      age: 26,
+      xiaopin: function() &#123;
+        console.log(&#39;我可以演小品...&#39;);
+      &#125;
+    &#125;
+
+let &#123; name, age, xiaopin&#125; = zhao;
+console.log(name);
+console.log(age);
+console.log(xiaopin);
+xiaopin();
+</code></pre>
+<h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><p>内容中可以直接出现换行符</p>
+<p>变量拼接</p>
+<pre><code class="lang-js">let star = &#39;张国荣&#39;;
+let out = `$&#123;star&#125;是我最喜欢的歌手...`;
+console.log(out);
+</code></pre>
+<h1 id="简化对象写法"><a href="#简化对象写法" class="headerlink" title="简化对象写法"></a>简化对象写法</h1><pre><code class="lang-js">/* ES6允许在大括号里，直接写入变量和函数，作为对象的属性和方法，
+    这样书写更加简洁 */
+    let name =&quot;中山大学&quot;;
+    let change = function () &#123;
+      console.log(&quot;我们可以改变你...&quot;);
+    &#125;
+    const school = &#123;
+      name,
+      change,
+      improve() &#123;
+        console.log(&quot;我们可以提高你的技能...&quot;);
+      &#125;
+    &#125;
+    console.log(school);
+</code></pre>
+<h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><p>this是静态的,this始终指向函数声明时所在作用域下的this的值</p>
+<pre><code class="lang-js">/* ES6允许使用[箭头]（=&gt;）定义函数 */
+  //  let fn = function(a, b) &#123;
+  //   return a + b;
+  //  &#125;
+   //调用函数
+  //  let res = fn(1, 2);
+  //  console.log(res);
+
+  function getName() &#123;
+    console.log(this.name);
+  &#125;
+
+  let getName2 = () =&gt; &#123;
+    console.log(this.name);
+  &#125;
+
+  window.name = &quot;尚硅谷&quot;;
+  const school = &#123;
+    name: &quot;ATGUIGU&quot;
+  &#125;
+
+  //直接调用
+  getName();  //尚硅谷
+  getName2(); //尚硅谷
+
+  getName.call(school); //ATGUIGU
+  getName2.call(school);  //尚硅谷
+</code></pre>
+<p>不能作为构造函数实例化对象</p>
+<pre><code class="lang-js"> //不能作为构造函数实例化对象
+  //  let Person = function(name, age) &#123;
+  //    this.name = name;
+  //    this.age = age;
+  //  &#125;
+  //  let me = new Person(&quot;xiao&quot;, 30);
+  //  console.log(me); //可行
+
+  let Person = (name, age) =&gt; &#123;
+    this.name = name;
+    this.age = age;
+  &#125;
+
+  let me = new Person(&quot;xiao&quot;, 30);
+  console.log(me); //Person is not a constructor
+</code></pre>
+<p>不能使用arguments变量</p>
+<pre><code class="lang-js"> let fn = () =&gt; &#123;
+     console.log(arguments);
+   &#125;
+   fn(100); //arguments is not defined
+</code></pre>
+<p>箭头函数的简写：</p>
+<pre><code class="lang-js">//省略小括号，当形参有且只有一个的时候
+    let add = num =&gt; &#123;
+      return ++num;
+    &#125;
+    console.log(add(9));
+</code></pre>
+<pre><code class="lang-js">  //省略花括号,当代码体只有一条语句的时候,此时return语句也需要省略
+    //而且语句的执行结果就是函数的返回值
+    let pow = num =&gt;  num * num;
+    console.log(pow(8));  //64
+</code></pre>
+<p>案例</p>
+<pre><code class="lang-js">const arr = [1, 6, 9, 10, 100, 25];
+      const res = arr.filter(item =&gt; item % 2 === 0 );
+      console.log(res);
+</code></pre>
+<p>箭头函数适合与this无关的回调。定时器，数组的方法的回调。</p>
+<p>箭头函数不适合与this有关的回调。事件回调，对象的方法。</p>
+<h1 id="ES6允许给函数参数赋初值"><a href="#ES6允许给函数参数赋初值" class="headerlink" title="ES6允许给函数参数赋初值"></a>ES6允许给函数参数赋初值</h1><pre><code class="lang-js"> //ES6允许给函数参数赋初始值
+      //1.形参初始值，具有默认值的参数，一般位置要靠后（潜规则）
+      // function add(a, b, c = 10) &#123;
+      //   return a + b + c;
+      // &#125;
+      // let res = add(1, 2);
+      // console.log(res);
+
+      //与结构赋值结合
+      function connect(&#123; host = &quot;127.0.0.1&quot;, username, password, port &#125;) &#123;
+        this.host = host;
+        this.username = username;
+        this.password = password;
+        this.port = port;
+      &#125;
+      connect(&#123;
+        host: &quot;localhost&quot;,
+        username: &quot;root&quot;,
+        password: &quot;root&quot;,
+        port: &quot;port&quot;,
+      &#125;);
+</code></pre>
+<h1 id="rest参数"><a href="#rest参数" class="headerlink" title="rest参数"></a>rest参数</h1><pre><code class="lang-js"> //ES6引入rest参数，用于获取函数的实参，用来代替arguments
+      //ES5获取实参的方法
+      // function date() &#123;
+      //   console.log(arguments);
+      // &#125;
+      // date(1, 2, 3);
+
+      //rest参数
+      // function date(...args) &#123;
+      //   console.log(args);
+      // &#125;
+      // date(1,2,3);
+
+      //rest参数必须放到实参最后,不然会报错
+      function date(a, b, ...args) &#123;
+        console.log(a);
+        console.log(b);
+        console.log(args);
+      &#125;
+      date(1, 2, 3, 4, 5, 6, 7);
+</code></pre>
+<h1 id="拓展运算符"><a href="#拓展运算符" class="headerlink" title="拓展运算符"></a>拓展运算符</h1><pre><code class="lang-js">const tfboys = [&#39;易烊千玺&#39;,&#39;王源&#39;,&#39;王俊凯&#39;];
+
+      function fn() &#123;
+        console.log(arguments);
+      &#125;
+      fn(...tfboys);  //类似于将(a,b,c)，将每个值取出来作为实参
+</code></pre>
+<pre><code class="lang-js"> const person = [&#39;张三&#39;,&#39;李四&#39;,&#39;王五&#39;];
+      const person2 = [&#39;赵六&#39;,&#39;黄七&#39;];
+      const person3 = person.concat(person2);
+      console.log(person3);
+      const person4 = [...person, ...person2];
+      console.log(person4);
+</code></pre>
+<h1 id="Symbol数据类型"><a href="#Symbol数据类型" class="headerlink" title="Symbol数据类型"></a>Symbol数据类型</h1><p>ES6引入了一种新的原始数据类型Symbol，表示独一无二的值。他是JS语言的第七种数据类型，是一种类似于字符串的数据类型。</p>
+<p>特点：</p>
+<p>Symbol的值是唯一的，用来解决命名冲突的问题。</p>
+<p>Symbol值不能与其他数据进行运算。</p>
+<p>Symbol定义的对象属性不能使用for…in循环遍历，但是可以使用Reflect.ownKeys来获取对象的所有键名。</p>
+<pre><code class="lang-js">//创建stmbol
+      let s = Symbol();
+      console.log(s, typeof s);
+
+      let s2 = Symbol(&#39;尚硅谷&#39;);
+      let s3 = Symbol(&#39;尚硅谷&#39;);
+      console.log(s2 === s3); //false
+
+      let s4 = Symbol.for(&#39;尚硅谷&#39;);
+      let s5 = Symbol.for(&#39;尚硅谷&#39;);
+      console.log(s4 === s5); //true
+</code></pre>
+<p>案例：</p>
+<pre><code class="lang-js"> let game = &#123;
+        name: &quot;俄罗斯方块&quot;,
+        up() &#123;
+          console.log(&quot;@&quot;);
+        &#125;,
+        down() &#123;
+          console.log(&quot;!&quot;);
+        &#125;
+      &#125;;
+      //这么写是拿不到这个字符串的值的，必须来一个去接受它
+      // game[Symbol(&#39;up&#39;)] = function() &#123;
+      //   console.log(&#39;我可以改变形状...&#39;);
+      // &#125;
+
+      //必须拿一个去接受它，然后就能去调用了
+      let up = Symbol();
+      game[up] = function() &#123;
+        console.log(&#39;我可以改变形状...&#39;);
+      &#125;
+      game[up]();
+    //顺便体会下.方式和[]的差别
+</code></pre>
+<h2 id="Symbol内置属性"><a href="#Symbol内置属性" class="headerlink" title="Symbol内置属性"></a>Symbol内置属性</h2><p>symbol有一些内置属性，用于特定方法下进行使用，可以拓展方法的功能。</p>
+<h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p>迭代器是一种接口，为不同的数据结构提供统一的访问机制。任何数据结构只要部署Iterator接口，就可以完成遍历操作。</p>
+<p>原生聚类Iterator接口的数据（可用for of遍历），主要是原型上存在Symbol.iterator的函数.</p>
+<ol>
+<li>Array</li>
+<li>Arguments</li>
+<li>Set</li>
+<li>Map</li>
+<li>String</li>
+<li>TypedArray</li>
+<li>NodeList</li>
+</ol>
+<p>工作原理：</p>
+<ol>
+<li>创建一个指针对象，指向当前数据结构的起始位置</li>
+<li>第一次调用对象的next方法，指针自动指向数据结构的第一个成员</li>
+<li>接下来不断调用next方法，指针一直往后移动，直到指向最后一个成员</li>
+<li>每次调用next方法返回一个包含value和done属性的对象</li>
+</ol>
+<pre><code class="lang-js">const xiyou = [&#39;唐僧&#39;,&#39;孙悟空&#39;,&#39;猪八戒&#39;,&#39;沙僧&#39;];
+      // //使用for...of遍历数组
+      // for (let item of xiyou) &#123;
+      //   console.log(item);
+      // &#125;
+
+      let iterator = xiyou[Symbol.iterator]();
+      console.log(iterator);
+      console.log(iterator.next());
+      console.log(iterator.next());
+      console.log(iterator.next());
+      console.log(iterator.next()); //done: false 这个表示是否遍历完数组的状态
+      console.log(iterator.next()); //done: true
+</code></pre>
+<pre><code class="lang-js">//自定义遍历规则
+      //自己构建Symbol.iterator的规则
+      const obj = &#123;
+        name: &quot;fpx&quot;,
+        components: [&quot;xiaoming&quot;, &quot;doinb&quot;, &quot;xiaotian&quot;],
+        [Symbol.iterator]() &#123;
+          let index = 0;
+          return &#123;
+            next: () =&gt; &#123;
+              if (index &lt; this.components.length) &#123;
+                const res = &#123; value: this.components[index], done: false &#125;;
+                index++;
+                return res;
+              &#125; else &#123;
+                return &#123; value: undefined, done: &#39;true&#39;&#125;;
+              &#125;
+            &#125;,
+          &#125;;
+        &#125;,
+      &#125;;
+
+      for (let item of obj) &#123;
+        console.log(item);
+      &#125;
+</code></pre>
+<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><p>生成器是ES6提供的一种异步编程解决方案，语法行为与传统函数完全不同。</p>
+<pre><code class="lang-js">//生成器，特殊的函数
+      //yield相当于函数的分隔符
+      function *gen() &#123;
+        yield &#39;1&#39;;
+        yield &#39;2&#39;;
+        yield &#39;3&#39;;
+      &#125;
+
+      let iterator = gen();
+      console.log(iterator.next());
+      console.log(iterator.next());
+      console.log(iterator.next());
+
+    //遍历
+    for (let item of gen()) &#123;
+        console.log(item);
+      &#125;
+</code></pre>
+<pre><code class="lang-js">function* gen(arg) &#123;
+        console.log(arg);
+        let one = yield 111;
+        console.log(one);
+        let two = yield 222;
+        console.log(two);
+        yield 333;
+      &#125;
+
+      let iterator = gen(&#39;AAA&#39;);
+      console.log(iterator.next());  //AAA,传入参数没问题
+
+      //输入的结果将作为第一个yield的返回值
+      console.log(iterator.next(&#39;BBB&#39;)); //BBB
+
+      //输入的结果将作为第二个yield的返回值
+      console.log(iterator.next(&#39;CCC&#39;)); //CCC
+</code></pre>
+<pre><code class="lang-js"> function one() &#123;
+        setTimeout(() =&gt; &#123;
+          console.log(111);
+          iterator.next();
+        &#125;, 1000)
+      &#125;
+
+      function two() &#123;
+        setTimeout(() =&gt; &#123;
+          console.log(222);
+          iterator.next();
+        &#125;, 2000)
+      &#125;
+
+      function three() &#123;
+        setTimeout(() =&gt; &#123;
+          console.log(333);
+          iterator.next();
+        &#125;, 3000)
+      &#125;
+
+      function *gen() &#123;
+        yield one();
+        yield two();
+        yield three();
+      &#125;
+
+      let iterator = gen();
+      iterator.next();
+</code></pre>
+<pre><code class="lang-js">//异步获取用户数据、订单数据、商品数据
+      function getUsers() &#123;
+        setTimeout(() =&gt; &#123;
+          let data = &quot;用户数据&quot;;
+          iterator.next(data);
+        &#125;, 1000)
+      &#125;
+
+      function getOrders() &#123;
+        setTimeout(() =&gt; &#123;
+          let data = &quot;订单数据&quot;;
+          iterator.next(data)
+        &#125;, 1000)
+      &#125;
+
+      function getGoods() &#123;
+        setTimeout(() =&gt; &#123;
+          let data = &quot;商品数据&quot;;
+          iterator.next(data)
+        &#125;, 1000)
+      &#125;
+
+      function *gen() &#123;
+        let users = yield getUsers();
+        console.log(users);
+        let orders = yield getOrders();
+        console.log(orders);
+        let goods = yield getGoods();
+        console.log(goods);
+      &#125;
+
+      let iterator = gen();
+      iterator.next()
+</code></pre>
+<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><p>Promise是ES6引入的异步编程的新解决方案。语法上Promise是一个构造函数，用来封装异步操作并可以获取其成功或失败的结果。</p>
+<ol>
+<li>Promise构造函数：Promise(excutor){}</li>
+<li>Promise.prototype.then方法</li>
+<li>Promise.prototype.catch方法</li>
+</ol>
+<pre><code class="lang-js">//实例化Promise对象
+      const p = new Promise(function(resolve, reject) &#123;
+        setTimeout(function() &#123;
+          // let data = &quot;数据库中的用户数据&quot;;
+          //状态：成功
+          // resolve(data);
+          let err = &quot;数据读取失败&quot;;
+          reject(err);
+        &#125;, 1000)
+      &#125;)
+
+      //调用promise对象的then方法
+      //前面调用了resolve方法，则会调用成功的回调函数
+      p.then(function(value) &#123;
+        console.log(value);
+      &#125;, function(reason) &#123;
+        console.log(reason);
+      &#125;)
+</code></pre>
+<pre><code class="lang-js">//引入fs模块
+const fs = require(&#39;fs&#39;);
+
+//调用方法读取文件
+// fs.readFile(&quot;./resources/长相思.md&quot;,(err, data) =&gt; &#123;
+//   if (err) throw err;
+//   console.log(data.toString());
+// &#125;);
+
+//使用Promise封装一个异步操作,所以里面写异步的操作
+const p = new Promise(function(reslove, reject) &#123;
+  //读取文件就是异步操作
+  fs.readFile(&#39;./resources/长相思.md&#39;,(err, data) =&gt; &#123;
+    if (err) reject(err);
+    reslove(data)
+  &#125;);
+&#125;)
+
+p.then(function(value)&#123;
+  console.log(value.toString());
+&#125;, function(reason) &#123;
+  console.log(reason);
+&#125;)
+
+//这样就可以避免回调的嵌套
+</code></pre>
+<h2 id="promise-then方法"><a href="#promise-then方法" class="headerlink" title="promise.then方法"></a>promise.then方法</h2><pre><code class="lang-js">const p = new Promise((resolve, reject) =&gt; &#123;
+        setTimeout(() =&gt; &#123;
+          resolve(&#39;用户数据&#39;);
+        &#125;,1000)
+      &#125;)
+
+      //then方法返回的直接也是Promise对象,这个对象状态由回调函数的执行结果决定
+      //1.如果回调函数中返回的值是非promise类型的属性，状态为成功，返回值为对象的成功的值
+      //2.如果回调函数中返回的值是promise对象，则成功还是失败的状态是根据返回的promise的状态决定的
+      //3.抛出异常
+      const res = p.then(value =&gt; &#123;
+        console.log(value);
+        //1.非promise类型的数据
+        // return 123;
+
+        //2.是promise对象
+        return new Promise((resolve, reject) =&gt; &#123;
+          // resolve(&quot;ok&quot;);
+          // reject(&quot;失败了&quot;);
+          throw new Error(&quot;出错了&quot;);
+        &#125;)
+      &#125;, reason =&gt; &#123;
+        console.log(reason);
+      &#125;)
+
+      //这样的特性使得promise.then的方法是可以链式调用的
+      //这样就可以避免回调地狱
+      const result = p.then(value =&gt; &#123;&#125;, reason =&gt; &#123;&#125;)
+      .then(value =&gt; &#123;&#125;, reason =&gt; &#123;&#125;)
+
+      console.log(res);
+</code></pre>
+<pre><code class="lang-js"> const p = new Promise((resolve, reject) =&gt; &#123;
+        setTimeout(() =&gt; &#123;
+          reject(&quot;出错了...&quot;);
+        &#125;, 1000)
+      &#125;)
+
+      //catch的作用相当p.thedn不写第一个函数的作用
+      p.catch(function(reason) &#123;
+        console.warn(reason);
+      &#125;)
+</code></pre>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><p>ES6提供了新的数据结构Set(集合)。它类似于数组，但成员的值都是唯一的。集合实现了iterator接口。所以可以使用拓展运算符和for…of进行遍历。</p>
+<p>集合的构建和方法的使用</p>
+<pre><code class="lang-js">//集合的声明
+      let s = new Set();
+      let s2 = new Set([&quot;大事儿&quot;, &quot;小事儿&quot;, &quot;好事儿&quot;, &quot;坏事儿&quot;]);
+      console.log(s, typeof s);
+      console.log(s2, typeof s2);
+
+      //元素个数
+      console.log(s2.size);
+
+      //添加新元素
+      s2.add(&#39;喜事儿&#39;);
+      console.log(s2);
+
+      //删除元素
+      s2.delete(&#39;坏事儿&#39;);
+      console.log(s2);
+
+      //检测是否有某个元素
+      let res = s2.has(&#39;大事儿&#39;);
+      console.log(res);
+
+      //清空集合
+      // s2.clear();
+      // console.log(s2);
+
+      //遍历
+      for (let item of s2) &#123;
+        console.log(item);
+      &#125;
+</code></pre>
+<p>案例：</p>
+<p>数组去重：</p>
+<pre><code class="lang-js">let arr = [1,2,3,4,5,4,3,2,1];
+
+      //数组去重，利用集合特性
+      // let res = [...new Set(arr)];
+      // console.log(res);
+
+      let arr2 = [];
+      for (let i in arr) &#123;
+        if (arr2.length === 0) &#123;
+          arr2.push(arr[i]);
+          continue;
+        &#125;
+        if (arr2.indexOf(arr[i]) === -1) &#123;
+          arr2.push(arr[i]);
+        &#125;
+      &#125;
+      console.log(arr2);
+</code></pre>
+<p>数组求交集：</p>
+<pre><code class="lang-js"> let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+  let arr2 = [4, 5, 6, 5, 6];
+      //交集
+      let arr3 = [...new Set(arr)].filter((item) =&gt; arr2.indexOf(item) !== -1)
+      console.log(arr3);
+</code></pre>
+<p>数组求并集：</p>
+<pre><code class="lang-js"> let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+
+      let arr2 = [4, 5, 6, 5, 6];
+
+      //并集
+      let union = [...new Set([...arr, ...arr2])];
+      console.log(union);
+</code></pre>
+<p>数组求差集：</p>
+<pre><code class="lang-js"> let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+
+      let arr2 = [4, 5, 6, 5, 6];
+      //求差集
+      let diff = [...new Set(arr)].filter(item =&gt; !new Set(arr2).has(item))
+      console.log(diff);
+</code></pre>
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><p>ES6提供了Map数据结构。它类似于对象，也是键值对的集合。但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当做键。Map也实现了iterator接口，所以可以使用【拓展运算符】和for…of进行遍历，map的常见属性和方法如下：</p>
+<pre><code class="lang-js">let m = new Map();
+
+      //添加元素
+      m.set(&quot;name&quot;, &quot;尚硅谷&quot;);
+      m.set(&quot;change&quot;, function () &#123;
+        console.log(&quot;我们可以改变你...&quot;);
+      &#125;);
+
+      let key = &#123;
+        school: &quot;ATGUIGU&quot;,
+      &#125;;
+      m.set(key, [&quot;北京&quot;, &quot;上海&quot;, &quot;深圳&quot;]);
+
+      //元素个数
+      console.log(m.size);
+
+      //删除
+      // m.delete(&quot;name&quot;);
+
+      //获取
+      console.log(m.get(&quot;change&quot;));
+
+      //清空
+      // m.clear();
+      // console.log(m);
+
+      //遍历,获取的是数组键值对
+      for (let item of m) &#123;
+        console.log(item);
+      &#125;
+</code></pre>
+<h1 id="函数以及类的继承"><a href="#函数以及类的继承" class="headerlink" title="函数以及类的继承"></a>函数以及类的继承</h1><p>函数的继承：</p>
+<pre><code class="lang-js">//ES5的继承
+function Phone(brand, price) &#123;
+      this.brand = brand;
+      this.price = price;
+    &#125;
+
+    Phone.prototype.call = function() &#123;
+      console.log(&#39;我可以打电话...&#39;);
+    &#125;
+
+    function SmartPhone(brand, price, color, size) &#123;
+      //函数call方法，改变this的指向,传入参数为实参
+      Phone.call(this, brand, price);
+      this.color = color;
+      this.size = size;
+    &#125;
+
+    //这里往原型上添加属性，相当于给SmartPhone找了个爸爸
+    SmartPhone.prototype = new Phone;
+    SmartPhone.prototype.constructor = SmartPhone;
+
+    SmartPhone.prototype.photo = function() &#123;
+      console.log(&#39;我可以拍照...&#39;);
+    &#125;
+
+    SmartPhone.prototype.playGame = function() &#123;
+      console.log(&#39;我可以玩游戏...&#39;);
+    &#125;
+
+    const chuizi = new SmartPhone(&#39;锤子&#39;, 2499, &#39;黑色&#39;, &#39;5.5inch&#39;);
+
+    console.log(chuizi);
+</code></pre>
+<p>类的继承：</p>
+<pre><code class="lang-js"> class Phone &#123;
+        //构造方法
+        constructor(brand, price) &#123;
+          this.brand = brand;
+          this.price = price;
+        &#125;
+
+        //父类的成员属性
+        call()&#123;
+          console.log(&quot;我可以打电话...&quot;);
+        &#125;
+      &#125; 
+
+      class SmartPhone extends Phone &#123;
+        constructor(brand, price, color, size) &#123;
+          super(brand, price);
+          this.color = color;
+          this.size = size;
+        &#125;
+
+        photo() &#123;
+          console.log(&quot;拍照...&quot;);
+        &#125;
+
+        playGame() &#123;
+          console.log(&quot;玩游戏&quot;);
+        &#125;
+        //可以实现方法的重写，就近一致原则
+        call() &#123;
+          console.log(&quot;我可以进行视频通话...&quot;);
+        &#125;
+      &#125;
+
+      const xiaomi = new SmartPhone(&quot;小米&quot;, 799, &quot;黑色&quot;, &quot;4.7inch&quot;);
+      console.log(xiaomi);
+      xiaomi.call();
+      xiaomi.photo();
+      xiaomi.playGame();
+</code></pre>
+<h1 id="类的get和set方法"><a href="#类的get和set方法" class="headerlink" title="类的get和set方法"></a>类的get和set方法</h1><pre><code class="lang-js">//get 和 set
+      class Phone &#123;
+        get price() &#123;
+          console.log(&quot;价格属性被读取了...&quot;);
+          return &quot;i love you&quot;;
+        &#125;
+
+        set price(newVal) &#123;//必须传参数
+          console.log(&quot;价格属性被修改了...&quot;);
+          console.log(newVal);
+        &#125;
+      &#125;
+
+      //实例化对象
+      let s = new Phone();
+      console.log(s.price);
+      s.price = 10; //这个语句会引起set的调用, 参数newVal就是更改的值。
+</code></pre>
+<h1 id="数值扩展"><a href="#数值扩展" class="headerlink" title="数值扩展"></a>数值扩展</h1><pre><code class="lang-js">//JS的数值扩展
+     /* Number.EPSILON是JavaScript 表示的最小精度
+     当两个数的差值小于这个精度时，即可认为这两个数相等 */
+      console.log(0.1 + 0.2 === 0.3); //false
+
+      function equal(a, b) &#123;
+        return (Math.abs(a - b) &lt; Number.EPSILON);
+      &#125;
+
+      console.log(equal(0.1 + 0.2, 0.3));
+
+      //进制
+      let b = 0b1010;
+      console.log(b);
+
+      let o = 0o222;
+      console.log(o);
+
+      let x = 0xff;
+      console.log(x);
+
+      //Number.isFinite 检测一个数值是否为优先数
+      console.log(Number.isFinite(100));
+      console.log(Number.isFinite(100 / 0));
+
+      //其他的看Number方法
+</code></pre>
+<pre><code class="lang-js">//判断两个值是否为同一个值。
+      console.log(Object.is(120, 120));
+      console.log(Object.is(NaN, NaN)); //true
+      console.log(NaN === NaN); //false
+
+      //Object.assign 对象的合并
+      const config1 = &#123;
+        host: &#39;localhost&#39;,
+        port: 3306,
+        name: &#39;root&#39;,
+        pass: &#39;root&#39;
+      &#125;
+
+      const config2 = &#123;
+        host: &#39;http://atguigu.com&#39;,
+        port: 33060,
+        name: &#39;atguigu.com&#39;,
+        pass: &#39;iloveyou&#39;
+      &#125;
+      //如果遇见同名的对象，后面的会把前面的覆盖掉
+      console.log(Object.assign(config1, config2));
+
+      //Object.setPrototypeOf 设置原型对象
+      const school = &#123;
+        name: &#39;尚硅谷&#39;
+      &#125;
+      const cities = &#123;
+        campus: [&#39;北京&#39;, &#39;上海&#39;, &#39;深圳&#39;]
+      &#125;
+
+      //把cities加到school上的原型上
+      Object.setPrototypeOf(school, cities);
+      console.log(Object.getPrototypeOf(school));
+      console.log(school);
+</code></pre>
+<h1 id="Object的一些新方法"><a href="#Object的一些新方法" class="headerlink" title="Object的一些新方法"></a>Object的一些新方法</h1><pre><code class="lang-js">//判断两个值是否为同一个值。
+      console.log(Object.is(120, 120));
+      console.log(Object.is(NaN, NaN)); //true
+      console.log(NaN === NaN); //false
+
+      //Object.assign 对象的合并
+      const config1 = &#123;
+        host: &#39;localhost&#39;,
+        port: 3306,
+        name: &#39;root&#39;,
+        pass: &#39;root&#39;
+      &#125;
+
+      const config2 = &#123;
+        host: &#39;http://atguigu.com&#39;,
+        port: 33060,
+        name: &#39;atguigu.com&#39;,
+        pass: &#39;iloveyou&#39;
+      &#125;
+      //如果遇见同名的对象，后面的会把前面的覆盖掉
+      console.log(Object.assign(config1, config2));
+
+      //Object.setPrototypeOf 设置原型对象
+      const school = &#123;
+        name: &#39;尚硅谷&#39;
+      &#125;
+      const cities = &#123;
+        campus: [&#39;北京&#39;, &#39;上海&#39;, &#39;深圳&#39;]
+      &#125;
+
+      //把cities加到school上的原型上dsadas
+      Object.setPrototypeOf(school, cities);
+      console.log(Object.getPrototypeOf(school));
+      console.log(school);
+</code></pre>
+<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><p>模块化是值将一个大的程序文件，拆分成许多小的文件，然后将小文件组合起来。</p>
+<p>ES6模块化语法</p>
+<p>模块功能主要由两个命令构成：export和import</p>
+<p>export命令用于规定模块的对外接口</p>
+<p>import命令用于输入其他模块提供的功能</p>
+<p>export的使用方法：</p>
+<pre><code class="lang-js">//统一暴露
+let school = &#39;尚硅谷&#39;;
+
+function teach() &#123;
+  console.log(&quot;我们可以教给你开发技能...&quot;);
+&#125;
+
+export &#123;school, teach&#125;;
+
+//分别暴露
+export let student = &#39;张三&#39;;
+
+export function say() &#123;
+  console.log(&#39;我可以说话...&#39;);
+&#125;
+
+//默认暴露
+export default &#123;
+  school: &#39;atguigu&#39;,
+  change: function() &#123;
+    console.log(&#39;我们可以改变你的技能...&#39;);
+  &#125;
+&#125;
+</code></pre>
+<p>import的使用方法：</p>
+<pre><code class="lang-js">import &#123;school, teach&#125; from &#39;./m1.js&#39;;
+      //当变量名由冲突的时候，可以使用别名形式进行替代
+      import &#123;school as guigu, teach as tc&#125; from &#39;xxx&#39;;
+
+      //当时用默认暴露时，这个名称就是default，所以调用方法的时候也是x.default.xx的形式
+      //解构赋值写法
+      import &#123;default as m3&#125; from &#39;xxx&#39;;
+
+      //简便形式，只能针对默认暴露
+      import m3 from &#39;./m1.js&#39;
+</code></pre>
+<pre><code class="lang-js"> &lt;script&gt;
+
+    &lt;/script&gt;
+    //app里面集中写所有的import语句，再通过这样的方式去使用
+    &lt;script type=&quot;module&quot; src=&quot;./app.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h1 id="async和await"><a href="#async和await" class="headerlink" title="async和await"></a>async和await</h1><p>async和await两种语法结合可以让异步代码像同步代码一样</p>
+<p>async函数：</p>
+<ol>
+<li>async函数的返回值为promise对象</li>
+<li>promise对象的结果由async函数执行的返回值决定</li>
+</ol>
+<p>await表达式：</p>
+<ol>
+<li>await必须写在async函数里</li>
+<li>await右侧的表达式一般为promise对象</li>
+<li>await返回的是promise成功的值</li>
+<li>await的promise失败了就会抛出异常，需要通过try…catch捕获处理</li>
+</ol>
+<pre><code class="lang-js">//引入fs模块
+const fs = require(&#39;fs&#39;);
+
+//读取文件
+function readFile(filePath) &#123;
+  return new Promise((resolve, reject) =&gt; &#123;
+    fs.readFile(filePath, (err, data) =&gt; &#123;
+      if (err) &#123;
+        reject(err);
+      &#125;
+      resolve(data)
+    &#125;)
+  &#125;)
+&#125;
+
+async function main() &#123;
+  try &#123;
+    let data = await readFile(&#39;./gushi.md&#39;);
+    console.log(data.toString());
+  &#125; catch (error) &#123;
+    console.log(error);
+  &#125;
+&#125;
+
+main();
+</code></pre>
+<h1 id="正则扩展"><a href="#正则扩展" class="headerlink" title="正则扩展"></a>正则扩展</h1><p>正则表达式命名分组：</p>
+<pre><code class="lang-js">let str = &#39;&lt;a href=&quot;http://www.atguigu.com&quot;&gt;尚硅谷&lt;/a&gt;&#39;;
+
+      const reg = /&lt;a href=&quot;(?&lt;url&gt;.*)&quot;&gt;(?&lt;text&gt;.*)&lt;\/a&gt;/;
+
+      const result = reg.exec(str);
+      console.log(result);
+      console.log(result.groups.url);
+</code></pre>
+<p>正则拓展-dotAll模式-模式修正符</p>
+<pre><code class="lang-js">// . 除换行符以外的任意单个字符
+      let str = `
+        &lt;ul&gt;
+        &lt;li&gt;
+          &lt;a&gt;肖生克的救赎&lt;/a&gt;
+          &lt;p&gt;上映时间：1994-09-10&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a&gt;阿甘正传&lt;/a&gt;
+          &lt;p&gt;上映时间：1994-07-06&lt;/p&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;`;
+
+      //声明正则
+      // const reg = /&lt;li&gt;\s+&lt;a&gt;(.*?)&lt;\/a&gt;\s+&lt;p&gt;(.*?)&lt;\/p&gt;/g;
+      //加上这个s，表示模式修正符，可以使.能匹配任意字符
+      const reg2 = /&lt;li&gt;.*?&lt;a&gt;(.*?)&lt;\/a&gt;.*?&lt;p&gt;(.*?)&lt;\/p&gt;/gs;
+      let res;
+      let data = [];
+      while ((res = reg2.exec(str))) &#123;
+        data.push(&#123; title: res[1], time: res[2] &#125;);
+      &#125;
+      console.log(data);
+</code></pre>
+<h1 id="Object-fromEntries"><a href="#Object-fromEntries" class="headerlink" title="Object.fromEntries"></a>Object.fromEntries</h1><pre><code class="lang-js"> //二维数组
+     //fromEntries方法可以把二维数组转成对象
+     const res = Object.fromEntries([
+       [&#39;name&#39;, &#39;尚硅谷&#39;],
+       [&#39;subject&#39;, &#39;Java，大数据，前端，云计算&#39;]
+     ])
+     console.log(res);
+     //Map
+     const m = new Map();
+     m.set(&#39;name&#39;, &#39;atguigu&#39;);
+     const res2 = Object.fromEntries(m);
+     console.log(res2);
+
+     //Object.entries 这个方法是将对象转成数组的
+     const arr = Object.entries(&#123;
+       name: &#39;尚硅谷&#39;
+     &#125;)
+     console.log(arr);
+</code></pre>
+<h1 id="私有属性"><a href="#私有属性" class="headerlink" title="私有属性"></a>私有属性</h1><pre><code class="lang-js">class Person &#123;
+        name;
+        //前面加#表示它是私有的
+        #age;
+        #wight;
+        constructor(name, age, wight) &#123;
+          this.name = name;
+          this.#age = age;
+          this.#wight = wight;
+        &#125;
+
+        toString() &#123;
+          console.log(this.name, this.#age, this.#wight);
+        &#125;
+      &#125;
+
+      let girl = new Person(&#39;小红&#39;, 18, &#39;45kg&#39;);
+      girl.toString();
+</code></pre>
+<h1 id="可选链操作符"><a href="#可选链操作符" class="headerlink" title="可选链操作符"></a>可选链操作符</h1><pre><code class="lang-js">function main(config) &#123;
+        //判断的时候写整个链得挨个去写，ES11多了可选链操作符做了简化
+        // const dbHost = config &amp;&amp; config.db &amp;&amp; config.db.host;
+        const dbHost = config?.db?.host;
+        console.log(dbHost);
+      &#125;
+
+      main(&#123;
+        db: &#123;
+          host: &#39;192.168.1.100&#39;,
+          username: &#39;root&#39;
+        &#125;,
+        cache: &#123;
+          host: &#39;192.168.1.200&#39;,
+          username: &#39;admin&#39;
+        &#125;
+      &#125;)
+</code></pre>
+<h1 id="动态import"><a href="#动态import" class="headerlink" title="动态import"></a>动态import</h1><p>在需要Import的时候在按需引入</p>
+<pre><code class="lang-js">const btn = document.getElementById(&#39;btn&#39;);
+
+//then函数的形参就是引入的那个文件，可以调用相关的方法
+btn.onclick = function() &#123;
+    import(&#39;./xxx&#39;).then(module =&gt; &#123;
+        module.hello();
+    &#125;)
+&#125;
+</code></pre>
+<h1 id="大整型"><a href="#大整型" class="headerlink" title="大整型"></a>大整型</h1><pre><code class="lang-js"> //声明
+      let n = 520n;
+      console.log(n, typeof(n));
+
+      //函数,将普通整型转成
+      let n2 = 123;
+      console.log(BigInt(n2));
+
+      //JS的最大安全整型
+      let max = Number.MAX_SAFE_INTEGER;
+      console.log(max);
+
+      //需要将这个数转成大整型进行运算，但是大整型只能和大整型进行运算
+      console.log(BigInt(max));
+      console.log(BigInt(max) + BigInt(2));
+</code></pre>
+]]></content>
   </entry>
 </search>
